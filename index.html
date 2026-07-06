@@ -11,13 +11,14 @@
             --success-color: #2ecc71;
             --bg-color: #f8f9fa;
         }
-        body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            background-color: var(--bg-color);
-            margin: 0;
-            padding: 20px;
-            color: #333;
-        }
+body {
+font-family: 'Helvetica Neue', Arial, sans-serif;
+background-color: var(--bg-color);
+margin: 0;
+padding: 20px;
+color: #333;
+}
+
         .container {
             max-width: 700px;
             margin: 0 auto;
@@ -274,7 +275,7 @@ const quizDataset = [
         question: "日本文に合うように、次の語句を並び替えなさい。<br><small>（駅へ行く道を教えていただけませんか。）</small>",
         words: ["the train station", "could", "you", "the way", "to", "me", "show"],
         // 2, 3, 7, 6, 4, 5, 1 の順 (could you show me the way to the train station)
-        answer: "could you show me the way to the train station",
+        answer: "Could you show me the way to the train station?",
         translation: "駅へ行く道を教えていただけませんか。",
         explanation: "Could you show me the way to ~ ? で「〜への道を教えてくれませんか」という丁寧な依頼の表現になります。",
         school: "九州看護福祉大"
@@ -301,8 +302,6 @@ const quizDataset = [
 
 let currentQuestions = [];
 let currentIndex = 0;
-let currentType = "";
-
 function startCategory(catName) {
     currentQuestions = quizDataset.filter(q => q.category === catName);
     if(currentQuestions.length === 0) {
@@ -316,7 +315,6 @@ function startCategory(catName) {
 
 function loadQuestion() {
     const q = currentQuestions[currentIndex];
-    currentType = q.type;
     
     // メタ情報設定
     document.getElementById("quiz-meta-pos").innerText = `p.${q.page} No.${q.no}`;
@@ -350,8 +348,13 @@ function loadQuestion() {
         wordZone.innerHTML = "";
         ansZone.innerHTML = "";
 
-        // シャッフル（今回は登録順のまま表示したければそのまま）
-        q.words.forEach(w => {
+const shuffled = [...q.words];
+
+for (let i = shuffled.length - 1; i > 0; i--) {
+const j = Math.floor(Math.random() * (i + 1));
+[shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+}
+shuffled.forEach(w => {
             const card = document.createElement("div");
             card.className = "word-card";
             card.innerText = w;
@@ -409,14 +412,58 @@ function evaluateAnswer(userAns) {
     let userDisplay = "";
     let correctDisplay = "";
 
-    if (q.type === "4choice" || q.type === "sort") {
-        isCorrect = (typeof userAns === 'string' && userAns.trim().toLowerCase() === q.answer.toLowerCase());
-        userDisplay = userAns || "(未入力)";
-        correctDisplay = q.answer;
-    } else if (q.type === "rewrite") {
+if (q.type === "4choice" || q.type === "sort") {
+
+let cleanUser =
+(typeof userAns === "string")
+? userAns.trim().replace(/\s+/g, " ")
+: "";
+
+let cleanCorrect =
+q.answer.trim().replace(/\s+/g, " ");
+
+cleanUser = cleanUser.replace(/\s+([?.!])/g, "$1");
+cleanCorrect = cleanCorrect.replace(/\s+([?.!])/g, "$1");
+
+    // 正解データの末尾だけで疑問文を判定
+let punc = "";
+
+if (cleanCorrect.endsWith("?")) {
+punc = "?";
+} else if (cleanCorrect.endsWith("!")) {
+punc = "!";
+} else {
+punc = ".";
+}
+   if (cleanUser &&
+!cleanUser.endsWith(".") &&
+!cleanUser.endsWith("?") &&
+!cleanUser.endsWith("!")) {
+cleanUser += punc;
+}
+
+if (cleanCorrect &&
+!cleanCorrect.endsWith(".") &&
+!cleanCorrect.endsWith("?") &&
+!cleanCorrect.endsWith("!")) {
+cleanCorrect += punc;
+}
+    isCorrect =
+        cleanUser.toLowerCase() === cleanCorrect.toLowerCase();
+
+userDisplay = cleanUser || "(未入力)";
+    correctDisplay = cleanCorrect;
+}else if (q.type === "rewrite") {
         // 配列の比較
-        isCorrect = q.answer.every((ans, idx) => userAns[idx] && userAns[idx].toLowerCase() === ans.toLowerCase());
-        userDisplay = userAns.join(", ") || "(未入力)";
+        
+isCorrect = q.answer.every((ans, idx) =>
+userAns[idx] &&
+userAns[idx].trim().toLowerCase() === ans.toLowerCase()
+);
+userDisplay =
+userAns.every(a => a === "")
+? "(未入力)"
+: userAns.join(", ");
         correctDisplay = q.answer.join(", ");
     }
 
