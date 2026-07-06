@@ -356,9 +356,13 @@ const j = Math.floor(Math.random() * (i + 1));
 }
 shuffled.forEach(w => {
             const card = document.createElement("div");
-            card.className = "word-card";
-            card.innerText = w;
-            card.onclick = () => moveWord(card, wordZone, ansZone);
+card.className = "word-card";
+
+card.dataset.original = w;   // ←追加
+
+card.innerText = w;
+
+card.onclick = () => moveWord(card, wordZone, ansZone);
             wordZone.appendChild(card);
         });
     } 
@@ -378,13 +382,32 @@ shuffled.forEach(w => {
 
 // 語句整序の移動ロジック
 function moveWord(card, wordZone, ansZone) {
-    if (card.parentElement === wordZone) {
-        ansZone.appendChild(card);
-    } else {
-        wordZone.appendChild(card);
-    }
+if (card.parentElement === wordZone) {
+ansZone.appendChild(card);
+} else {
+wordZone.appendChild(card);
 }
 
+// 語句の表示を更新
+updateWordCase(ansZone);
+}
+
+function updateWordCase(ansZone) {
+
+    const cards = ansZone.querySelectorAll(".word-card");
+
+    cards.forEach((card, index) => {
+
+        let text = card.dataset.original.toLowerCase();
+
+        if (index === 0) {
+            text = text.charAt(0).toUpperCase() + text.slice(1);
+        }
+
+        card.innerText = text;
+    });
+
+}
 // 四択選択時の即時判定
 function select4Choice(selected) {
     evaluateAnswer(selected);
