@@ -1,12 +1,473 @@
-[
-  {
-    "question": "analyze",
-    "options": ["を分析する", "を麻痺させる", "を統合する", "を誇張する"],
-    "answer": "を分析する"
-  },
-  {
-    "question": "consequence",
-    "options": ["結果、影響", "原因", "意識", "動機"],
-    "answer": "結果、影響"
-  }
-]
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>英作基本文例600 アプリ</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --success-color: #2ecc71;
+            --bg-color: #f8f9fa;
+        }
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+        }
+        /* カテゴリ画面 */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 12px;
+            margin-top: 15px;
+        }
+        .btn-cat {
+            background-color: white;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-cat:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        .section-title {
+            margin-top: 20px;
+            font-size: 1.1rem;
+            color: #666;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 8px;
+        }
+        /* 問題画面 */
+        .hidden { display: none !important; }
+        .meta-info {
+            display: flex;
+            justify-content: space-between;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 8px;
+        }
+        .question-text {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        /* 四択 */
+        .choices-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        .btn-choice {
+            background-color: #fff;
+            border: 1.5px solid #bdc3c7;
+            padding: 14px;
+            border-radius: 8px;
+            font-size: 1.05rem;
+            cursor: pointer;
+            text-align: left;
+        }
+        .btn-choice:hover { border-color: var(--accent-color); background-color: #f7f9fa; }
+        
+        /* 語句整序 */
+        .zone {
+            min-height: 50px;
+            border: 2px dashed #bdc3c7;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: center;
+        }
+        .word-card {
+            background-color: #fff;
+            border: 1px solid #cbd5e1;
+            padding: 8px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            font-size: 1.05rem;
+            user-select: none;
+        }
+        /* 書き換え */
+        .input-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .blank-input {
+            padding: 10px;
+            font-size: 1.1rem;
+            border: 1px solid #bdc3c7;
+            border-radius: 6px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        /* 共通アクション */
+        .action-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .btn-action {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        /* 判定・解説画面 */
+        .result-box {
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+        .correct-box { background-color: #d4edda; color: #155724; }
+        .incorrect-box { background-color: #f8d7da; color: #721c24; }
+        .review-panel {
+            background-color: #f1f5f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+        .review-item { margin-bottom: 15px; }
+        .review-label { font-weight: bold; color: var(--primary-color); font-size: 0.9rem; }
+        .review-value { font-size: 1.1rem; margin-top: 4px; line-height: 1.5; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>英作基本文例600</h1>
+
+    <!-- 1. カテゴリ選択画面 -->
+    <div id="view-category">
+<div style="text-align: center; margin-bottom: 20px;">
+            <h2 style="color: #2c3e50; margin-bottom: 5px; font-size: 1.5rem;">エリスフィールド進学会</h2>
+            <p style="color: #7f8c8d; margin: 0; font-size: 1rem; font-weight: bold;">テストするカテゴリを選んでね</p>
+        </div>
+        <div class="section-title">基本カリキュラム</div>
+        <div class="category-grid">
+            <button class="btn-cat" onclick="startCategory('時制の基本')">時制の基本</button>
+            <button class="btn-cat">文型（1）</button>
+            <button class="btn-cat">文型（2）</button>
+            <button class="btn-cat">文型（3）</button>
+            <button class="btn-cat">完了形（1）</button>
+            <button class="btn-cat">完了形（2）</button>
+        </div>
+        
+        <div class="section-title">文法基礎・不規則動詞等</div>
+        <div class="category-grid">
+            <button class="btn-cat">不規則動詞 (過去形)</button>
+            <button class="btn-cat">不規則動詞 (過去分詞)</button>
+            <button class="btn-cat">形容詞・副詞 (比較級)</button>
+            <button class="btn-cat">形容詞・副詞 (最上級)</button>
+        </div>
+    </div>
+
+    <!-- 2. 問題出題画面 -->
+    <div id="view-quiz" class="hidden">
+        <div class="meta-info">
+            <span id="quiz-meta-pos">p.0 No.0</span>
+            <span id="quiz-meta-type">形式</span>
+        </div>
+        <div class="question-text" id="quiz-question">Question Text</div>
+
+        <!-- 形式別コンテンツエリア -->
+        <div id="area-4choice" class="hiddenChoices choices-grid"></div>
+        
+        <div id="area-sort" class="hidden">
+            <div class="zone" id="answer-zone" placeholder="タップして解答を作成"></div>
+            <div class="zone" id="word-zone"></div>
+        </div>
+
+        <div id="area-rewrite" class="hidden input-container">
+            <div id="rewrite-inputs"></div>
+        </div>
+
+        <div class="action-container">
+            <button class="btn-action" style="background-color:#95a5a6;" onclick="backToCategory()">戻る</button>
+            <button class="btn-action" id="btn-submit" onclick="checkAnswer()">答え合わせ</button>
+        </div>
+    </div>
+
+    <!-- 3. 解答・解説画面 -->
+    <div id="view-result" class="hidden">
+        <div id="result-judge" class="result-box">正解 / 不正解</div>
+        
+        <div class="review-panel">
+            <div class="review-item">
+                <div class="review-label">あなたの解答:</div>
+                <div class="review-value" id="res-user-ans" style="color:#e74c3c;">-</div>
+            </div>
+            <div class="review-item">
+                <div class="review-label">正解:</div>
+                <div class="review-value" id="res-correct" style="color:#2ecc71; font-weight:bold;">-</div>
+            </div>
+            <div class="review-item">
+                <div class="review-label">和訳:</div>
+                <div class="review-value" id="res-translation">-</div>
+            </div>
+            <div class="review-item">
+                <div class="review-label">解説:</div>
+                <div class="review-value" id="res-explanation">-</div>
+            </div>
+            <div class="review-item">
+                <div class="review-label">出題校:</div>
+                <div class="review-value" id="res-school" style="font-size:0.95rem; color:#7f8c8d;">-</div>
+            </div>
+        </div>
+
+        <div class="action-container" style="justify-content: flex-end;">
+            <button class="btn-action" id="btn-next" onclick="nextQuestion()">次の問題へ</button>
+        </div>
+    </div>
+</div>
+
+<script>
+// 画像データを再現した4問のサンプルデータベース
+const quizDataset = [
+    {
+        page: 4, no: 2, category: "時制の基本", type: "4choice",
+        question: "My father usually ( &nbsp; &nbsp; &nbsp; ) home from work at 7:00 p.m.",
+        choices: ["is coming", "comes", "come", "has come"],
+        answer: "comes",
+        translation: "父はたいてい午後7時に仕事から帰宅します。",
+        explanation: "usually（たいてい）があることから、現在の習慣を表す文形です。主語が My father (三人称単数) なので、動詞の現在形 comes が正解となります。",
+        school: "甲南大"
+    },
+    {
+        page: 6, no: 14, category: "時制の基本", type: "sort",
+        question: "日本文に合うように、次の語句を並び替えなさい。<br><small>（駅へ行く道を教えていただけませんか。）</small>",
+        words: ["the train staion", "could", "you", "the way", "to", "me", "show"],
+        // 2, 3, 7, 6, 4, 5, 1 の順 (could you show me the way to the train staion)
+        answer: "could you show me the way to the train staion",
+        translation: "駅へ行く道を教えていただけませんか。",
+        explanation: "Could you show me the way to ~ ? で「〜への道を教えてくれませんか」という丁寧な依頼の表現になります。※画像内 train staion の綴りを再現しています。",
+        school: "九州看護福祉大"
+    },
+    {
+        page: 10, no: 1, category: "時制の基本", type: "rewrite",
+        question: "Is she a member of the volleyball club ?<br>➔ Does she ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) the volleyball club ?",
+        blankCount: 2,
+        answer: ["belong", "to"],
+        translation: "彼女はバレーボール部の一員ですか？ ➔ 彼女はバレーボール部に所属していますか？",
+        explanation: "be a member of ~（〜のメンバーである）は、動詞 belong to ~（〜に所属している）を用いて書き換えることができます。Does の後ろなので動詞の原形（belong）にします。",
+        school: "昭和女子大"
+    },
+    {
+        page: 12, no: 14, category: "時制の基本", type: "rewrite",
+        question: "Three weeks have passed since she became ill.<br>➔ She ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) ill ( &nbsp; &nbsp; &nbsp; ) three weeks.",
+        blankCount: 3,
+        answer: ["has", "been", "for"],
+        translation: "彼女が病気になってから3週間が過ぎた。 ➔ 彼女は3週間ずっと病気です。",
+        explanation: "「〜期間が経過した」は、＜主語 + has been ill for 期間＞で状態の継続に書き換えることが可能です。3週間「間」を表すので for を使います。",
+        school: "静岡理工科大"
+    }
+];
+
+let currentQuestions = [];
+let currentIndex = 0;
+let currentType = "";
+
+function startCategory(catName) {
+    currentQuestions = quizDataset.filter(q => q.category === catName);
+    if(currentQuestions.length === 0) {
+        alert("選択されたカテゴリのサンプルデータは未登録です（時制の基本 を選択してください）");
+        return;
+    }
+    currentIndex = 0;
+    showView("quiz");
+    loadQuestion();
+}
+
+function loadQuestion() {
+    const q = currentQuestions[currentIndex];
+    currentType = q.type;
+    
+    // メタ情報設定
+    document.getElementById("quiz-meta-pos").innerText = `p.${q.page} No.${q.no}`;
+    const typeLabel = q.type === "4choice" ? "四択問題" : q.type === "sort" ? "語句整序" : "書き換え問題";
+    document.getElementById("quiz-meta-type").innerText = typeLabel;
+    document.getElementById("quiz-question").innerHTML = q.question;
+
+    // 各形式エリアをリセット・非表示
+    document.getElementById("area-4choice").classList.add("hidden");
+    document.getElementById("area-sort").classList.add("hidden");
+    document.getElementById("area-rewrite").classList.add("hidden");
+    document.getElementById("btn-submit").classList.remove("hidden");
+
+    if (q.type === "4choice") {
+        const area = document.getElementById("area-4choice");
+        area.innerHTML = "";
+        area.classList.remove("hidden");
+        q.choices.forEach(choice => {
+            const btn = document.createElement("button");
+            btn.className = "btn-choice";
+            btn.innerText = choice;
+            btn.onclick = () => select4Choice(choice);
+            area.appendChild(btn);
+        });
+        document.getElementById("btn-submit").classList.add("hidden"); // 四択は選んだ瞬間に判定するため非表示
+    } 
+    else if (q.type === "sort") {
+        document.getElementById("area-sort").classList.remove("hidden");
+        const wordZone = document.getElementById("word-zone");
+        const ansZone = document.getElementById("answer-zone");
+        wordZone.innerHTML = "";
+        ansZone.innerHTML = "";
+
+        // シャッフル（今回は登録順のまま表示したければそのまま）
+        q.words.forEach(w => {
+            const card = document.createElement("div");
+            card.className = "word-card";
+            card.innerText = w;
+            card.onclick = () => moveWord(card, wordZone, ansZone);
+            wordZone.appendChild(card);
+        });
+    } 
+    else if (q.type === "rewrite") {
+        document.getElementById("area-rewrite").classList.remove("hidden");
+        const inputContainer = document.getElementById("rewrite-inputs");
+        inputContainer.innerHTML = "";
+        for(let i=0; i<q.blankCount; i++) {
+            const input = document.createElement("input");
+            input.type = "text";
+            input.className = "blank-input";
+            input.placeholder = `空欄 [ ${i+1} ] の解答を入力`;
+            inputContainer.appendChild(input);
+        }
+    }
+}
+
+// 語句整序の移動ロジック
+function moveWord(card, wordZone, ansZone) {
+    if (card.parentElement === wordZone) {
+        ansZone.appendChild(card);
+    } else {
+        wordZone.appendChild(card);
+    }
+}
+
+// 四択選択時の即時判定
+function select4Choice(selected) {
+    evaluateAnswer(selected);
+}
+
+// 答え合わせボタン押下時（整序・書き換え）
+function checkAnswer() {
+    const q = currentQuestions[currentIndex];
+    let userAns = "";
+
+    if (q.type === "sort") {
+        const cards = document.querySelectorAll("#answer-zone .word-card");
+        userAns = Array.from(cards).map(c => c.innerText).join(" ");
+    } else if (q.type === "rewrite") {
+        const inputs = document.querySelectorAll(".blank-input");
+        userAns = Array.from(inputs).map(i => i.value.trim());
+    }
+    evaluateAnswer(userAns);
+}
+
+// 判定処理共通
+function evaluateAnswer(userAns) {
+    const q = currentQuestions[currentIndex];
+    let isCorrect = false;
+    let userDisplay = "";
+    let correctDisplay = "";
+
+    if (q.type === "4choice" || q.type === "sort") {
+        isCorrect = (typeof userAns === 'string' && userAns.trim().toLowerCase() === q.answer.toLowerCase());
+        userDisplay = userAns || "(未入力)";
+        correctDisplay = q.answer;
+    } else if (q.type === "rewrite") {
+        // 配列の比較
+        isCorrect = q.answer.every((ans, idx) => userAns[idx] && userAns[idx].toLowerCase() === ans.toLowerCase());
+        userDisplay = userAns.join(", ") || "(未入力)";
+        correctDisplay = q.answer.join(", ");
+    }
+
+    // 結果表示設定
+    const judge = document.getElementById("result-judge");
+    if (isCorrect) {
+        judge.innerText = "正解 ○";
+        judge.className = "result-box correct-box";
+    } else {
+        judge.innerText = "不正解 ✕";
+        judge.className = "result-box incorrect-box";
+    }
+
+    document.getElementById("res-user-ans").innerText = userDisplay;
+    document.getElementById("res-correct").innerText = correctDisplay;
+    document.getElementById("res-translation").innerText = q.translation;
+    document.getElementById("res-explanation").innerText = q.explanation;
+    document.getElementById("res-school").innerText = q.school;
+
+    // ボタン文言の制御
+    if (currentIndex === currentQuestions.length - 1) {
+        document.getElementById("btn-next").innerText = "カテゴリ一覧へ戻る";
+    } else {
+        document.getElementById("btn-next").innerText = "次の問題へ";
+    }
+
+    showView("result");
+}
+
+function nextQuestion() {
+    if (currentIndex === currentQuestions.length - 1) {
+        backToCategory();
+    } else {
+        currentIndex++;
+        showView("quiz");
+        loadQuestion();
+    }
+}
+
+function backToCategory() {
+    showView("category");
+}
+
+function showView(viewName) {
+    document.getElementById("view-category").classList.add("hidden");
+    document.getElementById("view-quiz").classList.add("hidden");
+    document.getElementById("view-result").classList.add("hidden");
+
+    if (viewName === "category") document.getElementById("view-category").classList.remove("hidden");
+    if (viewName === "quiz") document.getElementById("view-quiz").classList.remove("hidden");
+    if (viewName === "result") document.getElementById("view-result").classList.remove("hidden");
+}
+</script>
+</body>
+</html>
