@@ -492,90 +492,80 @@ function checkAnswer() {
 
 // 判定処理共通
 function evaluateAnswer(userAns) {
-    const q = currentQuestions[currentIndex];
-    let isCorrect = false;
-    let userDisplay = "";
-    let correctDisplay = "";
+   const q = currentQuestions[currentIndex];
+   let isCorrect = false;
+   let userDisplay = "";
+   let correctDisplay = "";
+ 
+   // --- 1. 四択問題 (4choice) の判定ロジック ---
+   if (q.type === "4choice") {
+       let cleanUser = (typeof userAns === 'string') ? userAns.trim() : "";
+       let cleanCorrect = q.answer.trim();
 
-if (q.type === "4choice" || q.type === "sort") {
+       // 四択は文末記号（.）を一切付加せず、純粋に選択肢の文字列だけで一致判定をします
+       isCorrect = (cleanUser.toLowerCase() === cleanCorrect.toLowerCase());
+       userDisplay = userAns || "(未入力)";
+       correctDisplay = q.answer; // ここもドットなしの純粋な正解を表示
+   }
+   // --- 2. 語句整序 (sort) の判定ロジック ---
+   else if (q.type === "sort") {
+       let cleanUser = (typeof userAns === 'string') ? userAns.trim().replace(/\s+/g, " ") : "";
+       let cleanCorrect = q.answer.trim().replace(/\s+/g, " ");
 
-let cleanUser =
-(typeof userAns === "string")
-? userAns.trim().replace(/\s+/g, " ")
-: "";
+       const isQuestion = q.answer.trim().endsWith("?");
+       const punc = isQuestion ? "?" : ".";
+       
+       if(cleanUser && !cleanUser.endsWith(".") && !cleanUser.endsWith("?")) {
+           cleanUser += punc;
+       }
+       if(cleanCorrect && !cleanCorrect.endsWith(".") && !cleanCorrect.endsWith("?")) {
+           cleanCorrect += punc;
+       }
 
-let cleanCorrect =
-q.answer.trim().replace(/\s+/g, " ");
-
-cleanUser = cleanUser.replace(/\s+([?.!])/g, "$1");
-cleanCorrect = cleanCorrect.replace(/\s+([?.!])/g, "$1");
-
-    // 正解データの末尾だけで疑問文を判定
-let punc = "";
-
-if (cleanCorrect.endsWith("?")) {
-punc = "?";
-} else if (cleanCorrect.endsWith("!")) {
-punc = "!";
-} else {
-punc = ".";
-}
-   if (cleanUser &&
-!cleanUser.endsWith(".") &&
-!cleanUser.endsWith("?") &&
-!cleanUser.endsWith("!")) {
-cleanUser += punc;
-}
-
-if (cleanCorrect &&
-!cleanCorrect.endsWith(".") &&
-!cleanCorrect.endsWith("?") &&
-!cleanCorrect.endsWith("!")) {
-cleanCorrect += punc;
-}
-    isCorrect =
-        cleanUser.toLowerCase() === cleanCorrect.toLowerCase();
-
-userDisplay = cleanUser || "(未入力)";
-    correctDisplay = cleanCorrect;
-}else if (q.type === "rewrite") {
-        // 配列の比較
-        
-isCorrect = q.answer.every((ans, idx) =>
-userAns[idx] &&
-userAns[idx].trim().toLowerCase() === ans.toLowerCase()
-);
-userDisplay =
-userAns.every(a => a === "")
-? "(未入力)"
-: userAns.join(", ");
-        correctDisplay = q.answer.join(", ");
-    }
-
-    // 結果表示設定
-    const judge = document.getElementById("result-judge");
-    if (isCorrect) {
-        judge.innerText = "正解 ○";
-        judge.className = "result-box correct-box";
-    } else {
-        judge.innerText = "不正解 ✕";
-        judge.className = "result-box incorrect-box";
-    }
-
-    document.getElementById("res-user-ans").innerText = userDisplay;
-    document.getElementById("res-correct").innerText = correctDisplay;
-    document.getElementById("res-translation").innerText = q.translation;
-    document.getElementById("res-explanation").innerText = q.explanation;
-    document.getElementById("res-school").innerText = q.school;
-
-    // ボタン文言の制御
-    if (currentIndex === currentQuestions.length - 1) {
-        document.getElementById("btn-next").innerText = "カテゴリ一覧へ戻る";
-    } else {
-        document.getElementById("btn-next").innerText = "次の問題へ";
-    }
-
-    showView("result");
+       isCorrect = (cleanUser.toLowerCase() === cleanCorrect.toLowerCase());
+       userDisplay = userAns || "(未入力)";
+       correctDisplay = q.answer;
+   }
+   // --- 3. 書き換え問題 (rewrite) の判定ロジック ---
+   else if (q.type === "rewrite") {
+       isCorrect = q.answer.every((ans, idx) => userAns[idx] && userAns[idx].toLowerCase() === ans.toLowerCase());
+       userDisplay = userAns.join(", ") || "(未入力)";
+       correctDisplay = q.answer.join(", ");
+   }
+ 
+   // 正誤判定のボックス表示処理
+   const judge = document.getElementById("result-judge");
+   if (isCorrect) {
+       judge.innerText = "正解○";
+       judge.className = "result-box correct-box";
+   } else {
+       judge.innerText = "不正解✕";
+       judge.className = "result-box incorrect-box";
+   }
+ 
+   // 画面へのデータ反映
+   document.getElementById("res-user-ans").innerText = userDisplay;
+   document.getElementById("res-correct").innerText = correctDisplay;
+   document.getElementById("res-translation").innerText = q.translation;
+   document.getElementById("res-explanation").innerText = q.explanation;
+   
+   // --- ChatGPT提案の出題校表示・非表示ロジック ---
+   const schoolItem = document.getElementById("res-school").parentElement;
+   if (q.school.trim() === "") {
+       schoolItem.style.display = "none";
+   } else {
+       schoolItem.style.display = "block";
+       document.getElementById("res-school").innerText = q.school;
+   }
+ 
+   // 次のボタンのテキスト制御
+   if (currentIndex === currentQuestions.length - 1) {
+       document.getElementById("btn-next").innerText = "カテゴリ一覧へ戻る";
+   } else {
+       document.getElementById("btn-next").innerText = "次の問題へ";
+   }
+ 
+   showView("result");
 }
 
 function nextQuestion() {
