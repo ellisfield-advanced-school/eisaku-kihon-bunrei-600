@@ -539,10 +539,10 @@ cleanCorrect = cleanCorrect.replace(/\s+([?.!])/g, "$1");
    // 正誤判定のボックス表示処理
    const judge = document.getElementById("result-judge");
    if (isCorrect) {
-       judge.innerText = "正解○";
+       judge.innerText = "正解　○";
        judge.className = "result-box correct-box";
    } else {
-       judge.innerText = "不正解✕";
+       judge.innerText = "不正解　✕";
        judge.className = "result-box incorrect-box";
    }
  
