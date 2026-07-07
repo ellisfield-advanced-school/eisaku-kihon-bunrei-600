@@ -304,11 +304,21 @@ const quizDataset = [
 
 let currentQuestions = [];
 let currentIndex = 0;
+let currentType = ""; // もし元からあれば残しておいてください
+
 function startCategory(catName) {
-    currentQuestions = quizDataset.filter(q => q.category === catName);
-    if(currentQuestions.length === 0) {
-        alert("選択されたカテゴリのサンプルデータは未登録です（時制の基本 を選択してください）");
-        return;
+   currentQuestions = quizDataset.filter(q => q.category === catName);
+   
+   // データが見つからなかった場合の安全装置（チェック機能）
+   if (currentQuestions.length === 0) {
+       alert(`エラー：カテゴリ「${catName}」の問題データが見つかりません。\nデータが正しく登録されているか、または文字の打ち間違い（半角・全角など）がないか確認してください。`);
+       return;
+   }
+   
+   currentIndex = 0;
+   showView("quiz");
+   loadQuestion();
+}
     }
     currentIndex = 0;
     showView("quiz");
