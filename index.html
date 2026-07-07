@@ -512,6 +512,9 @@ function evaluateAnswer(userAns) {
        let cleanUser = (typeof userAns === 'string') ? userAns.trim().replace(/\s+/g, " ") : "";
        let cleanCorrect = q.answer.trim().replace(/\s+/g, " ");
 
+cleanUser = cleanUser.replace(/\s+([?.!])/g, "$1");
+cleanCorrect = cleanCorrect.replace(/\s+([?.!])/g, "$1");
+       
        const isQuestion = q.answer.trim().endsWith("?");
        const punc = isQuestion ? "?" : ".";
        
