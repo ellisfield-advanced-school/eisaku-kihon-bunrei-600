@@ -433,9 +433,15 @@ function startCategory(catName) {
    container.innerHTML = ""; 
 
    sortedNumbers.forEach(num => {
+      // 各番号の後ろに「（〇問）」というカウントを追加
+       const qCount = categoryQuestions.filter(q => {
+           const match = String(q.no).match(/^(\d+)/);
+           return match && parseInt(match[1], 10) === num;
+       }).length;
+      
        const btn = document.createElement("button");
        btn.className = "btn-cat";
-       btn.innerText = `${num}番`;
+       btn.innerText = `${num}番 (${qCount}問)`;
        btn.onclick = () => startNumber(num);
        container.appendChild(btn);
    });
