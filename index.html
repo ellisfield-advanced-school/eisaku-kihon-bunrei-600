@@ -541,6 +541,7 @@ let currentQuestions = [];  // 選択された番号に絞り込まれた問題�
 let currentIndex = 0;
  
 function startCategory(catName) {
+   console.log("startCategory:", catName);
    categoryQuestions = quizDataset.filter(q => q.category === catName);
    
    if (categoryQuestions.length === 0) {
