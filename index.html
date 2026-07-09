@@ -834,6 +834,38 @@ function showView(viewName) {
     if (viewName === "quiz") DOM.viewQuiz.classList.remove("hidden");
     if (viewName === "result") DOM.viewResult.classList.remove("hidden");
 }
+   function searchQuestions() {
+
+    const keyword = document.getElementById("search-box")
+        .value
+        .trim()
+        .toLowerCase();
+
+    if (keyword === "") {
+        alert("検索語を入力してください。");
+        return;
+    }
+
+    const results = quizDataset.filter(q => {
+        return (
+            (q.question || "").toLowerCase().includes(keyword) ||
+            (q.translation || "").toLowerCase().includes(keyword) ||
+            (q.explanation || "").toLowerCase().includes(keyword) ||
+            (q.school || "").toLowerCase().includes(keyword)
+        );
+    });
+
+    if (results.length === 0) {
+        alert("該当する問題はありません。");
+        return;
+    }
+
+    currentQuestions = results;
+    currentIndex = 0;
+
+    showView("quiz");
+    loadQuestion();
+}
 </script>
 </body>
 </html>
