@@ -518,7 +518,7 @@ function startCategory(catName) {
    });
 
    const sortedNumbers = Array.from(numberSet).sort((a, b) => a - b);
-   const container = document.getElementById("number-buttons-container");
+   const container = DOM.numberButtonsContainer;
    container.innerHTML = ""; 
 
    sortedNumbers.forEach(num => {
