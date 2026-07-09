@@ -771,15 +771,15 @@ function backToNumberSelect() {
 }
  
 function showView(viewName) {
-   document.getElementById("view-category").classList.add("hidden");
-   document.getElementById("view-number-select").classList.add("hidden");
-   document.getElementById("view-quiz").classList.add("hidden");
-   document.getElementById("view-result").classList.add("hidden");
- 
-   if (viewName === "category") document.getElementById("view-category").classList.remove("hidden");
-   if (viewName === "number-select") document.getElementById("view-number-select").classList.remove("hidden");
-   if (viewName === "quiz") document.getElementById("view-quiz").classList.remove("hidden");
-   if (viewName === "result") document.getElementById("view-result").classList.remove("hidden");
+    DOM.viewCategory.classList.add("hidden");
+    DOM.viewNumberSelect.classList.add("hidden");
+    DOM.viewQuiz.classList.add("hidden");
+    DOM.viewResult.classList.add("hidden");
+
+    if (viewName === "category") DOM.viewCategory.classList.remove("hidden");
+    if (viewName === "number-select") DOM.viewNumberSelect.classList.remove("hidden");
+    if (viewName === "quiz") DOM.viewQuiz.classList.remove("hidden");
+    if (viewName === "result") DOM.viewResult.classList.remove("hidden");
 }
 </script>
 </body>
