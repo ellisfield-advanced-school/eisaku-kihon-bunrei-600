@@ -261,6 +261,41 @@
  
 <script>
 // サンプルデータベース
+   // ==========================================
+// DOMキャッシュ
+// ==========================================
+const DOM = {
+    viewCategory: document.getElementById("view-category"),
+    viewNumberSelect: document.getElementById("view-number-select"),
+    viewQuiz: document.getElementById("view-quiz"),
+    viewResult: document.getElementById("view-result"),
+
+    numberButtonsContainer: document.getElementById("number-buttons-container"),
+
+    quizMetaPos: document.getElementById("quiz-meta-pos"),
+    quizMetaType: document.getElementById("quiz-meta-type"),
+    quizQuestion: document.getElementById("quiz-question"),
+
+    area4Choice: document.getElementById("area-4choice"),
+    areaSort: document.getElementById("area-sort"),
+    areaRewrite: document.getElementById("area-rewrite"),
+
+    answerZone: document.getElementById("answer-zone"),
+    wordZone: document.getElementById("word-zone"),
+
+    rewriteInputs: document.getElementById("rewrite-inputs"),
+
+    btnSubmit: document.getElementById("btn-submit"),
+    btnNext: document.getElementById("btn-next"),
+
+    resultJudge: document.getElementById("result-judge"),
+
+    resUserAns: document.getElementById("res-user-ans"),
+    resCorrect: document.getElementById("res-correct"),
+    resTranslation: document.getElementById("res-translation"),
+    resExplanation: document.getElementById("res-explanation"),
+    resSchool: document.getElementById("res-school")
+};
 const quizDataset = [
    {
        page: 3, no: 2, category: "文型（1）", type: "4choice",
