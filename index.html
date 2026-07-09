@@ -692,14 +692,16 @@ function evaluateAnswer(userAns) {
   let correctDisplay = "";
  
    // --- 1. 四択問題 (4choice) の判定ロジック ---
-   if (q.type === "4choice") {
-      let cleanUser = (typeof userAns === 'string') ? userAns.trim() : "";
-      let cleanCorrect = (q.answer || "").trim(); // 【防弾】
- 
-      isCorrect = (cleanUser.toLowerCase() === cleanCorrect.toLowerCase());
-      userDisplay = userAns || "(未入力)";
-      correctDisplay = q.answer || ""; 
-   }
+if (q.type === "4choice") {
+
+    const cleanUser = normalizeText(userAns);
+    const cleanCorrect = normalizeText(q.answer);
+
+    isCorrect = (cleanUser === cleanCorrect);
+
+    userDisplay = userAns || "(未入力)";
+    correctDisplay = q.answer || "";
+}
    // --- 2. 語句整序 (sort) の判定ロジック ---
   else if (q.type === "sort") {
       let cleanUser = (typeof userAns === 'string') ? userAns.trim().replace(/\s+/g, " ") : "";
