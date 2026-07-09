@@ -181,25 +181,41 @@
           <div style="margin:20px 0;">
     <div style="text-align:center; margin-bottom:20px;">
 
+<div style="
+    position: relative;
+    margin: 18px 0 25px 0;
+">
+
     <input
         id="search-box"
         type="text"
         placeholder="問題・解説・和訳・大学名を検索..."
+        onkeydown="if(event.key==='Enter') searchQuestions();"
         style="
             width:100%;
-            padding:14px;
+            padding:14px 55px 14px 16px;
             font-size:16px;
             border:2px solid #3498db;
-            border-radius:8px;
+            border-radius:10px;
             box-sizing:border-box;
         ">
 
-    <button
-        class="btn-action"
+    <span
         onclick="searchQuestions()"
-        style="margin-top:10px;">
-        🔍 検索
-    </button>
+        style="
+            position:absolute;
+            right:18px;
+            top:50%;
+            transform:translateY(-50%);
+            font-size:28px;
+            cursor:pointer;
+            user-select:none;
+        "
+        title="検索">
+        🔍
+    </span>
+
+</div>
 
 </div>
            <p style="color: #7f8c8d; margin: 0; font-size: 1rem; font-weight: bold;">テストするカテゴリを選んでね</p>
