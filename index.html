@@ -704,11 +704,8 @@ if (q.type === "4choice") {
 }
    // --- 2. 語句整序 (sort) の判定ロジック ---
   else if (q.type === "sort") {
-      let cleanUser = (typeof userAns === 'string') ? userAns.trim().replace(/\s+/g, " ") : "";
-      let cleanCorrect = (q.answer || "").trim().replace(/\s+/g, " "); // 【防弾】
- 
-      cleanUser = cleanUser.replace(/\s+([?.!])/g, "$1");
-      cleanCorrect = cleanCorrect.replace(/\s+([?.!])/g, "$1");
+let cleanUser = normalizeText(userAns);
+let cleanCorrect = normalizeText(q.answer);
  
       const isQuestion = (q.answer || "").trim().endsWith("?"); // 【防弾】
       const punc = isQuestion ? "?" : ".";
