@@ -178,8 +178,8 @@
    <div id="view-category">
        <div style="text-align: center; margin-bottom: 20px;">
            <h2 style="color: #2c3e50; margin-bottom: 5px; font-size: 1.2rem;">エリスフィールド進学会</h2>
-          <div style="margin:20px 0;">
-    <div style="text-align:center; margin-bottom:20px;">
+<div style="margin:20px 0;">
+<div style="text-align:center; margin-bottom:20px;">
 
 <div style="
     position: relative;
@@ -216,7 +216,6 @@
     </span>
 
 </div>
-
 </div>
            <p style="color: #7f8c8d; margin: 0; font-size: 1rem; font-weight: bold;">テストするカテゴリを選んでね</p>
        </div>
@@ -300,7 +299,7 @@
  
 <script>
 // サンプルデータベース
-   // ==========================================
+// ==========================================
 // DOMキャッシュ
 // ==========================================
 const DOM = {
@@ -399,7 +398,7 @@ const quizDataset = [
       explanation: "leave A for B（Aを去ってBへ向かう）の形を作ります。leave は他動詞なので from などの前置詞を直接後ろに置くことはできません。したがって、Japan for が正解となります。",
       school: "中央大"
    },
-   {
+{
        page: 3, no: 7, category: "文型（1）", type: "4choice",
        question: "The sun always ( &nbsp; &nbsp; &nbsp; ) early in summer.",
        choices: ["rises", "rose", "risen", "is rising"],
@@ -453,7 +452,7 @@ const quizDataset = [
        explanation: "動詞 look は「〜に見える」という第2文型（SVC）を作るため、保護（C）の位置には状態を表す【形容詞】が来ます。したがって形容詞の beautiful が正解です。副詞の beautifully は保護になれないため不可となります。",
        school: "千葉商科大"
    },
-   {
+{
        page: 3, no: 12, category: "文型（1）", type: "4choice",
        question: "Lucy looks very ( &nbsp; &nbsp; &nbsp; ). Perhaps she caught cold.",
        choices: ["happy", "pale", "pleased", "surprised"],
@@ -474,7 +473,7 @@ const quizDataset = [
    {
        page: 3, no: 13, category: "文型（1）", type: "4choice",
        question: "This wine smells ( &nbsp; &nbsp; &nbsp; ).",
-      choices: ["sweet", "sweetly", "sweetness", "sweeten"], 
+       choices: ["sweet", "sweetly", "sweetness"],
        answer: "sweet",
        translation: "このワインは甘い香りがします。",
        explanation: "動詞 smell（〜のにおいがする）は第2文型（SVC）を作るため、保護（C）の位置には【形容詞】が来ます。副詞の sweetly や名詞の sweetness は保護になれないため、形容詞の sweet が正解です。sweeten は「〜を甘くする」という動詞です。※対義語の「辛口」は dry で表します。",
@@ -507,6 +506,7 @@ const quizDataset = [
        explanation: "smell（〜のにおいがする）は主語の性質・状態を表す動詞であり、進行形や受動態にはできません。主語が These flowers と複数形になっているため、三人称単数の s は不要となり、動詞の原形と同じ形である現在形の smell が正解となります。",
        school: "沖縄国際大"
    },
+
    {
        page: 5, no: 14, category: "文型（2）", type: "sort",
        question: "日本文に合うように、次の語句を並び替えなさい。<br><small>（駅へ行く道を教えていただけませんか。）</small>",
@@ -557,16 +557,16 @@ function startCategory(catName) {
    });
 
    const sortedNumbers = Array.from(numberSet).sort((a, b) => a - b);
-   const container = DOM.numberButtonsContainer;
+const container = DOM.numberButtonsContainer;
    container.innerHTML = ""; 
 
    sortedNumbers.forEach(num => {
-      // 各番号の後ろに「（〇問）」というカウントを追加
+// 各番号の後ろに「（〇問）」というカウントを追加
        const qCount = categoryQuestions.filter(q => {
            const match = String(q.no).match(/^(\d+)/);
            return match && parseInt(match[1], 10) === num;
        }).length;
-      
+
        const btn = document.createElement("button");
        btn.className = "btn-cat";
        btn.innerText = `${num}番 (${qCount}問)`;
@@ -708,7 +708,7 @@ function checkAnswer() {
     }
    evaluateAnswer(userAns);
 }
-// ==========================================
+ // ==========================================
 // 解答文字列の正規化
 // ==========================================
 function normalizeText(text) {
@@ -723,7 +723,7 @@ function normalizeText(text) {
         .replace(/　/g, " ")
         .replace(/\s+/g, " ")
         .replace(/\s+([?.!])/g, "$1");
-} 
+}
 function evaluateAnswer(userAns) {
   const q = currentQuestions[currentIndex];
   let isCorrect = false;
@@ -745,7 +745,6 @@ if (q.type === "4choice") {
   else if (q.type === "sort") {
 let cleanUser = normalizeText(userAns);
 let cleanCorrect = normalizeText(q.answer);
- 
       const isQuestion = (q.answer || "").trim().endsWith("?"); // 【防弾】
       const punc = isQuestion ? "?" : ".";
       
@@ -840,7 +839,8 @@ function showView(viewName) {
 
    if (viewName === "result")
       document.getElementById("view-result").classList.remove("hidden");
-}
+} 
 </script>
 </body>
 </html>
+
