@@ -824,47 +824,22 @@ function backToNumberSelect() {
 }
  
 function showView(viewName) {
-    DOM.viewCategory.classList.add("hidden");
-    DOM.viewNumberSelect.classList.add("hidden");
-    DOM.viewQuiz.classList.add("hidden");
-    DOM.viewResult.classList.add("hidden");
+   document.getElementById("view-category").classList.add("hidden");
+   document.getElementById("view-number-select").classList.add("hidden");
+   document.getElementById("view-quiz").classList.add("hidden");
+   document.getElementById("view-result").classList.add("hidden");
 
-    if (viewName === "category") DOM.viewCategory.classList.remove("hidden");
-    if (viewName === "number-select") DOM.viewNumberSelect.classList.remove("hidden");
-    if (viewName === "quiz") DOM.viewQuiz.classList.remove("hidden");
-    if (viewName === "result") DOM.viewResult.classList.remove("hidden");
-}
-   function searchQuestions() {
+   if (viewName === "category")
+      document.getElementById("view-category").classList.remove("hidden");
 
-    const keyword = document.getElementById("search-box")
-        .value
-        .trim()
-        .toLowerCase();
+   if (viewName === "number-select")
+      document.getElementById("view-number-select").classList.remove("hidden");
 
-    if (keyword === "") {
-        alert("検索語を入力してください。");
-        return;
-    }
+   if (viewName === "quiz")
+      document.getElementById("view-quiz").classList.remove("hidden");
 
-    const results = quizDataset.filter(q => {
-        return (
-            (q.question || "").toLowerCase().includes(keyword) ||
-            (q.translation || "").toLowerCase().includes(keyword) ||
-            (q.explanation || "").toLowerCase().includes(keyword) ||
-            (q.school || "").toLowerCase().includes(keyword)
-        );
-    });
-
-    if (results.length === 0) {
-        alert("該当する問題はありません。");
-        return;
-    }
-
-    currentQuestions = results;
-    currentIndex = 0;
-
-    showView("quiz");
-    loadQuestion();
+   if (viewName === "result")
+      document.getElementById("view-result").classList.remove("hidden");
 }
 </script>
 </body>
