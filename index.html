@@ -669,7 +669,22 @@ function checkAnswer() {
     }
    evaluateAnswer(userAns);
 }
- 
+// ==========================================
+// 解答文字列の正規化
+// ==========================================
+function normalizeText(text) {
+    if (Array.isArray(text)) {
+        text = text.join(" ");
+    }
+
+    return String(text)
+        .trim()
+        .toLowerCase()
+        .replace(/,/g, " ")
+        .replace(/　/g, " ")
+        .replace(/\s+/g, " ")
+        .replace(/\s+([?.!])/g, "$1");
+} 
 function evaluateAnswer(userAns) {
   const q = currentQuestions[currentIndex];
   let isCorrect = false;
