@@ -173,8 +173,10 @@
 <h1 style="font-size: 1.3rem; text-align: center; margin-bottom: 5px;">
     英作基本文例600 <span style="font-size: 0.9rem; font-weight: normal; color: #7f8c8d; margin-left: 6px;">第6版</span>
 </h1>
-<div style="text-align: center; font-size: 1.1rem; color: #e74c3c; font-weight: bold; margin-bottom: 25px;">入試問題演習 作成中</div>
-
+<div id="quiz-counter"
+     style="text-align: center; font-size: 1.1rem; color: #e74c3c; font-weight: bold; margin-bottom: 25px;">
+    入試問題演習 作成中
+</div>
    <div id="view-category">
        <div style="text-align: center; margin-bottom: 20px;">
            <h2 style="color: #2c3e50; margin-bottom: 5px; font-size: 1.2rem;">エリスフィールド進学会</h2>
@@ -983,6 +985,8 @@ function showView(viewName) {
    if (viewName === "result")
       document.getElementById("view-result").classList.remove("hidden");
 } 
+  document.getElementById("quiz-counter").innerText =
+    `入試問題演習 作成中（現在 ${quizDataset.length} 問収録）`;
 </script>
 </body>
 </html>
