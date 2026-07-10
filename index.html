@@ -695,12 +695,12 @@ const quizDataset = [
       school: "徳島文理大"
    },
 {
-      page: 5, no: 11, category: "文型（2）", type: "4choice", // 👈 既存の選択システムに乗せます
-      question: "This medicine will ( &nbsp; &nbsp; &nbsp; ) you good.<br><br><span style='color: #e74c3c; font-weight: bold;'>💡 ヒント：選択肢はありません。頭の中で答え（動詞の原形1語）を思い浮かべてから「解答をチェック」を押してね！</span>",
-      choices: ["解答をチェック"], // 👈 ボタンを1つだけ配置し、これを正解扱いにします
-      answer: "解答をチェック",
+      page: 5, no: 11, category: "文型（2）", type: "rewrite",
+      question: "This medicine will ( &nbsp; &nbsp; &nbsp; ) you good.",
+      blankCount: 1,
+      answer: ["do"],
       translation: "この薬はあなたに効くでしょう。",
-      explanation: "熟語 do ＋ 人 ＋ good で「（人）に利益をもたらす、体に効く」という意味になります。＜動詞 + 目的語(人) + 目的語(good)＞の第4文型（SVOO）を形成する重要語法です。助動詞 will の後ろなので、動詞の原形である 【 do 】 が正解となります。対義語の「（人）に害を与える」は do ＋ 人 ＋ harm です。",
+      explanation: "熟語 do ＋ 人 ＋ good で「（人）に利益をもたらす、体に効く」という意味になります。＜動詞 + 目的語(人) + 目的語(good)＞の第4文型（SVOO）を形成する重要語法です。助動詞 will の後ろなので、動詞の原形である do が正解となります。対義語の「（人）に害を与える」は do ＋ 人 ＋ harm です。",
       school: "鹿児島大"
    },
 
