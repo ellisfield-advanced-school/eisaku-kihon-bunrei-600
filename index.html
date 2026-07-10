@@ -698,9 +698,10 @@ function loadQuestion() {
    const pPage = q.page !== undefined ? q.page : "?";
    const pNo = q.no !== undefined ? q.no : "?";
    document.getElementById("quiz-meta-pos").innerText = `p.${pPage} No.${pNo}`;
-   
-   const typeLabel = q.type === "4choice" ? "四択問題" : q.type === "sort" ? "語句整序" : "書き換え問題";
-   document.getElementById("quiz-meta-type").innerText = typeLabel;
+
+   // 4choice のときの表示を「選択問題」に変更
+  const typeLabel = q.type === "4choice" ? "選択問題" : q.type === "sort" ? "語句整序" : "書き換え問題";
+  document.getElementById("quiz-meta-type").innerText = typeLabel;
    
    // 【防弾】questionプロパティの欠落対策
    document.getElementById("quiz-question").innerHTML = q.question || "(問題文が未入力です)";
