@@ -694,12 +694,13 @@ const quizDataset = [
       explanation: "＜save + 人 + 費用/手間＞で「（人）から（費用や手間）を省く、節約させる」という第4文型（SVOO）を作ります。文脈上「5ドル節約できる」となるため saves が正解です。※costs は「（費用）をかからせる（損害）」、takes は「（時間など）を必要とさせる」という意味になります。",
       school: "徳島文理大"
    },
-   {
-      page: 5, no: 11, category: "文型（2）", type: "write", // 👈 選択肢なしの自作入力・記述形式
-      question: "This medicine will ( &nbsp; &nbsp; &nbsp; ) you good.",
-      answer: "do",
+{
+      page: 5, no: 11, category: "文型（2）", type: "4choice", // 👈 既存の選択システムに乗せます
+      question: "This medicine will ( &nbsp; &nbsp; &nbsp; ) you good.<br><br><span style='color: #e74c3c; font-weight: bold;'>💡 ヒント：選択肢はありません。頭の中で答え（動詞の原形1語）を思い浮かべてから「解答をチェック」を押してね！</span>",
+      choices: ["解答をチェック"], // 👈 ボタンを1つだけ配置し、これを正解扱いにします
+      answer: "解答をチェック",
       translation: "この薬はあなたに効くでしょう。",
-      explanation: "熟語 do ＋ 人 ＋ good で「（人）に利益をもたらす、体に効く」という意味になります。＜動詞 + 目的語(人) + 目的語(good)＞の第4文型（SVOO）を形成する重要語法です。助動詞 will の後ろなので、動詞の原形である do が正解となります。対義語の「（人）に害を与える」は do ＋ 人 ＋ harm です。",
+      explanation: "熟語 do ＋ 人 ＋ good で「（人）に利益をもたらす、体に効く」という意味になります。＜動詞 + 目的語(人) + 目的語(good)＞の第4文型（SVOO）を形成する重要語法です。助動詞 will の後ろなので、動詞の原形である 【 do 】 が正解となります。対義語の「（人）に害を与える」は do ＋ 人 ＋ harm です。",
       school: "鹿児島大"
    },
 
