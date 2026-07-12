@@ -955,7 +955,61 @@ const quizDataset = [
     explanation: "後ろに＜目的語（him）＋ 補語（形容詞 angry）＞が続いているため、第5文型（SVOC）をとって「OをCの状態にする」という意味を持つ動詞を選びます。選択肢の中で＜動詞 + O + 形容詞＞の形をとることができるのは make（過去形 made）のみです。caused は＜cause + O + to do＞、forced は＜force + O + to do＞、helped は＜help + O + (to) do＞、let は＜let + O + 動詞の原形＞の形をとるため、後ろに形容詞を直接置くことはできません。",
     school: "成城大"
   },
-      
+      {
+    page: 7, no: 9, category: "文型（3）", type: "4choice",
+    question: "Why do you think so ? &nbsp; What ( &nbsp; &nbsp; &nbsp; ) you think so ?&nbsp;同意文完成",
+    choices: ["leads", "makes", "brings", "enables"],
+    answer: "makes",
+    translation: "なぜそう思うのですか。（何があなたをそう思わせるのですか。）",
+    explanation: "「Why 〜 ?（なぜ〜ですか）」を無生物主語を使って「What 〜 ?（何が〜ですか）」に書き換える典型的な問題です。後ろに＜目的語（you）＋ 動詞の原形（think）＞の形が続いているため、使役動詞の第5文型（SVOC）を作ることができる make（主語が What なので3人称単数の makes）が正解となります。他の選択肢 leads や enables は後ろに＜O + to do＞、brings は＜bring + O + to 場所＞などの形をとるため不適切です。",
+    school: "桜美林短大"
+  },
+  {
+    page: 7, no: 10, category: "文型（3）", type: "rewrite",
+    question: "You have made me ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ).<br><small>私が今日あるのはあなたのおかげです。</small>",
+    blankCount: 3,
+    answer: ["what", "I", "am"],
+    translation: "私が今日あるのはあなたのおかげです。（あなたは私を今日の私にしてくれた。）",
+    explanation: "関係代名詞 what を用いた重要表現。使役動詞 make（have made）の後ろに＜目的語（me）＋ 補語（what I am）＞の第5文型（SVOC）を構成し、「あなたは私を現在の私にした」という直訳から「私が今日あるのはあなたのおかげです」という意味を表します。",
+    school: "上智短大"
+  },
+  {
+    page: 7, no: "10", category: "文型（3）", type: "sort",
+    question: "He ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) today.<br><small>彼のおかげで今日の私があるのです。</small>",
+    words: ["am", "me", "has", "what", "made", "I"],
+    answer: "has made me what I am",
+    translation: "彼のおかげで今日の私があるのです。",
+    explanation: "＜has made + 目的語(O) + 補語(C)＞の第5文型（SVOC）を組み立てる問題です。主語が He なので現在完了形の has made を続け、目的語に me、補語に「現在の私」を意味する関係代名詞の what I am を配置します。「彼が私を今の私にした」という直訳から、「彼のおかげで今日の私がある」という無生物主語（に準ずる表現）の文になります。",
+    school: "金沢経済大"
+  },
+  {
+    page: 7, no: "10-a", category: "文型（3）", type: "4choice",
+    question: "I succeeded because Henry helped me.<br>I ( &nbsp; &nbsp; &nbsp; ) my success to Henry.&nbsp;同意文完成",
+    choices: ["thank", "owe", "give", "get"],
+    answer: "owe",
+    translation: "ヘンリーが手伝ってくれたので、私は成功した。／私は自分の成功をヘンリーのおかげだと思っている。",
+    explanation: "熟語 ＜owe A to B＞ で「A（結果など）はB（人・事）のおかげである、AをBに負うている」という意味になります。上の文「ヘンリーが私を助けてくれたから成功した」を、owe を用いて「私は自分の成功（my success）をヘンリー（Henry）のおかげだと思っている」というほぼ同じ意味の文に書き換えることができます。",
+    school: "福岡工業大"
+  },
+  {
+    page: 7, no: "10-b", category: "文型（3）", type: "4choice",
+    question: "I ( &nbsp; &nbsp; &nbsp; ) Mary some money and must pay her back by next Monday.",
+    choices: ["borrowed", "loaned", "owe", "lend"],
+    answer: "owe",
+    translation: "私はメアリーにお金を借りているので、次の月曜日までに彼女に返さなければならない。",
+    explanation: "動詞 owe は＜owe + 人(A) + お金(B)＞（第4文型：SVOO）の形をとって、「AにB（のお金）の借りがある、Aにお金を負うている」という意味を表すことができます。後半の文に「次の月曜日までに彼女に返さなければならない（must pay her back）」とあるため文脈にも合致します。borrow や loan、lend はこのような二重目的語（SVOO）の語法をとることができません。",
+    school: "東海大"
+  },
+  {
+    page: 7, no: 11, category: "文型（3）", type: "4choice",
+    question: "We saw a young man ( &nbsp; &nbsp; &nbsp; ) across the river.",
+    choices: ["to swim", "swim", "swims", "swam"],
+    answer: "swim",
+    translation: "私たちは若い男が川を泳いで渡るのを見た。",
+    explanation: "知覚動詞 see の重要な語法です。＜see + 目的語(O) + 原形不定詞(C)＞の第5文型（SVOC）で「Oが〜するのを見る」という意味になります。目的語の a young man の後ろには、動詞の原形（原形不定詞）が来るため swim が正解です。to 不定詞（to swim）にすることはできない点に注意しましょう。",
+    school: ""
+  },
+   
    {
        page: 9, no: 1, category: "時制の基本", type: "rewrite",
        question: "Is she a member of the volleyball club ?<br>➔ Does she ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) the volleyball club ?",
