@@ -1261,8 +1261,16 @@ function searchQuestions() {
         );
 
     });
+if (results.length === 0) {
+    alert("該当する問題は見つかりませんでした。");
+    return;
+}
 
-    alert(`検索結果：${results.length}件`);
+currentQuestions = results;
+currentIndex = 0;
+
+showView("quiz");
+loadQuestion();
 
 }
   document.getElementById("quiz-counter").innerText =
