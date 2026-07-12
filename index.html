@@ -1237,11 +1237,32 @@ function showView(viewName) {
    if (viewName === "result")
       document.getElementById("view-result").classList.remove("hidden");
 } 
-   function searchQuestions() {
+function searchQuestions() {
 
-    const keyword = document.getElementById("search-box").value.trim();
+    const keyword = document.getElementById("search-box")
+        .value
+        .trim()
+        .toLowerCase();
 
-    alert("検索文字：" + keyword);
+    if (keyword === "") {
+        alert("検索する文字を入力してください。");
+        return;
+    }
+
+    const results = quizDataset.filter(q => {
+
+        return (
+            (q.question || "").toLowerCase().includes(keyword) ||
+            (q.translation || "").toLowerCase().includes(keyword) ||
+            (q.explanation || "").toLowerCase().includes(keyword) ||
+            (q.category || "").toLowerCase().includes(keyword) ||
+            (q.school || "").toLowerCase().includes(keyword) ||
+            String(q.answer || "").toLowerCase().includes(keyword)
+        );
+
+    });
+
+    alert(`検索結果：${results.length}件`);
 
 }
   document.getElementById("quiz-counter").innerText =
