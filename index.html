@@ -1177,11 +1177,21 @@ function moveWord(card, wordZone, ansZone) {
  
 function updateWordCase(ansZone) {
    const cards = ansZone.querySelectorAll(".word-card");
+
    cards.forEach((card, index) => {
-       let text = card.dataset.original.toLowerCase();
-       if (index === 0) {
+
+       let text = card.dataset.original;
+
+       // 「I」以外だけ小文字にする
+       if (text !== "I") {
+           text = text.toLowerCase();
+       }
+
+       // 先頭だけ大文字にする（ただし I はそのまま）
+       if (index === 0 && text !== "I") {
            text = text.charAt(0).toUpperCase() + text.slice(1);
        }
+
        card.innerText = text;
    });
 }
