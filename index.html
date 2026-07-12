@@ -1237,6 +1237,13 @@ function showView(viewName) {
    if (viewName === "result")
       document.getElementById("view-result").classList.remove("hidden");
 } 
+   function searchQuestions() {
+
+    const keyword = document.getElementById("search-box").value.trim();
+
+    alert("検索文字：" + keyword);
+
+}
   document.getElementById("quiz-counter").innerText =
     `入試問題演習 作成中（現在 ${quizDataset.length} 問収録）`;
 </script>
