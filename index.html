@@ -1560,7 +1560,23 @@ function nextQuestion() {
    showView("quiz");
    loadQuestion();
 }
- 
+
+function speakEnglish(text) {
+
+    if (!('speechSynthesis' in window)) {
+        alert("このブラウザは音声再生に対応していません。");
+        return;
+    }
+
+    speechSynthesis.cancel();
+
+    const uttr = new SpeechSynthesisUtterance(text);
+    uttr.lang = "en-US";
+    uttr.rate = 1.0;
+
+    speechSynthesis.speak(uttr);
+}
+   
 function backToCategory() {
    showView("category");
 }
