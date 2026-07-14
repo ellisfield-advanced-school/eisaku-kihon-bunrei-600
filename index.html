@@ -32,12 +32,19 @@
            margin-bottom: 25px;
        }
        /* カテゴリ画面・番号選択画面 */
-       .category-grid {
-           display: grid;
-           grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-           gap: 12px;
-           margin-top: 15px;
-       }
+      .category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 12px;
+    margin-top: 15px;
+}
+
+/* スマホだけ2列 */
+@media (max-width: 768px) {
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
        .btn-cat {
            background-color: white;
            border: 2px solid var(--primary-color);
