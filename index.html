@@ -1570,36 +1570,6 @@ function nextQuestion() {
    showView("quiz");
    loadQuestion();
 }
-function getFullSentence() {
-
-    const q = currentQuestions[currentIndex];
-
-    // 問題文から <small> 以下を削除
-    let sentence = q.question.split("<small>")[0];
-
-    // HTMLタグを削除
-    sentence = sentence.replace(/<[^>]*>/g, "");
-
-    // (     ) を正解で置き換える
-    if (q.type === "rewrite") {
-
-        const ans = Array.isArray(q.answer)
-            ? q.answer.join(" ")
-            : q.answer;
-
-        sentence = sentence.replace(/\(\s*&nbsp;.*?\)/g, ans);
-
-    } else {
-
-        sentence = sentence.replace(/\(\s*&nbsp;.*?\)/g, q.answer);
-
-    }
-
-    // 空白を整理
-    sentence = sentence.replace(/\s+/g, " ").trim();
-
-    return sentence;
-}
    
 function speakEnglish(text) {
 
