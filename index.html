@@ -1573,31 +1573,32 @@ function getFullSentence() {
 
     const q = currentQuestions[currentIndex];
 
-    // 問題文から <small> 以下を削除
-    let sentence = q.question.split("<small>")[0];
-
-    // HTMLタグを削除
-    sentence = sentence.replace(/<[^>]*>/g, "");
-
-    // (     ) を正解で置き換える
+    // 書き換え問題は ➔ の後だけ読む
     if (q.type === "rewrite") {
 
-        const ans = Array.isArray(q.answer)
-            ? q.answer.join(" ")
-            : q.answer;
+        let sentence = q.question;
 
-        sentence = sentence.replace(/\(\s*&nbsp;.*?\)/g, ans);
+        if (sentence.includes("➔")) {
+            sentence = sentence.split("➔")[1];
+        }
 
-    } else {
+        sentence = sentence.replace(/<[^>]*>/g, "");
 
-        sentence = sentence.replace(/\(\s*&nbsp;.*?\)/g, q.answer);
+        let answers = [...q.answer];
 
+        sentence = sentence.replace(/\(\s*&nbsp;.*?\)/g, () => answers.shift());
+
+        return sentence.replace(/\s+/g, " ").trim();
     }
 
-    // 空白を整理
-    sentence = sentence.replace(/\s+/g, " ").trim();
+    // 四択・語句整序
+    let sentence = q.question.split("<small>")[0];
 
-    return sentence;
+    sentence = sentence.replace(/<[^>]*>/g, "");
+
+    sentence = sentence.replace(/\(\s*&nbsp;.*?\)/g, q.answer);
+
+    return sentence.replace(/\s+/g, " ").trim();
 }
    
 function speakEnglish(text) {
