@@ -1573,7 +1573,8 @@ function nextQuestion() {
 function speakEnglish(text) {
 
     if (!('speechSynthesis' in window)) {
-        alert("このブラウザは音声再生に対応していません。");
+        alert("音声機能は、お使いのブラウザでは利用できません。\n\n" +
+"Google Chromeで開くと利用できる場合があります。");
         return;
     }
 
