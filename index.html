@@ -1609,7 +1609,7 @@ const quizDataset = [
     answer: ["with"],
     translation: "これらの本をどうしたらいいか分からない。",
     explanation: "熟語 ＜do with ~＞ で「〜を処理する、扱う、どうにかする」という意味を表します。what to do with ~ の形で「〜をどう処理すべきか（どうしたらいいか）」という定番の表現になるため、空欄には前置詞の with が入ります。",
-    school: "流通科学大"
+    school: "流通科学大・改"
   },
   {
     page: 11, no: 7, category: "完了形（1）", type: "rewrite",
@@ -1629,7 +1629,60 @@ const quizDataset = [
     explanation: "「非常に〜なので…」を表す ＜such ＋ a/an ＋ 形容詞 ＋ 名詞 ＋ that ~＞ の構文です。空欄の後ろが a hardworking student と＜冠詞 ＋ 形容詞 ＋ 名詞＞の語順になっているため、such が正解となります。※so を用いる場合は ＜so ＋ 形容詞 ＋ a/an ＋ 名詞 ＋ that ~＞（so hardworking a student that ~）の語順にする必要があります。",
     school: "中部大"
   },
-
+{
+    page: 11, no: 10, category: "完了形（1）", type: "4choice",
+    question: "<br><b>I don't understand how Bill could have made ( &nbsp; &nbsp; &nbsp; ) in his life.</b>",
+    choices: ["such big mistake", "so a big mistake", "such a big mistake", "so big mistake"],
+    answer: "such a big mistake",
+    translation: "ビルが人生でどうしてそんな大失敗をしてしまったのか、私には理解できない。",
+    explanation: "「そんなに〜な…」を表す ＜such ＋ a/an ＋ 形容詞 ＋ 名詞＞ の語順を問う問題です。mistake は可算名詞（数えられる名詞）であるため単数形には不定冠詞の a が不可欠となり、such a big mistake が正解となります。so を用いる場合は ＜so ＋ 形容詞 ＋ a/an ＋ 名詞＞ の語順にする必要があります。",
+    school: "西南学院大"
+  },
+  {
+    page: 11, no: "10-a", category: "完了形（1）", type: "rewrite",
+    question: "<br><b>This is the biggest tree I have ever seen.<br>I have never seen ( &nbsp; &nbsp; &nbsp; ) a big tree ( &nbsp; &nbsp; &nbsp; ) this.<br>同意文完成</b>",
+    blankCount: 2,
+    answer: ["such", "as"],
+    translation: "これは私が今までに見た中で最も大きな木です。／私はこれほど大きな木をこれまでに見たことがありません。",
+    explanation: "「今までで最も〜だ」を、否定語（never）と原級を用いた比較構文で書き換える問題です。＜such ＋ a ＋ 形容詞 ＋ 名詞 ＋ as 〜＞ の形で「〜のようなそんなに…な名詞（これほど…な名詞）」を表すため、空欄には such と as がそれぞれ入ります。",
+    school: "工学院大"
+  },
+  {
+    page: 11, no: "10-b", category: "完了形（1）", type: "4choice",
+    question: "<br><b>This is the worst chicken ( &nbsp; &nbsp; &nbsp; ) I've ever had.</b>",
+    choices: ["who", "where", "what", "that"],
+    answer: "that",
+    translation: "これは私が今までに食べた中で最悪のチキンです。",
+    explanation: "先行詞に the worst（最高級）がついているため、関係代名詞には that を優先的に用います。後ろの節（I've ever had）の目的語が欠けているため、目的格の関係代名詞 that が正解となります。",
+    school: "広島国際大"
+  },
+  {
+    page: 11, no: 11, category: "完了形（1）", type: "4choice",
+    question: "<br><b>I often heard him ( &nbsp; &nbsp; &nbsp; ) the piano.</b>",
+    choices: ["plays", "play", "is playing", "to play"],
+    answer: "play",
+    translation: "私は彼がピアノを弾くのをよく耳にした。",
+    explanation: "知覚動詞 hear の語法です。＜hear ＋ 目的語（him）＋ 動詞の原形（play）＞の第5文型（SVOC）を組み立て、「Oが〜するのを耳にする」という意味になります。知覚動詞の目的格補語に to 不定詞（to play）を用いることはできません。",
+    school: "東海大"
+  },
+  {
+    page: 11, no: 11, category: "完了形（1）", type: "4choice",
+    question: "<br><b>I heard her ( &nbsp; &nbsp; &nbsp; ) English fluently.</b>",
+    choices: ["speak", "speaks", "spoke", "to speak"],
+    answer: "speak",
+    translation: "私は彼女が英語を流暢に話すのを聞いた。",
+    explanation: "知覚動詞 hear を用いた第5文型（SVOC）の問題です。＜hear ＋ 目的語（her）＋ 原形不定詞＞で「Oが〜するのを聞く」という関係が成立するため、動詞の原形である speak が正解となります。",
+    school: "千葉商科大"
+  },
+  {
+    page: 11, no: 12, category: "完了形（1）", type: "sort",
+    question: "日本文に合うように、次の語句を並び替えなさい。<br><b>How ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) America ?</b><br><small>何回アメリカへ行ったことがありますか。</small>",
+    words: ["times", "you", "been", "have", "many", "to"],
+    answer: "many times have you been to",
+    translation: "何回アメリカへ行ったことがありますか。",
+    explanation: "「何回〜」と回数を尋ねる疑問詞 How many times を文頭に置き、現在完了の経験を尋ねる疑問文の語順 ＜have ＋ 主語(you) ＋ 過去分詞(been) ＋ 前置詞(to)＞ を続けます。have been to ~ で「〜へ行ったことがある」という意味になります。",
+    school: "拓殖大"
+  },
    
    
    {
