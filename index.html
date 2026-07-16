@@ -1683,9 +1683,34 @@ const quizDataset = [
     explanation: "「何回〜」と回数を尋ねる疑問詞 How many times を文頭に置き、現在完了の経験を尋ねる疑問文の語順 ＜have ＋ 主語(you) ＋ 過去分詞(been) ＋ 前置詞(to)＞ を続けます。have been to ~ で「〜へ行ったことがある」という意味になります。",
     school: "拓殖大"
   },
-   
-   
    {
+    page: 11, no: 12, category: "完了形（1）", type: "4choice",
+    question: "<br><b>We have ( &nbsp; &nbsp; &nbsp; ) there twice.</b>",
+    choices: ["gone to", "went", "been to", "been"],
+    answer: "been",
+    translation: "私たちはそこに2回行ったことがあります。",
+    explanation: "「そこに2回行ったことがある」という現在完了の「経験」を表す問題です。「〜へ行ったことがある」は ＜have been to 〜＞ で表しますが、後ろに場所を表す副詞 there が続いているため、前置詞 to は不要になり been のみが正解となります。gone to は「行ってしまってここにはいない（結果）」を表し、went は過去形のため have の後ろに置けません。",
+    school: "松山大"
+  },
+  {
+    page: 11, no: 14, category: "完了形（1）", type: "4choice",
+    question: "<br><b>My mother ( &nbsp; &nbsp; &nbsp; ) for three years.</b>",
+    choices: ["died", "has died", "has been dead", "is dead"],
+    answer: "has been dead",
+    translation: "私の母が亡くなってから3年になります。",
+    explanation: "for three years（3年間）という期間を表す表現があるため、「亡くなっている状態」が3年間続いているという現在完了の「継続」を用います。die（死ぬ）は一瞬の動作を表す動詞で継続を表せないため、状態を表す形容詞 dead を用いて ＜has been dead＞ としたものが正解となります。",
+    school: "千葉工業大"
+  },
+  {
+    page: 11, no: 14, category: "完了形（1）", type: "4choice",
+    question: "<br><b>My aunt ( &nbsp; &nbsp; &nbsp; ) these three years.</b>",
+    choices: ["died", "has died", "has been dead", "is dead", "was dead"],
+    answer: "has been dead",
+    translation: "私の叔母が亡くなってからこの3年になります。",
+    explanation: "these three years（この3年間）という期間を表す表現があるため、現在完了の「継続」を用います。一瞬の動作を表す die（および has died）は期間を表す語句とともに使えないため、状態の継続を表す ＜has been dead＞（ずっと亡くなっている状態である）が正解となります。",
+    school: "大東文化大"
+  },
+      {
        page: 11, no: 14, category: "完了形（1）", type: "rewrite",
        question: "Three weeks have passed since she became ill.<br>➔ She ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) ill ( &nbsp; &nbsp; &nbsp; ) three weeks.<br>同意文完成",
        blankCount: 3,
@@ -1693,7 +1718,36 @@ const quizDataset = [
        translation: "彼女が病気になってから3週間が過ぎた。 ➔ 彼女は3週間ずっと病気です。",
        explanation: "「〜期間が経過した」は、＜主語 + has been ill for 期間＞で状態の継続に書き換えることが可能です。3週「間」を表すので for を使います。",
        school: "静岡理工科大"
-   }
+   },
+  {
+    page: 11, no: "14-a", category: "完了形（1）", type: "4choice",
+    question: "<br><b>We ( &nbsp; &nbsp; &nbsp; ) good friends since our childhood.</b>",
+    choices: ["are", "have been", "had been", "would be"],
+    answer: "have been",
+    translation: "私たちは子供のころからずっと親しい友達です。",
+    explanation: "since our childhood（子供のころから）という過去の起点を表す表現があるため、過去から現在に至るまでの「継続」を表す現在完了形を用います。状態を表す be 動詞を現在完了形にした have been が正解となります。",
+    school: "京都産業大"
+  },
+  {
+    page: 11, no: "14-b", category: "完了形（1）", type: "4choice",
+    question: "<br><b>Ken and I ( &nbsp; &nbsp; &nbsp; ) friends since we met at college.</b>",
+    choices: ["are", "were", "have been", "had been"],
+    answer: "have been",
+    translation: "ケンと私は大学で出会って以来、ずっと友達です。",
+    explanation: "since we met at college（大学で出会って以来）という過去の起点があるため、現在までの「継続」を表す現在完了形を用います。主語が Ken and I（複数形）であり、現在完了の have been が正解となります。",
+    school: "熊本保健科学大"
+  },
+  {
+    page: 11, no: "14-c", category: "完了形（1）", type: "4choice",
+    question: "<br><b>He ( &nbsp; &nbsp; &nbsp; ) several years ago.</b>",
+    choices: ["was died", "died", "dead", "dyed"],
+    answer: "died",
+    translation: "彼は数年前に亡くなりました。",
+    explanation: "several years ago（数年前に）という「過去の特定の時点」を表す表現があるため、現在完了形は使えず、単純な過去時制を用います。「死ぬ」という意味の自動詞 die の過去形である died が正解となります。※die は自動詞なので受動態（was died）にはできません。dyed は「染めた」という意味の異なる動詞です。",
+    school: "上智大"
+  }
+   
+
 ];
  
 let categoryQuestions = []; // 選択されたカテゴリ内の全問題
