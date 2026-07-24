@@ -233,6 +233,7 @@
            <button class="btn-cat" onclick="startCategory('完了形（1）')">完了形（1）</button>
            <button class="btn-cat" onclick="startCategory('完了形（2）')">完了形（2）</button>
            <button class="btn-cat" onclick="startCategory('疑問文（1）')">疑問文（1）</button>
+           <button class="btn-cat" onclick="startCategory('疑問文（2）')">疑問文（1）</button>
        </div>
        
    </div>
@@ -2529,7 +2530,62 @@ const quizDataset = [
     translation: "コーヒーでも飲みながらその件について話し合いましょうね。",
     explanation: "＜Let's ...＞（〜しましょう）で始まる勧誘の命令文に対する付加疑問部分は ＜shall we?＞ となります。したがって ＜shall＞ が正解です。",
     school: "東北学院大"
+  },
+  {
+    page: 15, no: 12, category: "疑問文（1）", type: "4choice",
+    question: "<br><b>Who ( &nbsp; &nbsp; &nbsp; ) after the cat while you are away ?</b>",
+    choices: ["look", "looked", "looks", "looking"],
+    answer: "looks",
+    translation: "あなたが留守の間、誰が猫の世話をするのですか。",
+    explanation: "疑問代名詞 Who が主語となる場合、一般的に三人称単数扱いとなります。また、while you are away（あなたが留守の間）という現在の状態・習慣について尋ねているため、現在形の ＜looks＞ が正解となります。",
+    school: "東海大"
+  },
+  {
+    page: 15, no: 15, category: "疑問文（1）", type: "4choice",
+    question: "<br><b>It was ( &nbsp; &nbsp; &nbsp; ) that we decided to go on a picnic.</b>",
+    choices: ["so nice day", "such a nice day", "so a nice day", "such nice a day"],
+    answer: "such a nice day",
+    translation: "とてもよい天気だったので、私たちはピクニックに行くことに決めた。",
+    explanation: "「非常に〜なので…」を表す ＜such ＋ a(n) ＋ 形容詞 ＋ 名詞 ＋ that...＞ の構文です。such の後ろは ＜such ＋ a ＋ 形容詞 ＋ 名詞＞ の語順になるため、＜such a nice day＞ が正解となります（so を用いる場合は so nice a day となります）。",
+    school: "東京家政大"
+  },
+  {
+    page: 15, no: 15, category: "疑問文（1）", type: "4choice",
+    question: "<br><b>Computers have played ( &nbsp; &nbsp; &nbsp; ) in our daily lives that we could not live without them.</b>",
+    choices: ["so an important part", "such an important part", "so important part", "such important part"],
+    answer: "such an important part",
+    translation: "コンピュータは私たちの日常のなかで非常に重要な役割を果たしているので、それなしでは生活できないほどだ。",
+    explanation: "「とても〜な役割を果たすので…」を表す ＜such ＋ a(n) ＋ 形容詞 ＋ 名詞 ＋ that...＞ の構文です。語順は ＜such ＋ an ＋ 形容詞 ＋ 名詞＞ となるため ＜such an important part＞ が正解となります。なお、so を用いる場合は ＜so ＋ 形容詞 ＋ a(n) ＋ 名詞＞ の語順になり ＜so important a part＞ と表現します。",
+    school: "東海大"
+  },
+  {
+    page: 17, no: 2, category: "疑問文（2）", type: "4choice",
+    question: "<br><b>( &nbsp; &nbsp; &nbsp; ) is the population of China ?</b>",
+    choices: ["What", "How many", "How large", "How big"],
+    answer: "What",
+    translation: "中国の人口はどのくらいですか。",
+    explanation: "人口（population）を尋ねる場合、「人口は何ですか」という意味で ＜What is the population of ... ?＞、または人口の大きさを表す形容詞を用いて ＜How large is the population of ... ?＞ の2通りの表現が正解となります（①What / ③How large の両方が正解です）。",
+    school: ""
+  },
+  {
+    page: 17, no: 2, category: "疑問文（2）", type: "4choice",
+    question: "<br><b>( &nbsp; &nbsp; &nbsp; ) is the price of this bicycle ?</b>",
+    choices: ["How many", "How for", "What", "Who"],
+    answer: "What",
+    translation: "この自転車の値段はいくらですか。",
+    explanation: "価格（price）を尋ねる場合は ＜What is the price of ... ?＞ の形を用います。「いくらですか」という日本語につられて How much としたくなりますが、price そのものを主語にする場合は What（または How much is ... ? / How much does ... cost ?）で尋ねるのが正解です。",
+    school: "札幌学院大"
+  },
+  {
+    page: 17, no: 3, category: "疑問文（2）", type: "rewrite",
+    question: "There is a great ( &nbsp; &nbsp; &nbsp; ) between your answer and mine.<br><small>あなたの答えと私の答えの間に大きな相違がある。</small>",
+    blankCount: 1,
+    answer: ["difference"],
+    translation: "あなたの答えと私の答えの間に大きな相違がある。",
+    explanation: "「相違、違い」を表す名詞 difference を補う問題です。a great という形容詞修飾の後ろなので単数名詞の difference が入ります。＜there is a difference between A and B＞（AとBの間に違いがある）は極めて重要な表現です。",
+    school: "津田塾大"
   }
+
 
 
 
