@@ -2802,11 +2802,15 @@ function evaluateAnswer(userAns) {
    // --- 1. 四択問題 (4choice) の判定ロジック ---
 if (q.type === "4choice") {
 
-    const cleanUser = normalizeText(userAns);
-    const cleanCorrect = normalizeText(q.answer);
+   const cleanUser = normalizeText(userAns);
 
-    isCorrect = (cleanUser === cleanCorrect);
-
+if (Array.isArray(q.answer)) {
+    isCorrect = q.answer.some(ans =>
+        cleanUser === normalizeText(ans)
+    );
+} else {
+    isCorrect = (cleanUser === normalizeText(q.answer));
+} 
     userDisplay = userAns || "(未入力)";
     correctDisplay = q.answer || "";
 }
