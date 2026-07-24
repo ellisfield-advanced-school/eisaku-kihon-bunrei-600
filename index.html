@@ -2812,7 +2812,10 @@ if (Array.isArray(q.answer)) {
     isCorrect = (cleanUser === normalizeText(q.answer));
 } 
     userDisplay = userAns || "(未入力)";
-    correctDisplay = q.answer || "";
+
+   correctDisplay = Array.isArray(q.answer)
+    ? q.answer.join(" ／ ")
+    : q.answer;
 }
    // --- 2. 語句整序 (sort) の判定ロジック ---
   else if (q.type === "sort") {
