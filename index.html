@@ -234,6 +234,7 @@
            <button class="btn-cat" onclick="startCategory('完了形（2）')">完了形（2）</button>
            <button class="btn-cat" onclick="startCategory('疑問文（1）')">疑問文（1）</button>
            <button class="btn-cat" onclick="startCategory('疑問文（2）')">疑問文（2）</button>
+           <button class="btn-cat" onclick="startCategory('命令文・感嘆文')">命令文・感嘆文</button>
        </div>
        
    </div>
@@ -3106,6 +3107,60 @@ const quizDataset = [
     translation: "トムは急性アルコール中毒で死にかかっている。",
     explanation: "die は「死ぬ」という瞬間的な変化を表す動詞であるため、進行形（is dying）にすると「死に瀕している、今にも死にそうである」という意味になります。",
     school: ""
+  },
+  {
+    page: 19, no: 2, category: "命令文・感嘆文", type: "4choice",
+    question: "Be ( &nbsp; &nbsp; &nbsp; ) to strangers when they ask you the way.<br>➔ Don’t be rude to strangers when they ask you the way.<br><small>同意文完成</small>",
+    choices: ["easy", "friend", "hard", "kind", "stranger"],
+    answer: "kind",
+    translation: "見知らぬ人に道を尋ねられたら親切にしなさい。<br>➔ 見知らぬ人に道を尋ねられたら失礼な態度をとってはいけません。",
+    explanation: "「Don't be rude...（失礼な態度をとってはいけない）」の同意文を作る問題です。＜be kind to ～＞で「～に親切にする」という意味になり、反対の表現を用いることでほぼ同義の文になります。",
+    school: "千葉商科大"
+  },
+  {
+    page: 19, no: 5, category: "命令文・感嘆文", type: "4choice",
+    question: "Ken often helps his mother ( &nbsp; &nbsp; &nbsp; ) her work.",
+    choices: ["for", "with", "on", "from"],
+    answer: "with",
+    translation: "ケンはよく母親の仕事を手伝います。",
+    explanation: "＜help A with B＞で「A（人）のB（仕事・手伝いなど）を手伝う」という意味を表す重要語法です。したがって前置詞 with が正解となります。",
+    school: "愛知学院大"
+  },
+  {
+    page: 19, no: 5, category: "命令文・感嘆文", type: "rewrite",
+    question: "Let me ( &nbsp; &nbsp; &nbsp; ) you ( &nbsp; &nbsp; &nbsp; ) your baggage.<br><small>荷物をお持ちいたしましょう。</small>",
+    blankCount: 2,
+    answer: ["help", "with"],
+    translation: "荷物をお持ちいたしましょう。",
+    explanation: "＜help A with B＞（AのBを手伝う）と使役動詞 Let を組み合わせた表現です。＜Let me do ...＞で「私に～させてください（～しましょう）」となるため、動詞の原形 help と前置詞 with が入ります。",
+    school: "早稲田大"
+  },
+  {
+    page: 19, no: "5-a", category: "命令文・感嘆文", type: "4choice",
+    question: "Sally ( &nbsp; &nbsp; &nbsp; ) her father paint the wall.",
+    choices: ["asked", "encouraged", "helped", "caused"],
+    answer: "helped",
+    translation: "サリーは父親が壁を塗るのを手伝った。",
+    explanation: "＜help ＋ 人 ＋ 動詞の原形（原形不定詞）＞で「人が～するのを手伝う」という意味を表します。asked, encouraged, caused は後ろに＜O ＋ to do＞をとるため不適切です。",
+    school: "東海大"
+  },
+  {
+    page: 19, no: 6, category: "命令文・感嘆文", type: "4choice",
+    question: "The notice in the park said “Keep ( &nbsp; &nbsp; &nbsp; ) the grass.”",
+    choices: ["in", "off", "out", "under", "away"],
+    answer: "off",
+    translation: "その公園の看板には「芝生に入らないこと」と書いてあった。",
+    explanation: "＜keep off ～＞で「～から離れている、～に立ち入らない」という意味を表す慣用表現です。したがって off が正解となります。",
+    school: "成蹊大"
+  },
+  {
+    page: 19, no: 7, category: "命令文・感嘆文", type: "rewrite",
+    question: "It’s bad manners to speak ( &nbsp; &nbsp; &nbsp; ) your mouth ( &nbsp; &nbsp; &nbsp; ).<br><small>口に食べ物をいっぱいにしてしゃべるのは無作法だ。</small>",
+    blankCount: 2,
+    answer: ["with", "full"],
+    translation: "口に食べ物をいっぱいにしてしゃべるのは無作法だ。",
+    explanation: "付帯状況を表す前置詞 with を用いた＜with ＋ 名詞 ＋ 形容詞＞「～を…にした状態で」の形です。with your mouth full で「口をいっぱいにして」という意味になります。",
+    school: "広島経済大"
   }
 
 
