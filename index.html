@@ -235,6 +235,7 @@
            <button class="btn-cat" onclick="startCategory('疑問文（1）')">疑問文（1）</button>
            <button class="btn-cat" onclick="startCategory('疑問文（2）')">疑問文（2）</button>
            <button class="btn-cat" onclick="startCategory('命令文・感嘆文')">命令文・感嘆文</button>
+           <button class="btn-cat" onclick="startCategory('助動詞（1）')">助動詞（1）</button>
        </div>
        
    </div>
@@ -3467,11 +3468,63 @@ const quizDataset = [
     translation: "あなたが私のためにしてくれたことを私は決して忘れません。",
     explanation: "forget の目的語となる名詞節を作ります。done の目的語が欠けているため、「～してくれたこと」という意味を表す関係代名詞 what が正解です。",
     school: "宮崎産業経営大"
+  },
+  {
+    page: 19, no: 15, category: "命令文・感嘆文", type: "sort",
+    question: "日本文に合うように、次の語句を並び替えなさい。<br><small>約束したことは果たさなければならない。</small><br>You must ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ).",
+    words: ["have", "carry", "you", "what", "promised", "out"],
+    answer: "You must carry out what you have promised.",
+    translation: "約束したことは果さなければならない。",
+    explanation: "「（約束などを）果たす、実行する」という意味の carry out と、関係代名詞 what（～すること）を用いた what you have promised「あなたが約束したこと」を組み合わせます。must の後ろに動詞の原形 carry out を続け、carry out what you have promised の順になります。",
+    school: "名古屋女子大"
+  },
+  {
+    page: 19, no: "15-a", category: "命令文・感嘆文", type: "4choice",
+    question: "( &nbsp; &nbsp; &nbsp; ) she believes you is certain.",
+    choices: ["That", "What", "Whatever", "Which"],
+    answer: "That",
+    translation: "彼女があなたを信じているのは確かだ。",
+    explanation: "後ろの節（she believes you）は完全な文であるため、全体を名詞節としてまとめる接続詞 That が正解となります（It is certain that she believes you. の It を省略せずに主語の位置に置いた形です）。",
+    school: "慶應義塾大"
+  },
+  {
+    page: 19, no: "15-b", category: "命令文・感嘆文", type: "4choice",
+    question: "( &nbsp; &nbsp; &nbsp; ) she believes you is hard to understand.",
+    choices: ["What", "That", "Whatever", "Whenever"],
+    answer: "That",
+    translation: "彼女があなたを信じているということは理解しがたい。",
+    explanation: "後ろの節（she believes you）は「S+V+O」が揃った完全な文であるため、事実を表す接続詞 That が文頭に入り、全体で主語となる名詞節を作ります。",
+    school: "立命館大"
+  },
+  {
+    page: 19, no: "15-c", category: "命令文・感嘆文", type: "4choice",
+    question: "( &nbsp; &nbsp; &nbsp; ) she had no interest in him was obvious to us all.",
+    choices: ["That", "What", "Which", "Whatever"],
+    answer: "That",
+    translation: "彼女が彼にまったく興味を持っていないということは、私たち全員にとって明白だった。",
+    explanation: "後ろに完全な文（she had no interest in him）が続いているため、文全体を主語にする接続詞 That が正解です。",
+    school: "創価大"
+  },
+  {
+    page: 19, no: "15-d", category: "命令文・感嘆文", type: "4choice",
+    question: "( &nbsp; &nbsp; &nbsp; ) he refused our proposal was a big surprise to us.",
+    choices: ["If", "That", "What", "Which"],
+    answer: "That",
+    translation: "彼が私たちの提案を断ったことは、私達にとって大きな驚きだった。",
+    explanation: "he refused our proposal は要素がすべて揃った完全な文です。したがって「～ということ」を意味する接続詞 That が正解です。",
+    school: "福岡大"
+  },
+  {
+    page: 21, no: 3, category: "助動詞（1）", type: "4choice",
+    question: "“ ( &nbsp; &nbsp; &nbsp; ) I take you to the library ? ” “Thank you, please do.”",
+    choices: ["Will", "Must", "Should", "Shall"],
+    answer: "Shall",
+    translation: "「図書館までお送りしましょうか。」「ありがとうございます、お願いします。」",
+    explanation: "＜Shall I ～?＞で「（私が）～しましょうか」と相手に申し出る表現です。応答文（Thank you, please do.）からも親切な申し出に対する感謝と承諾が示されているため Shall が正解となります。",
+    school: "獨協大"
   }
 
 
-
-   
 
 ];
  
