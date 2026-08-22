@@ -237,6 +237,7 @@
            <button class="btn-cat" onclick="startCategory('命令文・感嘆文')">命令文・感嘆文</button>
            <button class="btn-cat" onclick="startCategory('助動詞（1）')">助動詞（1）</button>
            <button class="btn-cat" onclick="startCategory('助動詞（2）')">助動詞（2）</button>
+           <button class="btn-cat" onclick="startCategory('受動態（1）')">受動態（1）</button>
        </div>
        
    </div>
@@ -4225,6 +4226,51 @@ const quizDataset = [
     translation: "外出して風邪をひくよりは家にいたほうがいい。",
     explanation: "＜would rather A than B＞「BするよりはむしろAしたい」の構文を用います。Aの部分に stay at home、Bの部分に go out and catch を配置します。",
     school: "徳島文理大"
+  },
+   {
+    page: 23, no: "15-a", category: "助動詞（2）", type: "sort",
+    question: "<small>日本文に合うように、次の語句を並び替えなさい。</small><br>They ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ).<br><small>彼らはあなたにタバコを吸ってもらいたくないのだ。</small>",
+    words: ["smoke", "prefer", "not", "would", "to", "you"],
+    answer: "would prefer you not to smoke",
+    translation: "彼らはあなたにタバコを吸ってもらいたくないのだ。",
+    explanation: "＜would prefer ＋ 人 ＋ not to ＋ 動詞の原形＞ で「（人）に〜してもらいたくない」という表現を作ります。不定詞の否定形 not to に注意が必要です。",
+    school: ""
+  },
+  {
+    page: 23, no: "15-b", category: "助動詞（2）", type: "sort",
+    question: "<small>日本文に合うように、次の語句を並び替えなさい。</small><br>I’d ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) here.<br><small>ここではタバコをご遠慮願えませんか。</small>",
+    words: ["not", "prefer", "smoke", "to", "you"],
+    answer: "prefer you not to smoke",
+    translation: "ここではタバコをご遠慮願えませんか。",
+    explanation: "I’d は I would の縮約形です。＜would prefer ＋ 人 ＋ not to ＋ 動詞の原形＞ で「（人）に〜してほしくない」という控えめな依頼・表現になります。",
+    school: "姫路獨協大"
+  },
+  {
+    page: 25, no: 3, category: "受動態（1）", type: "sort",
+    question: "<small>日本文に合うように、次の語句を並び替えなさい。※1語不要</small><br>We ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) last night.<br><small>私たちは昨晩パーティに招待された。</small>",
+    words: ["invited", "the party", "by", "were", "to"],
+    answer: "were invited to the party",
+    translation: "私たちは昨晩パーティに招待された。",
+    explanation: "「（場所・行事）に招待される」は ＜be invited to ~＞ で表します。動作主を表す前置詞 by は不要語となります。",
+    school: ""
+  },
+  {
+    page: 25, no: 4, category: "受動態（1）", type: "rewrite",
+    question: "( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) English in New Zealand.<br><small>ニュージーランドでは英語を話します。</small>",
+    blankCount: 2,
+    answer: ["They", "speak"],
+    translation: "ニュージーランドでは英語を話します。",
+    explanation: "一般の人々（People in New Zealand）を主語に用いて ＜They speak ＋ 言語＞ で「〜（国・地域）では（言語）が話されている」という意味を表します。",
+    school: "鹿児島大"
+  },
+  {
+    page: 25, no: 5, category: "受動態（1）", type: "sort",
+    question: "<small>日本文に合うように、次の語句を並び替えなさい。</small><br>He was laughed ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ).<br><small>彼は出席者全員に笑われた。</small>",
+    words: ["at", "present", "by", "the", "all", "people"],
+    answer: "at by all the people present",
+    translation: "彼は出席者全員に笑われた。",
+    explanation: "＜laugh at ~＞（〜を笑う）の受動態は ＜be laughed at＞ と前置詞 at を残します。形容詞 present（出席している）は1語でも名詞句 the people の後ろから後置修飾（all the people present）します。",
+    school: "東京家政大・改"
   }
 
 
