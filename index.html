@@ -357,123 +357,110 @@ const DOM = {
     resSchool: document.getElementById("res-school")
 };
 const quizDataset = [
-   {
-       page: 3, no: 2, category: "文型（1）", type: "4choice",
+   {   page: 3, no: 2, category: "文型（1）", type: "4choice",
        question: "My father usually ( &nbsp; &nbsp; &nbsp; ) home from work at 7:00 p.m.",
        choices: ["is coming", "comes", "come", "has come"],
        answer: "comes",
        translation: "父はたいてい午後7時に仕事から帰宅します。",
        explanation: "usually（たいてい）があることから、現在の習慣を表す文形です。主語が My father (三人称単数) なので、動詞の現在形 comes が正解となります。",
-       school: "甲南大"
-   },
-   {
-      page: 3, no: "2-a", category: "文型（1）", type: "4choice",
+       school: "甲南大"   },
+   
+   {  page: 3, no: "2-a", category: "文型（1）", type: "4choice",
       question: "Bill ( &nbsp; &nbsp; &nbsp; ) the guitar every evening.",
       choices: ["plays", "is playing", "will play", "will be playing"],
       answer: "plays",
       translation: "ビルは毎晩ギターを弾きます。",
       explanation: "every evening（毎晩）があることから、現在の習慣や反復行動を表します。主語が Bill (三人称単数) なので、動詞の現在形 plays が正解となります。",
-      school: ""
-   },
-   {
-      page: 3, no: "2-b", category: "文型（1）", type: "4choice",
+      school: ""   },
+   
+   {  page: 3, no: "2-b", category: "文型（1）", type: "4choice",
       question: "I usually ( &nbsp; &nbsp; &nbsp; ) home at around eight o'clock.",
       choices: ["leave", "am leaving", "will leave", "will be leaving"],
       answer: "leave",
       translation: "私はたいてい8時頃に家を出ます。",
       explanation: "usually（たいてい）から、現在の習慣的な行動を表すと判断します。主語が I なので、動詞の現在形原形である leave が正解となります。",
-      school: "学習院大"
-   },
-   {
-      page: 3, no: "2-c", category: "文型（1）", type: "4choice",
+      school: "学習院大"   },
+   
+   {  page: 3, no: "2-c", category: "文型（1）", type: "4choice",
       question: "Judy often ( &nbsp; &nbsp; &nbsp; ) to the library to borrow books.",
       choices: ["goes", "is going", "will go", "will be going"],
       answer: "goes",
       translation: "ジュディはよく本を借りに図書館へ行きます。",
       explanation: "often（よく、しばしば）があるため、現在の習慣的な行動を表します。主語の Judy は三人称単数なので、現在形の goes が正解となります。",
-      school: ""
-   },
-   {
-      page: 3, no: 4, category: "文型（1）", type: "4choice",
+      school: ""   },
+   
+   {  page: 3, no: 4, category: "文型（1）", type: "4choice",
       question: "Our plane leaves ( &nbsp; &nbsp; &nbsp; ) New York at 10:30 am.",
       choices: ["for", "in", "to", "at"],
       answer: "for",
       translation: "私たちの飛行機は午前10時30分にニューヨークに向けて出発します。",
       explanation: "「A（目的地）に向けて出発する」は leave for A という熟語で表現します。後ろに到着地（New York）が来ているため、前置詞は for が正解です。",
-      school: "九州看護福祉大"
-   },
-   {
-      page: 3, no: 4, category: "文型（1）", type: "4choice",
+      school: "九州看護福祉大"   },
+   
+   {  page: 3, no: 4, category: "文型（1）", type: "4choice",
       question: "I am going to leave Tokyo ( &nbsp; &nbsp; &nbsp; ) Osaka.",
       choices: ["on", "to", "for", "near"],
       answer: "for",
       translation: "私は東京を出発して大阪へ向かう予定です。",
       explanation: "熟語 leave A for B で「A（出発地）を離れてB（目的地）へ向かう」という意味になります。文脈から東京を発って大阪へ向かう形になるため、for が正解です。",
-      school: "駒澤大"
-   },
-   {
-      page: 3, no: 4, category: "文型（1）", type: "4choice",
+      school: "駒澤大"   },
+   
+   {  page: 3, no: 4, category: "文型（1）", type: "4choice",
       question: "Mr. Johnson left ( &nbsp; &nbsp; &nbsp; ) America yesterday.",
       choices: ["from Japan for", "from Japan to", "Japan for", "Japan to"],
       answer: "Japan for",
       translation: "ジョンソン氏は昨日、日本を離れてアメリカへ向かいました。",
       explanation: "leave A for B（Aを去ってBへ向かう）の形を作ります。leave は他動詞なので from などの前置詞を直接後ろに置くことはできません。したがって、Japan for が正解となります。",
-      school: "中央大"
-   },
-{
-       page: 3, no: 7, category: "文型（1）", type: "4choice",
+      school: "中央大"   },
+   
+   {   page: 3, no: 7, category: "文型（1）", type: "4choice",
        question: "The sun always ( &nbsp; &nbsp; &nbsp; ) early in summer.",
        choices: ["rises", "rose", "risen", "is rising"],
        answer: "rises",
        translation: "夏には太陽はいつも早く昇ります。",
        explanation: "「太陽が東から昇る」や「地球は太陽の周りを回る」といった【不変の真理・自然現象】は、過去や未来に関わらず常に「現在形」で表すという鉄則があります。主語の The sun は三人称単数なので rises が正解です。",
-       school: ""
-   },
-   {
-       page: 3, no: "7-a", category: "文型（1）", type: "4choice",
+       school: ""   },
+   
+   {   page: 3, no: "7-a", category: "文型（1）", type: "4choice",
        question: "The price of coffee ( &nbsp; &nbsp; &nbsp; ) 200 yen.",
        choices: ["has raised to", "has rised by", "raised", "rose by"],
        answer: "rose by",
        translation: "コーヒーの価格は200円値上がりしました。",
        explanation: "「（価格などが）上がる」という自動詞 rise（変化：rise - rose - risen）を使います（raiseは他動詞）。また、差額（〜だけ）を表す前置詞は by を用いるため、rose by が正解となります。※bの rised という不規則変化の形は存在しません。",
-       school: "慶應義塾大"
-   },
-   {
-       page: 3, no: "7-b", category: "文型（1）", type: "4choice",
+       school: "慶應義塾大"   },
+   
+   {   page: 3, no: "7-b", category: "文型（1）", type: "4choice",
        question: "“Was the question too difficult ?”<br>“I don't think so. Several students ( &nbsp; &nbsp; &nbsp; ) their hands to answer.”",
        choices: ["have risen", "raised", "risen", "rose"],
        answer: "raised",
        translation: "「その質問は難しすぎましたか？」「そうは思いません。数人の生徒が答えるために手を挙げましたよ。」",
        explanation: "空欄の後ろに their hands（彼らの手）という目的語（名詞）があるため、「〜を挙げる」という意味の【他動詞】が不可欠です。他動詞 raise（変化：raise - raised - raised）の過去形である raised が正解となります。",
-       school: "フェリス女大"
-   },
-   {
-       page: 3, no: "7-c", category: "文型（1）", type: "4choice",
+       school: "フェリス女大"   },
+   
+   {   page: 3, no: "7-c", category: "文型（1）", type: "4choice",
        question: "The manager told us he would ( &nbsp; &nbsp; &nbsp; ) the price next week.",
        choices: ["rise", "rising", "raise", "rose"],
        answer: "raise",
        translation: "店長は私たちに、来週価格を上げるつもりだと話しました。",
        explanation: "助動詞 would の後ろなので動詞の原形が入ります。さらに、後ろに the price（価格）という目的語があるため、「〜を上げる」という意味の【他動詞】raise が正解です。自動詞の rise は後ろに目的語を直接置けません。",
-       school: "関東学院大"
-   },
-   {
-       page: 3, no: 10, category: "文型（1）", type: "4choice",
+       school: "関東学院大"   },
+   
+   {   page: 3, no: 10, category: "文型（1）", type: "4choice",
        question: "Don't eat so much. You'll ( &nbsp; &nbsp; &nbsp; ) fat.",
        choices: ["gain", "get", "increase", "put"],
        answer: "get",
        translation: "そんなにたくさん食べてはいけません。太りますよ。",
        explanation: "「〜（の状態）になる」という第2文型（SVC）を作る動詞を選びます。後ろに fat（太った）という形容詞が来ているため、＜get + 形容詞＞の形を作る get が正解です。※gain や put を使う場合は gain weight / put on weight（体重が増える）のように名詞を続けます。",
-       school: "千葉商科大"
-   },
-   {
-       page: 3, no: 12, category: "文型（1）", type: "4choice",
+       school: "千葉商科大"   },
+   
+   {   page: 3, no: 12, category: "文型（1）", type: "4choice",
        question: "His sister always looks ( &nbsp; &nbsp; &nbsp; ).",
        choices: ["beauties", "beautiful", "beautifully", "beauty"],
        answer: "beautiful",
        translation: "彼の姉［妹］はいつも美しく見えます。",
        explanation: "動詞 look は「〜に見える」という第2文型（SVC）を作るため、保護（C）の位置には状態を表す【形容詞】が来ます。したがって形容詞の beautiful が正解です。副詞の beautifully は保護になれないため不可となります。",
-       school: "千葉商科大"
-   },
+       school: "千葉商科大"   },
+   
 {
        page: 3, no: 12, category: "文型（1）", type: "4choice",
        question: "Lucy looks very ( &nbsp; &nbsp; &nbsp; ). Perhaps she caught cold.",
