@@ -4814,7 +4814,15 @@ let cleanCorrect = normalizeText(q.answer);
       schoolItem.style.display = "block";
       document.getElementById("res-school").innerText = q.school;
    }
- 
+
+   // Google Analytics 4 に解答データを送信
+   gtag('event', 'solve_question', {
+       category: q.category,
+       question_no: String(q.no),
+       question_type: q.type,
+       result: isCorrect ? 'correct' : 'incorrect'
+   });
+   
    // あなた独自の洗練されたテキスト切り替えロジック
    const btnNext = document.getElementById("btn-next");
    if (currentIndex === currentQuestions.length - 1) {
