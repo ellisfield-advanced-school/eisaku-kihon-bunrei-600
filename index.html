@@ -4814,11 +4814,32 @@ let cleanCorrect = normalizeText(q.answer);
    }
    // --- 3. 書き換え問題 (rewrite) の判定ロジック ---
   else if (q.type === "rewrite") {
-      const answers = Array.isArray(q.answer) ? q.answer : []; // 【防弾】
-      isCorrect = answers.every((ans, idx) => userAns[idx] && userAns[idx].toLowerCase() === ans.toLowerCase());
-      userDisplay = userAns.join(", ") || "(未入力)";
-      correctDisplay = answers.join(", ");
-   }
+    const answers = Array.isArray(q.answer) ? q.answer : [q.answer];
+
+    // 入力された各空欄を正規化
+    const userAnswers = Array.isArray(userAns) ? userAns : [userAns];
+
+    // blankCount が1で、正解が複数ある場合：
+    // 「いずれか1つ」に一致すれば正解
+    if (q.blankCount === 1 && answers.length > 1) {
+        const cleanUser = normalizeText(userAnswers[0] || "");
+
+        isCorrect = answers.some(ans =>
+            cleanUser === normalizeText(ans)
+        );
+    }
+    // 通常の複数空欄問題：
+    // 空欄ごとに正解と一致するか判定
+    else {
+        isCorrect = answers.every((ans, idx) =>
+            userAnswers[idx] &&
+            normalizeText(userAnswers[idx]) === normalizeText(ans)
+        );
+    }
+
+    userDisplay = userAnswers.join(", ") || "(未入力)";
+    correctDisplay = answers.join(" ／ ");
+}
  
   const judge = document.getElementById("result-judge");
    if (isCorrect) {
