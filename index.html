@@ -239,6 +239,7 @@
            <button class="btn-cat" onclick="startCategory('助動詞（2）')">助動詞（2）</button>
            <button class="btn-cat" onclick="startCategory('受動態（1）')">受動態（1）</button>
            <button class="btn-cat" onclick="startCategory('受動態（2）')">受動態（2）</button>
+           <button class="btn-cat" onclick="startCategory('否定表現（1）')">否定表現（1）</button>
        </div>
        
    </div>
@@ -4493,7 +4494,37 @@ const quizDataset = [
     question: "We are not ( &nbsp; &nbsp; &nbsp; ) to talk while we are taking an exam.<br><small>テスト中に話をしてはいけないことになっている。</small>",
     blankCount: 1, answer: ["supposed"], translation: "テスト中に話をしてはいけないことになっている。",
     explanation: "熟語 ＜be supposed to ＋ 動詞の原形＞ で「〜することになっている、〜するはずである」という意味を表します。否定形の ＜be not supposed to ＋ 動詞の原形＞ で「〜してはいけないことになっている（禁止）」という意味になります。",
-    school: "立命館大" }
+    school: "立命館大" },
+   { page: 27, no: "16-b", category: "受動態（2）", type: "4choice",
+    question: "A new law is expected ( &nbsp; &nbsp; &nbsp; ) air pollution by 60%.",
+    choices: ["cutting", "to cut", "to be cut", "to have cut"],
+    answer: "to cut", translation: "新しい法律によって大気汚染が60％削減されると期待されている。",
+    explanation: "＜be expected to ＋ 動詞の原形＞ で「〜すると予想される、〜することが期待される」という意味を表します。新法（A new law）が「削減する（cut）」という能動関係のため to cut が正解です。",
+    school: "立命館大・改" },
+  { page: 27, no: "16-c", category: "受動態（2）", type: "4choice",
+    question: "A full report is expected ( &nbsp; &nbsp; &nbsp; ) later this month.",
+    choices: ["to be released", "releasing", "to have released", "to release"],
+    answer: "to be released", translation: "完全な報告書が今月後半に公表される予定です。",
+    explanation: "＜be expected to ＋ 動詞の原形＞ の構文です。主語の報告書（A full report）と release（公表する）の関係は受動関係（公表される）となるため、不定詞の受動態 ＜to be ＋ 過去分詞＞（to be released）が正解です。",
+    school: "立命館大" },
+  { page: 29, no: 3, category: "否定表現（1）", type: "4choice",
+    question: "He can’t speak German, and I can’t, ( &nbsp; &nbsp; &nbsp; ).",
+    choices: ["too", "also", "either", "neither"],
+    answer: "either", translation: "彼はドイツ語を話せないし、私も話せない。",
+    explanation: "否定文を受けて「〜もまた（…ない）」と表す場合は、文末に either を用います。（※too や also は肯定文で用いられます。neither を用いる場合は neither can I のような倒置形になります。）",
+    school: "追手門学院" },
+  { page: 29, no: 7, category: "否定表現（1）", type: "4choice",
+    question: "There used to be a big cherry tree here.<br>➔ There is ( &nbsp; &nbsp; &nbsp; ) longer a big cherry tree here now.<br><small>同意文完成</small>",
+    choices: ["any", "never", "no", "not"],
+    answer: "no", translation: "以前ここには大きな桜の木があった。／今やここにはもう大きな桜の木はない。",
+    explanation: "＜no longer 〜＞ で「もはや〜ない、もはや〜ではない」という意味を表す重要熟語です。not any longer と同義になります。",
+    school: "実践女子大" },
+  { page: 29, no: 7, category: "否定表現（1）", type: "4choice",
+    question: "Many rivers have been so polluted that they can ( &nbsp; &nbsp; &nbsp; ) be used for drinking water.",
+    choices: ["not longer", "no longer", "not longest", "no longest"],
+    answer: "no longer", translation: "多くの川が非常に汚染されているため、もはや飲料水としては使用できない。",
+    explanation: "「もはや〜ない」という意味を表す副詞句 ＜no longer＞ を用いる問題です。助動詞 can と動詞の原形 be の間に挟んで用います。",
+    school: "大東文化大・改" }
 
 
 
