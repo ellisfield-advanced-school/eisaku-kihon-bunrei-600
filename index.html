@@ -4906,11 +4906,22 @@ function speakEnglish(text) {
 
     speechSynthesis.cancel();
 
-    const uttr = new SpeechSynthesisUtterance(text);
-    uttr.lang = "en-US";
-    uttr.rate = 1.0;
+const voices = synth.getVoices();
 
-    speechSynthesis.speak(uttr);
+const englishVoice =
+    voices.find(voice => voice.lang === "en-US") ||
+    voices.find(voice => voice.lang.startsWith("en-"));
+
+const uttr = new SpeechSynthesisUtterance(text);
+
+uttr.lang = "en-US";
+uttr.rate = 1.0;
+
+if (englishVoice) {
+    uttr.voice = englishVoice;
+}
+
+synth.speak(uttr);
 }
    
 function backToCategory() {
