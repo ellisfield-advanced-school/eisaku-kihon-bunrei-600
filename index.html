@@ -251,6 +251,7 @@
            <button class="btn-cat" onclick="startCategory('受動態（1）')">受動態（1）</button>
            <button class="btn-cat" onclick="startCategory('受動態（2）')">受動態（2）</button>
            <button class="btn-cat" onclick="startCategory('否定表現（1）')">否定表現（1）</button>
+           <button class="btn-cat" onclick="startCategory('否定表現（2）')">否定表現（2）</button>
        </div>
        
    </div>
@@ -4013,7 +4014,40 @@ const quizDataset = [
     words: ["so", "been", "did", "I", "have"],
     answer: "have I been so", translation: "これまで一度も、これほど失望したことはなかった。",
     explanation: "否定語 Never を文頭に置いた倒置構文です。現在完了形（have ＋ 過去分詞）の文から助動詞 have を文頭側に繰り出し、＜have ＋ 主語（I）＋ 過去分詞（been）＋ so＞ の順に並べます（did は不要語）。",
-    school: "山形大・改" }
+    school: "山形大・改" },
+   { page: 29, no: 14, category: "否定表現（1）", type: "rewrite",
+    question: "He is ( &nbsp; &nbsp; &nbsp; ) from happy.<br><small>彼はちっとも幸福ではない。</small>",
+    blankCount: 1, answer: ["far"], translation: "彼はちっとも幸福ではない。",
+    explanation: "熟語 ＜far from ~＞ で「ちっとも〜ではない、決して〜ではない」という強い否定（慣用表現）を表します。",
+    school: "鹿児島大" },
+  { page: 29, no: 14, category: "否定表現（1）", type: "rewrite",
+    question: "He is far from a gentleman.<br>➔ He is ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) a gentleman.<br><small>同意文完成</small>",
+    blankCount: 2, answer: ["anything", "but"], translation: "彼は決して紳士ではない。",
+    explanation: "「決して〜ではない」を表す熟語 far from は ＜anything but ~＞ に書き換えることができます。anything but は「〜を除いて何でも」から転じて「決して〜ではない」という意味になります。",
+    school: "鹿児島大" },
+  { page: 29, no: 15, category: "否定表現（1）", type: "4choice",
+    question: "He’d be the ( &nbsp; &nbsp; &nbsp; ) person to do such a thing.",
+    choices: ["last", "unusual", "ultimate", "strange"],
+    answer: "last", translation: "彼はそのようなことをするような人では決してないだろう。",
+    explanation: "＜the last ＋ 名詞 ＋ to do＞ で「最も〜しそうにない（人・物）」から転じて「決して〜しない（人・物）」という意味を表します。",
+    school: "城西大" },
+  { page: 29, no: 15, category: "否定表現（1）", type: "sort",
+    question: "<small>日本文に合うように、次の語句を並び替えなさい。</small><br>He would ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ).<br><small>彼は，絶対あなた方を裏切るような人ではないでしょう。</small>",
+    words: ["you", "the", "person", "to", "be", "last", "betray"],
+    answer: "be the last person to betray you", translation: "彼は，絶対あなた方を裏切るような人ではないでしょう。",
+    explanation: "助動詞 would に続けて動詞の原形 be を置き、否定の慣用表現 ＜the last person to do＞（最も〜しそうにない人 ＝ 決して〜しない人）を組み合わせます。不定詞の後は ＜betray you＞ と続きます。",
+    school: "北海学園大" },
+  { page: 31, no: 8, category: "否定表現（2）", type: "sort",
+    question: "<small>日本文に合うように、次の語句を並び替えなさい。</small><br>( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ).<br><small>お金は必ずしもあなたを幸せにしませんよ。</small>",
+    words: ["you", "doesn't", "happy", "money", "always", "make"],
+    answer: "money doesn't always make you happy", translation: "お金は必ずしもあなたを幸せにしませんよ。",
+    explanation: "否定語（doesn't）と always を一緒に用いることで「必ずしも〜とは限らない」という部分否定を表します。文全体は ＜Money doesn't always make you happy＞ となり、第5文型（SVOC：make + you + happy）の形を作ります。",
+    school: "" },
+  { page: 31, no: 8, category: "否定表現（2）", type: "rewrite",
+    question: "Technology does not ( &nbsp; &nbsp; &nbsp; ) bring us happiness.<br><small>科学技術は必ずしも我々に幸せをもたらさない。</small>",
+    blankCount: 1, answer: ["always"], translation: "科学技術は必ずしも我々に幸せをもたらさない。",
+    explanation: "否定語 not と always を組み合わせることで「必ずしも〜とは限らない」という部分否定の表現になります。",
+    school: "東京経済大" }
 
 
 
