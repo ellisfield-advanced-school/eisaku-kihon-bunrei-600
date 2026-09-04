@@ -252,6 +252,7 @@
            <button class="btn-cat" onclick="startCategory('受動態（2）')">受動態（2）</button>
            <button class="btn-cat" onclick="startCategory('否定表現（1）')">否定表現（1）</button>
            <button class="btn-cat" onclick="startCategory('否定表現（2）')">否定表現（2）</button>
+           <button class="btn-cat" onclick="startCategory('否定表現（1）')">不定詞（1）</button>
        </div>
        
    </div>
@@ -4183,7 +4184,42 @@ const quizDataset = [
     words: ["its value", "health", "we", "realize", "lose", "our", "that"],
     answer: "lose our health that we realize its value", translation: "健康を失って初めて、その価値に気づく。",
     explanation: "＜It is not until ~ that ...＞ 構文です。until 節内が ＜we lose our health＞、that 節内が ＜we realize its value＞ となります。",
-    school: "宮崎国際大" }
+    school: "宮崎国際大" },
+   { page: 33, no: 1, category: "不定詞（1）", type: "sort",
+    question: "<small>日本文に合うように、次の語句を並び替えなさい。</small><br>I would like to ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) “global warming.”<br><small>「地球温暖化」と呼ばれているものについてお話ししたいと思います。</small>",
+    words: ["what", "talk", "called", "is", "about"],
+    answer: "talk about what is called", translation: "「地球温暖化」と呼ばれているものについてお話ししたいと思います。",
+    explanation: "＜would like to ＋ 動詞の原形＞（〜したい）の後ろに talk about を置き、目的語として関係代名詞 what を用いた慣用表現 ＜what is called ~＞（いわゆる〜、〜と呼ばれているもの）を続けます。",
+    school: "東京理科大" },
+  { page: 33, no: 1, category: "不定詞（1）", type: "sort",
+    question: "<small>日本文に合うように、次の語句を並び替えなさい。</small><br>Would you ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) dinner ?<br><small>ご一緒に食事でもいかがですか。</small>",
+    words: ["to", "like", "us", "for", "join"],
+    answer: "like to join us for", translation: "ご一緒に食事でもいかがですか。",
+    explanation: "勧誘を表す ＜Would you like to do ... ?＞（〜しませんか）の形に、「（食事など）に加わる」を表す ＜join ＋ 人 ＋ for ~＞ を組み合わせて構成します。",
+    school: "熊本保健科学大" },
+  { page: 33, no: 3, category: "不定詞（1）", type: "4choice",
+    question: "Ten minutes’ walk along this road will ( &nbsp; &nbsp; &nbsp; ) you to the station.<br><small>この道を10分も歩けば駅に着きます。</small>",
+    choices: ["arrive", "betray", "take", "have"],
+    answer: "take", translation: "この道を10分も歩けば駅に着きます。",
+    explanation: "無生物主語構文で「（道や時間が）人を〜へ連れて行く、導く」を表す場合、＜take ＋ 人 ＋ to 場所＞ を用います。",
+    school: "武蔵工業大" },
+  { page: 33, no: "3-a", category: "不定詞（1）", type: "sort",
+    question: "<small>日本文に合うように、次の語句を並び替えなさい。</small><br>( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ).<br><small>この通りを行けば私たちの学校に行けます。</small>",
+    words: ["you", "to", "our school", "this street", "will lead"],
+    answer: "this street will lead you toour school", translation: "この通りを行けば私たちの学校に行けます。",
+    explanation: "無生物主語構文 ＜主語（道など）＋ lead ＋ 人 ＋ to 場所＞（この道を行けば〜へ着く）の形を作成します。",
+    school: "拓殖大" },
+  { page: 33, no: "3-b", category: "不定詞（1）", type: "sort",
+    question: "<small>日本文に合うように、次の語句を並び替えなさい。</small><br>( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) the center of the city.<br><small>このバスに乗れば街の中心部まで行けます。</small>",
+    words: ["will", "to", "this bus", "you", "take"],
+    answer: "this bus will take you to", translation: "このバスに乗れば街の中心部まで行けます。",
+    explanation: "無生物主語構文 ＜主語（乗り物など）＋ take ＋ 人 ＋ to 場所＞（〜に乗れば…へ行ける）の形にします。",
+    school: "西南女学院・改" },
+  { page: 33, no: 4, category: "不定詞（1）", type: "rewrite",
+    question: "Bob asked Jack to lend him fifty dollars because he was running ( &nbsp; &nbsp; &nbsp; ) of money.<br><small>ボブはお金が足りなくなったので，ジャックに50ドル貸してくれるよう頼んだ。</small>",
+    blankCount: 1, answer: ["short"], translation: "ボブはお金が足りなくなったので，ジャックに50ドル貸してくれるよう頼んだ。",
+    explanation: "「（お金や時間が）不足する、使い果たす」を表す熟語 ＜run short of ~＞ の知識を問う問題です。空所には short が入ります。",
+    school: "青山学院大・改" }
 
 
 
