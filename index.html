@@ -253,6 +253,7 @@
            <button class="btn-cat" onclick="startCategory('否定表現（1）')">否定表現（1）</button>
            <button class="btn-cat" onclick="startCategory('否定表現（2）')">否定表現（2）</button>
            <button class="btn-cat" onclick="startCategory('不定詞（1）')">不定詞（1）</button>
+           <button class="btn-cat" onclick="startCategory('不定詞（2）')">不定詞（2）</button>
        </div>
        
    </div>
@@ -4478,7 +4479,54 @@ const quizDataset = [
     words: ["impossible", "it", "for", "the ship", "make"],
     answer: "make it impossible for the ship", translation: "その船は嵐のため出航できないだろう。",
     explanation: "＜make it impossible for ＋ 意味上の主語 ＋ to do＞（〜が…するのを不可能にする）の構文を用います。助動詞 will の直後なので動詞の原形 make から始まり、make it impossible for the ship の順になります。",
-    school: "国学院大・改" }
+    school: "国学院大・改" },
+   { page: 35, no: 1, category: "不定詞（2）", type: "sort",
+    question: "<small>日本文に合うように、次の語句を並び替えなさい。</small><br>( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ).<br><small>何か冷たい飲み物を下さい。</small>",
+    words: ["something", "drink", "give", "cold", "to", "me"],
+    answer: "Give me something cold to drink", translation: "何か冷たい飲み物を下さい。",
+    explanation: "「（人）に（物）を語る/与える」を表す ＜give ＋ 人 ＋ 物＞ と、-thing を修飾する形容詞の語順 ＜something ＋ 形容詞 ＋ to do＞ を組み合わせます。Give me something cold to drink の順になります。",
+    school: "浜松大・改" },
+  { page: 35, no: 1, category: "不定詞（2）", type: "sort",
+    question: "<small>日本文に合うように、次の語句を並び替えなさい。</small><br>I ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) to you about.",
+    words: ["talk", "something", "have", "to", "important"],
+    answer: "have something important to talk", translation: "あなたにお話ししなければならない大切なことがあります。",
+    explanation: "something などの -thing で終わる代名詞を形容詞と不定詞で修飾する場合、＜something ＋ 形容詞 ＋ to do＞ の語順になります。have something important to talk の順で並べます。",
+    school: "奈良産業大・改" },
+  { page: 35, no: 2, category: "不定詞（2）", type: "4choice",
+    question: "He has a family to ( &nbsp; &nbsp; &nbsp; ).",
+    choices: ["hold", "continue", "support", "aid"],
+    answer: "support", translation: "彼には養うべき家族がいる。",
+    explanation: "不定詞の形容詞的用法で、「養うべき家族」という意味を作るため「（家族を）養う、養育する」を意味する他動詞 support が正解です。",
+    school: "城西大" },
+  { page: 35, no: "2-a", category: "不定詞（2）", type: "rewrite",
+    question: "I must do a lot of things today.<br>➔ I have a lot of things ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) today.<br><small>同意文完成</small>",
+    blankCount: 2, answer: ["to", "do"], translation: "私には今日やるべきことがたくさんある。",
+    explanation: "「今日たくさんのことをしなければならない」を「今日やるべき（するべき）たくさんのことがある」と書き換える問題です。a lot of things を後ろから不定詞の形容詞的用法で修飾する to do が入ります。",
+    school: "日本福祉大" },
+  { page: 35, no: 3, category: "不定詞（2）", type: "sort",
+    question: "<small>日本文に合うように、次の語句を並び替えなさい。</small><br>They ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ).",
+    words: ["for", "to", "looking", "live in", "a house", "are"],
+    answer: "are looking for a house to live in", translation: "彼らは住むための家を探している。",
+    explanation: "「〜を探している」を表す進行形 are looking for の後ろに、「住むための家」を表す a house to live in を続けます。live は自動詞のため、後ろに前置詞 in が必要です。",
+    school: "" },
+  { page: 35, no: "3-a", category: "不定詞（2）", type: "4choice",
+    question: "I looked for something ( &nbsp; &nbsp; &nbsp; ).",
+    choices: ["to sit on", "to sit", "sitting", "to sit down"],
+    answer: "to sit on", translation: "私は座るための何か（椅子など）を探した。",
+    explanation: "sit は自動詞なので「〜の上に座る」は sit on となります。修飾される something が on の目的語の関係（sit on something）になるため、前置詞 on を残した to sit on が正解です。",
+    school: "浜松大" },
+  { page: 35, no: "3-b", category: "不定詞（2）", type: "4choice",
+    question: "I have no friends ( &nbsp; &nbsp; &nbsp; ) in English.",
+    choices: ["talking to", "talking with", "to talk", "to talk to"],
+    answer: "to talk to", translation: "私には英語で話をする友達がいない。",
+    explanation: "「〜と話す」は talk to [with] 〜 という自動詞＋前置詞の形を用います。修飾される friends が to の目的語の関係（talk to friends）になるため、前置詞 to を残した to talk to が正解です。",
+    school: "目白大" },
+  { page: 35, no: "3-c", category: "不定詞（2）", type: "4choice",
+    question: "Can you lend me something ( &nbsp; &nbsp; &nbsp; ) ? I don't have a pen.",
+    choices: ["to write", "to write on", "to write with", "to write for"],
+    answer: "to write with", translation: "何か書くもの（筆記用具）を貸してくれませんか。ペンを持っていません。",
+    explanation: "「ペンで書く（〜を使って書く）」は write with a pen と表すため、道具を表す前置詞 with が必要です。something を修飾して to write with となります（「書くための用紙」であれば to write on になります）。",
+    school: "神戸松蔭女子学院" }
 
 
 
