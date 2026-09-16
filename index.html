@@ -7247,6 +7247,7 @@ let cleanCorrect = normalizeText(q.answer);
    // 【防弾】和訳や解説が省略されていてもエラーを出さない処理
   document.getElementById("res-user-ans").innerText = userDisplay;
   document.getElementById("res-correct").innerText = correctDisplay;
+  document.getElementById("res-audiotext").innerText = q.audioText || "-";
   document.getElementById("res-translation").innerText = q.translation || "";
   document.getElementById("res-explanation").innerText = q.explanation || "";
    
