@@ -7387,6 +7387,11 @@ loadQuestion();
 }
   document.getElementById("quiz-counter").innerText =
     `入試問題演習 作成中 現在 ${quizDataset.length} 問収録`;
+
+   const audioTextCount = quizDataset.filter(q => q.audioText).length;
+document.getElementById("audio-progress-notice").innerText =
+    `🔊 音声読み上げ機能を順次追加中です（現在 ${audioTextCount} / ${quizDataset.length} 問対応）`;
+   
 </script>
 </body>
 </html>
