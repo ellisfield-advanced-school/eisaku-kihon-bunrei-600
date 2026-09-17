@@ -275,6 +275,7 @@
            <button class="btn-cat" onclick="startCategory('動名詞（2）')">動名詞（2）</button>
            <button class="btn-cat" onclick="startCategory('分詞（1）')">分詞（1）</button>
            <button class="btn-cat" onclick="startCategory('分詞（2）')">分詞（2）</button>
+           <button class="btn-cat" onclick="startCategory('形容詞・副詞')">形容詞・副詞</button>
        </div>
        
    </div>
@@ -7003,7 +7004,55 @@ const quizDataset = [
     answer: "being", audioText: "There being no bus service, I had to walk home.",
     translation: "バスの便がなかったので、私は歩いて家に帰らなければならなかった。",
     explanation: "There is / are 構文の理由を表す独立分詞構文です。There の後ろに be 動詞の現在分詞 being を配置する ＜There being 〜＞ の形が正解です。分詞構文にする前は、As there was no bus service, ～",
-    school: "立命館大" }
+    school: "立命館大" },
+
+   { page: 45, no: "16-f", category: "分詞（2）", type: "rewrite",
+    question: "As there was nothing to do, we left the place to go home.<br>➔ ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) nothing to do, we left the place to go home.<br><small>同意文完成</small>",
+    blankCount: 2, answer: ["There", "being"], 
+    audioText: "There being nothing to do, we left the place to go home.",
+    translation: "何もすることがなかったので、私たちは家に向かうためにその場を離れた。",
+    explanation: "There is / are 構文を分詞構文にする場合、There を意味上の主語の位置に残し、be 動詞を being に変える ＜There being 〜＞ の独立分詞構文を用います。文頭大文字で There being とします。",
+    school: "福井工業大" },
+  { page: 45, no: "16-g", category: "分詞（2）", type: "rewrite",
+    question: "If we consider his age, his conduct is not to blame.<br>➔ ( &nbsp; &nbsp; &nbsp; ) his age, his conduct is not to blame.<br><small>同意文完成</small>",
+    blankCount: 1, answer: ["Considering"], audioText: "Considering his age, his conduct is not to blame.",
+    translation: "彼の年齢を考えると、彼の行いは責められるべきではない。",
+    explanation: "「〜を考慮すると、〜を考えると」を表す独立分詞構文の慣用表現 ＜Considering 〜＞ に書き換えます。文頭のため大文字で始めます。",
+    school: "法政大" },
+  { page: 45, no: "16-h", category: "分詞（2）", type: "4choice",
+    question: "( &nbsp; &nbsp; &nbsp; ) everything into consideration, the event was remarkably successful.",
+    choices: ["Bringing", "Having", "Taking", "Allowing"],
+    answer: "Taking", audioText: "Taking everything into consideration, the event was remarkably successful.",
+    translation: "すべてのことを考慮に入れると、そのイベントは際立って成功であった。",
+    explanation: "「〜を考慮に入れる」を意味する熟語 ＜take 〜 into consideration＞ を用いた分詞構文です。Taking を文頭に置いて ＜Taking everything into consideration＞（すべてを考慮に入れると）の形を作ります。",
+    school: "創価大" },
+  { page: 45, no: "16-i", category: "分詞（2）", type: "4choice",
+    question: "All things ( &nbsp; &nbsp; &nbsp; ), we cannot say that it is wrong.",
+    choices: ["considered", "considering", "having considered"],
+    answer: "considered", audioText: "All things considered, we cannot say that it is wrong.",
+    translation: "すべてのことを考慮すると、それが間違っているとは言えない。",
+    explanation: "「すべてのことが考慮されると（すべてのことを考慮すると）」を表す慣用的な独立分詞構文 ＜All things considered＞ を用います。All things と consider（考慮する）の関係が受動（考慮される）になるため、過去分詞の considered が正解です。",
+    school: "早稲田大・改" },
+  { page: 45, no: "16-j", category: "分詞（2）", type: "4choice",
+    question: "All things ( &nbsp; &nbsp; &nbsp; ) into consideration, her life is a happy one.",
+    choices: ["got", "caught", "had", "taken"],
+    answer: "taken", audioText: "All things taken into consideration, her life is a happy one.",
+    translation: "すべてのことを考慮に入れると、彼女の人生は幸せなものである。",
+    explanation: "熟語 ＜take 〜 into consideration＞（〜を考慮に入れる）の受動の独立分詞構文です。All things が主語の位置にあるため、過去分詞 taken を用いた ＜All things taken into consideration＞ の形になります。",
+    school: "玉川大" },
+  { page: 47, no: 3, category: "形容詞・副詞", type: "rewrite",
+    question: "The noise kept us ( &nbsp; &nbsp; &nbsp; ) all night.<br><small>騒音のせいで一晩中寝られなかった。</small>",
+    blankCount: 1, answer: ["awake"], audioText: "The noise kept us awake all night.",
+    translation: "騒音のせいで一晩中寝られなかった（騒音が私たちを一晩中起きている状態に保った）。",
+    explanation: "＜keep ＋ O ＋ C＞（OをCの状態にしておく）の補語（C）の位置に、叙述用法限定の形容詞 awake（起きている）を置きます。直訳は「その騒音は私たちを一晩中起きさせておいた」となります。",
+    school: "桃山学院大" },
+  { page: 47, no: 3, category: "形容詞・副詞", type: "4choice",
+    question: "The baby was fast ( &nbsp; &nbsp; &nbsp; ).",
+    choices: ["asleep", "sleep", "sleeping", "sleepy"],
+    answer: "asleep", audioText: "The baby was fast asleep.",
+    translation: "その赤ん坊はぐっすり眠っていた。",
+    explanation: "「ぐっすり眠って」を表す熟語 ＜be fast [sound] asleep＞ を問う問題です。補語（C）として叙述用法の形容詞 asleep が入ります。",
+    school: "千葉商科大" }
 
    
 ];
