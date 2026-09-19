@@ -98,6 +98,13 @@
            margin-bottom: 20px;
            line-height: 1.6;
        }
+       .question-text small {
+           display: block;
+           font-size: 0.7em;
+           font-weight: normal;
+           color: #7f8c8d;
+           margin-bottom: 4px;
+       }
        /* 四択 */
        .choices-grid {
            display: grid;
@@ -187,6 +194,33 @@
        .review-item { margin-bottom: 15px; }
        .review-label { font-weight: bold; color: var(--primary-color); font-size: 0.9rem; }
        .review-value { font-size: 1.1rem; margin-top: 4px; line-height: 1.5; }
+       /* 成績画面 */
+       .stat-row {
+           margin-bottom: 14px;
+           padding: 10px 12px;
+           border: 1px solid #e2e8f0;
+           border-radius: 8px;
+           background-color: #fafbfc;
+       }
+       .stat-row-header {
+           display: flex;
+           justify-content: space-between;
+           align-items: baseline;
+           margin-bottom: 6px;
+           font-size: 0.95rem;
+       }
+       .stat-row-name { font-weight: bold; color: var(--primary-color); }
+       .stat-row-detail { color: #7f8c8d; font-size: 0.85rem; }
+       .stat-bar-bg {
+           background-color: #e2e8f0;
+           border-radius: 6px;
+           height: 10px;
+           overflow: hidden;
+       }
+       .stat-bar-fill {
+           height: 100%;
+           border-radius: 6px;
+       }
    </style>
 </head>
 <body>
@@ -251,6 +285,9 @@
                🔊 音声読み上げ機能を順次追加中です。
            </p>
            <p style="color: #7f8c8d; margin: 0; font-size: 1rem; font-weight: bold;">テストするカテゴリを選んでね</p>
+           <div style="text-align:center; margin-top:12px;">
+               <button class="btn-action" style="background-color:#8e44ad;" onclick="showView('stats')">📊 成績を見る（苦手分野チェック）</button>
+           </div>
        </div>
        <div class="category-grid">
            <button class="btn-cat" onclick="startCategory('文型（1）')">文型（1）</button>
@@ -357,6 +394,18 @@
  
        <div class="action-container" style="justify-content: flex-end;">
            <button class="btn-action" id="btn-next" onclick="nextQuestion()">次の問題へ</button>
+       </div>
+   </div>
+
+   <div id="view-stats" class="hidden">
+       <div style="text-align: center; margin-bottom: 15px;">
+           <h2 style="color:#2c3e50; font-size:1.15rem; margin-bottom: 4px;">📊 カテゴリ別 成績</h2>
+           <p style="color:#7f8c8d; font-size:0.85rem; margin:0;">正答率が低いカテゴリほど上に表示されます。苦手分野の把握に役立ててください。</p>
+       </div>
+       <div id="stats-list"></div>
+       <div class="action-container" style="margin-top: 25px;">
+           <button class="btn-action" style="background-color:#95a5a6;" onclick="showView('category')">カテゴリ一覧へ戻る</button>
+           <button class="btn-action" style="background-color:#c0392b;" onclick="resetStats()">記録をリセット</button>
        </div>
    </div>
 </div>
@@ -7309,20 +7358,29 @@ function moveWord(card, wordZone, ansZone) {
     updateWordCase(ansZone);
 }
  
+// 【防弾】語句整序で、空所が文頭から始まる問題かどうかを判定
+// （"What ( )( )..." のように空所の前に文字がある場合は文頭ではない）
+function questionStartsWithBlank(q) {
+   if (!q || !q.question) return false;
+   let stripped = q.question.replace(/<small>[\s\S]*?<\/small>/g, "").trim();
+   // 【防弾】小見出しを除去した直後に残る先頭の<br>タグも除去する
+   stripped = stripped.replace(/^(<br>\s*)+/, "").trim();
+   return /^\(\s*(&nbsp;\s*)+\)/.test(stripped);
+}
+
 function updateWordCase(ansZone) {
    const cards = ansZone.querySelectorAll(".word-card");
+   const q = currentQuestions[currentIndex];
+   const startsAtBlank = questionStartsWithBlank(q);
 
    cards.forEach((card, index) => {
-
+       // 常に元の表記（データ本来の大文字・小文字）に戻す。
+       // これにより固有名詞（English、Mary など）が誤って小文字化されることを防ぐ。
        let text = card.dataset.original;
 
-       // 「I」以外だけ小文字にする
-       if (text !== "I") {
-           text = text.toLowerCase();
-       }
-
-       // 先頭だけ大文字にする（ただし I はそのまま）
-       if (index === 0 && text !== "I") {
+       // 空所が「本当に文の先頭」であり、かつそのカードが解答欄の1番目にある場合のみ、
+       // 先頭を大文字にする。
+       if (startsAtBlank && index === 0) {
            text = text.charAt(0).toUpperCase() + text.slice(1);
        }
 
@@ -7443,6 +7501,9 @@ let cleanCorrect = normalizeText(q.answer);
       judge.innerText = "不正解 ✕";
       judge.className = "result-box incorrect-box";
    }
+
+   // 苦手分野可視化のため、カテゴリ別の正答記録を保存
+   recordStat(q.category, isCorrect);
  
    // 【防弾】和訳や解説が省略されていてもエラーを出さない処理
   document.getElementById("res-user-ans").innerText = userDisplay;
@@ -7522,6 +7583,7 @@ function showView(viewName) {
    document.getElementById("view-number-select").classList.add("hidden");
    document.getElementById("view-quiz").classList.add("hidden");
    document.getElementById("view-result").classList.add("hidden");
+   document.getElementById("view-stats").classList.add("hidden");
 
    if (viewName === "category")
       document.getElementById("view-category").classList.remove("hidden");
@@ -7534,7 +7596,123 @@ function showView(viewName) {
 
    if (viewName === "result")
       document.getElementById("view-result").classList.remove("hidden");
+
+   if (viewName === "stats") {
+      document.getElementById("view-stats").classList.remove("hidden");
+      renderStats();
+   }
 } 
+// ==========================================
+// 成績（カテゴリ別正答率）の記録・表示
+// ==========================================
+const STATS_KEY = "eisaku600_categoryStats";
+
+// 【防弾】localStorageが使えない環境（プライベートモード等）でもエラーで落ちないようにする
+function loadStats() {
+    try {
+        return JSON.parse(localStorage.getItem(STATS_KEY) || "{}");
+    } catch (e) {
+        return {};
+    }
+}
+
+function saveStats(stats) {
+    try {
+        localStorage.setItem(STATS_KEY, JSON.stringify(stats));
+    } catch (e) {
+        // 保存できなくてもアプリの動作は継続する
+    }
+}
+
+function recordStat(category, isCorrect) {
+    if (!category) return;
+    const stats = loadStats();
+    if (!stats[category]) stats[category] = { correct: 0, total: 0 };
+    stats[category].total += 1;
+    if (isCorrect) stats[category].correct += 1;
+    saveStats(stats);
+}
+
+function resetStats() {
+    if (confirm("これまでの成績記録をすべて削除します。よろしいですか？")) {
+        saveStats({});
+        renderStats();
+    }
+}
+
+// カテゴリ一覧のボタンから、全カテゴリ名を取得する
+function getAllCategoryNames() {
+    const buttons = document.querySelectorAll(".category-grid .btn-cat");
+    const names = [];
+    buttons.forEach(btn => {
+        const m = btn.getAttribute("onclick").match(/startCategory\('([^']+)'\)/);
+        if (m) names.push(m[1]);
+    });
+    return names;
+}
+
+function renderStats() {
+    const stats = loadStats();
+    const container = document.getElementById("stats-list");
+    container.innerHTML = "";
+
+    const categories = getAllCategoryNames();
+
+    // 正答率を計算し、低い順（苦手なカテゴリが上）に並べる。
+    // 未挑戦のカテゴリ（total === 0）は一番下にまとめる。
+    const rows = categories.map(name => {
+        const s = stats[name] || { correct: 0, total: 0 };
+        const rate = s.total > 0 ? (s.correct / s.total) : null;
+        return { name, correct: s.correct, total: s.total, rate };
+    });
+
+    rows.sort((a, b) => {
+        if (a.rate === null && b.rate === null) return 0;
+        if (a.rate === null) return 1;
+        if (b.rate === null) return -1;
+        return a.rate - b.rate;
+    });
+
+    rows.forEach(r => {
+        const row = document.createElement("div");
+        row.className = "stat-row";
+
+        const header = document.createElement("div");
+        header.className = "stat-row-header";
+
+        const nameEl = document.createElement("span");
+        nameEl.className = "stat-row-name";
+        nameEl.innerText = r.name;
+
+        const detailEl = document.createElement("span");
+        detailEl.className = "stat-row-detail";
+
+        const barBg = document.createElement("div");
+        barBg.className = "stat-bar-bg";
+        const barFill = document.createElement("div");
+        barFill.className = "stat-bar-fill";
+
+        if (r.rate === null) {
+            detailEl.innerText = "まだ挑戦していません";
+            barFill.style.width = "0%";
+            barFill.style.backgroundColor = "#cbd5e1";
+        } else {
+            const pct = Math.round(r.rate * 100);
+            detailEl.innerText = `${r.correct} / ${r.total} 問正解（${pct}%）`;
+            barFill.style.width = pct + "%";
+            // 正答率に応じて色分け：赤(苦手)→黄→緑(得意)
+            barFill.style.backgroundColor =
+                pct < 50 ? "#e74c3c" : (pct < 80 ? "#f39c12" : "#2ecc71");
+        }
+
+        header.appendChild(nameEl);
+        header.appendChild(detailEl);
+        barBg.appendChild(barFill);
+        row.appendChild(header);
+        row.appendChild(barBg);
+        container.appendChild(row);
+    });
+}
 function searchQuestions() {
 
     const keyword = document.getElementById("search-box")
@@ -7578,7 +7756,9 @@ loadQuestion();
 
    const audioTextCount = quizDataset.filter(q => q.audioText).length;
 document.getElementById("audio-progress-notice").innerText =
-    `🔊 音声読み上げ機能を順次追加中です（現在 ${audioTextCount} / ${quizDataset.length} 問対応）`;
+    (audioTextCount >= quizDataset.length)
+      ? `🔊 全${quizDataset.length}問で音声読み上げに対応しています`
+      : `🔊 音声読み上げ機能を順次追加中です（現在 ${audioTextCount} / ${quizDataset.length} 問対応）`;
    
 </script>
 </body>
