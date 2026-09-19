@@ -319,6 +319,7 @@
            <button class="btn-cat" onclick="startCategory('分詞（1）')">分詞（1）</button>
            <button class="btn-cat" onclick="startCategory('分詞（2）')">分詞（2）</button>
            <button class="btn-cat" onclick="startCategory('形容詞・副詞')">形容詞・副詞</button>
+           <button class="btn-cat" onclick="startCategory('比較（1）')">比較（1）</button>
        </div>
        
    </div>
@@ -7212,7 +7213,54 @@ const quizDataset = [
     answer: "Therefore", audioText: "I forgot to stop at the store on the way home and buy food for dinner. Therefore, I decided to eat out tonight.", 
     translation: "家に帰る途中で店に寄って夕食の食材を買うのを忘れてしまった。したがって、今夜は外食することにした。",
     explanation: "前文で「夕食の食材を買い忘れた」という原因を述べ、後文で「外食することにした」という結果を導いているため、因果関係を表す「したがって、それゆえに」の意味を持つ接続副詞 Therefore が正解です。",
-    school: "東京理科大・改" }
+    school: "東京理科大・改" },
+
+  { page: 49, no: 2, category: "比較（1）", type: "rewrite",
+    question: "He is ( &nbsp; &nbsp; &nbsp; ) so ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) he looks.<br><small>彼は見かけほど年をとっていない。</small>",
+    blankCount: 3, answer: ["not", "old", "as"], 
+    translation: "彼は見かけほど年をとっていない。",
+    explanation: "原級を用いた比較表現の否定構文 ＜not as [so] ＋ 原級 ＋ as ~＞（〜ほど…ない）を用います。",
+    school: "鹿児島大" },
+  { page: 49, no: 2, category: "比較（1）", type: "4choice",
+    question: "It isn’t ( &nbsp; &nbsp; &nbsp; ) as it was last week.",
+    choices: ["so cold", "so as cold", "colder than", "such cold"],
+    answer: "so cold", 
+    translation: "先週ほど寒くない。",
+    explanation: "＜not so ＋ 原級 ＋ as ~＞ で「〜ほど…ない」を表します。空欄の後ろに as があるため、so cold が入ります。",
+    school: "関西外語大" },
+  { page: 49, no: 2, category: "比較（1）", type: "rewrite",
+    question: "This book is less instructive than that one.<br>➔ This book is not so instructive ( &nbsp; &nbsp; &nbsp; ) that one.<br><small>同意文完成</small>",
+    blankCount: 1, answer: ["as"], 
+    translation: "この本はあの本ほど（教育上）ためにならない。",
+    explanation: "＜less ＋ 原級 ＋ than ~＞（〜ほど…ない）は、＜not so ＋ 原級 ＋ as ~＞ でほぼ同じ意味に書き換えることができます。",
+    school: "昭和女子大" },
+  { page: 49, no: 3, category: "比較（1）", type: "sort",
+    question: "<small>日本文に合うように、次の語句を並び替えなさい。</small><br>I was ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) as I wanted to.<br><small>本を読みたいだけ読むことができた。</small>",
+    words: ["able", "as", "books", "many", "read", "to"],
+    answer: "able to read as many books", 
+    translation: "本を読みたいだけ読むことができた。",
+    explanation: "＜be able to do＞（〜することができる）と ＜as many ＋ 複数名詞 ＋ as S want to (do)＞（〜したいだけの…）を組み合わせます。I was に続けて able to read as many books as I wanted to の順になります。",
+    school: "慶應義塾大" },
+  { page: 49, no: 3, category: "比較（1）", type: "sort",
+    question: "<small>日本文に合うように、次の語句を並び替えなさい。</small><br>She is trying to ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ).<br><small>彼女はできるだけお金をためようと努力している。</small>",
+    words: ["save", "as", "she", "money", "can", "as much"],
+    answer: "save as much money as she can", 
+    translation: "彼女はできるだけお金をためようと努力している。",
+    explanation: "＜as much ＋ 不可算名詞 ＋ as S can＞（できるだけ多くの〜）を用いた表現です。to の後ろに動詞の原形 save を置き、save as much money as she can の順にします。",
+    school: "近畿大・改" },
+  { page: 49, no: 4, category: "比較（1）", type: "rewrite",
+    question: "Get as much information as you can.<br>➔ Get as much information as ( &nbsp; &nbsp; &nbsp; ).<br><small>同意文完成</small>",
+    blankCount: 1, answer: ["possible"], 
+    translation: "できるだけ多くの情報を得なさい。",
+    explanation: "「できるだけ〜」を表す ＜as ＋ 原級 ＋ as S can＞ は、＜as ＋ 原級 ＋ as possible＞ に書き換えることができます。",
+    school: "東海大" },
+  { page: 49, no: 4, category: "比較（1）", type: "4choice",
+    question: "“To sell this product, you need to call ( &nbsp; &nbsp; &nbsp; ) you can,” said the manager.",
+    choices: ["as more people", "as many people as", "as many people", "as more people as"],
+    answer: "as many people as", 
+    translation: "「この商品を売るためには、できるだけ多くの人に電話をする必要がある」とマネージャーは言った。",
+    explanation: "「できるだけ多くの人」は ＜as many people as S can＞ と表現します。as many people as が正解です。",
+    school: "鹿児島大" }
 
 
 
