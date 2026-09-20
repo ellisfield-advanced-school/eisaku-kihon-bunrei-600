@@ -345,6 +345,7 @@
            <button class="btn-cat" onclick="startCategory('形容詞・副詞')">形容詞・副詞</button>
            <button class="btn-cat" onclick="startCategory('動詞の語法')">動詞の語法</button>
            <button class="btn-cat" onclick="startCategory('比較（1）')">比較（1）</button>
+           <button class="btn-cat" onclick="startCategory('比較（2）')">比較（2）</button>
        </div>
        <h2 style="text-align:center; color:#8e44ad; margin-top:25px; font-size:1.1rem;">エリスフィールド進学会</h2>
        
@@ -7553,7 +7554,49 @@ const quizDataset = [
     answer: "more", audioText: "",
     translation: "最も頭のよいチンパンジーであっても、飛ぶことができないのと同様に話すことはできない。",
     explanation: "＜no more ... than 〜＞ で「〜と同様に…でない（〜できないのと同様に…できない）」といういわゆるクジラ構文と同タイプの否定比較表現です。",
-    difficulty: "", school: "東京薬科大" }
+    difficulty: "", school: "東京薬科大" },
+
+  { page: 49, no: "16-d", category: "比較（1）", type: "4choice",
+    question: "I am no ( &nbsp; &nbsp; &nbsp; ) able to operate this machine than he is.",
+    choices: ["very", "more", "much", "far"],
+    answer: "more", audioText: "",
+    translation: "彼がこの機械を操作できないのと同様に、私も操作できない。",
+    explanation: "＜no more ... than 〜＞ で「〜と同様に…でない（〜できないのと同様に…できない）」という比較を用いた否定表現を作ります。形容詞 able の比較級を作る more を置くのが正解です。", 
+    difficulty: "", school: "中央大" },
+  { page: 49, no: "16-e", category: "比較（1）", type: "4choice",
+    question: "Neither Mary nor Tom can swim.<br>➔ Tom can ( &nbsp; &nbsp; &nbsp; ) swim than Mary can.<br><small>同意文完成</small>",
+    choices: ["no more", "not more", "no less", "not less", "more or less"],
+    answer: "no more", audioText: "",
+    translation: "メアリーもトムも泳げない。➔ メアリーが泳げないのと同様に、トムも泳げない。",
+    explanation: "「どちらも〜できない」を ＜no more ... than 〜＞（〜と同様に…できない）の構文を用いて言い換えます。Tom can no more swim than Mary can. で「メアリーが泳げないのと同様にトムも泳げない」という意味になります。",
+    difficulty: "", school: "中央大" },
+  { page: 49, no: "16-f", category: "比較（1）", type: "4choice",
+    question: "My father was no more a scientist than his brother ( &nbsp; &nbsp; &nbsp; )",
+    choices: ["did", "did not", "was", "was not"],
+    answer: "was", audioText: "",
+    translation: "私の兄［弟］が科学者でないのと同様に、私の父も科学者ではなかった。",
+    explanation: "＜no more A than B＞ の比較構文です。主節の no more が「決してAではない」という意味を表し、than 以下は肯定形の his brother was [a scientist] とします。したがって、was not ではなく肯定形の be 動詞 was を用います。",
+    difficulty: "", school: "青山学院大" },
+  { page: 49, no: "16-g", category: "比較（1）", type: "sort",
+    question: "<small>日本文に合うように、次の語句を並び替えなさい。</small><br>I ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) you are a scientist.<br><small>私が詩人でないのは君が科学者でないのと同じだ。</small>",
+    words: ["poet", "than", "more", "am", "no", "a"],
+    answer: "am no more a poet than", audioText: "",
+    translation: "私が詩人でないのは君が科学者でないのと同じだ。",
+    explanation: "＜no more A than B＞ で「B でないのと同様に A でない」を表します。主語 I に続けて am no more a poet とし、比較の接続詞 than を繋げます。",
+    difficulty: "", school: "神戸学院大" },
+  { page: 51, no: 2, category: "比較（2）", type: "sort",
+    question: "<small>日本文に合うように、次の語句を並び替えなさい。</small><br>This stone is ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) that one.<br><small>この石があの石の2倍の重さだ。</small>",
+    words: ["as", "as", "heavy", "twice"],
+    answer: "twice as heavy as", audioText: "",
+    translation: "この石はあの石の2倍の重さだ。",
+    explanation: "「〜の X 倍…だ」を表す倍数表現は ＜倍数詞 ＋ as ＋ 原級 ＋ as 〜＞ の形をとります。「2倍」を表す twice に as heavy as を繋げます。",
+    difficulty: "", school: "四天王寺大 / 国際仏教大" },
+  { page: 51, no: 2, category: "比較（2）", type: "rewrite",
+    question: "He has collected ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) stamps as I have.<br><small>彼は切手を私の2倍も集めている。</small>",
+    blankCount: 3, answer: ["twice", "as", "many"], audioText: "",
+    translation: "彼は切手を私の2倍も集めている。",
+    explanation: "「〜の X 倍の数の［量・額の］…」を表す場合は ＜倍数詞 ＋ as ＋ many/much ＋ 名詞 ＋ as 〜＞ の順にします。「2倍」の twice と as many を並べて twice as many とする形になります。",
+    difficulty: "", school: "名古屋市立大" }
    
    
 ];
