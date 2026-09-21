@@ -374,7 +374,7 @@
                <button class="btn-action" style="background-color:#8e44ad;" onclick="showView('stats')">📊 成績を見る（苦手分野チェック）</button>
             </div>
             <div class="mode-row">
-                <button class="btn-mode" style="background-color:#e67e22;" onclick="openRandomSetup()">🎯 ランダム10問テスト</button>
+                <button class="btn-mode" style="background-color:#e67e22;" onclick="openRandomSetup()">🎲 ランダム10問テスト</button>
                 <button class="btn-mode" id="btn-review-entry" style="background-color:#16a085;" onclick="openReview()">🔁 誤答復習</button>
             </div>
            <p id="difficulty-summary" style="text-align:center; color:#7f8c8d; font-size:0.8rem; margin:10px 0 0 0;"></p>
@@ -518,7 +518,7 @@
 
     <div id="view-random-setup" class="hidden">
         <div style="text-align:center; margin-bottom:15px;">
-            <h2 style="color:#e67e22; font-size:1.15rem; margin:0 0 4px 0;">🎯 ランダム10問テスト</h2>
+            <h2 style="color:#e67e22; font-size:1.15rem; margin:0 0 4px 0;">🎲 ランダム10問テスト</h2>
             <p style="color:#7f8c8d; font-size:0.85rem; margin:0;">全カテゴリから、基礎・標準・応用を合計10問になるように出題します。</p>
         </div>
 
@@ -8030,7 +8030,7 @@ function loadQuestion() {
    const pPage = q.page !== undefined ? q.page : "?";
    const pNo = q.no !== undefined ? q.no : "?";
    const progressLabel = (sessionMode === "random" || sessionMode === "review")
-        ? `${sessionMode === "random" ? "🎯" : "🔁"} ${currentIndex + 1}/${currentQuestions.length}　`
+        ? `${sessionMode === "random" ? "🎲" : "🔁"} ${currentIndex + 1}/${currentQuestions.length}　`
         : "";
     document.getElementById("quiz-meta-pos").innerText = `${progressLabel}p.${pPage} No.${pNo}`;
 
@@ -8910,7 +8910,7 @@ function renderSessionResult() {
     const pct = sum.n > 0 ? Math.round(sum.c / sum.n * 100) : 0;
 
     document.getElementById("sr-title").innerText =
-        isRandom ? "🎯 ランダムテスト 結果" : "🔁 誤答復習 結果";
+        isRandom ? "🎲 ランダムテスト 結果" : "🔁 誤答復習 結果";
 
     const scoreEl = document.getElementById("sr-score");
     scoreEl.innerText = `${sum.c} / ${sum.n} 問正解（${pct}%）`;
@@ -9040,7 +9040,7 @@ function renderHistory() {
 
     if (all.length === 0) {
         sub.innerText = "まだテストの記録がありません。";
-        chart.innerHTML = `<p style="text-align:center; color:#7f8c8d; padding:30px 0;">「🎯 ランダム10問テスト」を受けると、ここに正答率の推移が表示されます。</p>`;
+        chart.innerHTML = `<p style="text-align:center; color:#7f8c8d; padding:30px 0;">「🎲 ランダム10問テスト」を受けると、ここに正答率の推移が表示されます。</p>`;
         legend.innerHTML = "";
         summary.innerHTML = "";
         list.innerHTML = "";
