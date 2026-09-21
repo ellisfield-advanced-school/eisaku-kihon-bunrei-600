@@ -243,7 +243,72 @@
            height: 100%;
            border-radius: 6px;
        }
-   </style>
+   
+        /* ランダム出題テスト・誤答復習 */
+        .btn-mode {
+            color: white;
+            border: none;
+            padding: 12px 18px;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .mode-row { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+        .mix-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 12px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            background-color: #fafbfc;
+        }
+        .mix-label { font-weight: bold; color: var(--primary-color); }
+        .mix-avail { display: block; font-size: 0.75rem; font-weight: normal; color: #7f8c8d; margin-top: 2px; }
+        .mix-avail.short { color: #e74c3c; }
+        .mix-ctrl { display: flex; align-items: center; gap: 10px; }
+        .btn-step {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            border: 1.5px solid #bdc3c7;
+            background-color: #fff;
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            cursor: pointer;
+            line-height: 1;
+        }
+        .btn-step:disabled { opacity: 0.35; cursor: not-allowed; }
+        .mix-num { min-width: 30px; text-align: center; font-size: 1.4rem; font-weight: bold; color: var(--primary-color); }
+        .mix-total { text-align: center; font-weight: bold; margin: 10px 0 4px 0; }
+        .mix-total.ok { color: #27ae60; }
+        .mix-total.ng { color: #e74c3c; }
+        .type-check { display: flex; align-items: center; gap: 8px; padding: 6px 0; font-size: 1rem; cursor: pointer; }
+        .type-check input { width: 18px; height: 18px; }
+        .wrong-note {
+            text-align: center;
+            font-size: 0.9rem;
+            background-color: #fff8e6;
+            border: 1px solid #f5cba7;
+            color: #a04000;
+            border-radius: 8px;
+            padding: 8px 10px;
+            margin: -8px 0 16px 0;
+        }
+        .wrong-note.good { background-color: #eafaf1; border-color: #a9dfbf; color: #1e8449; }
+        .center-actions { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-top: 20px; }
+        .session-item { padding: 10px 12px; border: 1px solid #f5b7b1; background-color: #fdf2f0; border-radius: 8px; margin-bottom: 8px; }
+        .session-item-pos { font-size: 0.8rem; color: #7f8c8d; }
+        .session-item-en { font-weight: bold; margin: 2px 0; line-height: 1.5; }
+        .session-item-ja { font-size: 0.9rem; color: #555; }
+        .legend { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; font-size: 0.8rem; color: #555; margin: 4px 0 14px 0; }
+        .legend-dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 4px; }
+        .history-row { display: flex; justify-content: space-between; gap: 8px; padding: 8px 4px; border-bottom: 1px solid #eee; font-size: 0.82rem; }
+        .history-row span { white-space: nowrap; }
+</style>
 </head>
 <body>
  
@@ -307,7 +372,11 @@
            </p>
            <div style="text-align:center; margin-top:12px;">
                <button class="btn-action" style="background-color:#8e44ad;" onclick="showView('stats')">📊 成績を見る（苦手分野チェック）</button>
-           </div>
+            </div>
+            <div class="mode-row">
+                <button class="btn-mode" style="background-color:#e67e22;" onclick="openRandomSetup()">🎯 ランダム10問テスト</button>
+                <button class="btn-mode" id="btn-review-entry" style="background-color:#16a085;" onclick="openReview()">🔁 誤答復習</button>
+            </div>
            <p id="difficulty-summary" style="text-align:center; color:#7f8c8d; font-size:0.8rem; margin:10px 0 0 0;"></p>
            <div style="margin-top:10px;">
                <p style="color:#7f8c8d; margin:0 0 8px 0; font-size:0.85rem; text-align:center;">難易度で絞り込む（任意）</p>
@@ -380,13 +449,15 @@
        </div>
  
        <div class="action-container">
-           <button class="btn-action" style="background-color:#95a5a6;" onclick="backToNumberSelect()">戻る</button>
+           <button class="btn-action" style="background-color:#95a5a6;" onclick="backFromQuiz()">戻る</button>
            <button class="btn-action" id="btn-submit" onclick="checkAnswer()">答え合わせ</button>
        </div>
    </div>
  
    <div id="view-result" class="hidden">
        <div id="result-judge" class="result-box">正解 / 不正解</div>
+        <div id="wrong-note" class="wrong-note hidden"></div>
+        
        
        <div class="review-panel">
            <div class="review-item">
@@ -434,14 +505,90 @@
        <div style="text-align: center; margin-bottom: 15px;">
            <h2 style="color:#2c3e50; font-size:1.15rem; margin-bottom: 4px;">📊 カテゴリ別 成績</h2>
            <p style="color:#7f8c8d; font-size:0.85rem; margin:0;">正答率が低いカテゴリほど上に表示されます。苦手分野の把握に役立ててください。</p>
-       </div>
+            <div style="margin-top:10px;">
+                <button class="btn-mode" style="background-color:#e67e22; padding:8px 14px; font-size:0.9rem;" onclick="showView('history')">📈 ランダムテスト履歴を見る</button>
+            </div>
+        </div>
        <div id="stats-list"></div>
        <div class="action-container" style="margin-top: 25px;">
            <button class="btn-action" style="background-color:#95a5a6;" onclick="showView('category')">カテゴリ一覧へ戻る</button>
            <button class="btn-action" style="background-color:#c0392b;" onclick="resetStats()">記録をリセット</button>
-       </div>
-   </div>
-</div>
+        </div>
+    </div>
+
+    <div id="view-random-setup" class="hidden">
+        <div style="text-align:center; margin-bottom:15px;">
+            <h2 style="color:#e67e22; font-size:1.15rem; margin:0 0 4px 0;">🎯 ランダム10問テスト</h2>
+            <p style="color:#7f8c8d; font-size:0.85rem; margin:0;">全カテゴリから、基礎・標準・応用を合計10問になるように出題します。</p>
+        </div>
+
+        <div class="section-title">配分を選ぶ</div>
+        <div id="mix-presets" style="display:flex; gap:6px; flex-wrap:wrap; margin:10px 0;">
+            <button class="btn-difficulty" onclick="applyPreset(3,4,3)">バランス 3・4・3</button>
+            <button class="btn-difficulty" onclick="applyPreset(6,3,1)">基礎中心 6・3・1</button>
+            <button class="btn-difficulty" onclick="applyPreset(1,3,6)">応用中心 1・3・6</button>
+        </div>
+        <div id="mix-rows"></div>
+        <div id="mix-total" class="mix-total"></div>
+
+        <div class="section-title">出題形式</div>
+        <div style="margin:8px 0 4px 0;">
+            <label class="type-check"><input type="checkbox" class="rt-type" value="4choice" checked onchange="syncRandomSetupUI()"> 選択問題</label>
+            <label class="type-check"><input type="checkbox" class="rt-type" value="sort" checked onchange="syncRandomSetupUI()"> 語句整序</label>
+            <label class="type-check"><input type="checkbox" class="rt-type" value="rewrite" checked onchange="syncRandomSetupUI()"> 書き換え・適語補充</label>
+        </div>
+
+        <div class="action-container" style="margin-top:22px;">
+            <button class="btn-action" style="background-color:#95a5a6;" onclick="showView('category')">戻る</button>
+            <button class="btn-action" id="btn-random-start" style="background-color:#e67e22;" onclick="startRandomTest()">テスト開始</button>
+        </div>
+        <div style="text-align:center; margin-top:14px;">
+            <button class="btn-difficulty" onclick="showView('history')">📈 過去のテスト結果を見る</button>
+        </div>
+    </div>
+
+    <div id="view-review" class="hidden">
+        <div style="text-align:center; margin-bottom:15px;">
+            <h2 style="color:#16a085; font-size:1.15rem; margin:0 0 4px 0;">🔁 誤答復習</h2>
+            <p style="color:#7f8c8d; font-size:0.85rem; margin:0;">間違えた問題が自動で貯まります。同じ問題に2回連続で正解するとリストから外れます。</p>
+        </div>
+        <p id="review-summary" style="text-align:center; font-weight:bold; font-size:1.05rem;"></p>
+        <div id="review-breakdown"></div>
+        <div class="action-container" style="margin-top:22px;">
+            <button class="btn-action" style="background-color:#95a5a6;" onclick="showView('category')">戻る</button>
+            <button class="btn-action" id="btn-review-start" style="background-color:#16a085;" onclick="startReview()">復習を始める</button>
+        </div>
+        <div style="text-align:center; margin-top:14px;">
+            <button class="btn-difficulty" onclick="clearWrongList()">誤答リストを空にする</button>
+        </div>
+    </div>
+
+    <div id="view-session-result" class="hidden">
+        <h2 id="sr-title" style="text-align:center; font-size:1.15rem; color:#2c3e50; margin:0 0 12px 0;"></h2>
+        <div id="sr-score" class="result-box correct-box"></div>
+        <div id="sr-note" style="text-align:center; color:#555; font-size:0.9rem; margin-bottom:12px;"></div>
+        <div id="sr-breakdown"></div>
+        <div id="sr-wrong"></div>
+        <div id="sr-actions" class="center-actions"></div>
+    </div>
+
+    <div id="view-history" class="hidden">
+        <div style="text-align:center; margin-bottom:12px;">
+            <h2 style="color:#e67e22; font-size:1.15rem; margin:0 0 4px 0;">📈 ランダムテスト履歴</h2>
+            <p id="history-sub" style="color:#7f8c8d; font-size:0.85rem; margin:0;"></p>
+        </div>
+        <div id="history-chart"></div>
+        <div id="history-legend" class="legend"></div>
+        <div class="section-title" id="history-total-title">通算の難易度別正答率</div>
+        <div id="history-summary" style="margin-top:10px;"></div>
+        <div class="section-title">最近のテスト</div>
+        <div id="history-list" style="margin-top:6px;"></div>
+        <div class="action-container" style="margin-top:22px;">
+            <button class="btn-action" style="background-color:#95a5a6;" onclick="showView('category')">トップへ戻る</button>
+            <button class="btn-action" style="background-color:#c0392b;" onclick="clearHistory()">履歴を削除</button>
+        </div>
+    </div>
+ </div>
  
 <script>
 // サンプルデータベース
@@ -7801,6 +7948,8 @@ let categoryQuestions = []; // 選択されたカテゴリ内の全問題
 let currentQuestions = [];  // 選択された番号に絞り込まれた問題グループ
 let currentIndex = 0;
 let selectedDifficulty = "すべて"; // 難易度フィルター（すべて/基礎/標準/応用）
+let sessionMode = "normal";  // normal(カテゴリ学習) / search(検索) / random(ランダムテスト) / review(誤答復習)
+let sessionLog = [];         // random・reviewで、1問ごとの結果を溜める [{q, isCorrect, wrong}]
 
 function setDifficultyFilter(level) {
     selectedDifficulty = level;
@@ -7868,6 +8017,7 @@ function startNumber(selectedNum) {
         return;
     }
 
+    sessionMode = "normal";
     currentIndex = 0;
     showView("quiz");
     loadQuestion();
@@ -7879,7 +8029,10 @@ function loadQuestion() {
    // 【防弾】pageやnoプロパティが欠落していた場合の対策
    const pPage = q.page !== undefined ? q.page : "?";
    const pNo = q.no !== undefined ? q.no : "?";
-   document.getElementById("quiz-meta-pos").innerText = `p.${pPage} No.${pNo}`;
+   const progressLabel = (sessionMode === "random" || sessionMode === "review")
+        ? `${sessionMode === "random" ? "🎯" : "🔁"} ${currentIndex + 1}/${currentQuestions.length}　`
+        : "";
+    document.getElementById("quiz-meta-pos").innerText = `${progressLabel}p.${pPage} No.${pNo}`;
 
    // 4choice のときの表示を「選択問題」に変更
    // rewrite タイプは「2文の書き換え（同意文完成など）」と「1文の空所補充（つづり・語形変化）」の
@@ -8129,6 +8282,14 @@ let cleanCorrect = normalizeText(q.answer);
 
    // 苦手分野可視化のため、カテゴリ別の正答記録を保存
    recordStat(q.category, isCorrect);
+
+    // 誤答リストの更新（全モード共通）と、テスト・復習用のログ
+    const wrongInfo = updateWrongList(q, isCorrect);
+    showWrongNote(wrongInfo);
+    if (sessionMode === "random" || sessionMode === "review") {
+        sessionLog.push({ q: q, isCorrect: isCorrect, wrong: wrongInfo });
+    }
+  
  
    // 【防弾】和訳や解説が省略されていてもエラーを出さない処理
   document.getElementById("res-user-ans").innerText = userDisplay;
@@ -8151,14 +8312,20 @@ let cleanCorrect = normalizeText(q.answer);
        category: q.category,
        question_no: String(q.no),
        question_type: q.type,
-       result: isCorrect ? 'correct' : 'incorrect'
-   });
+        difficulty: q.difficulty,
+        mode: sessionMode,
+        result: isCorrect ? 'correct' : 'incorrect'
+    });
    
    // あなた独自の洗練されたテキスト切り替えロジック
    const btnNext = document.getElementById("btn-next");
    if (currentIndex === currentQuestions.length - 1) {
-      btnNext.innerText = "問題番号選択へ戻る";
-   } else {
+       btnNext.innerText =
+           sessionMode === "random" ? "結果を見る"
+         : sessionMode === "review" ? "復習の結果を見る"
+         : sessionMode === "search" ? "カテゴリ一覧へ戻る"
+         : "問題番号選択へ戻る";
+    } else {
       btnNext.innerText = "次の問題へ";
    }
  
@@ -8168,9 +8335,10 @@ let cleanCorrect = normalizeText(q.answer);
 // あなた独自の美しい進行管理ロジック
 function nextQuestion() {
    if (currentIndex === currentQuestions.length - 1) {
-       showView("number-select");
+       finishSession();
        return;
    }
+
 
    currentIndex++;
    showView("quiz");
@@ -8203,30 +8371,19 @@ function backToNumberSelect() {
    showView("number-select");
 }
  
+const VIEW_IDS = ["category", "number-select", "quiz", "result", "stats",
+                  "review", "random-setup", "session-result", "history"];
+
 function showView(viewName) {
-   document.getElementById("view-category").classList.add("hidden");
-   document.getElementById("view-number-select").classList.add("hidden");
-   document.getElementById("view-quiz").classList.add("hidden");
-   document.getElementById("view-result").classList.add("hidden");
-   document.getElementById("view-stats").classList.add("hidden");
+   VIEW_IDS.forEach(v => document.getElementById("view-" + v).classList.add("hidden"));
+   document.getElementById("view-" + viewName).classList.remove("hidden");
 
-   if (viewName === "category")
-      document.getElementById("view-category").classList.remove("hidden");
-
-   if (viewName === "number-select")
-      document.getElementById("view-number-select").classList.remove("hidden");
-
-   if (viewName === "quiz")
-      document.getElementById("view-quiz").classList.remove("hidden");
-
-   if (viewName === "result")
-      document.getElementById("view-result").classList.remove("hidden");
-
-   if (viewName === "stats") {
-      document.getElementById("view-stats").classList.remove("hidden");
-      renderStats();
-   }
-} 
+   if (viewName === "stats") renderStats();
+   if (viewName === "category") updateReviewButton();
+   if (viewName === "review") renderReview();
+   if (viewName === "history") renderHistory();
+   window.scrollTo(0, 0);
+}
 // ==========================================
 // 成績（カテゴリ別正答率）の記録・表示
 // ==========================================
@@ -8259,7 +8416,7 @@ function recordStat(category, isCorrect) {
 }
 
 function resetStats() {
-    if (confirm("これまでの成績記録をすべて削除します。よろしいですか？")) {
+    if (confirm("カテゴリ別の成績記録を削除します。（誤答リストとテスト履歴は残ります）よろしいですか？")) {
         saveStats({});
         renderStats();
     }
@@ -8267,10 +8424,10 @@ function resetStats() {
 
 // カテゴリ一覧のボタンから、全カテゴリ名を取得する
 function getAllCategoryNames() {
-    const buttons = document.querySelectorAll(".category-grid .btn-cat");
+    const buttons = document.querySelectorAll("#view-category .category-grid .btn-cat");
     const names = [];
     buttons.forEach(btn => {
-        const m = btn.getAttribute("onclick").match(/startCategory\('([^']+)'\)/);
+        const m = (btn.getAttribute("onclick") || "").match(/startCategory\('([^']+)'\)/);
         if (m) names.push(m[1]);
     });
     return names;
@@ -8338,6 +8495,591 @@ function renderStats() {
         container.appendChild(row);
     });
 }
+// ==========================================
+// 共通ユーティリティ
+// ==========================================
+function shuffleArray(arr) {
+    const a = [...arr];
+    for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+}
+
+function esc(str) {
+    return String(str).replace(/[&<>"']/g, c =>
+        ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+
+function pctColor(pct) {
+    return pct < 50 ? "#e74c3c" : (pct < 80 ? "#f39c12" : "#2ecc71");
+}
+
+// 正答率バー付きの1行（成績画面と同じ見た目）
+function buildRateRow(name, correct, total) {
+    const pct = total > 0 ? Math.round(correct / total * 100) : null;
+    const detail = pct === null ? "出題なし" : `${correct} / ${total} 問正解（${pct}%）`;
+    const width = pct === null ? 0 : pct;
+    const color = pct === null ? "#cbd5e1" : pctColor(pct);
+    return `<div class="stat-row">
+        <div class="stat-row-header"><span class="stat-row-name">${esc(name)}</span><span class="stat-row-detail">${detail}</span></div>
+        <div class="stat-bar-bg"><div class="stat-bar-fill" style="width:${width}%; background-color:${color};"></div></div>
+    </div>`;
+}
+
+// ==========================================
+// 問題ID（誤答リスト用）
+// 英文と正解から自動生成するので、出典校・和訳・解説を直してもIDは変わりません
+// ==========================================
+function hashStr(str) {
+    let h = 5381;
+    for (let i = 0; i < str.length; i++) {
+        h = ((h << 5) + h + str.charCodeAt(i)) | 0;
+    }
+    return (h >>> 0).toString(36);
+}
+
+function stripQuestionText(q) {
+    return (q.question || "")
+        .replace(/<small[^>]*>[\s\S]*?<\/small>/g, " ")
+        .replace(/<[^>]+>/g, " ")
+        .replace(/&nbsp;/g, " ")
+        .replace(/\s+/g, " ")
+        .trim();
+}
+
+const QID_OF = new Map();       // 問題オブジェクト → ID
+const QUESTION_BY_ID = new Map(); // ID → 問題オブジェクト（同一IDが複数あれば最初の1問）
+quizDataset.forEach(q => {
+    const ans = Array.isArray(q.answer) ? q.answer.join("/") : String(q.answer);
+    const id = `${q.category}|${q.type}|${hashStr(stripQuestionText(q) + "|" + ans)}`;
+    QID_OF.set(q, id);
+    if (!QUESTION_BY_ID.has(id)) QUESTION_BY_ID.set(id, q);
+});
+
+function getQid(q) {
+    return QID_OF.get(q);
+}
+
+// ==========================================
+// 誤答リスト（localStorage）
+// ==========================================
+const WRONG_KEY = "eisaku600_wrongList";
+const MASTER_STREAK = 2;   // この回数だけ連続で正解すると誤答リストから外れる
+const REVIEW_MAX = 20;     // 1回の復習で出題する最大問題数
+
+function loadWrong() {
+    try {
+        const o = JSON.parse(localStorage.getItem(WRONG_KEY) || "{}");
+        return (o && typeof o === "object" && !Array.isArray(o)) ? o : {};
+    } catch (e) {
+        return {};
+    }
+}
+
+function saveWrong(obj) {
+    try {
+        localStorage.setItem(WRONG_KEY, JSON.stringify(obj));
+    } catch (e) {
+        // 保存できなくてもアプリの動作は継続する
+    }
+}
+
+// 解答のたびに呼ぶ。戻り値: null(記録対象外) / {status: added|again|progress|cleared, remaining}
+function updateWrongList(q, isCorrect) {
+    const id = getQid(q);
+    if (!id) return null;
+    const list = loadWrong();
+    const e = list[id];
+    let result = null;
+
+    if (!isCorrect) {
+        if (e) {
+            e.c = (e.c || 1) + 1;
+            e.s = 0;
+            e.t = Date.now();
+            result = { status: "again", remaining: MASTER_STREAK };
+        } else {
+            list[id] = { c: 1, s: 0, t: Date.now() };
+            result = { status: "added", remaining: MASTER_STREAK };
+        }
+    } else if (e) {
+        e.s = (e.s || 0) + 1;
+        if (e.s >= MASTER_STREAK) {
+            delete list[id];
+            result = { status: "cleared", remaining: 0 };
+        } else {
+            result = { status: "progress", remaining: MASTER_STREAK - e.s };
+        }
+    }
+    saveWrong(list);
+    return result;
+}
+
+function getWrongItems() {
+    const list = loadWrong();
+    return Object.keys(list)
+        .filter(id => QUESTION_BY_ID.has(id))   // データから消えた問題は無視
+        .map(id => ({ q: QUESTION_BY_ID.get(id), c: list[id].c || 1, s: list[id].s || 0 }));
+}
+
+function showWrongNote(info) {
+    const el = document.getElementById("wrong-note");
+    if (!info) {
+        el.classList.add("hidden");
+        return;
+    }
+    el.classList.remove("hidden", "good");
+    if (info.status === "added") {
+        el.innerText = "📝 誤答リストに追加しました（「🔁 誤答復習」で解き直せます）";
+    } else if (info.status === "again") {
+        el.innerText = `📝 誤答リストに残っています（${MASTER_STREAK}回連続で正解するとクリア）`;
+    } else if (info.status === "progress") {
+        el.classList.add("good");
+        el.innerText = `🔁 あと${info.remaining}回連続で正解すると、誤答リストから外れます`;
+    } else if (info.status === "cleared") {
+        el.classList.add("good");
+        el.innerText = "🎉 誤答リストから外れました！";
+    }
+}
+
+function updateReviewButton() {
+    const btn = document.getElementById("btn-review-entry");
+    if (!btn) return;
+    const n = getWrongItems().length;
+    btn.innerText = n > 0 ? `🔁 誤答復習（${n}問）` : "🔁 誤答復習";
+}
+
+// ==========================================
+// 誤答復習モード
+// ==========================================
+function openReview() {
+    showView("review");
+}
+
+function renderReview() {
+    const items = getWrongItems();
+    const summary = document.getElementById("review-summary");
+    const box = document.getElementById("review-breakdown");
+    const startBtn = document.getElementById("btn-review-start");
+    box.innerHTML = "";
+
+    if (items.length === 0) {
+        summary.innerText = "誤答リストは空です。問題を間違えると、ここに自動で追加されます。";
+        startBtn.disabled = true;
+        startBtn.style.opacity = "0.4";
+        return;
+    }
+
+    summary.innerText = `誤答リストに ${items.length} 問あります` +
+        (items.length > REVIEW_MAX ? `（1回の復習は最大${REVIEW_MAX}問）` : "");
+    startBtn.disabled = false;
+    startBtn.style.opacity = "1";
+
+    const byCat = {};
+    items.forEach(it => { byCat[it.q.category] = (byCat[it.q.category] || 0) + 1; });
+    const rows = Object.entries(byCat).sort((a, b) => b[1] - a[1]);
+    box.innerHTML = rows.map(([name, n]) =>
+        `<div class="history-row"><span>${esc(name)}</span><span>${n}問</span></div>`).join("");
+}
+
+function startReview() {
+    const items = getWrongItems();
+    if (items.length === 0) return;
+
+    // 何度も間違えている問題を優先（同じ回数どうしはランダム）
+    const picked = shuffleArray(items)
+        .sort((a, b) => b.c - a.c)
+        .slice(0, REVIEW_MAX);
+
+    currentQuestions = shuffleArray(picked.map(it => it.q));
+    currentIndex = 0;
+    sessionMode = "review";
+    sessionLog = [];
+    showView("quiz");
+    loadQuestion();
+}
+
+function clearWrongList() {
+    if (confirm("誤答リストをすべて空にします。よろしいですか？")) {
+        saveWrong({});
+        renderReview();
+        updateReviewButton();
+    }
+}
+
+// ==========================================
+// ランダム10問テスト
+// ==========================================
+const RANDOM_TOTAL = 10;
+const DIFF_LEVELS = ["基礎", "標準", "応用"];
+const HISTORY_KEY = "eisaku600_randomHistory";
+let randomMix = { "基礎": 3, "標準": 4, "応用": 3 };
+let lastRandomMeta = null;   // 直近のテスト設定（「もう一度」用）
+
+function sumMix() {
+    return DIFF_LEVELS.reduce((sum, lv) => sum + randomMix[lv], 0);
+}
+
+function selectedTypes() {
+    return Array.from(document.querySelectorAll(".rt-type:checked")).map(el => el.value);
+}
+
+function openRandomSetup() {
+    syncRandomSetupUI();
+    showView("random-setup");
+}
+
+function applyPreset(a, b, c) {
+    randomMix = { "基礎": a, "標準": b, "応用": c };
+    syncRandomSetupUI();
+}
+
+function changeMix(level, delta) {
+    const next = randomMix[level] + delta;
+    if (next < 0) return;
+    if (delta > 0 && sumMix() >= RANDOM_TOTAL) return;
+    randomMix[level] = next;
+    syncRandomSetupUI();
+}
+
+function syncRandomSetupUI() {
+    const types = selectedTypes();
+    const total = sumMix();
+    const rows = document.getElementById("mix-rows");
+
+    rows.innerHTML = DIFF_LEVELS.map(lv => {
+        const avail = quizDataset.filter(q => q.difficulty === lv && types.includes(q.type)).length;
+        const short = randomMix[lv] > avail;
+        return `<div class="mix-row">
+            <div class="mix-label">${lv}
+                <span class="mix-avail ${short ? "short" : ""}">該当 ${avail}問${short ? "（不足）" : ""}</span>
+            </div>
+            <div class="mix-ctrl">
+                <button class="btn-step" onclick="changeMix('${lv}', -1)" ${randomMix[lv] <= 0 ? "disabled" : ""}>−</button>
+                <span class="mix-num">${randomMix[lv]}</span>
+                <button class="btn-step" onclick="changeMix('${lv}', 1)" ${total >= RANDOM_TOTAL ? "disabled" : ""}>＋</button>
+            </div>
+        </div>`;
+    }).join("");
+
+    const totalEl = document.getElementById("mix-total");
+    const ok = total === RANDOM_TOTAL;
+    totalEl.className = "mix-total " + (ok ? "ok" : "ng");
+    totalEl.innerText = ok ? `合計 ${total} / ${RANDOM_TOTAL} 問` : `合計 ${total} / ${RANDOM_TOTAL} 問（合計10問になるよう調整してください）`;
+
+    const startBtn = document.getElementById("btn-random-start");
+    const startable = ok && types.length > 0;
+    startBtn.disabled = !startable;
+    startBtn.style.opacity = startable ? "1" : "0.4";
+}
+
+function startRandomTest() {
+    const types = selectedTypes();
+    if (types.length === 0) {
+        alert("出題形式を1つ以上選んでください。");
+        return;
+    }
+    if (sumMix() !== RANDOM_TOTAL) {
+        alert("難易度の配分を合計10問にしてください。");
+        return;
+    }
+
+    const usedSentences = new Set();   // 同じ英文の問題を1回のテストに2度出さない
+    const picked = [];
+    let shortage = 0;
+
+    DIFF_LEVELS.forEach(level => {
+        const need = randomMix[level];
+        if (need === 0) return;
+        const pool = shuffleArray(quizDataset.filter(q => q.difficulty === level && types.includes(q.type)));
+        let got = 0;
+        for (const q of pool) {
+            if (got >= need) break;
+            const key = normalizeText(q.audioText || stripQuestionText(q));
+            if (usedSentences.has(key)) continue;
+            usedSentences.add(key);
+            picked.push(q);
+            got++;
+        }
+        shortage += need - got;
+    });
+
+    if (picked.length === 0) {
+        alert("条件に合う問題がありません。配分や出題形式を変えてください。");
+        return;
+    }
+    if (shortage > 0 &&
+        !confirm(`条件に合う問題が足りないため、${picked.length}問のテストになります。続けますか？`)) {
+        return;
+    }
+
+    lastRandomMeta = { mix: { ...randomMix }, types: [...types] };
+    currentQuestions = shuffleArray(picked);
+    currentIndex = 0;
+    sessionMode = "random";
+    sessionLog = [];
+    showView("quiz");
+    loadQuestion();
+}
+
+function retryRandomTest() {
+    if (lastRandomMeta) {
+        randomMix = { ...lastRandomMeta.mix };
+        document.querySelectorAll(".rt-type").forEach(el => {
+            el.checked = lastRandomMeta.types.includes(el.value);
+        });
+    }
+    startRandomTest();
+}
+
+// ==========================================
+// テスト履歴（localStorage）
+// ==========================================
+function loadHistory() {
+    try {
+        const arr = JSON.parse(localStorage.getItem(HISTORY_KEY) || "[]");
+        return Array.isArray(arr) ? arr : [];
+    } catch (e) {
+        return [];
+    }
+}
+
+function saveHistory(arr) {
+    try {
+        localStorage.setItem(HISTORY_KEY, JSON.stringify(arr.slice(-200)));
+    } catch (e) {
+        // 保存できなくてもアプリの動作は継続する
+    }
+}
+
+function summarizeLog(log) {
+    const d = { "基礎": { c: 0, n: 0 }, "標準": { c: 0, n: 0 }, "応用": { c: 0, n: 0 } };
+    let c = 0;
+    log.forEach(item => {
+        const lv = item.q.difficulty;
+        if (d[lv]) {
+            d[lv].n++;
+            if (item.isCorrect) d[lv].c++;
+        }
+        if (item.isCorrect) c++;
+    });
+    return { c: c, n: log.length, d: d };
+}
+
+function clearHistory() {
+    if (confirm("ランダムテストの履歴をすべて削除します。よろしいですか？")) {
+        saveHistory([]);
+        renderHistory();
+    }
+}
+
+// ==========================================
+// テスト・復習の終了と結果画面
+// ==========================================
+function finishSession() {
+    if (sessionMode === "random" || sessionMode === "review") {
+        if (sessionMode === "random") {
+            const sum = summarizeLog(sessionLog);
+            const hist = loadHistory();
+            hist.push({
+                t: Date.now(),
+                mix: lastRandomMeta ? lastRandomMeta.mix : null,
+                types: lastRandomMeta ? lastRandomMeta.types : null,
+                c: sum.c, n: sum.n, d: sum.d
+            });
+            saveHistory(hist);
+            gtag('event', 'random_test_complete', {
+                score: sum.c,
+                total: sum.n
+            });
+        }
+        renderSessionResult();
+        showView("session-result");
+    } else if (sessionMode === "search") {
+        showView("category");
+    } else {
+        showView("number-select");
+    }
+}
+
+function renderSessionResult() {
+    const isRandom = sessionMode === "random";
+    const sum = summarizeLog(sessionLog);
+    const pct = sum.n > 0 ? Math.round(sum.c / sum.n * 100) : 0;
+
+    document.getElementById("sr-title").innerText =
+        isRandom ? "🎯 ランダムテスト 結果" : "🔁 誤答復習 結果";
+
+    const scoreEl = document.getElementById("sr-score");
+    scoreEl.innerText = `${sum.c} / ${sum.n} 問正解（${pct}%）`;
+    scoreEl.className = "result-box " + (pct >= 60 ? "correct-box" : "incorrect-box");
+
+    const noteEl = document.getElementById("sr-note");
+    if (isRandom) {
+        noteEl.innerText = lastRandomMeta && lastRandomMeta.mix
+            ? `配分：基礎${lastRandomMeta.mix["基礎"]}・標準${lastRandomMeta.mix["標準"]}・応用${lastRandomMeta.mix["応用"]}`
+            : "";
+    } else {
+        const cleared = sessionLog.filter(l => l.wrong && l.wrong.status === "cleared").length;
+        noteEl.innerText = `誤答リストから外れた問題：${cleared}問 ／ 残り：${getWrongItems().length}問`;
+    }
+
+    document.getElementById("sr-breakdown").innerHTML =
+        DIFF_LEVELS.map(lv => buildRateRow(lv, sum.d[lv].c, sum.d[lv].n)).join("");
+
+    const wrongs = sessionLog.filter(l => !l.isCorrect);
+    const wrongBox = document.getElementById("sr-wrong");
+    if (wrongs.length === 0) {
+        wrongBox.innerHTML = `<p style="text-align:center; color:#27ae60; font-weight:bold;">全問正解です！🎉</p>`;
+    } else {
+        wrongBox.innerHTML = `<div class="section-title" style="margin-bottom:10px;">間違えた問題</div>` +
+            wrongs.map(l => `<div class="session-item">
+                <div class="session-item-pos">p.${esc(l.q.page)} No.${esc(l.q.no)}　${esc(l.q.category)}　［${esc(l.q.difficulty)}］</div>
+                <div class="session-item-en">${esc(l.q.audioText || "")}</div>
+                <div class="session-item-ja">${esc(l.q.translation || "")}</div>
+            </div>`).join("");
+    }
+
+    const actions = document.getElementById("sr-actions");
+    const btn = (label, color, fn) =>
+        `<button class="btn-mode" style="background-color:${color};" onclick="${fn}">${label}</button>`;
+    let html = "";
+    if (isRandom) {
+        html += btn("もう一度（同じ設定）", "#e67e22", "retryRandomTest()");
+        html += btn("配分を変える", "#d35400", "openRandomSetup()");
+        html += btn("📈 履歴を見る", "#8e44ad", "showView('history')");
+    } else if (getWrongItems().length > 0) {
+        html += btn("もう一度復習する", "#16a085", "startReview()");
+    }
+    html += btn("トップへ", "#95a5a6", "showView('category')");
+    actions.innerHTML = html;
+}
+
+function backFromQuiz() {
+    if (sessionMode === "random" || sessionMode === "review") {
+        const msg = sessionMode === "random"
+            ? "テストを中断しますか？\n（解答済みの問題の記録は残りますが、このテストの結果は履歴に保存されません）"
+            : "復習を中断しますか？\n（解答済みの問題の記録は残ります）";
+        if (!confirm(msg)) return;
+        showView(sessionMode === "random" ? "random-setup" : "review");
+        if (sessionMode === "random") syncRandomSetupUI();
+        return;
+    }
+    if (sessionMode === "search") {
+        showView("category");
+        return;
+    }
+    showView("number-select");
+}
+
+// ==========================================
+// 履歴画面（折れ線グラフ）
+// ==========================================
+const SERIES_STYLE = [
+    { key: "total", label: "全体", color: "#2c3e50", width: 3 },
+    { key: "基礎", label: "基礎", color: "#2ecc71", width: 2 },
+    { key: "標準", label: "標準", color: "#3498db", width: 2 },
+    { key: "応用", label: "応用", color: "#e74c3c", width: 2 }
+];
+
+function rateOf(rec, key) {
+    if (key === "total") return rec.n > 0 ? rec.c / rec.n : null;
+    const d = rec.d && rec.d[key];
+    return d && d.n > 0 ? d.c / d.n : null;
+}
+
+function buildChartSVG(hist) {
+    const W = 360, H = 250, padL = 38, padR = 12, padT = 12, padB = 26;
+    const plotW = W - padL - padR, plotH = H - padT - padB;
+    const n = hist.length;
+        const xFor = i => n === 1 ? padL + plotW / 2 : padL + i * (plotW / (n - 1));
+    const yFor = r => padT + plotH * (1 - r);
+
+    let g = "";
+    [0, 0.25, 0.5, 0.75, 1].forEach(r => {
+        const y = yFor(r);
+        g += `<line x1="${padL}" y1="${y}" x2="${W - padR}" y2="${y}" stroke="#e2e8f0" stroke-width="1"/>`;
+        g += `<text x="${padL - 6}" y="${y + 4}" font-size="10" fill="#7f8c8d" text-anchor="end">${Math.round(r * 100)}%</text>`;
+    });
+
+    const step = n <= 10 ? 1 : (n <= 20 ? 2 : 5);
+    hist.forEach((rec, i) => {
+        if (i % step === 0 || i === n - 1) {
+            g += `<text x="${xFor(i)}" y="${H - 8}" font-size="10" fill="#7f8c8d" text-anchor="middle">${rec._no}</text>`;
+        }
+    });
+
+    SERIES_STYLE.forEach(sty => {
+        let path = "", dots = "", pen = false;
+        hist.forEach((rec, i) => {
+            const r = rateOf(rec, sty.key);
+            if (r === null) { pen = false; return; }
+            const x = xFor(i), y = yFor(r);
+            path += (pen ? "L" : "M") + x.toFixed(1) + " " + y.toFixed(1) + " ";
+            dots += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${sty.key === "total" ? 4 : 3}" fill="${sty.color}"/>`;
+            pen = true;
+        });
+        if (path) {
+            g += `<path d="${path}" fill="none" stroke="${sty.color}" stroke-width="${sty.width}" stroke-linejoin="round" stroke-linecap="round" opacity="${sty.key === "total" ? 1 : 0.85}"/>`;
+            g += dots;
+        }
+    });
+
+    return `<svg viewBox="0 0 ${W} ${H}" style="width:100%; height:auto; background:#fafbfc; border:1px solid #e2e8f0; border-radius:8px;" role="img" aria-label="ランダムテストの正答率の推移">${g}</svg>`;
+}
+
+function renderHistory() {
+    const all = loadHistory();
+    const sub = document.getElementById("history-sub");
+    const chart = document.getElementById("history-chart");
+    const legend = document.getElementById("history-legend");
+    const summary = document.getElementById("history-summary");
+    const list = document.getElementById("history-list");
+
+    if (all.length === 0) {
+        sub.innerText = "まだテストの記録がありません。";
+        chart.innerHTML = `<p style="text-align:center; color:#7f8c8d; padding:30px 0;">「🎯 ランダム10問テスト」を受けると、ここに正答率の推移が表示されます。</p>`;
+        legend.innerHTML = "";
+        summary.innerHTML = "";
+        list.innerHTML = "";
+        return;
+    }
+
+    // 通算のテスト番号を付ける（グラフは直近20回）
+    const numbered = all.map((rec, i) => ({ ...rec, _no: i + 1 }));
+    const recent = numbered.slice(-20);
+
+    sub.innerText = `これまでに ${all.length} 回受験（グラフは直近${recent.length}回・横軸は受験回）`;
+    chart.innerHTML = buildChartSVG(recent);
+    legend.innerHTML = SERIES_STYLE.map(sty =>
+        `<span><span class="legend-dot" style="background-color:${sty.color};"></span>${sty.label}</span>`).join("");
+
+    const tot = { "基礎": { c: 0, n: 0 }, "標準": { c: 0, n: 0 }, "応用": { c: 0, n: 0 } };
+    let allC = 0, allN = 0;
+    all.forEach(rec => {
+        allC += rec.c; allN += rec.n;
+        DIFF_LEVELS.forEach(lv => {
+            if (rec.d && rec.d[lv]) { tot[lv].c += rec.d[lv].c; tot[lv].n += rec.d[lv].n; }
+        });
+    });
+    summary.innerHTML = buildRateRow("全体", allC, allN) +
+        DIFF_LEVELS.map(lv => buildRateRow(lv, tot[lv].c, tot[lv].n)).join("");
+
+    list.innerHTML = numbered.slice(-10).reverse().map(rec => {
+        const dt = new Date(rec.t);
+        const label = `${dt.getMonth() + 1}/${dt.getDate()} ${String(dt.getHours()).padStart(2, "0")}:${String(dt.getMinutes()).padStart(2, "0")}`;
+        const mix = rec.mix ? `${rec.mix["基礎"]}・${rec.mix["標準"]}・${rec.mix["応用"]}` : "-";
+        const pct = rec.n > 0 ? Math.round(rec.c / rec.n * 100) : 0;
+        return `<div class="history-row">
+            <span>第${rec._no}回　${label}</span>
+            <span>配分 ${mix}</span>
+            <span style="font-weight:bold; color:${pctColor(pct)};">${rec.c}/${rec.n}（${pct}%）</span>
+        </div>`;
+    }).join("");
+}
+
 function searchQuestions() {
 
     const keyword = document.getElementById("search-box")
@@ -8369,6 +9111,8 @@ if (results.length === 0) {
 
 currentQuestions = results;
 currentIndex = 0;
+sessionMode = "search";
+
 
 alert(`「${keyword}」で検索しました。\n${results.length}件ヒットしました。`);
    
@@ -8387,6 +9131,7 @@ document.getElementById("audio-progress-notice").innerText =
 
 // 難易度フィルターの初期状態（「すべて」を選択済みにしておく）
 setDifficultyFilter("すべて");
+updateReviewButton();
 
 // 収録問題の難易度分布を自動集計して表示（問題数が増減しても自動で追従する）
 (function() {
