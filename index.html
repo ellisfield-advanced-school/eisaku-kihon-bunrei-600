@@ -1371,8 +1371,8 @@ const quizDataset = [
     question: "A: Which club ( &nbsp; &nbsp; &nbsp; ) ?<br>B: I'm a member of the Glee Club.",
     choices: ["are you belonging", "do you belong to", "are you joining to", "do you take part"],
     answer: "do you belong to", audioText: "Which club do you belong to?",
-    translation: "A：どのクラブに所属していますか。<br>B：グリークラブ（合唱部）に所属しています。",
-    explanation: "belong to ~（〜に所属している）は、一時的ではない継続的な状態を表す状態動詞です。状態動詞は原則として進行形にできません。また、join は他動詞なので to を直接後ろに続けず、take part には in が必要です。よって現在形かつ正しい語法を用いている do you belong to が正解となります。<br>※このような【進行形に出来ない動詞（状態動詞）】には、ほかに know、live in、resemble、consist of、contain などがあります。",
+    translation: "A：どのクラブに所属していますか。\nB：グリークラブ（合唱部）に所属しています。",
+    explanation: "belong to ~（〜に所属している）は、一時的ではない継続的な状態を表す状態動詞です。状態動詞は原則として進行形にできません。また、join は他動詞なので to を直接後ろに続けず、take part には in が必要です。よって現在形かつ正しい語法を用いている do you belong to が正解となります。\n※このような【進行形に出来ない動詞（状態動詞）】には、ほかに know、live in、resemble、consist of、contain などがあります。",
     difficulty: "基礎", school: "愛知学院大"  },
   { page: 9, no: 1, category: "時制の基本", type: "4choice",
     question: "I ( &nbsp; &nbsp; &nbsp; ) to the tennis club at that time.",
@@ -1386,7 +1386,7 @@ const quizDataset = [
     choices: ["belongs", "is belonging", "belonged", "was belonging"],
     answer: "belonged", audioText: "Maki belonged to the music club when she was in high school.",
     translation: "マキは高校時代、音楽部に所属していた。",
-    explanation: "when she was in high school（彼女が高校生だったとき）という過去を表す節があるため、過去の文になります。belong to ~ は状態動詞であり、過去進行形にすることはできないため、単純過去形の belonged が正解となります。<br>※このような【進行形に出来ない動詞（状態動詞）】には、ほかに know、live in、resemble、consist of、contain などがあります。",
+    explanation: "when she was in high school（彼女が高校生だったとき）という過去を表す節があるため、過去の文になります。belong to ~ は状態動詞であり、過去進行形にすることはできないため、単純過去形の belonged が正解となります。\n※このような【進行形に出来ない動詞（状態動詞）】には、ほかに know、live in、resemble、consist of、contain などがあります。",
     difficulty: "標準", school: "熊本保健科学大"  },
   { page: 9, no: 9, category: "時制の基本", type: "4choice",
     question: "Let's start when she ( &nbsp; &nbsp; &nbsp; ).",
@@ -7961,6 +7961,34 @@ const quizDataset = [
     translation: "人間の知能がコンピューターのそれより優れていることは、歴史によって証明されている。",
     explanation: "主語 History の後ろに、現在完了 ＜has ＋ 過去分詞(proven)＞ を置き、「〜ということ」を表す that 節を続けます。that 節の中は ＜be superior to ～＞（〜より優れている）を使って human intelligence is superior to とし、最後の computers につなげます。※厳密には that of computers（コンピューターのそれ）とすべきところを、簡潔に computers としています。",
     difficulty: "標準", school: "早稲田大" },
+  { page: 51, no: 13, category: "比較（2）", type: "4choice",
+    question: "You were lucky you were not seriously injured in the accident. It could have been ( &nbsp; &nbsp; &nbsp; ).",
+    choices: ["bad", "better", "good", "worse"],
+    answer: "worse", audioText: "You were lucky you were not seriously injured in the accident. It could have been worse.",
+    translation: "その事故で大怪我をしなくて幸運だったね。さらに悪くなっていた可能性だってあったのだから（不幸中の幸いだね）。",
+    explanation: "＜could have + 過去分詞＞は「〜だったかもしれない（実際にはそうならなかった）」という、過去の事実に反する可能性を表します。ここでは be動詞の過去分詞 been を用いた could have been worse で「もっと悪い結果になっていたかもしれない」という意味になり、「（実際は大怪我をしなかったので）不幸中の幸いだった」ことを表す決まり文句です。bad や good では比較のニュアンスが出ず、better では意味が正反対になってしまいます。",
+    difficulty: "標準", school: "青山学院大" },
+  { page: 51, no: 13, category: "比較（2）", type: "4choice",
+    question: "If you had not helped me, the situation would have been much ( &nbsp; &nbsp; &nbsp; ).",
+    choices: ["better", "worse", "bad", "good"],
+    answer: "worse", audioText: "If you had not helped me, the situation would have been much worse.",
+    translation: "もしあなたが私を助けてくれていなかったら、状況はさらに悪くなっていただろう。",
+    explanation: "＜If + 主語 + had + 過去分詞 ～, 主語 + would have + 過去分詞…＞は仮定法過去完了で、過去の事実に反する仮定を表します。実際には助けてもらえたので状況は悪化しませんでしたが、「もし助けてもらえなかったら、状況はさらに悪化していただろう」という内容に合うのは much worse（はるかに悪い）です。much は比較級を強め る副詞で、bad や good のような原級の前には置けません。",
+    difficulty: "応用", school: "慶應義塾大" },
+  { page: 51, no: "13-a", category: "比較（2）", type: "4choice",
+    question: "A: How was the party last night?<br>B: Well, it could have been ( &nbsp; &nbsp; &nbsp; ), but it was still fun.",
+    choices: ["bad", "better", "worse", "best"],
+    answer: "better", audioText: "Well, it could have been better, but it was still fun.",
+    translation: "A：昨夜のパーティーはどうだった？\nB：うーん、もっと良かったかもしれないけど、それでも楽しかったよ。",
+    explanation: "＜could have been + 比較級＞は「もっと〜だったかもしれない（実際はそうではなかった）」という意味を表す決まり文句です。ここでは could have been better で「もっと良かったかもしれない」＝「（実際は）あまり大したことはなかった」という婉曲的な感想になり、but it was still fun（それでも楽しかった）という文脈にも合います。",
+    difficulty: "標準", school: "センター試験" },
+  { page: 51, no: "13-b", category: "比較（2）", type: "4choice",
+    question: "A: How are things with you?<br>B: Great! Things couldn't be ( &nbsp; &nbsp; &nbsp; ).",
+    choices: ["worse", "better", "good", "best"],
+    answer: "better", audioText: "Great! Things couldn't be better.",
+    translation: "A：調子はどう？\nB：絶好調だよ！これ以上良くなりようがないくらいだよ。",
+    explanation: "＜couldn't be + 比較級＞は「これ以上〜なりようがない」という意味を表す決まり文句です。couldn't be better で「これ以上良くなりようがない」＝「絶好調だ、最高だ」という意味になります。同じ形でも、no.13-aの could have been better は過去の出来事について「もっと良かったかもしれない（実際はそうでもなかった）」という意味になる点と混同しないよう注意しましょう。",
+    difficulty: "応用", school: "立命館大学" },
   { page: 51, no: 14, category: "比較（2）", type: "sort",
     question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>My work is ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ).<br><small>私の仕事は多かれ少なかれ終わっている（＝ほぼ終わっている）。</small>",
     words: ["finished", "less", "more", "or"],
@@ -8710,7 +8738,7 @@ function showWrongNote(info) {
         el.innerText = `🔁 あと${info.remaining}回連続で正解すると、誤答リストから外れます`;
     } else if (info.status === "cleared") {
         el.classList.add("good");
-        el.innerText = "🎉 誤答リストから外れました！";
+        el.innerText = "✅ 誤答リストから外れました！";
     }
 }
 
@@ -9002,7 +9030,7 @@ function renderSessionResult() {
     const wrongs = sessionLog.filter(l => !l.isCorrect);
     const wrongBox = document.getElementById("sr-wrong");
     if (wrongs.length === 0) {
-        wrongBox.innerHTML = `<p style="text-align:center; color:#27ae60; font-weight:bold;">全問正解です！🎉</p>`;
+        wrongBox.innerHTML = `<p style="text-align:center; color:#27ae60; font-weight:bold;">全問正解です！🌟</p>`;
     } else {
         wrongBox.innerHTML = `<div class="section-title" style="margin-bottom:10px;">間違えた問題</div>` +
             wrongs.map(l => `<div class="session-item">
