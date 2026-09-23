@@ -415,6 +415,7 @@
            <button class="btn-cat" onclick="startCategory('比較（1）')">比較（1）</button>
            <button class="btn-cat" onclick="startCategory('比較（2）')">比較（2）</button>
            <button class="btn-cat" onclick="startCategory('関係詞（1）')">関係詞（1）</button>
+           <button class="btn-cat" onclick="startCategory('関係詞（2）')">関係詞（2）</button>
        </div>
        <h2 style="text-align:center; color:#8e44ad; margin-top:25px; font-size:1.1rem;">エリスフィールド進学会</h2>
        
@@ -8510,7 +8511,84 @@ const quizDataset = [
       answer: "some of which I found quite interesting", audioText: "During my trip abroad I experienced diverse cultures and customs, some of which I found quite interesting.",
       translation: "海外旅行中さまざまな文化や習慣に接しましたが、中にはとても面白いなと思うものがありましたよ。",
       explanation: "＜some of＋関係代名詞 which＞で「そのうちのいくつかが」という意味を表します。found A B（A を B だと思った）の A にあたる部分が which で、B にあたる部分が quite interesting です。",
-      difficulty: "応用", school: "広島修道大"   }
+      difficulty: "応用", school: "広島修道大"   }   ,
+   {  page: 55, no: 1, category: "関係詞（2）", type: "4choice",
+      question: "( &nbsp; &nbsp; &nbsp; ) is most needed for this project is creative thinking.",
+      choices: ["Which", "What", "That", "Whatever"],
+      answer: "What", audioText: "What is most needed for this project is creative thinking.",
+      translation: "このプロジェクトに最も必要なものは、創造的な思考だ。",
+      explanation: "先行詞を含む関係代名詞 what は「〜すること［もの］」という意味を表し、is most needed for this project（このプロジェクトに最も必要とされていること）という節全体をまとめて文全体の主語（S）にしています。Which や That は先行詞を必要とするため、先行詞のないこの文脈では使えません。",
+      difficulty: "基礎", school: "明治大"   },
+   {  page: 55, no: 1, category: "関係詞（2）", type: "4choice",
+      question: "You should always do ( &nbsp; &nbsp; &nbsp; ) you think is right.",
+      choices: ["that", "what", "which", "whatever"],
+      answer: "what", audioText: "You should always do what you think is right.",
+      translation: "あなたが正しいと思うことを、常に行うべきだ。",
+      explanation: "関係代名詞 what は do の目的語となる節を作ります。you think は「あなたが思うに」という挿入句で、もとの構造は what is right（正しいこと）です。that や which は先行詞を必要とするため、この文脈には合いません。",
+      difficulty: "標準", school: "中央大"   },
+   {  page: 55, no: 1, category: "関係詞（2）", type: "rewrite",
+      question: "<br>Do ( &nbsp; &nbsp; &nbsp; ) you think ( &nbsp; &nbsp; &nbsp; ) right.<br><small>あなたが正しいと思うことをしなさい。</small>",
+      blankCount: 2, answer: ["what", "is"], audioText: "Do what you think is right.",
+      translation: "あなたが正しいと思うことをしなさい。",
+      explanation: "関係代名詞 what が do の目的語となる節を作り、you think が「あなたが思うに」という挿入句として is right の前に入り込んだ形です。もとは what is right（正しいこと）という構造なので、2つ目の空所には is が入ります。",
+      difficulty: "標準", school: "東京電機大"   },
+   {  page: 55, no: 1, category: "関係詞（2）", type: "4choice",
+      question: "My father told me to do ( &nbsp; &nbsp; &nbsp; ) was right under the circumstances.",
+      choices: ["I thought that", "I thought what", "that I thought", "what I thought"],
+      answer: "what I thought", audioText: "My father told me to do what I thought was right under the circumstances.",
+      translation: "父は私に、その状況下で自分が正しいと思うことをするように言いました。",
+      explanation: "関係代名詞 what が do の目的語となる節（what ... was right）を作り、I thought はその節の中に挿入された「私が思うに」という表現です。what の前に他の語句を置く形は節の構造を壊してしまうため誤りです。",
+      difficulty: "標準", school: "近畿大"   },
+   {  page: 55, no: 1, category: "関係詞（2）", type: "sort",
+      question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>Always ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ).<br><small>自分が正しいと信じることをいつでも行いなさい。</small>",
+      words: ["believe", "do", "is", "right", "what", "you"],
+      answer: "do what you believe is right", audioText: "Always do what you believe is right.",
+      translation: "自分が正しいと信じることをいつでも行いなさい。",
+      explanation: "関係代名詞 what が do の目的語となる節（what ... is right）を作り、you believe が「あなたが信じるに」という挿入句として is right の前に入っています。do の後ろに what を置き、believe に続けて is right でまとめます。",
+      difficulty: "標準", school: "青山学院大"   },
+   {  page: 55, no: 2, category: "関係詞（2）", type: "4choice",
+      question: "( &nbsp; &nbsp; &nbsp; ) he said at the meeting was very important for all of us.",
+      choices: ["That", "Which", "What", "Which that"],
+      answer: "What", audioText: "What he said at the meeting was very important for all of us.",
+      translation: "彼が会議で言ったことは、私たち全員にとって非常に重要だった。",
+      explanation: "先行詞を含む関係代名詞 What が he said at the meeting（彼が会議で言ったこと）という節をまとめ、文全体の主語（S）を作ります。That を関係代名詞として使うには先行詞が必要ですが、この文には先行詞がありません。また、接続詞として使うには said の後ろに完全な文（目的語がそろった文）が続く必要がありますが、said の目的語が欠けているため、接続詞の That もこの文脈には合いません。",
+      difficulty: "基礎", school: "立命館大"   },
+   {  page: 55, no: 2, category: "関係詞（2）", type: "4choice",
+      question: "Thank you, Hiromi. This book is exactly ( &nbsp; &nbsp; &nbsp; ) I wanted.",
+      choices: ["what", "which", "of which", "that"],
+      answer: "what", audioText: "Thank you, Hiromi. This book is exactly what I wanted.",
+      translation: "ありがとう、ヒロミ。この本はまさに私が欲しかったものです。",
+      explanation: "関係代名詞 what は「〜するもの」という意味を表し、wanted の目的語が欠けた節をまとめて補語（C）を作ります。which や that は先行詞を必要とするため、先行詞のないこの文脈には使えません。",
+      difficulty: "基礎", school: "センター試験"   },
+   {  page: 55, no: 2, category: "関係詞（2）", type: "4choice",
+      question: "Remember ( &nbsp; &nbsp; &nbsp; ) I've just told you.",
+      choices: ["as", "that", "what", "which"],
+      answer: "what", audioText: "Remember what I've just told you.",
+      translation: "私が今あなたに言ったことを覚えておきなさい。",
+      explanation: "Remember の目的語となる節を関係代名詞 what が作ります。told you の後ろに直接目的語が欠けているため、その欠けた部分を補う what が正解です。that は後ろに完全な文をとる接続詞なので、目的語の欠けたこの文には合いません。",
+      difficulty: "基礎", school: "センター試験"   },
+   {  page: 55, no: 2, category: "関係詞（2）", type: "sort",
+      question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>What ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) understanding.<br><small>先生の言ったことは私には理解できなかった。</small>",
+      words: ["said", "beyond", "the teacher", "my", "was"],
+      answer: "the teacher said was beyond my", audioText: "What the teacher said was beyond my understanding.",
+      translation: "先生の言ったことは私には理解できなかった。",
+      explanation: "先行詞を含む関係代名詞 What が the teacher said（先生が言ったこと）という節をまとめ、文全体の主語（S）を作ります。＜be beyond one's understanding＞で「〜の理解を超えている」という意味の重要表現です。",
+      difficulty: "標準", school: "拓殖大"   },
+   {  page: 55, no: 2, category: "関係詞（2）", type: "sort",
+      question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) a sense.<br><small>彼女が言ったことは、ある意味では本当だ。</small>",
+      words: ["in", "is", "she", "true", "what", "said"],
+      answer: "what she said is true in", audioText: "What she said is true in a sense.",
+      translation: "彼女が言ったことは、ある意味では本当だ。",
+      explanation: "先行詞を含む関係代名詞 what が she said（彼女が言ったこと）という節をまとめ、文全体の主語（S）を作ります。＜in a sense＞で「ある意味では」という意味の重要表現です。",
+      difficulty: "標準", school: "関西学院大"   },
+   {  page: 55, no: 2, category: "関係詞（2）", type: "sort",
+      question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>She doesn't seem ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ).<br><small>彼女は自分のしたことを悪いと思っていないようです。</small>",
+      words: ["she", "has", "for", "sorry", "done", "what"],
+      answer: "sorry for what she has done", audioText: "She doesn't seem sorry for what she has done.",
+      translation: "彼女は自分のしたことを悪いと思っていないようです。",
+      explanation: "＜be sorry for 〜＞（〜をすまなく思う）の for の目的語を、関係代名詞 what が導く節（what she has done＝彼女がしたこと）で表します。has done は「（現在までに）したこと」という現在完了形です。",
+      difficulty: "標準", school: "東京家政大"   }
+
 ];
 let categoryQuestions = []; // 選択されたカテゴリ内の全問題
 let currentQuestions = [];  // 選択された番号に絞り込まれた問題グループ
@@ -8925,7 +9003,7 @@ function speakEnglish(text) {
 
    const uttr = new SpeechSynthesisUtterance(text);
 uttr.lang = "en-US";
-uttr.rate = 0.9;
+uttr.rate = 0.8;
 
 speechSynthesis.speak(uttr);
    
