@@ -308,6 +308,47 @@
         .legend-dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 4px; }
         .history-row { display: flex; justify-content: space-between; gap: 8px; padding: 8px 4px; border-bottom: 1px solid #eee; font-size: 0.82rem; }
         .history-row span { white-space: nowrap; }
+/* ===== Theme: 明るい学習アプリ系 ===== */
+:root{--primary-color:#1f2a44;--accent-color:#1cb0f6;--bg-color:#eef6ff}
+body{font-family:"Hiragino Sans","Noto Sans JP","Yu Gothic","Meiryo",sans-serif;background:linear-gradient(180deg,#e3f2ff 0,#f5faff 320px,#f5faff 100%);background-attachment:fixed;padding:16px}
+.container{border-radius:24px;padding:22px 20px;box-shadow:0 10px 30px rgba(28,120,200,.12)}
+#search-box{border:2px solid #d6e6f7!important;border-radius:16px!important;background:#f8fbff;outline:none}
+#search-box:focus{border-color:#1cb0f6!important;background:#fff}
+#audio-progress-notice{background:#fff8e6!important;border:0!important;color:#c97a00!important;border-radius:14px!important}
+.btn-action,.btn-mode,.btn-cat,.btn-choice,.word-card{transition:transform .08s,box-shadow .08s,background .15s;-webkit-tap-highlight-color:transparent}
+.btn-action,.btn-mode{border-radius:16px!important;font-weight:800;letter-spacing:.02em;padding:13px 20px;box-shadow:0 4px 0 rgba(0,0,0,.2)}
+.btn-action{background:#1cb0f6}
+.btn-mode[onclick*="openRandomSetup"]{background:#58cc02!important;box-shadow:0 4px 0 #58a700}
+#btn-review-entry{background:#ff9600!important;box-shadow:0 4px 0 #cc7900}
+#view-category .btn-action[onclick*="stats"]{background:#ce82ff!important;box-shadow:0 4px 0 #a568cc}
+.btn-action:active,.btn-mode:active{transform:translateY(3px);box-shadow:0 1px 0 rgba(0,0,0,.2)!important}
+.btn-cat{background:#fff;border:2px solid #e3eaf2;border-bottom-width:5px;border-radius:16px;color:#2b3a55;padding:14px 8px;font-size:.95rem}
+.btn-cat:hover{background:#ddf4ff;border-color:#1cb0f6;color:#0b6fa8}
+.btn-cat:active{transform:translateY(3px);border-bottom-width:2px}
+.section-title{border-left:0;padding-left:0;color:#1f2a44;font-weight:800}
+.meta-info{border-bottom:2px solid #eef2f7}
+.question-text{font-size:1.3rem;color:#1f2a44}
+.btn-choice{border:2px solid #e3eaf2;border-bottom-width:5px;border-radius:16px;padding:14px 16px;font-weight:600;color:#2b3a55}
+.btn-choice:hover{border-color:#1cb0f6;background:#ddf4ff}
+.btn-choice:active{transform:translateY(3px);border-bottom-width:2px}
+.zone{background:#f5faff;border:2px dashed #b9d6ef;border-radius:16px}
+.word-card{border:2px solid #e3eaf2;border-bottom-width:4px;border-radius:12px;font-weight:600;color:#2b3a55;box-shadow:none}
+.blank-input{border:2px solid #d6e6f7;border-radius:12px}
+.blank-input:focus{outline:none;border-color:#1cb0f6}
+.result-box{border-radius:16px;font-weight:800}
+.correct-box{background:#d7ffb8;color:#3f8f00}
+.incorrect-box{background:#ffdfe0;color:#d92b2b}
+.review-panel{background:#f2f9ff;border:2px solid #dbeeff;border-radius:16px}
+.review-label{color:#1cb0f6;font-weight:800}
+.btn-difficulty{border:2px solid #e3eaf2;border-bottom-width:4px;color:#6b7c93;padding:6px 16px}
+.btn-difficulty.active{background:#1cb0f6;border-color:#1899d6;color:#fff}
+.stat-row,.mix-row{border:2px solid #e9eff6;border-radius:16px;background:#fbfdff}
+.stat-bar-bg{height:12px;border-radius:999px}.stat-bar-fill{border-radius:999px}
+.btn-step{border:2px solid #e3eaf2;border-bottom-width:4px}
+h2[style*="8e44ad"]{color:#7a5cff!important}
+#view-category .btn-action[onclick*="stats"],.mode-row .btn-mode{display:block;width:100%;max-width:340px;box-sizing:border-box;padding:13px 10px;font-size:.98rem;white-space:nowrap;text-align:center}
+#view-category .btn-action[onclick*="stats"]{margin:0 auto}
+.mode-row{flex-direction:column;align-items:center}
 </style>
 </head>
 <body>
@@ -952,7 +993,7 @@ const quizDataset = [
       explanation: "後ろに ＜人（me） ＋ 物（the way...）＞という第4文型（SVOO）が続いているため、この文型を取ることができる他動詞 tell が正解となります。say は ＜say + 物 + to + 人＞ のように使い、talk は自動詞、teach は学問などを教える際に使うため、いずれもこの文脈・語法では不可となります。",
       difficulty: "基礎", school: "ノートルダム清心女子大"   },
    {  page: 5, no: 14, category: "文型（2）", type: "sort",
-      question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>駅へ行く道を教えていただけませんか。",
+      question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br><small>駅へ行く道を教えていただけませんか。</small>",
       words: ["the train station", "could", "you", "the way", "to", "me", "show", "?"],
       answer: "Could you show me the way to the train station?", audioText: "Could you show me the way to the train station?",
       translation: "駅へ行く道を教えていただけませんか。",
@@ -988,7 +1029,7 @@ const quizDataset = [
       explanation: "主節の動詞が asked（〜に尋ねた）なので、後ろには「〜かどうか」という意味の名詞節を導く接続詞 if（または whether）が必要です。また、主節の時制が過去（asked）であるため、時制の一致により助動詞も過去形の could になっている if he could が正解となります。※where could he は疑問文の語順になっているため不可、whether or not は後ろに主語＋動詞が欠落しているため不可です。",
       difficulty: "応用", school: "名古屋工業大"   },
    {  page: 7, no: 1, category: "文型（3）", type: "sort",
-      question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>What ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) English ?<br>この花は英語で何と言いますか。",
+      question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>What ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) English ?<br><small>この花は英語で何と言いますか。</small>",
       words: ["in", "you", "this flower", "call", "do"],
       answer: "do you call this flower in", audioText: "What do you call this flower in English?",
       translation: "この花は英語で何と言いますか。",
@@ -1029,7 +1070,7 @@ const quizDataset = [
       explanation: "＜keep + O + C＞（OをCの状態に保つ）の文型です。目的語（me）の後ろの補語（C）には形容詞が入るため、「目が覚めて、起きていて」という意味の形容詞 awake が正解となります。※wake は動詞（原形）なのでここには置けません。",
       difficulty: "標準", school: "熊本保健科学大"   },
    {  page: 7, no: 4, category: "文型（3）", type: "sort",
-      question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>You'll ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) to read.<br>その本はとても読みやすいと分かるでしょう。",
+      question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>You'll ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) to read.<br><small>その本はとても読みやすいと分かるでしょう。</small>",
       words: ["very", "the book", "easy", "find"],
       answer: "find the book very easy", audioText: "You'll find the book very easy to read.",
       translation: "その本はとても読みやすいと分かるでしょう。",
@@ -1273,7 +1314,7 @@ const quizDataset = [
     explanation: "動詞 get は＜get + 目的語(O) + 過去分詞(C)＞の第5文型（SVOC）で「Oを〜してもらう（使役）」という意味を表します。「あなたの髪（your hair）」と「切る（cut）」の間には受動の関係があるため、過去分詞の cut（cut-cut-cutの3番目）が正解です。",
     difficulty: "基礎", school: "青山学院大"  },
   { page: 7, no: "13-c", category: "文型（3）", type: "sort",
-    question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>Where ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) ?<br>どこで髪を切ったの。",
+    question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>Where ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) ?<br><small>どこで髪を切ったの。</small>",
     words: ["cut", "hair", "did", "get", "you", "your"],
     answer: "did you get your hair cut", audioText: "Where did you get your hair cut?",
     translation: "どこで髪を切ってもらったの。",
@@ -1756,7 +1797,7 @@ const quizDataset = [
     explanation: "for the past few months（ここ数ヶ月間）という「過去から現在に至るまでの期間」を表す語句があるため、現在完了形を用います。There is の現在完了形である ＜There has been＞ が正解となります。",
     difficulty: "標準", school: "京都学園大"  },
   { page: 13, no: 2, category: "完了形（2）", type: "rewrite",
-    question: "<br>I ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) her three days ago.<br>彼女から3日前に便りがあった。",
+    question: "<br>I ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) her three days ago.<br><small>彼女から3日前に便りがあった。</small>",
     blankCount: 2, answer: ["heard", "from"], audioText: "I heard from her three days ago.",
     translation: "私は3日前に彼女から便りをもらいました。",
     explanation: "「〜から便りがある、連絡がある」は動詞フレーズ ＜hear from 〜＞ で表します。文末に three days ago（3日前）という過去の特定の時点を表す副詞句があるため、時制は過去形にして heard from とする文脈が成立します。",
@@ -1776,14 +1817,14 @@ const quizDataset = [
     explanation: "現在完了の否定文において、three days（3日間）という「期間の長さ」を表すため前置詞 for が正解となります。during は具体的な特定の期間（during the summer など）を後ろに伴うため、数字の期間を直接置くことはできません。",
     difficulty: "基礎", school: "南山大"  },
   { page: 13, no: 3, category: "完了形（2）", type: "rewrite",
-    question: "<br>How long ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) living in your present house ?<br>あなたは今の家にどれぐらい住んでいますか。",
+    question: "<br>How long ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) living in your present house ?<br><small>あなたは今の家にどれぐらい住んでいますか。</small>",
     blankCount: 3, answer: ["have", "you", "been"], 
     audioText: "How long have you been living in your present house?",
     translation: "あなたは現在の家にどれくらいの間住み続けていますか。",
     explanation: "「どれくらいの間〜していますか」と現在の動作の継続を尋ねるため、現在完了進行形 ＜have ＋ 主語 ＋ been ＋ -ing＞ の疑問文の語順にします。How long の後ろに have you been を配置し、後ろの living に繋げます。",
     difficulty: "標準", school: "武庫川女子大"  },
   { page: 13, no: 3, category: "完了形（2）", type: "sort",
-    question: "<small>日本文に合うように、次の語句を並び替えなさい。<small></small><br>How ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) ?<br><small>ロンドンに来てからどのくらいになりますか。</small>",
+    question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>How ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) ?<br><small>ロンドンに来てからどのくらいになりますか。</small>",
     words: ["in", "you", "been", "have", "long", "London"],
     answer: "long have you been in London", audioText: "How long have you been in London?",
     translation: "ロンドンに滞在して（来て）からどのくらいになりますか。",
@@ -1874,7 +1915,7 @@ const quizDataset = [
     explanation: "for more than twenty years（20年以上もの間）という期間を表す語句があるため、現在までの継続を表す現在完了形を用います。know（〜を知っている）は状態を表す【状態動詞】であり、原則として進行形（-ing）にすることができません。そのため、現在完了進行形ではなく現在完了形 ＜have known＞ が正解となります。",
     difficulty: "標準", school: "松山大"  },
   { page: 13, no: 7, category: "完了形（2）", type: "rewrite",
-    question: "<br>She has been busy ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) her coming trip to the U.S.<br>彼女は今度のアメリカ旅行の準備でずっと忙しい。",
+    question: "<br>She has been busy ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) her coming trip to the U.S.<br><small>彼女は今度のアメリカ旅行の準備でずっと忙しい。</small>",
     blankCount: 2, answer: ["preparing", "for"], 
     audioText: "She has been busy preparing for her coming trip to the U.S.",
     translation: "彼女は今度のアメリカ旅行の準備でずっと忙しい状態が続いています。",
@@ -1931,7 +1972,7 @@ const quizDataset = [
     explanation: "文全体が ＜so ＋ 形容詞/副詞 ＋ that ＋ S ＋ V …＞（非常に～なので…） の「程度・結果」を表す重要構文になっています。「サラの家に到着した（arrived）」という過去の時点よりも前に「パーティーがすでに終わっていた」という時間の前後関係を表すため、過去完了形 ＜had already finished＞ が正解となります。「昨夜、私がサラの家に到着するのが非常に遅かったので、パーティーは（私が着いた時には）すでに終わっていた」という文脈です。",
     difficulty: "応用", school: "南山大"  },
   { page: 13, no: "9-a", category: "完了形（2）", type: "rewrite",
-    question: "<br>By the time we reached the railway station, our train ( &nbsp; &nbsp; &nbsp; ) already ( &nbsp; &nbsp; &nbsp; ).<br>駅に着いた頃には，私たちの乗る電車はもう出てしまっていた。",
+    question: "<br>By the time we reached the railway station, our train ( &nbsp; &nbsp; &nbsp; ) already ( &nbsp; &nbsp; &nbsp; ).<br><small>駅に着いた頃には，私たちの乗る電車はもう出てしまっていた。</small>",
     blankCount: 2, answer: ["had", "left"], 
     audioText: "By the time we reached the railway station, our train had already left.",
     translation: "私たちが駅に到着した頃には、電車はすでに発車してしまっていた。",
@@ -3052,7 +3093,7 @@ const quizDataset = [
     explanation: "forget の目的語となる名詞節を作ります。done の目的語が欠けているため、「～してくれたこと」という意味を表す関係代名詞 what が正解です。",
     difficulty: "基礎", school: "宮崎産業経営大"  },
   { page: 19, no: 15, category: "命令文・感嘆文", type: "sort",
-    question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>約束したことは果たさなければならない。<br>You must ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ).",
+    question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br><small>約束したことは果たさなければならない。</small><br>You must ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ).",
     words: ["have", "carry", "you", "what", "promised", "out"],
     answer: "carry out what you have promised.", audioText: "You must carry out what you have promised.",
     translation: "約束したことは果さなければならない。",
@@ -3186,7 +3227,7 @@ const quizDataset = [
     explanation: "道案内で「（人に）道を教える」と言う場合は＜show＋人＋the way＞を用います。teach や guide などは不適切です。",
     difficulty: "基礎", school: "駒澤大"  },
   { page: 21, no: 11, category: "助動詞（1）", type: "sort",
-    question: "最寄りの駅にはどう行けばいいのですか。<br>( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) get to the nearest station ?",
+    question: "<small>最寄りの駅にはどう行けばいいのですか。</small><br>( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) get to the nearest station ?",
     words: ["would you", "how", "tell", "to", "me"],
     answer: "Would you tell me how to", audioText: "Would you tell me how to get to the nearest station?",
     translation: "最寄りの駅にはどう行けばいいのですか。",
@@ -3275,7 +3316,7 @@ const quizDataset = [
     explanation: "＜must ＋ 動詞の原形＞で「～にちがいない」という意味を表します。",
     difficulty: "標準", school: "高千穂大"  },
   { page: 23, no: 4, category: "助動詞（2）", type: "rewrite",
-    question: "We ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) move this bookshelf.<br><small>私たちがこの本棚を動かす必要はない。<small>",
+    question: "We ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) move this bookshelf.<br><small>私たちがこの本棚を動かす必要はない。</small>",
     blankCount: 3, answer: ["don't", "have", "to"],
     translation: "私たちがこの本棚を動かす必要はない。", audioText: "We don't have to move this bookshelf.",
     explanation: "＜don’t have to ＋ 動詞の原形＞で「～する必要はない」「～しなくてもよい」という意味を表します。",
@@ -3356,7 +3397,7 @@ const quizDataset = [
     explanation: "＜had better ＋ 動詞の原形＞で「〜したほうがよい」という意味を表します。had better の後ろには直接動詞の原形が続くため have が正解です。",
     difficulty: "標準", school: "センター試験"  },
   { page: 23, no: 7, category: "助動詞（2）", type: "sort",
-    question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>この件は秘密にしておかないほうがいい。<br>We had ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ).",
+    question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br><small>この件は秘密にしておかないほうがいい。</small><br>We had ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ).",
     words: ["better", "this matter", "not", "secret", "keep"],
     answer: "better not keep this matter secret", audioText: "We had better not keep this matter secret.",
     translation: "この件は秘密にしておかないほうがいい。",
@@ -7624,7 +7665,7 @@ const quizDataset = [
     explanation: "「いつもより〜」は比較級の後に ＜than usual＞ を接続して表します。",
     difficulty: "基礎", school: "鹿児島大" },
   { page: 49, no: 15, category: "比較（1）", type: "sort",
-    question: "<small>日本文に合うように、次の語句を並び替えなさい。</small><br>( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ), the colder it became.<br><small>高く登れば登るほど、ますます寒くなった。</small>",
+    question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ), the colder it became.<br><small>高く登れば登るほど、ますます寒くなった。</small>",
     words: ["I", "higher", "climbed", "the"],
     answer: "The higher I climbed", audioText: "The higher I climbed, the colder it became.",
     translation: "高く登れば登るほど、ますます寒くなった。",
@@ -7659,7 +7700,7 @@ const quizDataset = [
     explanation: "「〜すればするほど、ますます…ない（より少なくなる）」を表す文脈です。＜The ＋ 比較級 〜, the less ＋ 形容詞 ＋ S ＋ V＞ を用いて、「信じてもらえる可能性（likely）が低くなる（less）」を表す the less が正解です。",
     difficulty: "応用", school: "京都橘女子" },
   { page: 49, no: 15, category: "比較（1）", type: "sort",
-    question: "<small>日本文に合うように、次の語句を並び替えなさい。</small><br>( &nbsp; &nbsp; &nbsp; ) you get, ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ).<br><small>年を取れば取るほど時間がたつのが速くなる。</small>",
+    question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>( &nbsp; &nbsp; &nbsp; ) you get, ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ).<br><small>年を取れば取るほど時間がたつのが速くなる。</small>",
     words: ["time", "by", "the faster", "goes", "the older"],
     answer: "The older the faster time goes by", audioText: "The older you get, the faster time goes by.",
     translation: "年を取れば取るほど時間がたつのが速くなる。",
@@ -7681,7 +7722,7 @@ const quizDataset = [
     explanation: "＜The ＋ 比較級 ＋ S ＋ V 〜＞（〜すればするほど…）は、接続詞 As（〜するにつれて）を用いた ＜As ＋ S ＋ 比較級 ＋ V 〜＞ の文構造に書き換えることができます。",
     difficulty: "応用", school: "名古屋学院大" },
   { page: 49, no: 15, category: "比較（1）", type: "sort",
-    question: "<small>日本文に合うように、次の語句を並び替えなさい。</small><br>The longer we discussed the problem, the ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) a solution.",
+    question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>The longer we discussed the problem, the ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) a solution.",
     words: ["difficult", "find", "it", "more", "seemed", "to"],
     answer: "more difficult it seemed to find", audioText: "The longer we discussed the problem, the more difficult it seemed to find a solution.",
     translation: "その問題について議論すればするほど、解決策を見つけるのはいっそう難しく思われた。",
@@ -7731,7 +7772,7 @@ const quizDataset = [
     explanation: "＜no more A than B＞ の比較構文です。主節の no more が「決してAではない」という意味を表し、than 以下は肯定形の his brother was [a scientist] とします。したがって、was not ではなく肯定形の be 動詞 was を用います。",
     difficulty: "応用", school: "青山学院大" },
   { page: 49, no: "16-g", category: "比較（1）", type: "sort",
-    question: "<small>日本文に合うように、次の語句を並び替えなさい。</small><br>I ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) you are a scientist.<br><small>私が詩人でないのは君が科学者でないのと同じだ。</small>",
+    question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>I ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) you are a scientist.<br><small>私が詩人でないのは君が科学者でないのと同じだ。</small>",
     words: ["poet", "than", "more", "am", "no", "a"],
     answer: "am no more a poet than", audioText: "I am no more a poet than you are a scientist.",
     translation: "私が詩人でないのは君が科学者でないのと同じだ。",
@@ -7746,7 +7787,7 @@ const quizDataset = [
     difficulty: "応用",
     school: "摂南大" },
   { page: 51, no: 2, category: "比較（2）", type: "sort",
-    question: "<small>日本文に合うように、次の語句を並び替えなさい。</small><br>This stone is ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) that one.<br><small>この石はあの石の2倍の重さだ。</small>",
+    question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>This stone is ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) that one.<br><small>この石はあの石の2倍の重さだ。</small>",
     words: ["as", "as", "heavy", "twice"],
     answer: "twice as heavy as", audioText: "This stone is twice as heavy as that one.",
     translation: "この石はあの石の2倍の重さだ。",
