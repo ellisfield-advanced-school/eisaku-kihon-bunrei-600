@@ -540,6 +540,12 @@
             <label class="type-check"><input type="checkbox" class="rt-type" value="rewrite" checked onchange="syncRandomSetupUI()"> 書き換え・適語補充</label>
         </div>
 
+        <div class="section-title">出題の優先度</div>
+        <div style="margin:8px 0 4px 0;">
+            <label class="type-check"><input type="checkbox" id="rt-weak-priority" checked> 苦手カテゴリを優先的に出題する</label>
+        </div>
+        <p style="color:#7f8c8d; font-size:0.78rem; margin:4px 0 0 0;">これまでの正答率が低いカテゴリの問題ほど選ばれやすくなります（3問以上解いたことがあるカテゴリが対象。データが少ないカテゴリも一定の確率で混ざります）。</p>
+
         <div class="action-container" style="margin-top:22px;">
             <button class="btn-action" style="background-color:#95a5a6;" onclick="showView('category')">戻る</button>
             <button class="btn-action" id="btn-random-start" style="background-color:#e67e22;" onclick="startRandomTest()">テスト開始</button>
@@ -8765,13 +8771,6 @@ const quizDataset = [
       explanation: "＜what S used to be＞で「昔のS（の姿）」という意味を表す重要表現です。not at all（全く〜ない）と組み合わさり、「10年前の彼とはまったく違う」という意味になります。which や that は先行詞を必要とするため、先行詞のないこの文脈では使えません。",
       difficulty: "基礎", school: "東海大"   },
    {  page: 55, no: 9, category: "関係詞（2）", type: "4choice",
-      question: "He is by no means ( &nbsp; &nbsp; &nbsp; ) he was five years ago.",
-      choices: ["what", "that", "which", "who"],
-      answer: "what", audioText: "He is by no means what he was five years ago.",
-      translation: "彼は5年前の彼では決してない。",
-      explanation: "＜what S was／used to be＞で「昔のS（の姿）」という意味を表す重要表現です。by no means（決して〜ない）と組み合わさり、「5年前の彼では決してない」という意味になります。that や which は先行詞を必要とするため、先行詞のないこの文脈では使えません。",
-      difficulty: "標準", school: "立命館大"   },
-   {  page: 55, no: 9, category: "関係詞（2）", type: "4choice",
       question: "My hometown is no longer ( &nbsp; &nbsp; &nbsp; ) it used to be.",
       choices: ["how", "what", "which", "that"],
       answer: "what", audioText: "My hometown is no longer what it used to be.",
@@ -8784,6 +8783,20 @@ const quizDataset = [
       translation: "彼女は昔の彼女とは違う。",
       explanation: "＜what S used to be＞で「昔のS（の姿）」という意味を表す重要表現です。＜used to ＋ 動詞の原形＞は「以前は〜だった」という過去の状態を表します。",
       difficulty: "基礎", school: "鹿児島大"   },
+   {  page: 55, no: 9, category: "関係詞（2）", type: "sort",
+      question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>He ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) ten years ago.<br><small>彼は10年前の彼ではない。</small>",
+      words: ["used", "isn't", "he", "be", "what", "to"],
+      answer: "isn't what he used to be", audioText: "He isn't what he used to be ten years ago.",
+      translation: "彼は10年前の彼ではない。",
+      explanation: "＜what S used to be＞で「昔のS（の姿）」という意味を表す重要表現です。isn't の後ろに what he used to be（彼が昔そうだったもの）という節を続けます。",
+      difficulty: "標準", school: "桜美林大"   },
+   {  page: 55, no: 9, category: "関係詞（2）", type: "4choice",
+      question: "He is by no means ( &nbsp; &nbsp; &nbsp; ) he was five years ago.",
+      choices: ["what", "that", "which", "who"],
+      answer: "what", audioText: "He is by no means what he was five years ago.",
+      translation: "彼は5年前の彼では決してない。",
+      explanation: "＜what S was／used to be＞で「昔のS（の姿）」という意味を表す重要表現です。by no means（決して〜ない）と組み合わさり、「5年前の彼では決してない」という意味になります。that や which は先行詞を必要とするため、先行詞のないこの文脈では使えません。",
+      difficulty: "標準", school: "立命館大"   },
    {  page: 55, no: 9, category: "関係詞（2）", type: "4choice",
       question: "The village is now very different from ( &nbsp; &nbsp; &nbsp; ) it was ten years ago.",
       choices: ["what", "as", "that", "which"],
@@ -8799,13 +8812,6 @@ const quizDataset = [
       explanation: "＜different from what S was／used to be＞で「昔のSの姿とは違う」という意味を表す重要表現です。前置詞 from の目的語となる節を、先行詞を含む関係代名詞 what が作ります。the condition は名詞そのものであり後ろに節を続けられず、which や whom は先行詞を必要とするため使えません。",
       difficulty: "標準", school: "名古屋工業大"   },
    {  page: 55, no: 9, category: "関係詞（2）", type: "sort",
-      question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>He ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) ten years ago.<br><small>彼は10年前の彼ではない。</small>",
-      words: ["used", "isn't", "he", "be", "what", "to"],
-      answer: "isn't what he used to be", audioText: "He isn't what he used to be ten years ago.",
-      translation: "彼は10年前の彼ではない。",
-      explanation: "＜what S used to be＞で「昔のS（の姿）」という意味を表す重要表現です。isn't の後ろに what he used to be（彼が昔そうだったもの）という節を続けます。",
-      difficulty: "標準", school: "桜美林大"   },
-   {  page: 55, no: 9, category: "関係詞（2）", type: "sort",
       question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>This town is very ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ).<br><small>この町は10年前の姿とはすっかり変わってしまった。</small>",
       words: ["ago", "from", "it", "what", "ten", "different", "was", "years"],
       answer: "different from what it was ten years ago", audioText: "This town is very different from what it was ten years ago.",
@@ -8818,7 +8824,56 @@ const quizDataset = [
       answer: "used", audioText: "Many people say that Japan is not as safe as it used to be.",
       translation: "多くの人は、日本は昔ほど安全ではないと言う。",
       explanation: "＜not as … as it used to be＞で「以前ほど…ではない」という意味を表す重要表現です。＜used to ＋ 動詞の原形＞は「以前は〜だった」という過去の状態を表すため、be の前には used が入ります。",
-      difficulty: "標準", school: "福井工業大"   }
+      difficulty: "標準", school: "福井工業大"   },
+   {  page: 55, no: 10, category: "関係詞（2）", type: "4choice",
+      question: "Give it to ( &nbsp; &nbsp; &nbsp; ) needs it.",
+      choices: ["whoever", "whosever", "whomever"],
+      answer: "whoever", audioText: "Give it to whoever needs it.",
+      translation: "それを必要とする人なら誰にでも、それをあげなさい。",
+      explanation: "複合関係代名詞 whoever は anyone who と同じ意味（「〜する人は誰でも」）で、先行詞を含んだ名詞節を作ります。ここでは whoever needs it 全体が前置詞 to の目的語です。whoever は節の中で needs の主語になっているため、主格の whoever が正解です。whomever は目的格なので、主語が欠けたこの節には使えません。whosever は所有格で、後ろに名詞が必要です。",
+      difficulty: "標準", school: "横浜市立大"   },
+   {  page: 55, no: 10, category: "関係詞（2）", type: "4choice",
+      question: "Give this book to ( &nbsp; &nbsp; &nbsp; ) wants it.",
+      choices: ["whom", "anyone", "whomever", "whoever"],
+      answer: "whoever", audioText: "Give this book to whoever wants it.",
+      translation: "この本を欲しい人なら誰にでも、あげなさい。",
+      explanation: "whoever wants it（それを欲しい人は誰でも）が前置詞 to の目的語となる名詞節を作ります。whoever は節の中で wants の主語なので、主格の whoever が入ります。whom や anyone は、後ろに who などの関係代名詞がないと wants 以下の節を続けられません。whomever は目的格なので、主語が欠けたこの節には使えません。",
+      difficulty: "基礎", school: "同志社大"   },
+   {  page: 55, no: 10, category: "関係詞（2）", type: "4choice",
+      question: "You can give this extra ticket to ( &nbsp; &nbsp; &nbsp; ) wants to go to the concert.",
+      choices: ["whoever", "whomever", "no matter who", "anyone"],
+      answer: "whoever", audioText: "You can give this extra ticket to whoever wants to go to the concert.",
+      translation: "この余っているチケットは、コンサートに行きたい人なら誰にでもあげていいですよ。",
+      explanation: "whoever wants to go to the concert（コンサートに行きたい人は誰でも）が前置詞 to の目的語となる名詞節を作ります。whoever は節の中で wants の主語なので、主格の whoever が正解です。whomever は目的格なので不適切です。no matter who は「誰が〜しても」という譲歩の副詞節を作るだけで、to の目的語（名詞節）にはなれません。anyone は後ろに who がないと wants 以下の節を続けられません。",
+      difficulty: "標準", school: "立命館大"   },
+   {  page: 55, no: 10, category: "関係詞（2）", type: "4choice",
+      question: "The host said that he would welcome ( &nbsp; &nbsp; &nbsp; ) came to the party.",
+      choices: ["whoever", "whomever", "no matter who", "who"],
+      answer: "whoever", audioText: "The host said that he would welcome whoever came to the party.",
+      translation: "主催者は、パーティーに来る人は誰でも歓迎すると言った。",
+      explanation: "whoever came to the party（パーティーに来る人は誰でも）が welcome の目的語となる名詞節を作ります。whoever は節の中で came の主語なので、主格の whoever が正解です。whomever は目的格なので不適切です。no matter who は副詞節を作るだけで、welcome の目的語になれません。who は先行詞が必要で、この文には先行詞がありません。",
+      difficulty: "標準", school: "早稲田大"   },
+   {  page: 55, no: 10, category: "関係詞（2）", type: "4choice",
+      question: "I'll vote for ( &nbsp; &nbsp; &nbsp; ) promises to reduce taxes.",
+      choices: ["wherever", "however", "whoever", "whenever"],
+      answer: "whoever", audioText: "I'll vote for whoever promises to reduce taxes.",
+      translation: "私は減税を公約する人なら誰にでも投票します。",
+      explanation: "whoever promises to reduce taxes（減税を公約する人は誰でも）が前置詞 for の目的語となる名詞節を作ります。wherever（どこで〜しても）・however（どんなに〜しても）・whenever（いつ〜しても）はいずれも副詞節を作る語で、前置詞 for の目的語となる名詞節を作れません。",
+      difficulty: "基礎", school: "関西外語大"   },
+   {  page: 55, no: 10, category: "関係詞（2）", type: "rewrite",
+      question: "<br>I will invite ( &nbsp; &nbsp; &nbsp; ) wants to come to my birthday party.<br><small>私の誕生日パーティーに来たい人は誰でも招待します。</small>",
+      blankCount: 1, answer: ["whoever"], audioText: "I will invite whoever wants to come to my birthday party.",
+      translation: "私の誕生日パーティーに来たい人は誰でも招待します。",
+      explanation: "「〜する人は誰でも」は複合関係代名詞 whoever で表します。whoever wants to come to my birthday party が invite の目的語となる名詞節で、whoever は節の中で wants の主語になっています。anyone who wants ... と書き換えることもできます。",
+      difficulty: "基礎", school: "福島大"   },
+   {  page: 55, no: 10, category: "関係詞（2）", type: "sort",
+      question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ).<br><small>助けを必要としている人なら誰にでもこのお金をあげなさい。</small>",
+      words: ["money", "needs", "give", "this", "to", "whoever", "it"],
+      answer: "give this money to whoever needs it", audioText: "Give this money to whoever needs it.",
+      translation: "助けを必要としている人なら誰にでもこのお金をあげなさい。",
+      explanation: "命令文 Give this money to ... の to の後ろに、whoever needs it（それを必要とする人は誰でも）という名詞節を置きます。whoever は節の中で needs の主語になっているため、to の直後でも whomever ではなく whoever を使います（格は節の中での働きで決まります）。",
+      difficulty: "標準", school: "法政大"   }
+
 
 ];
 let categoryQuestions = []; // 選択されたカテゴリ内の全問題
@@ -9595,6 +9650,46 @@ const HISTORY_KEY = "eisaku600_randomHistory";
 let randomMix = { "基礎": 3, "標準": 4, "応用": 3 };
 let lastRandomMeta = null;   // 直近のテスト設定（「もう一度」用）
 
+// ---- 苦手カテゴリ優先の重み付け ----
+const WEAK_MIN_ATTEMPTS = 3;     // これ未満の受験回数のカテゴリは「データ不足」扱い
+const WEAK_BASE_WEIGHT = 0.15;   // 正答率100%のカテゴリにも残す最低限の重み
+const WEAK_NEUTRAL_WEIGHT = 0.6; // データ不足カテゴリの重み（平均よりやや高めにして機会を残す）
+
+function categoryWeight(category, stats) {
+    const s = stats && category ? stats[category] : null;
+    if (!s || s.total < WEAK_MIN_ATTEMPTS) return WEAK_NEUTRAL_WEIGHT;
+    const acc = s.correct / s.total;
+    return Math.max(WEAK_BASE_WEIGHT, (1 - acc) + WEAK_BASE_WEIGHT);
+}
+
+// 重み付き非復元抽出。weighted が false の場合は単純なシャッフル抽出と同じ挙動になる。
+// 既出の英文（usedSentences）は数えずに除外し、必要数（need）に達するまで繰り返す。
+function pickQuestions(pool, need, usedSentences, weighted, stats) {
+    const got = [];
+    let items = weighted
+        ? pool.map(q => ({ q, w: categoryWeight(q.category, stats) }))
+        : shuffleArray(pool).map(q => ({ q, w: 1 }));
+
+    while (got.length < need && items.length > 0) {
+        let idx = 0;
+        if (weighted) {
+            const totalW = items.reduce((sum, it) => sum + it.w, 0);
+            let r = Math.random() * totalW;
+            for (; idx < items.length - 1; idx++) {
+                r -= items[idx].w;
+                if (r <= 0) break;
+            }
+        }
+        const q = items[idx].q;
+        items.splice(idx, 1);
+        const key = normalizeText(q.audioText || stripQuestionText(q));
+        if (usedSentences.has(key)) continue;
+        usedSentences.add(key);
+        got.push(q);
+    }
+    return got;
+}
+
 function sumMix() {
     return DIFF_LEVELS.reduce((sum, lv) => sum + randomMix[lv], 0);
 }
@@ -9663,6 +9758,9 @@ function startRandomTest() {
         return;
     }
 
+    const weakPriority = document.getElementById("rt-weak-priority").checked;
+    const stats = weakPriority ? loadStats() : null;
+
     const usedSentences = new Set();   // 同じ英文の問題を1回のテストに2度出さない
     const picked = [];
     let shortage = 0;
@@ -9670,17 +9768,10 @@ function startRandomTest() {
     DIFF_LEVELS.forEach(level => {
         const need = randomMix[level];
         if (need === 0) return;
-        const pool = shuffleArray(quizDataset.filter(q => q.difficulty === level && types.includes(q.type)));
-        let got = 0;
-        for (const q of pool) {
-            if (got >= need) break;
-            const key = normalizeText(q.audioText || stripQuestionText(q));
-            if (usedSentences.has(key)) continue;
-            usedSentences.add(key);
-            picked.push(q);
-            got++;
-        }
-        shortage += need - got;
+        const pool = quizDataset.filter(q => q.difficulty === level && types.includes(q.type));
+        const got = pickQuestions(pool, need, usedSentences, weakPriority, stats);
+        picked.push(...got);
+        shortage += need - got.length;
     });
 
     if (picked.length === 0) {
@@ -9692,7 +9783,7 @@ function startRandomTest() {
         return;
     }
 
-    lastRandomMeta = { mix: { ...randomMix }, types: [...types] };
+    lastRandomMeta = { mix: { ...randomMix }, types: [...types], weakPriority };
     currentQuestions = shuffleArray(picked);
     currentIndex = 0;
     sessionMode = "random";
@@ -9707,6 +9798,7 @@ function retryRandomTest() {
         document.querySelectorAll(".rt-type").forEach(el => {
             el.checked = lastRandomMeta.types.includes(el.value);
         });
+        document.getElementById("rt-weak-priority").checked = lastRandomMeta.weakPriority !== false;
     }
     startRandomTest();
 }
