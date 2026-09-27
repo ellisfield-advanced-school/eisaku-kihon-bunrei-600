@@ -361,6 +361,20 @@ h2[style*="8e44ad"]{color:#7a5cff!important}
      style="text-align: center; font-size: 1.1rem; color: #e74c3c; font-weight: bold; margin-bottom: 25px;">
     入試問題演習 作成中
 </div>
+<div id="streak-badge"
+     class="hidden"
+     style="text-align:center; margin: -15px 0 20px 0;">
+    <span style="
+        display:inline-block;
+        background:#fff3e0;
+        border:2px solid #ff9600;
+        border-radius:999px;
+        padding:6px 18px;
+        font-size:1.05rem;
+        font-weight:800;
+        color:#ff9600;
+    ">🔥 <span id="streak-count">0</span>日連続チャレンジ中</span>
+</div>
    <div id="view-category">
        <div style="text-align: center; margin-bottom: 20px;">
 
@@ -460,6 +474,9 @@ h2[style*="8e44ad"]{color:#7a5cff!important}
            <button class="btn-cat" onclick="startCategory('接続詞（1）')">接続詞（1）</button>
        </div>
        <h2 style="text-align:center; color:#8e44ad; margin-top:25px; font-size:1.1rem;">エリスフィールド進学会</h2>
+       <div style="text-align:center; margin-top:10px;">
+           <button class="btn-action" style="background-color:#7f8c8d; font-size:0.9rem; padding:9px 18px;" onclick="openFeedbackForm()">📩 お問い合わせ</button>
+       </div>
        
    </div>
 
@@ -9846,6 +9863,9 @@ let cleanCorrect = normalizeText(q.answer);
    // 苦手分野可視化のため、カテゴリ別の正答記録を保存
    recordStat(q.category, isCorrect);
 
+   // ストリーク（連続学習日数）の更新
+   updateStudyStreak();
+
     // 誤答リストの更新（全モード共通）と、テスト・復習用のログ
     const wrongInfo = updateWrongList(q, isCorrect);
     showWrongNote(wrongInfo);
@@ -9983,6 +10003,85 @@ function resetStats() {
         saveStats({});
         renderStats();
     }
+}
+
+// ==========================================
+// ストリーク表示（連続学習日数）
+// ==========================================
+const STREAK_KEY = "eisaku600_studyStreak";
+
+// 【防弾】localStorageが使えない環境でもエラーで落ちないようにする
+function loadStreakData() {
+    try {
+        const o = JSON.parse(localStorage.getItem(STREAK_KEY) || "null");
+        if (o && typeof o === "object" && o.lastStudyDate && Number.isFinite(o.streakCount)) {
+            return o;
+        }
+    } catch (e) {}
+    return { lastStudyDate: "", streakCount: 0 };
+}
+
+function saveStreakData(data) {
+    try {
+        localStorage.setItem(STREAK_KEY, JSON.stringify(data));
+    } catch (e) {
+        // 保存できなくてもアプリの動作は継続する
+    }
+}
+
+// ローカル日付を "YYYY-MM-DD" 形式で取得（何時に学習したかは問わず、日付が変わったかで判定）
+function todayDateString() {
+    const d = new Date();
+    const y = d.getFullYear();
+    const m = String(d.getMonth() + 1).padStart(2, "0");
+    const day = String(d.getDate()).padStart(2, "0");
+    return `${y}-${m}-${day}`;
+}
+
+// 2つの "YYYY-MM-DD" 文字列の日数差を計算する
+function dateDiffInDays(fromStr, toStr) {
+    const from = new Date(`${fromStr}T00:00:00`);
+    const to = new Date(`${toStr}T00:00:00`);
+    return Math.round((to - from) / (1000 * 60 * 60 * 24));
+}
+
+// バッジの表示を更新（localStorageの値をそのまま表示するだけで、判定・更新は行わない）
+function renderStreakBadge() {
+    const data = loadStreakData();
+    const badge = document.getElementById("streak-badge");
+    const countEl = document.getElementById("streak-count");
+    if (!badge || !countEl) return;
+
+    if (data.streakCount > 0) {
+        countEl.innerText = data.streakCount;
+        badge.classList.remove("hidden");
+    } else {
+        badge.classList.add("hidden");
+    }
+}
+
+// 問題に解答したタイミングで呼び出す。日をまたいでいれば連続日数を更新し、
+// 2日以上間が空いていれば1にリセットする。
+function updateStudyStreak() {
+    const today = todayDateString();
+    const data = loadStreakData();
+
+    if (data.lastStudyDate === today) {
+        // 今日すでに記録済みなら何もしない
+        renderStreakBadge();
+        return;
+    }
+
+    if (data.lastStudyDate) {
+        const diff = dateDiffInDays(data.lastStudyDate, today);
+        data.streakCount = (diff === 1) ? data.streakCount + 1 : 1;
+    } else {
+        data.streakCount = 1;
+    }
+    data.lastStudyDate = today;
+
+    saveStreakData(data);
+    renderStreakBadge();
 }
 
 // カテゴリ一覧のボタンから、全カテゴリ名を取得する
@@ -10123,6 +10222,30 @@ quizDataset.forEach(q => {
 
 function getQid(q) {
     return QID_OF.get(q);
+}
+
+// ==========================================
+// お問い合わせボタン（Googleフォーム連携）
+// ==========================================
+// 【要設定】ユーザー側でGoogleフォームを作成し、「事前入力用リンクを取得」から
+// フォームURL（事前入力なしの通常のURLで構いません）を確認して、
+// 下記の formUrl の値を書き換えてください。
+// フォームの質問項目案: カテゴリ（例: 分詞（1））、問題番号、お問い合わせ内容、Eメールアドレス
+// （すべてユーザー本人が手入力する想定のため、事前入力の設定は不要です）
+const FEEDBACK_FORM_CONFIG = {
+    formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSeLiAnd2GtEMA4RRJh96OaiSGG23ZZc6Uv0DJ7t97vjvEZKoA/viewform"
+};
+
+function isFeedbackFormConfigured() {
+    return !FEEDBACK_FORM_CONFIG.formUrl.includes("XXXX");
+}
+
+function openFeedbackForm() {
+    if (!isFeedbackFormConfigured()) {
+        alert("お問い合わせフォームがまだ設定されていません。\n（FEEDBACK_FORM_CONFIG にフォームURLを設定してください）");
+        return;
+    }
+    window.open(FEEDBACK_FORM_CONFIG.formUrl, "_blank", "noopener");
 }
 
 // ==========================================
@@ -10732,6 +10855,9 @@ document.getElementById("audio-progress-notice").innerText =
 // 難易度フィルターの初期状態（「すべて」を選択済みにしておく）
 setDifficultyFilter("すべて");
 updateReviewButton();
+
+// ストリーク（連続学習日数）バッジの初期表示
+renderStreakBadge();
 
 // 収録問題の難易度分布を自動集計して表示（問題数が増減しても自動で追従する）
 (function() {
