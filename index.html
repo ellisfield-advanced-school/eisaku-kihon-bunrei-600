@@ -117,6 +117,15 @@
        .question-text small.instruction-note .fuyou-note {
            color: #e74c3c;
        }
+       /* 検索結果の一覧 */
+       .sr-row { display:block; width:100%; text-align:left; background:#fff; border:2px solid #e3eaf2; border-radius:14px; padding:10px 14px; margin:0 0 8px 0; cursor:pointer; font-family:inherit; box-sizing:border-box; }
+       .sr-row:hover, .sr-row:active { background:#f0f7ff; border-color:#3498db; }
+       .sr-head { display:flex; flex-wrap:wrap; align-items:center; gap:6px; font-size:0.8rem; color:#7f8c8d; margin-bottom:4px; }
+       .sr-pos { font-weight:800; color:#2c3e50; }
+       .sr-tag { background:#eef3f8; border-radius:8px; padding:1px 8px; }
+       .sr-diff { color:#fff; border-radius:8px; padding:1px 8px; font-weight:700; }
+       .sr-wrong { background:#fff3e0; color:#e67e22; border-radius:8px; padding:1px 8px; font-weight:700; }
+       .sr-preview { font-size:0.95rem; color:#1f2a44; line-height:1.5; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
        /* 四択 */
        .choices-grid {
            display: grid;
@@ -497,6 +506,28 @@ h2[style*="8e44ad"]{color:#7a5cff!important}
        </div>
    </div>
  
+   <div id="view-search-results" class="hidden">
+       <div style="text-align:center; margin-bottom:12px;">
+           <h2 style="color:#2c3e50; font-size:1.15rem; margin:0 0 4px 0;">🔍 検索結果</h2>
+           <p id="search-results-summary" style="font-weight:bold; font-size:1.05rem; margin:6px 0;"></p>
+           <p id="search-results-range" class="hidden" style="color:#2c3e50; font-size:0.9rem; margin:0 0 6px 0;"></p>
+           <p style="color:#7f8c8d; font-size:0.85rem; margin:0; line-height:1.6;">解きたい問題をタップしてください。その問題から順に出題します。問題文、解説、難易度などに疑問点やご意見などがありましたら、お問合せボタンを押して下さい。</p>
+       </div>
+       <div class="center-actions" style="margin:0 0 14px 0;">
+           <button id="btn-search-start" class="btn-action" onclick="startSearchQuiz(searchPage * SEARCH_PAGE_SIZE)">最初から順に解く</button>
+           <button class="btn-action" style="background-color:#95a5a6;" onclick="showView('category')">トップへ戻る</button>
+       </div>
+       <div id="search-results-list"></div>
+       <div id="search-pager" class="center-actions hidden" style="margin:14px 0 0 0;">
+           <button id="btn-search-prev" class="btn-action" style="background-color:#7f8c8d;" onclick="changeSearchPage(-1)">前の検索結果へ</button>
+           <button id="btn-search-next" class="btn-action" onclick="changeSearchPage(1)">次の検索結果へ</button>
+       </div>
+       <div class="center-actions" style="margin-top:18px;">
+           <button class="btn-action" style="background-color:#7f8c8d; font-size:0.9rem; padding:9px 18px;" onclick="openFeedbackForm()">📩 お問い合わせ</button>
+           <button class="btn-action" style="background-color:#95a5a6;" onclick="showView('category')">トップへ戻る</button>
+       </div>
+   </div>
+
    <div id="view-quiz" class="hidden">
        <div class="meta-info">
            <span id="quiz-meta-pos">p.0 No.0</span>
@@ -6406,7 +6437,7 @@ const quizDataset = [
     answer: "driving", audioText: "I'm used to driving on the left because I've lived in Britain for a long time.", 
     translation: "イギリスに長く住んでいるので、左側を通行すること（運転すること）には慣れている。",
     explanation: "＜be used to -ing＞ で「〜することに慣れている」という意味を表す慣用表現です。この to は前置詞なので、後ろには動名詞 driving が正解となります。",
-    difficulty: "応用", school: "鹿児島大" },
+    difficulty: "基礎", school: "鹿児島大" },
 
   { page: 41, no: 14, category: "動名詞（2）", type: "4choice",
     question: "Pat said she wasn't used ( &nbsp; &nbsp; &nbsp; ) before a large audience.",
@@ -9746,7 +9777,7 @@ function loadQuestion() {
    const pNo = q.no !== undefined ? q.no : "?";
    const progressLabel = (sessionMode === "random" || sessionMode === "review")
         ? `${sessionMode === "random" ? "🎲" : "🔁"} ${currentIndex + 1}/${currentQuestions.length}　`
-        : "";
+        : (sessionMode === "search" ? `🔍 ${currentIndex + 1}/${currentQuestions.length}　` : "");
     document.getElementById("quiz-meta-pos").innerText = `${progressLabel}p.${pPage} No.${pNo}`;
 
    // 4choice のときの表示を「選択問題」に変更
@@ -10090,7 +10121,7 @@ function backToNumberSelect() {
 }
  
 const VIEW_IDS = ["category", "number-select", "quiz", "result", "stats",
-                  "review", "random-setup", "session-result", "history"];
+                  "review", "random-setup", "session-result", "history", "search-results"];
 
 function showView(viewName) {
    VIEW_IDS.forEach(v => document.getElementById("view-" + v).classList.add("hidden"));
@@ -10756,7 +10787,7 @@ function finishSession() {
         renderSessionResult();
         showView("session-result");
     } else if (sessionMode === "search") {
-        showView("category");
+        backToSearchResults();
     } else {
         showView("number-select");
     }
@@ -10826,7 +10857,7 @@ function backFromQuiz() {
         return;
     }
     if (sessionMode === "search") {
-        showView("category");
+        backToSearchResults();
         return;
     }
     showView("number-select");
@@ -10938,6 +10969,140 @@ function renderHistory() {
     }).join("");
 }
 
+// ==========================================
+// 検索結果の一覧（解きたい問題を選べる）
+// ==========================================
+let lastSearchResults = [];
+let lastSearchKeyword = "";
+let searchListScroll = 0;
+
+const SR_DIFF_COLOR = { "基礎": "#2ecc71", "標準": "#3498db", "応用": "#e74c3c" };
+
+function questionTypeLabel(q) {
+    if (q.type === "4choice") return "選択問題";
+    if (q.type === "sort") return "語句整序";
+    if (q.type === "rewrite") return isTwoSentenceRewrite(q) ? "書き換え問題" : "適語補充問題";
+    return "書き換え問題";
+}
+
+// 一覧用の問題文プレビュー（注意書きとタグを除き、空所を（　）で表示）
+function searchPreviewText(q) {
+    return (q.question || "")
+        .replace(/<small[^>]*instruction-note[^>]*>[\s\S]*?<\/small>/g, " ")
+        .replace(/<[^>]+>/g, " ")
+        .replace(/&nbsp;/g, " ")
+        .replace(/\(\s*\)/g, "（　）")
+        .replace(/\s+/g, " ")
+        .trim();
+}
+
+const SEARCH_PAGE_SIZE = 50;   // 検索結果を一度に表示する件数
+let searchPage = 0;            // 現在表示中のページ（0始まり）
+
+function renderSearchResults() {
+    const summary = document.getElementById("search-results-summary");
+    const rangeEl = document.getElementById("search-results-range");
+    const list = document.getElementById("search-results-list");
+    const total = lastSearchResults.length;
+    const pageCount = Math.max(1, Math.ceil(total / SEARCH_PAGE_SIZE));
+    if (searchPage < 0) searchPage = 0;
+    if (searchPage > pageCount - 1) searchPage = pageCount - 1;
+
+    const startIdx = searchPage * SEARCH_PAGE_SIZE;
+    const endIdx = Math.min(total, startIdx + SEARCH_PAGE_SIZE);
+
+    summary.textContent = `「${lastSearchKeyword}」で ${total} 件ヒットしました`;
+    if (pageCount > 1) {
+        rangeEl.textContent = `${startIdx + 1}〜${endIdx}件目を表示中（${searchPage + 1}/${pageCount}ページ）`;
+        rangeEl.classList.remove("hidden");
+    } else {
+        rangeEl.classList.add("hidden");
+    }
+
+    document.getElementById("btn-search-start").textContent =
+        searchPage === 0 ? "最初から順に解く" : "この画面の先頭から順に解く";
+
+    const pager = document.getElementById("search-pager");
+    pager.classList.toggle("hidden", pageCount <= 1);
+    document.getElementById("btn-search-prev").classList.toggle("hidden", searchPage === 0);
+    document.getElementById("btn-search-next").classList.toggle("hidden", searchPage >= pageCount - 1);
+
+    list.innerHTML = "";
+    const wrong = loadWrong();
+    const frag = document.createDocumentFragment();
+
+    for (let i = startIdx; i < endIdx; i++) {
+        const q = lastSearchResults[i];
+        const row = document.createElement("button");
+        row.type = "button";
+        row.className = "sr-row";
+        row.onclick = () => startSearchQuiz(i);
+
+        const head = document.createElement("div");
+        head.className = "sr-head";
+
+        const addSpan = (cls, text, color) => {
+            const sp = document.createElement("span");
+            sp.className = cls;
+            sp.textContent = text;
+            if (color) sp.style.backgroundColor = color;
+            head.appendChild(sp);
+        };
+
+        addSpan("sr-pos", `p.${q.page !== undefined ? q.page : "?"} No.${q.no !== undefined ? q.no : "?"}`);
+        addSpan("sr-tag", questionTypeLabel(q));
+        if (q.difficulty) addSpan("sr-diff", q.difficulty, SR_DIFF_COLOR[q.difficulty] || "#95a5a6");
+        if (q.school) {
+            const sp = document.createElement("span");
+            sp.textContent = q.school;
+            head.appendChild(sp);
+        }
+        if (wrong[getQid(q)]) addSpan("sr-wrong", "🔁 要復習");
+
+        const prev = document.createElement("div");
+        prev.className = "sr-preview";
+        prev.textContent = searchPreviewText(q);
+
+        row.appendChild(head);
+        row.appendChild(prev);
+        frag.appendChild(row);
+    }
+
+    list.appendChild(frag);
+}
+
+// 検索結果のページ送り（±1）
+function changeSearchPage(delta) {
+    searchPage += delta;
+    renderSearchResults();
+    window.scrollTo(0, 0);
+}
+
+// 一覧で選んだ問題から、検索結果の順に出題する
+function startSearchQuiz(index) {
+    if (!lastSearchResults.length) return;
+    searchListScroll = window.scrollY || 0;
+    currentQuestions = lastSearchResults;
+    currentIndex = index;
+    sessionMode = "search";
+    showView("quiz");
+    loadQuestion();
+}
+
+// クイズ画面から検索結果の一覧へ戻る（今解いている問題があるページを表示し、同じページならスクロール位置も戻す）
+function backToSearchResults() {
+    if (!lastSearchResults.length) {
+        showView("category");
+        return;
+    }
+    const pageOfCurrent = Math.floor(currentIndex / SEARCH_PAGE_SIZE);
+    const samePage = (pageOfCurrent === searchPage);
+    searchPage = pageOfCurrent;
+    renderSearchResults();
+    showView("search-results");
+    window.scrollTo(0, samePage ? (searchListScroll || 0) : 0);
+}
+
 function searchQuestions() {
 
     const keyword = document.getElementById("search-box")
@@ -10967,15 +11132,12 @@ if (results.length === 0) {
     return;
 }
 
-currentQuestions = results;
-currentIndex = 0;
-sessionMode = "search";
-
-
-alert(`「${keyword}」で検索しました。\n${results.length}件ヒットしました。`);
-   
-showView("quiz");
-loadQuestion();
+lastSearchResults = results;
+lastSearchKeyword = document.getElementById("search-box").value.trim();
+searchListScroll = 0;
+searchPage = 0;
+renderSearchResults();
+showView("search-results");
 
 }
   document.getElementById("quiz-counter").innerText =
