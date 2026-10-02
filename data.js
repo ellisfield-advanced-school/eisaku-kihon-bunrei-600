@@ -9777,7 +9777,7 @@ const quizDataset = [
       explanation: "＜No matter how 形容詞［副詞］S＋V＞は「どんなに〜しても」という譲歩を表し、However 形容詞［副詞］S＋V と同じ意味になります。No matter how tired he is の語順になります。how の直後に形容詞の tired を置き、そのあとに S＋V（he is）を続けます。",
       difficulty: "応用", school: "同志社大"   },
   {  page: 59, no: "15-1", category: "接続詞（2）", type: "4choice",
-      question: "No ( &nbsp; &nbsp; &nbsp; ) he says, don't change your plan.",
+      question: "No matter ( &nbsp; &nbsp; &nbsp; ) he says, don't change your plan.",
       choices: ["what", "how", "which", "that"],
       answer: "what", audioText: "No matter what he says, don't change your plan.",
       translation: "彼が何と言おうと、計画を変えてはいけない。",
