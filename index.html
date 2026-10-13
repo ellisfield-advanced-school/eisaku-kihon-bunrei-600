@@ -340,6 +340,11 @@ body{background:linear-gradient(180deg,#e3f2ff 0,#f5faff 320px,#f5faff 100%);bac
 .btn-cat{background:#fff;border:2px solid #e3eaf2;border-bottom-width:5px;border-radius:16px;color:#2b3a55;padding:14px 8px;font-size:.95rem}
 .btn-cat:hover{background:#ddf4ff;border-color:#1cb0f6;color:#0b6fa8}
 .btn-cat:active{transform:translateY(3px);border-bottom-width:2px}
+/* 目次外の補充カテゴリ（「英作基本文例600」の目次にないもの）は、目次のボタンと見た目を変える */
+.btn-cat.btn-supplement{grid-column:1 / -1;background:#fffbea;border:2px dashed #f0a500;border-bottom-width:2px;color:#8a5a00}
+.btn-cat.btn-supplement::before{content:"目次外の補充";display:block;font-size:.7rem;font-weight:700;color:#b97a00;margin-bottom:2px}
+.btn-cat.btn-supplement:hover{background:#fff1c2;border-color:#e08e00;color:#6b4300}
+.btn-cat.btn-supplement:active{transform:translateY(2px)}
 .section-title{border-left:0;padding-left:0;color:#1f2a44;font-weight:800}
 .meta-info{border-bottom:2px solid #eef2f7}
 .question-text{font-size:1.3rem;color:#1f2a44}
@@ -492,7 +497,7 @@ h2[style*="8e44ad"]{color:#7a5cff!important}
            <button class="btn-cat" onclick="startCategory('代名詞（1）')">代名詞（1）</button>
            <button class="btn-cat" onclick="startCategory('代名詞（2）')">代名詞（2）</button>
           <button class="btn-cat" onclick="startCategory('仮定法')">仮定法</button>
-          <button class="btn-cat" onclick="startCategory('名詞（補充）')">名詞（補充）</button>
+          <button class="btn-cat btn-supplement" onclick="startCategory('名詞（補充）')">名詞（補充）</button>
        </div>
        <h2 style="text-align:center; color:#8e44ad; margin-top:25px; font-size:1.1rem;">エリスフィールド進学会</h2>
        <div style="text-align:center; margin-top:10px;">
