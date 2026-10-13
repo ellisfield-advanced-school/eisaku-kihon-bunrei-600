@@ -345,6 +345,20 @@ body{background:linear-gradient(180deg,#e3f2ff 0,#f5faff 320px,#f5faff 100%);bac
 .supplement-heading{grid-column:1 / -1;margin-top:10px;padding-top:8px;border-top:2px dashed #f0a500;font-size:.85rem;font-weight:800;color:#b97a00}
 .btn-cat.btn-supplement:hover{background:#fff1c2;border-color:#e08e00;color:#6b4300}
 .btn-cat.btn-supplement:active{transform:translateY(2px)}
+/* 英作文の添削 */
+.corr-note{color:#7f8c8d;font-size:.85rem;line-height:1.6;margin:0}
+.corr-box{background:#f7fbff;border:2px solid #dbeeff;border-radius:16px;padding:14px;margin:12px 0}
+.corr-box h3{margin:0 0 6px 0;font-size:1rem;color:#2980b9}
+.corr-label{display:block;font-weight:800;font-size:.9rem;color:#2b3a55;margin:10px 0 4px}
+.corr-textarea{width:100%;box-sizing:border-box;border:2px solid #cfe3f5;border-radius:12px;padding:10px;font-size:16px;font-family:inherit;resize:vertical}
+.corr-status{min-height:1.2em;font-size:.88rem;font-weight:700;color:#3f8f00;margin:8px 0 0}
+.corr-links{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;font-size:.9rem}
+.corr-links a{color:#0b6fa8;font-weight:700}
+.corr-card{background:#fff;border:2px solid #e9eff6;border-radius:14px;padding:10px 12px;margin-top:10px}
+.corr-card-title{font-weight:800;color:#2b3a55}
+.corr-card-hint{color:#7f8c8d;font-size:.85rem;margin:2px 0 4px}
+.corr-card .btn-cat{display:block;width:100%;margin-top:8px}
+.corr-caution{background:#fff8e6;border:1px solid #f5cba7;border-radius:12px;padding:10px 12px;color:#8a5a00;font-size:.85rem;line-height:1.6}
 .section-title{border-left:0;padding-left:0;color:#1f2a44;font-weight:800}
 .meta-info{border-bottom:2px solid #eef2f7}
 .question-text{font-size:1.3rem;color:#1f2a44}
@@ -451,6 +465,7 @@ h2[style*="8e44ad"]{color:#7a5cff!important}
             <div class="mode-row">
                 <button class="btn-mode" style="background-color:#e67e22;" onclick="openRandomSetup()">🎲 ランダム10問テスト</button>
                 <button class="btn-mode" id="btn-review-entry" style="background-color:#16a085;" onclick="openReview()">🔁 誤答復習</button>
+                <button class="btn-mode" style="background-color:#2980b9;" onclick="openCorrection()">✍️ 英作文を添削してもらう</button>
             </div>
            <p id="difficulty-summary" style="text-align:center; color:#7f8c8d; font-size:0.8rem; margin:10px 0 0 0;"></p>
            <div style="margin-top:10px;">
@@ -505,6 +520,44 @@ h2[style*="8e44ad"]{color:#7a5cff!important}
            <button class="btn-action" style="background-color:#7f8c8d; font-size:0.9rem; padding:9px 18px;" onclick="openFeedbackForm()">📩 お問い合わせ</button>
        </div>
        
+   </div>
+
+   <div id="view-correction" class="hidden">
+       <div style="text-align:center; margin-bottom:12px;">
+           <h2 style="color:#2980b9; font-size:1.15rem; margin:0 0 6px 0;">✍️ 英作文を添削してもらう</h2>
+           <p class="corr-note">書いた英文を、AIに添削してもらうための「指示文」を作ります。コピーして、お使いのAIアプリ（Gemini・ChatGPT・Claude など）に貼り付けてください。ノートを撮影した画像で見てもらうときは、英文の欄を空のままコピーして、AIアプリで画像を添付します。</p>
+       </div>
+       <div class="corr-box">
+           <h3>① 指示文を作ってコピーする</h3>
+           <label class="corr-label" for="corr-japanese">日本語の課題文（ない場合は空のままで大丈夫です）</label>
+           <textarea id="corr-japanese" class="corr-textarea" rows="2" placeholder="例: 万一雨が降れば、試合は中止になります。"></textarea>
+           <label class="corr-label" for="corr-english">あなたの英文</label>
+           <textarea id="corr-english" class="corr-textarea" rows="5" placeholder="ここに英文を入力します。"></textarea>
+           <div style="text-align:center; margin-top:10px;">
+               <button class="btn-action" style="background-color:#2980b9;" onclick="copyCorrectionPrompt()">📋 指示文をコピー</button>
+           </div>
+           <p id="corr-copy-status" class="corr-status"></p>
+           <textarea id="corr-preview" class="corr-textarea hidden" rows="8" readonly></textarea>
+           <div class="corr-links">
+               <span class="corr-note">AIアプリを開く:</span>
+               <a href="https://gemini.google.com/app" target="_blank" rel="noopener noreferrer">Gemini</a>
+               <a href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer">ChatGPT</a>
+               <a href="https://claude.ai/new" target="_blank" rel="noopener noreferrer">Claude</a>
+           </div>
+       </div>
+       <div class="corr-box">
+           <h3>② AIの返事から復習する</h3>
+           <p class="corr-note">AIの返事を、「分類:」の行を含めて貼り付けると、誤りの種類に合わせて、このアプリの復習問題を表示します。</p>
+           <textarea id="corr-reply" class="corr-textarea" rows="6" placeholder="ここにAIの返事を貼り付けます。"></textarea>
+           <div style="text-align:center; margin-top:10px;">
+               <button class="btn-action" style="background-color:#16a085;" onclick="renderCorrectionReview()">🔎 復習先を探す</button>
+           </div>
+           <div id="corr-review-result"></div>
+       </div>
+       <div class="corr-caution">⚠️ 入力した内容は、あなたが選んだAIアプリの会社に送られます。名前・学校名・住所・電話番号などの個人情報は書かないでください。AIアプリの利用条件（年齢制限など）にも従ってください。AIの添削は間違えることがあるので、気になる点は先生や参考書で確かめましょう。</div>
+       <div class="action-container" style="margin-top:18px;">
+           <button class="btn-action" style="background-color:#95a5a6;" onclick="showView('category')">トップへ戻る</button>
+       </div>
    </div>
 
    <div id="view-number-select" class="hidden">
@@ -707,6 +760,7 @@ h2[style*="8e44ad"]{color:#7a5cff!important}
  </div>
  
 <script src="data.js"></script>
+<script src="correction.js"></script>
 <script>
 // サンプルデータベース
 // ==========================================
@@ -1168,6 +1222,145 @@ speechSynthesis.speak(uttr);
    
 }
    
+// ==========================================
+// 英作文の添削（指示文をコピーして、AIアプリに貼り付ける方式）
+// データ（指示文・分類表）は correction.js にある
+// ==========================================
+function openCorrection() {
+    showView("correction");
+}
+
+function buildCorrectionPrompt() {
+    const jp = document.getElementById("corr-japanese").value.trim();
+    const en = document.getElementById("corr-english").value.trim();
+    // replace に関数を渡して、入力中の $ などが特別扱いされないようにする
+    const text = CORRECTION_PROMPT_TEMPLATE
+        .replace("{{日本語の課題文}}", () => jp || "なし")
+        .replace("{{学習者の英文}}", () => en || "（このあと、AIアプリで画像を添付します）");
+    return { text: text, hasEnglish: en.length > 0 };
+}
+
+async function copyCorrectionPrompt() {
+    const built = buildCorrectionPrompt();
+    const status = document.getElementById("corr-copy-status");
+    const preview = document.getElementById("corr-preview");
+    let ok = false;
+    try {
+        if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(built.text);
+            ok = true;
+        }
+    } catch (e) { ok = false; }
+    if (!ok) {
+        const ta = document.createElement("textarea");
+        ta.value = built.text;
+        ta.style.position = "fixed";
+        ta.style.opacity = "0";
+        document.body.appendChild(ta);
+        ta.select();
+        try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+        document.body.removeChild(ta);
+    }
+    if (ok) {
+        status.style.color = "#3f8f00";
+        status.textContent = built.hasEnglish
+            ? "✅ コピーしました。AIアプリに貼り付けてください。"
+            : "✅ コピーしました（英文は空です）。AIアプリに貼り付けて、画像を添付してください。";
+        preview.classList.add("hidden");
+    } else {
+        status.style.color = "#d92b2b";
+        status.textContent = "コピーできませんでした。下の枠の文章を全部選んで、手動でコピーしてください。";
+        preview.value = built.text;
+        preview.classList.remove("hidden");
+    }
+}
+
+// AIの返事から分類IDを探す（「分類: H06 …」の行を優先し、なければ本文中のIDを探す）
+function findCorrectionIds(reply) {
+    const known = new Set(CORRECTION_TAXONOMY.map(t => t.id));
+    const found = [];
+    const add = id => { if (known.has(id) && found.indexOf(id) === -1) found.push(id); };
+    let m;
+    const re1 = /分類[ \t*]*[:：][ \t*]*([A-Z][0-9]{2})/g;
+    while ((m = re1.exec(reply)) !== null) add(m[1]);
+    if (found.length === 0) {
+        const re2 = /(?:^|[^A-Za-z0-9])([A-Z][0-9]{2})(?![A-Za-z0-9])/g;
+        while ((m = re2.exec(reply)) !== null) add(m[1]);
+    }
+    return found;
+}
+
+// そのカテゴリ（と番号）の問題が、いま収録されているか
+function hasQuestionsFor(category, number) {
+    return quizDataset.some(q => {
+        if (q.category !== category) return false;
+        if (!number) return true;
+        const m = String(q.no).match(/^(\d+)/);
+        return m && m[1] === String(number);
+    });
+}
+
+function correctionReviewLabel(r) {
+    const base = (r.page !== null && r.page !== undefined) ? `p${r.page} ${r.category}` : r.category;
+    return r.number ? `${base} ${r.number}番` : base;
+}
+
+// 難易度フィルターに関係なく、そのカテゴリ（と番号）の問題を出す。フィルターの設定は元に戻す
+function startReviewTarget(category, number) {
+    const saved = selectedDifficulty;
+    selectedDifficulty = "すべて";
+    try {
+        startCategory(category);
+    } finally {
+        selectedDifficulty = saved;
+    }
+    if (number) startNumber(parseInt(number, 10));
+}
+
+function renderCorrectionReview() {
+    const reply = document.getElementById("corr-reply").value;
+    const box = document.getElementById("corr-review-result");
+    box.innerHTML = "";
+    const ids = findCorrectionIds(reply);
+    if (ids.length === 0) {
+        const p = document.createElement("p");
+        p.className = "corr-note";
+        p.style.marginTop = "10px";
+        p.textContent = "復習先が見つかりませんでした。AIの返事の「分類: H06 …」のような行を含めて貼り付けてください。";
+        box.appendChild(p);
+        return;
+    }
+    ids.forEach(id => {
+        const t = CORRECTION_TAXONOMY.find(x => x.id === id);
+        const card = document.createElement("div");
+        card.className = "corr-card";
+        const title = document.createElement("div");
+        title.className = "corr-card-title";
+        title.textContent = `${t.id}　${t.name}`;
+        const hint = document.createElement("div");
+        hint.className = "corr-card-hint";
+        hint.textContent = t.hint;
+        card.appendChild(title);
+        card.appendChild(hint);
+        const targets = t.review.filter(r => hasQuestionsFor(r.category, r.number));
+        if (targets.length === 0) {
+            const none = document.createElement("div");
+            none.className = "corr-note";
+            none.textContent = "この誤りを復習できる問題は、まだ収録していません。";
+            card.appendChild(none);
+        } else {
+            targets.forEach(r => {
+                const btn = document.createElement("button");
+                btn.className = "btn-cat";
+                btn.textContent = `📖 ${correctionReviewLabel(r)} で復習する`;
+                btn.onclick = () => startReviewTarget(r.category, r.number);
+                card.appendChild(btn);
+            });
+        }
+        box.appendChild(card);
+    });
+}
+
 function backToCategory() {
    showView("category");
 }
@@ -1177,7 +1370,7 @@ function backToNumberSelect() {
 }
  
 const VIEW_IDS = ["category", "number-select", "quiz", "result", "stats",
-                  "review", "random-setup", "session-result", "history", "search-results"];
+                  "review", "random-setup", "session-result", "history", "search-results", "correction"];
 
 function showView(viewName) {
    VIEW_IDS.forEach(v => document.getElementById("view-" + v).classList.add("hidden"));
