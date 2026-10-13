@@ -345,6 +345,8 @@ body{background:linear-gradient(180deg,#e3f2ff 0,#f5faff 320px,#f5faff 100%);bac
 .supplement-heading{grid-column:1 / -1;margin-top:10px;padding-top:8px;border-top:2px dashed #f0a500;font-size:.85rem;font-weight:800;color:#b97a00}
 .btn-cat.btn-supplement:hover{background:#fff1c2;border-color:#e08e00;color:#6b4300}
 .btn-cat.btn-supplement:active{transform:translateY(2px)}
+.btn-cat.no-data{opacity:.4}
+.data-warning{margin:8px 0;padding:8px 10px;border-radius:10px;background:#fdecea;color:#b71c1c;font-size:.85rem;font-weight:700;line-height:1.5}
 /* 英作文の添削 */
 .corr-note{color:#7f8c8d;font-size:.85rem;line-height:1.6;margin:0}
 .corr-box{background:#f7fbff;border:2px solid #dbeeff;border-radius:16px;padding:14px;margin:12px 0}
@@ -827,7 +829,9 @@ function startCategory(catName) {
       if (selectedDifficulty !== "すべて") {
           alert(`「${catName}」には、難易度「${selectedDifficulty}」の問題が現在ありません。\n難易度フィルターを「すべて」に戻すか、別の難易度をお試しください。`);
       } else {
-          alert(`エラー：カテゴリ「${catName}」の問題データが見つかりません。\nデータが正しく登録されているか、または文字の打ち間違い（半角・全角など）がないか確認してください。`);
+          const similar = Array.from(new Set(quizDataset.map(q => q.category)))
+              .filter(c => c.indexOf(catName) !== -1 || catName.indexOf(c) !== -1);
+          alert(`エラー：カテゴリ「${catName}」の問題データが見つかりません。\n読み込まれた問題数：${quizDataset.length}問` + (similar.length ? `\n似た名前のカテゴリ：${similar.join("、")}` : "") + `\n\ndata.js が古いか、ブラウザに古い data.js が残っている可能性があります。GitHub の data.js を最新版にして、ページを再読み込みしてください。`);
       }
       return;
    }
@@ -2422,6 +2426,25 @@ renderStreakBadge();
     const el = document.getElementById("difficulty-summary");
     if (el) {
         el.innerText = `収録問題のレベルはAIの判定により、基礎${counts["基礎"]}問、標準${counts["標準"]}問、応用${counts["応用"]}問に分類されています。`;
+    }
+})();
+
+// 【防弾】ボタンのカテゴリに対応する問題が、読み込んだ data.js にあるかを、起動時に確認する
+(function() {
+    const have = new Set(quizDataset.map(q => q.category));
+    const missing = getAllCategoryNames().filter(n => !have.has(n));
+    if (missing.length === 0) return;
+    console.warn("data.js に問題がないカテゴリ:", missing);
+    document.querySelectorAll("#view-category .category-grid .btn-cat").forEach(btn => {
+        const m = (btn.getAttribute("onclick") || "").match(/startCategory\('([^']+)'\)/);
+        if (m && missing.indexOf(m[1]) !== -1) btn.classList.add("no-data");
+    });
+    const counter = document.getElementById("quiz-counter");
+    if (counter && counter.parentNode) {
+        const w = document.createElement("div");
+        w.className = "data-warning";
+        w.textContent = `⚠️ 問題データのないカテゴリがあります（${missing.join("、")}）。data.js が古い可能性があります。`;
+        counter.parentNode.insertBefore(w, counter.nextSibling);
     }
 })();
    
