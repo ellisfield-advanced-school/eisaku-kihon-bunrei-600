@@ -492,6 +492,7 @@ h2[style*="8e44ad"]{color:#7a5cff!important}
            <button class="btn-cat" onclick="startCategory('代名詞（1）')">代名詞（1）</button>
            <button class="btn-cat" onclick="startCategory('代名詞（2）')">代名詞（2）</button>
           <button class="btn-cat" onclick="startCategory('仮定法')">仮定法</button>
+          <button class="btn-cat" onclick="startCategory('名詞（補充）')">名詞（補充）</button>
        </div>
        <h2 style="text-align:center; color:#8e44ad; margin-top:25px; font-size:1.1rem;">エリスフィールド進学会</h2>
        <div style="text-align:center; margin-top:10px;">
@@ -827,7 +828,7 @@ function loadQuestion() {
    const progressLabel = (sessionMode === "random" || sessionMode === "review")
         ? `${sessionMode === "random" ? "🎲" : "🔁"} ${currentIndex + 1}/${currentQuestions.length}　`
         : (sessionMode === "search" ? `🔍 ${currentIndex + 1}/${currentQuestions.length}　` : "");
-    document.getElementById("quiz-meta-pos").innerText = `${progressLabel}p.${pPage} No.${pNo}`;
+    document.getElementById("quiz-meta-pos").innerText = `${progressLabel}${posLabel(q)}`;
 
    // 4choice のときの表示を「選択問題」に変更
    // rewrite タイプは「2文の書き換え（同意文完成など）」と「1文の空所補充（つづり・語形変化）」の
@@ -1384,6 +1385,14 @@ function shuffleArray(arr) {
     return a;
 }
 
+// 問題の位置の表示: page が null なら目次外の補充問題として「補充 No.○」と表示する
+function posLabel(q) {
+  const no = (q.no !== undefined && q.no !== null) ? q.no : "?";
+  if (q.page === null) return `補充 No.${no}`;
+  const page = (q.page !== undefined) ? q.page : "?";
+  return `p.${page} No.${no}`;
+}
+
 function esc(str) {
     return String(str).replace(/[&<>"']/g, c =>
         ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -1874,7 +1883,7 @@ function renderSessionResult() {
     } else {
         wrongBox.innerHTML = `<div class="section-title" style="margin-bottom:10px;">間違えた問題</div>` +
             wrongs.map(l => `<div class="session-item">
-                <div class="session-item-pos">p.${esc(l.q.page)} No.${esc(l.q.no)}　${esc(l.q.category)}　［${esc(l.q.difficulty)}］</div>
+                <div class="session-item-pos">${esc(posLabel(l.q))}　${esc(l.q.category)}　［${esc(l.q.difficulty)}］</div>
                 <div class="session-item-en">${esc(l.q.audioText || "")}</div>
                 <div class="session-item-ja">${esc(l.q.translation || "")}</div>
             </div>`).join("");
@@ -2098,7 +2107,7 @@ function renderSearchResults() {
             head.appendChild(sp);
         };
 
-        addSpan("sr-pos", `p.${q.page !== undefined ? q.page : "?"} No.${q.no !== undefined ? q.no : "?"}`);
+        addSpan("sr-pos", posLabel(q));
         addSpan("sr-tag", questionTypeLabel(q));
         if (q.difficulty) addSpan("sr-diff", q.difficulty, SR_DIFF_COLOR[q.difficulty] || "#95a5a6");
         if (q.school) {
