@@ -4017,7 +4017,7 @@ const quizDataset = [
     answer: "of him", audioText: "It is very kind of him to invite me to dinner.", translation: "私を夕食に招いてくださるとは、彼は大変親切だ。",
     explanation: "kind（親切な）は人の性質・性格を表す形容詞です。nice、kind、honest、careful、polite、rude、wise、clever、foolish、stupid、silly などが続くとき、不定詞の意味上の主語は for ではなく of を使い、＜It is ＋ 形容詞 ＋ of ＋ 人 ＋ to do＞ の形にします。for him は難しさ・必要性などを表す形容詞のときの形で、with him や to him は意味上の主語を表す形にはなりません。",
     difficulty: "基礎", school: "札幌学院大" },
-  { page: 33, no: "10-2", category: "否定表現（2）", type: "4choice",
+  { page: 33, no: "10-2", category: "不定詞（1）", type: "4choice",
     question: "It was very nice ( &nbsp; &nbsp; &nbsp; ) you to help me carry my suitcase.",
     choices: ["by", "for", "of", "to"],
     answer: "of", audioText: "It was very nice of you to help me carry my suitcase.", translation: "スーツケースを運ぶのを手伝ってくれてどうもありがとう。",
