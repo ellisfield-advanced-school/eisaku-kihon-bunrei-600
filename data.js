@@ -10971,7 +10971,7 @@ const quizDataset = [
       answer: "were", audioText: "If it were not for the heavy rain, we would go on a picnic today.",
       translation: "大雨がなければ、今日はピクニックに行くのに。",
       explanation: "「もし〜がなければ」は、仮定法過去の ＜If it were not for ～＞ で表します（現在の事実に反する仮定）。主節が we would go と would を使っているので、if 節の動詞は過去形の were になります。is は直説法の現在形で、would を使う主節と合いません。has been は現在完了で、仮定法の if 節の形にならず、今日の天気を表す文脈にも合いません。was は過去の事実を述べる直説法の形で、仮定法では were を使います。had been は仮定法過去完了（過去の事実に反する仮定）の形で、today を含む現在の文脈には合いません。",
-      difficulty: "基礎", school: "立命館大・改"   },
+      difficulty: "標準", school: "立命館大・改"   },
   {  page: 67, no: "2-2", category: "仮定法", type: "4choice",
       question: "If it ( &nbsp; &nbsp; &nbsp; ) for your continuous encouragement, I would give up this project.",
       choices: ["is not", "were not", "had not been", "has not been"],
