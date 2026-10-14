@@ -11739,5 +11739,36 @@ const quizDataset = [
       answer: "started", audioText: "It is high time you started to think about your future.",
       translation: "あなたはもうとっくに、自分の将来について考え始める時期だ。",
       explanation: "＜It is high time ＋ S ＋ 過去形＞ で、「もうとっくに～する時間だ」を表します。動詞は過去形（仮定法過去）になり、started to think で「考え始める」となるので、started が正解です。start は直説法の現在形、have started は現在完了、will start は未来を表す形で、この構文には使えません。",
-      difficulty: "基礎", school: "立教大"   }
+      difficulty: "基礎", school: "立教大"   },
+
+  {  page: 67, no: "13-1", category: "仮定法", type: "4choice",
+      question: "He is, as it ( &nbsp; &nbsp; &nbsp; ), a grown-up baby.",
+      choices: ["is", "was", "were", "be"],
+      answer: "were", audioText: "He is, as it were, a grown-up baby.",
+      translation: "彼はいわば、大人になった赤ん坊だ。",
+      explanation: "「いわば、言ってみれば」は、挿入句の as it were で表します。仮定法過去の形が決まり文句になったもので、主語が it でも be動詞は were を使うので、were が正解です。is と was は直説法の形、be は原形で、この慣用表現の形にはなりません。",
+      difficulty: "基礎", school: "立教大"   },
+
+  {  page: 67, no: "13-2", category: "仮定法", type: "4choice",
+      question: "The newspaper is, as it ( &nbsp; &nbsp; &nbsp; ), the eyes and ears of society.",
+      choices: ["tells", "was", "speaks", "is", "were"],
+      answer: "were", audioText: "The newspaper is, as it were, the eyes and ears of society.",
+      translation: "新聞はいわば、社会の目であり耳である。",
+      explanation: "「新聞は社会の目と耳だ」は実際の目や耳ではなく、たとえの表現です。そのため、「いわば」の意味を表す挿入句 as it were を使い、were が正解です。as it were は仮定法過去の形が決まり文句になったもので、be動詞は主語に関係なく were になります。was と is は、この慣用表現の形になりません。tells と speaks は、as it のあとに続けても「いわば」の意味を表せません。",
+      difficulty: "基礎", school: "大東文化大"   },
+
+  {  page: 67, no: "13-3", category: "仮定法", type: "4choice",
+      question: "Internet search engines have become, ( &nbsp; &nbsp; &nbsp; ), a third brain for modern users.",
+      choices: ["as it is", "as it were", "so that", "as if"],
+      answer: "as it were", audioText: "Internet search engines have become, as it were, a third brain for modern users.",
+      translation: "インターネットの検索エンジンは、現代の利用者にとって、いわば第三の脳になっている。",
+      explanation: "「検索エンジンは第三の脳になった」は、実際に脳になったのではなく、たとえの表現です。そこで「いわば」を意味する挿入句 as it were を入れます。as it is は「実際には、現状では」という意味で、文意に合いません。so that は「～するために」などの接続詞で、後ろに節が必要です。as if も「まるで～のように」という意味の接続詞で、直後に節が続くので、a third brain がそのまま続く形にはなりません。",
+      difficulty: "基礎", school: "青山学院大"   },
+
+  {  page: 67, no: "13-4", category: "仮定法", type: "rewrite",
+      question: "She is, as it were, a grown-up child.<br>➔ She is, ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ), a grown-up child.<br><small>同意文完成</small>",
+      blankCount: 3, answer: ["so", "to", "speak"], audioText: "She is, so to speak, a grown-up child.",
+      translation: "彼女はいわば、大人になった子どもだ。",
+      explanation: "as it were（いわば）は、so to speak に書き換えられます。空欄は3つなので、so / to / speak の順に入ります。どちらも文中に挿入して、「いわば、言ってみれば」の意味を表します。※ so to say も同じ意味で使えますが、このアプリで正解にしているのは so to speak です。",
+      difficulty: "標準", school: "中央大"   }
 ];
