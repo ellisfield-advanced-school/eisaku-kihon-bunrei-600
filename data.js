@@ -11692,5 +11692,52 @@ const quizDataset = [
       answer: "a true gentleman would never behave in such a rude", audioText: "A true gentleman would never behave in such a rude manner.",
       translation: "本当の紳士なら、そんな無礼な振る舞いはしないだろう。",
       explanation: "「本当の紳士なら」のように、主語が「もし〜なら」という条件の意味を含むとき、述語には仮定法の would を使います。A true gentleman（主語）／would never behave（助動詞＋never＋動詞）／in such a rude manner の順に並べます。such は ＜such a＋形容詞＋名詞＞ の語順で、a は such の直後、形容詞 rude の前に置きます。主語の A true gentleman の a と、such a の a を取り違えないように注意しましょう。",
-      difficulty: "応用", school: "同志社大・改"   }
+      difficulty: "応用", school: "同志社大・改"   },
+
+  {  page: 67, no: "12-1", category: "仮定法", type: "4choice",
+      question: "It is time you ( &nbsp; &nbsp; &nbsp; ) to bed.",
+      choices: ["go", "went", "are going", "have gone"],
+      answer: "went", audioText: "It is time you went to bed.",
+      translation: "もう寝る時間ですよ。",
+      explanation: "＜It is time ＋ S ＋ 過去形＞ は「もう～する時間だ」という意味で、まだ実行していないことを促す仮定法の表現です。現在のことでも動詞は過去形（仮定法過去）を使うので、went が正解です。go は直説法の現在形で、この構文では過去形にする必要があります。are going（進行形）と have gone（現在完了）は、どちらもこの構文の形にならず、「寝る時間だ」という文意にも合いません。",
+      difficulty: "基礎", school: "慶應義塾大・改"   },
+
+  {  page: 67, no: "12-2", category: "仮定法", type: "rewrite",
+      question: "It is time for you to go to bed.<br>➔ It is time you ( &nbsp; &nbsp; &nbsp; ) to bed.<br><small>同意文完成</small>",
+      blankCount: 1, answer: ["went"], audioText: "It is time you went to bed.",
+      translation: "もう寝る時間ですよ。（あなたはもう寝る時間だ。）",
+      explanation: "＜It is time for 人 to do＞（人が～する時間だ）は、＜It is time ＋ S ＋ 過去形＞ に書き換えられます。for you to go を、主語 you と動詞の過去形にするので、go の過去形 went が入ります。※ 過去形ですが、過去のことではなく「今すぐ寝る時間だ」という現在の意味を表す仮定法過去の形です。",
+      difficulty: "標準", school: "同志社大"   },
+
+  {  page: 67, no: "12-3", category: "仮定法", type: "4choice",
+      question: "It is about time we ( &nbsp; &nbsp; &nbsp; ) home.",
+      choices: ["go", "went", "have gone", "had gone"],
+      answer: "went", audioText: "It is about time we went home.",
+      translation: "そろそろ家に帰る時間だ。",
+      explanation: "It is about time ～ は「そろそろ～する時間だ」という意味で、＜It is time ＋ S ＋ 過去形＞ に about を加えた形です。この構文でも動詞は仮定法過去（過去形）を使うので、went が正解です。go は直説法の現在形、have gone は現在完了で、この構文の形にはなりません。had gone は過去完了で、過去の事実に反する内容を表すときの形なので、「そろそろ帰る時間だ」という現在の文脈には合いません。",
+      difficulty: "基礎", school: "中央大"   },
+
+  {  page: 67, no: "12-4", category: "仮定法", type: "4choice",
+      question: "It's already eleven.  It's high time you ( &nbsp; &nbsp; &nbsp; ) in bed.",
+      choices: ["are", "have been", "were", "will be"],
+      answer: "were", audioText: "It's already eleven. It's high time you were in bed.",
+      translation: "もう11時だ。とっくに寝ている時間だよ。",
+      explanation: "It is high time ～ は、＜It is time ＋ S ＋ 過去形＞ に high を加えて、「もうとっくに～する時間だ」と、時間が過ぎていることを強調する形です。動詞は過去形（仮定法過去）になり、be動詞は were を使うので、were が正解です。are は直説法の現在形、have been は現在完了、will be は未来を表す形で、どれもこの構文の形にはなりません。※ 前の文の It's already eleven（もう11時だ）が、「とっくに寝ている時間だ」という意味につながります。",
+      difficulty: "基礎", school: "センター試験"   },
+
+  {  page: 67, no: "12-5", category: "仮定法", type: "4choice",
+      question: "It is high time she ( &nbsp; &nbsp; &nbsp; ) using a cellphone so often.",
+      choices: ["had stopped", "has stopped", "stopped", "stops"],
+      answer: "stopped", audioText: "It is high time she stopped using a cellphone so often.",
+      translation: "彼女はもうとっくに、そんなに頻繁に携帯電話を使うのをやめる時期だ。",
+      explanation: "＜It is high time ＋ S ＋ 過去形＞ で、「もうとっくに～する時間だ」という意味を表します。主語が she でも、動詞は過去形（仮定法過去）にするので、stopped が正解です。＜stop ＋ ～ing＞ で「～するのをやめる」という意味になります（stopped using）。had stopped は過去完了、has stopped は現在完了、stops は直説法の現在形（三人称単数）で、いずれもこの構文には使えません。",
+      difficulty: "基礎", school: "鹿児島大"   },
+
+  {  page: 67, no: "12-6", category: "仮定法", type: "4choice",
+      question: "It is high time you ( &nbsp; &nbsp; &nbsp; ) to think about your future.",
+      choices: ["start", "started", "have started", "will start"],
+      answer: "started", audioText: "It is high time you started to think about your future.",
+      translation: "あなたはもうとっくに、自分の将来について考え始める時期だ。",
+      explanation: "＜It is high time ＋ S ＋ 過去形＞ で、「もうとっくに～する時間だ」を表します。動詞は過去形（仮定法過去）になり、started to think で「考え始める」となるので、started が正解です。start は直説法の現在形、have started は現在完了、will start は未来を表す形で、この構文には使えません。",
+      difficulty: "基礎", school: "立教大"   }
 ];
