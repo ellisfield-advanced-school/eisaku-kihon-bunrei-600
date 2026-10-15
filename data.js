@@ -11875,6 +11875,14 @@ const quizDataset = [
       translation: "彼の助言がなかったら、私は今ごろ大きなトラブルに巻き込まれているだろう。",
       explanation: "主節が I would be ～ now（現在の事実の反対）で、「助言がなかったら」は過去の事実の反対を表すので、混合仮定法の文です。If it had not been for ～（～がなかったら）の If を省略すると、Had it not been for ～ という倒置の形になります。よって、Had it not been for his advice の順に並べます。",
       difficulty: "応用", school: "中央大・改"   },
+  {  page: 67, no: "15-8", category: "仮定法", type: "rewrite",
+      question: "As I didn't follow your advice, I'm not happy now.<br>➔ If I ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) your advice, I ( &nbsp; &nbsp; &nbsp; ) be happy now.<br><small>同意文完成</small>",
+      blankCount: 3,
+      answer: ["had", "followed", "would"], audioText: "As I didn't follow your advice, I'm not happy now. If I had followed your advice, I would be happy now.",
+      translation: "あなたの忠告に従わなかったので、私は今、幸せではない。／もしあなたの忠告に従っていたら、今ごろ私は幸せだろう。",
+      explanation: "As I didn't follow your advice（過去の事実）と I'm not happy now（現在の事実）を、事実と反対の仮定法に書き換える問題です。過去の事実の反対は If I had followed your advice（仮定法過去完了）、現在の事実の反対は I would be happy now（仮定法過去の帰結）で表します。このように、if 節が過去、主節が現在を表す形が混合仮定法です。よって、空欄には順に had / followed / would が入ります。followed は follow の過去分詞です。",
+      difficulty: "応用", school: "大阪教育大"   },
+
 
   {  page: 29, no: 2, category: "否定表現（1）", type: "4choice",
       question: "Are you sure we didn’t make ( &nbsp; &nbsp; &nbsp; ) mistakes in our calculations?",
@@ -11907,8 +11915,16 @@ const quizDataset = [
       translation: "私たちはすぐに出発した。そうでなければ、彼に会いそこねていただろう。",
       explanation: "would have missed は仮定法過去完了の帰結の形で、「すぐに出発しなかったら、彼に会いそこねていただろう」という過去の事実の反対を表します。この「そうでなければ（＝すぐに出発しなかったら）」を表す副詞は Otherwise です。unless、if、in case は接続詞で、後ろに we would have missed him を続けると、意味が通りません。",
       difficulty: "標準", school: "東京電機大"   },
-
   {  page: 67, no: "16-d", category: "仮定法", type: "4choice",
+      question: "“Did you study last night?”<br>“No.  ( &nbsp; &nbsp; &nbsp; ), I would have done better on today's test.”",
+      choices: ["If I hadn't", "If not", "Otherwise", "Unless"],
+      answer: "Otherwise", audioText: "Did you study last night? No. Otherwise, I would have done better on today's test.",
+      translation: "「昨夜は勉強しましたか。」「いいえ。もし勉強していたら、今日のテストはもっとよくできたでしょう。」",
+      explanation: "No（勉強しなかった）を受けて、「そうでなければ（＝もし勉強していたら）」を表す副詞は Otherwise です。後ろの would have done better は、過去の事実の反対を表す仮定法過去完了の帰結の形で、Otherwise がその仮定の部分を表します。If I hadn't は「もししなかったら」の意味で、勉強しなかった事実と合いません。If not は現在や未来の仮定を表すときに使う形で、過去の事実の反対を表す would have done とは合いません。Unless は「～でない限り」という意味の接続詞で、文意に合いません。",
+      difficulty: "応用", school: "東京電機大"   },
+
+
+  {  page: 67, no: "16-e", category: "仮定法", type: "4choice",
       question: "Would you read my letter and correct the mistakes, if ( &nbsp; &nbsp; &nbsp; ) ?",
       choices: ["ever", "any", "not", "never"],
       answer: "any", audioText: "Would you read my letter and correct the mistakes, if any?",
@@ -11916,7 +11932,7 @@ const quizDataset = [
       explanation: "if any は if there are any（もしあれば）の省略表現で、数や量があるかどうかを表します。ここでは「もし間違い（mistakes）があれば」の意味なので、any が正解です。if ever は「もしあるとしても、これまでに／めったに」という経験や頻度を表す表現で、間違いの有無を表せません。not と never は、if につなぐと意味が合いません。",
       difficulty: "標準", school: "センター試験"   },
 
-  {  page: 67, no: "16-e", category: "仮定法", type: "4choice",
+  {  page: 67, no: "16-f", category: "仮定法", type: "4choice",
       question: "There is little, ( &nbsp; &nbsp; &nbsp; ) any, hope of her recovery.",
       choices: ["when", "if", "but", "unless"],
       answer: "if", audioText: "There is little, if any, hope of her recovery.",
@@ -11924,7 +11940,7 @@ const quizDataset = [
       explanation: "＜little, if any, ～＞ は「あったとしても、ほとんど～ない」という意味の決まった表現で、if any は if there is any（もしあるとしても）の省略です。よって if が正解です。when、but、unless では、any と合わせて「あったとしても」の意味を表せません。",
       difficulty: "標準", school: "中京大"   },
 
-  {  page: 67, no: "16-f", category: "仮定法", type: "4choice",
+  {  page: 67, no: "16-g", category: "仮定法", type: "4choice",
       question: "He has seldom, if ( &nbsp; &nbsp; &nbsp; ), spoken in public.",
       choices: ["any", "little", "so", "ever"],
       answer: "ever", audioText: "He has seldom, if ever, spoken in public.",
@@ -11932,7 +11948,7 @@ const quizDataset = [
       explanation: "＜seldom, if ever, ～＞ は「あったとしても、めったに～ない」という意味の決まった表現で、頻度を表す副詞 seldom に合わせて ever を使います。if ever は if he has ever（もし今までにあるとしても）の省略です。any は数や量を表す語なので、頻度を表す seldom とは合いません。little と so は、この形になりません。",
       difficulty: "標準", school: "南山大"   },
 
-  {  page: 67, no: "16-g", category: "仮定法", type: "4choice",
+  {  page: 67, no: "16-h", category: "仮定法", type: "4choice",
       question: "I seldom, if ( &nbsp; &nbsp; &nbsp; ), use a computer to do clerical work.<br><small>事務仕事をするのに、めったにコンピュータは使わない。</small>",
       choices: ["never", "rarely", "ever", "any"],
       answer: "ever", audioText: "I seldom, if ever, use a computer to do clerical work.",
