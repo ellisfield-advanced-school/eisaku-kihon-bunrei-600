@@ -11866,5 +11866,13 @@ const quizDataset = [
       answer: "Had it not been", audioText: "Had it not been for his timely warning yesterday, I would not be alive today.",
       translation: "昨日の彼のタイムリーな警告がなかったら、私は今日、生きていないだろう。",
       explanation: "yesterday（昨日）が過去を、today（今日）が現在を表しているので、過去と現在を組み合わせた混合仮定法の文です。If it had not been for ～ の If を省略すると、Had it not been for ～ という倒置の形になります。よって、Had it not been が正解です。If it were not は現在の仮定を表す形で、yesterday と合いません。Without it と Unless it had は、後ろの for につながりません。",
-      difficulty: "応用", school: "関西学院大"   }
+      difficulty: "応用", school: "関西学院大"   },
+
+  {  page: 67, no: "15-7", category: "仮定法", type: "sort",
+      question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ), I would be in big trouble now.<br><small>彼の助言がなかったら、私は今ごろ大きなトラブルに巻き込まれているだろう。</small>",
+      words: ["his advice", "been", "for", "had", "it", "not"],
+      answer: "Had it not been for his advice", audioText: "Had it not been for his advice, I would be in big trouble now.",
+      translation: "彼の助言がなかったら、私は今ごろ大きなトラブルに巻き込まれているだろう。",
+      explanation: "主節が I would be ～ now（現在の事実の反対）で、「助言がなかったら」は過去の事実の反対を表すので、混合仮定法の文です。If it had not been for ～（～がなかったら）の If を省略すると、Had it not been for ～ という倒置の形になります。よって、Had it not been for his advice の順に並べます。",
+      difficulty: "応用", school: "中央大・改"   }
 ];
