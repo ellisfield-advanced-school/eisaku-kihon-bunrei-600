@@ -12157,5 +12157,37 @@ const quizDataset = [
       answer: "neither for nor against his proposal", audioText: "I am neither for nor against his proposal.",
       translation: "私は彼の提案に賛成でも反対でもない。",
       explanation: "「AでもBでもない」は neither A nor B で表します。「賛成」は for、「反対」は against なので、neither for nor against his proposal（彼の提案に賛成でも反対でもない）となります。よって、I am neither for nor against his proposal. の順に並べます。",
+      difficulty: "標準", school: "関西学院大・改"   },
+
+  {  page: 69, no: "9-1", category: "前置詞（1）", type: "4choice",
+      question: "It took me over a month to get ( &nbsp; &nbsp; &nbsp; ) my cold.<br><small>私は風邪を治すのに1か月以上かかった。</small>",
+      choices: ["into", "over", "by", "out"],
+      answer: "over", audioText: "It took me over a month to get over my cold.",
+      translation: "私は風邪を治すのに1か月以上かかった。",
+      explanation: "get over ～ は「～を乗り越える、～から回復する」という意味で、get over my cold で「風邪が治る」となります。よって、over が正解です。into は「～の中へ」、by は get by（なんとかやっていく）、out は get out（出る）の形で使い、風邪から回復する意味にはなりません。※ ＜It takes ＋ 時間 ＋ to do＞ は「～するのに（時間）がかかる」という意味です。",
+      difficulty: "基礎", school: "中央大"   },
+
+  {  page: 69, no: "9-2", category: "前置詞（1）", type: "4choice",
+      question: "It took him a long time to get ( &nbsp; &nbsp; &nbsp; ) the death of his beloved dog.<br><small>彼は愛犬の死から立ち直るのに長い時間がかかった。</small>",
+      choices: ["over", "through", "off", "away"],
+      answer: "over", audioText: "It took him a long time to get over the death of his beloved dog.",
+      translation: "彼は愛犬の死から立ち直るのに長い時間がかかった。",
+      explanation: "get over ～ は「～を乗り越える、～から立ち直る」という意味で、get over the death of ～ で「～の死から立ち直る」となります。よって、over が正解です。get through ～ は「～を通り抜ける、～をやり終える」という意味で、悲しみから立ち直る意味には get over を使います。get off は「降りる」、get away は「逃げる」という意味で、いずれも合いません。",
+      difficulty: "基礎", school: "立教大"   },
+
+  {  page: 69, no: "9-3", category: "前置詞（1）", type: "sort",
+      question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>A man of ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ).<br><small>意志の弱い人にはこのような困難は切り抜けられない。</small>",
+      words: ["get", "will", "such", "cannot", "weak", "over", "difficulties"],
+      answer: "weak will cannot get over such difficulties", audioText: "A man of weak will cannot get over such difficulties.",
+      translation: "意志の弱い人にはこのような困難は切り抜けられない。",
+      explanation: "「意志の弱い人」は、＜of ＋ 抽象名詞＞ を使って a man of weak will と表します（＝ a weak-willed man）。「困難を切り抜ける」は get over difficulties、「このような困難」は such difficulties です。よって、A man of weak will cannot get over such difficulties. の順に並べます。",
+      difficulty: "標準", school: "立命館大"   },
+
+  {  page: 69, no: "9-4", category: "前置詞（1）", type: "sort",
+      question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>He ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ).<br><small>彼は遅かれ早かれその失敗を乗り越えるだろう。</small>",
+      words: ["his failure", "get", "or", "over", "sooner", "will", "later"],
+      answer: "will get over his failure sooner or later", audioText: "He will get over his failure sooner or later.",
+      translation: "彼は遅かれ早かれその失敗を乗り越えるだろう。",
+      explanation: "「～を乗り越える」は get over ～ で表し、will get over his failure となります。「遅かれ早かれ」は sooner or later です。よって、He will get over his failure sooner or later. の順に並べます。",
       difficulty: "標準", school: "関西学院大・改"   }
 ];

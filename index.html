@@ -528,7 +528,7 @@ h2[style*="8e44ad"]{color:#7a5cff!important}
    <div id="view-correction" class="hidden">
        <div style="text-align:center; margin-bottom:12px;">
            <h2 style="color:#2980b9; font-size:1.15rem; margin:0 0 6px 0;">✍️ 英作文を添削してもらう</h2>
-           <p class="corr-note" style="text-align:left; max-width:560px; margin:0 auto;"><b>やり方（3ステップ）</b><br>① 下の「あなたの英文」に英文を入力して、【指示文をコピー】を押します。<br>② <a href="https://gemini.google.com/app" target="_blank" rel="noopener noreferrer">Gemini</a>、<a href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer">ChatGPT</a>、<a href="https://claude.ai/new" target="_blank" rel="noopener noreferrer">Claude</a> のいずれかを開いて、コピーした指示文を貼り付け、AIの返事（採点）をもらいます。<br>③ AIの返事をコピーして、下の「②」に貼り付け、【復習先を探す】を押します。すると、このアプリに収録している問題の中から、あなたの弱点を補強するのに適した問題が選ばれます。<br>※ ノートを撮影した画像で見てもらうときは、英文の欄を空のままコピーして、AIアプリで画像を添付します。</p>
+           <p class="corr-note" style="text-align:left; max-width:560px; margin:0 auto;"><b>やり方（3ステップ）</b><br>① 下の「あなたの英文」に英文を入力して、【指示文をコピー】を押します。<br>② <a href="https://gemini.google.com/app" target="_blank" rel="noopener noreferrer">Gemini</a>、<a href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer">ChatGPT</a>、<a href="https://claude.ai/new" target="_blank" rel="noopener noreferrer">Claude</a> のいずれかを開いて、コピーした指示文を貼り付け、AIの返事（添削結果）をもらいます。<br>③ AIの返事をコピーして、下の「②」に貼り付け、【復習先を探す】を押します。すると、復習に適した問題へのボタンが出ます。<br>※ ノートを撮影した画像で見てもらうときは、英文の欄を空のままコピーして、AIアプリで画像を添付します。</p>
        </div>
        <div class="corr-box">
            <h3>① 指示文を作ってコピーする</h3>
@@ -550,8 +550,8 @@ h2[style*="8e44ad"]{color:#7a5cff!important}
        </div>
        <div class="corr-box">
            <h3>② AIの返事から復習する</h3>
-           <p class="corr-note">AIの返事（採点）を、「分類:」の行を含めて、全体をコピーして貼り付けてください。誤りの種類に合わせて、このアプリの復習問題を表示します。</p>
-           <textarea id="corr-reply" class="corr-textarea" rows="6" placeholder="ここにAIの返事（採点）を貼り付けて、【復習先を探す】を押してください。"></textarea>
+           <p class="corr-note">AIの返事（添削結果）を、「分類:」の行を含めて、全体をコピーして貼り付けてください。誤りの種類に合わせて、このアプリの復習問題を表示します。</p>
+           <textarea id="corr-reply" class="corr-textarea" rows="6" placeholder="ここにAIの返事（添削結果）を貼り付けて、【復習先を探す】を押してください。"></textarea>
            <div style="text-align:center; margin-top:10px;">
                <button class="btn-action" style="background-color:#16a085;" onclick="renderCorrectionReview()">🔎 復習先を探す</button>
            </div>
