@@ -2367,27 +2367,28 @@ function backToSearchResults() {
 
 function searchQuestions() {
 
-    const keyword = document.getElementById("search-box")
-        .value
+    // 検索用に文字をそろえる（HTMLタグと &nbsp; を空白にし、’ や “” を半角に、空白を1つにして、小文字にする）
+    const normalizeForSearch = t => String(t == null ? "" : t)
+        .replace(/<[^>]*>/g, " ")
+        .replace(/&nbsp;/g, " ")
+        .replace(/[\u2018\u2019\u02BC]/g, "'")
+        .replace(/[\u201C\u201D]/g, '"')
+        .replace(/\u3000/g, " ")
+        .replace(/\s+/g, " ")
         .trim()
         .toLowerCase();
+
+    const keyword = normalizeForSearch(document.getElementById("search-box").value);
 
     if (keyword === "") {
         alert("検索する文字を入力してください。");
         return;
     }
 
+    // 問題文・音声用の英文（完成した文）・和訳・解説・カテゴリ・出題校・答えを対象にする
     const results = quizDataset.filter(q => {
-
-        return (
-            (q.question || "").toLowerCase().includes(keyword) ||
-            (q.translation || "").toLowerCase().includes(keyword) ||
-            (q.explanation || "").toLowerCase().includes(keyword) ||
-            (q.category || "").toLowerCase().includes(keyword) ||
-            (q.school || "").toLowerCase().includes(keyword) ||
-            String(q.answer || "").toLowerCase().includes(keyword)
-        );
-
+        return [q.question, q.audioText, q.translation, q.explanation, q.category, q.school, q.answer]
+            .some(v => normalizeForSearch(Array.isArray(v) ? v.join(" ") : v).includes(keyword));
     });
 if (results.length === 0) {
     alert("該当する問題は見つかりませんでした。");
