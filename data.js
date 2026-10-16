@@ -12253,5 +12253,21 @@ const quizDataset = [
       answer: "consists", audioText: "Japan consists of four large islands and many small islands.",
       translation: "日本は、4つの大きな島と多くの小さな島から成り立っている。",
       explanation: "「～から成り立っている」は consist of ～ で表すので、consists が正解です。contains（～を含む）、forms（～を形成する）、organizes（～を組織する）は、どれも他動詞で、後ろに of をつけずに目的語を直接続けます。そのため、of four large islands につなぐことはできません。",
-      difficulty: "基礎", school: "センター試験"   }
+      difficulty: "基礎", school: "センター試験"   },
+
+  {  page: 69, no: "14-1", category: "前置詞（1）", type: "4choice",
+      question: "She ordered a rare record ( &nbsp; &nbsp; &nbsp; ) a shop in London.",
+      choices: ["from", "to", "at", "with"],
+      answer: "from", audioText: "She ordered a rare record from a shop in London.",
+      translation: "彼女は、ロンドンの店に珍しいレコードを注文した。",
+      explanation: "「～を…に注文する、取り寄せる」は order ～ from ... で表し、from の後ろに注文先（仕入れ先）を置きます。ここでは、ロンドンの店に注文して取り寄せるので、from が正解です。to は向かう先を表す語で、注文先を表せません。at は場所を表し、「その店で（その場で）注文する」という意味になるため、遠くの店に取り寄せる文意には合いません。with は「～と一緒に」という意味で、合いません。",
+      difficulty: "基礎", school: "中央大"   },
+
+  {  page: 69, no: "14-2", category: "前置詞（1）", type: "4choice",
+      question: "My father ordered these custom shoes ( &nbsp; &nbsp; &nbsp; ) Italy online.",
+      choices: ["to", "from", "in", "for"],
+      answer: "from", audioText: "My father ordered these custom shoes from Italy online.",
+      translation: "私の父は、このオーダーメイドの靴を、インターネットでイタリアから注文した。",
+      explanation: "「～を…に注文する、取り寄せる」は order ～ from ... で表し、from の後ろに注文先（仕入れ先）を置きます。ここでは、インターネットでイタリアの店に注文するので、from が正解です。to は向かう先を表す語で、注文先を表せません。in は場所を表し、「イタリアの中で注文した」という意味になるため、取り寄せの文意には合いません。for は「～のために」という意味で、合いません。※ custom shoes は「オーダーメイドの靴」という意味です。",
+      difficulty: "基礎", school: "立教大"   }
 ];
