@@ -12229,5 +12229,29 @@ const quizDataset = [
       answer: "horror almost deprived the boy of his speech", audioText: "Horror almost deprived the boy of his speech.",
       translation: "恐怖のあまり、その少年は口がきけなくなった。（言葉を失った）",
       explanation: "「AからBを奪う」は deprive A of B で表します。日本文は「恐怖のあまり」ですが、英語では「恐怖が少年から言葉を奪った」と、無生物（horror）を主語にします。よって、Horror almost deprived the boy of his speech. の順に並べます。※ almost は動詞 deprived の前に置きます。",
-      difficulty: "応用", school: "関西学院大・改"   }
+      difficulty: "応用", school: "関西学院大・改"   },
+
+  {  page: 69, no: "13-1", category: "前置詞（1）", type: "4choice",
+      question: "The United States of America ( &nbsp; &nbsp; &nbsp; ) of fifty states.",
+      choices: ["is made", "is consisting", "is consisted", "consists"],
+      answer: "consists", audioText: "The United States of America consists of fifty states.",
+      translation: "アメリカ合衆国は、50の州から成り立っている。",
+      explanation: "「～から成り立っている」は consist of ～ で表します。consist は自動詞で、状態を表す動詞なので、進行形や受け身にはせず、現在形の consists を使います。よって、consists が正解です。is consisting は進行形、is consisted は受け身で、どちらも consist の使い方として誤りです。is made は、of の前に up を入れて is made up of ～ とすれば、同じ意味を表せます。",
+      difficulty: "基礎", school: "北陸大"   },
+
+  {  page: 69, no: "13-2", category: "前置詞（1）", type: "4choice",
+      question: "Water ( &nbsp; &nbsp; &nbsp; ) of hydrogen and oxygen.",
+      choices: ["consists", "is consisting", "is consisted", "has consisted"],
+      answer: "consists", audioText: "Water consists of hydrogen and oxygen.",
+      translation: "水は、水素と酸素から成り立っている。",
+      explanation: "「～から成り立っている」は consist of ～ で表します。consist は自動詞で、状態を表す動詞なので、進行形や受け身にはせず、現在形の consists を使います。よって、consists が正解です。is consisting は進行形、is consisted は受け身なので、consist の使い方として誤りです。has consisted は現在完了で、いまの構成を表す文には合いません。",
+      difficulty: "基礎", school: "日本工業大"   },
+
+  {  page: 69, no: "13-3", category: "前置詞（1）", type: "4choice",
+      question: "Japan ( &nbsp; &nbsp; &nbsp; ) of four large islands and many small islands.",
+      choices: ["consists", "contains", "forms", "organizes"],
+      answer: "consists", audioText: "Japan consists of four large islands and many small islands.",
+      translation: "日本は、4つの大きな島と多くの小さな島から成り立っている。",
+      explanation: "「～から成り立っている」は consist of ～ で表すので、consists が正解です。contains（～を含む）、forms（～を形成する）、organizes（～を組織する）は、どれも他動詞で、後ろに of をつけずに目的語を直接続けます。そのため、of four large islands につなぐことはできません。",
+      difficulty: "基礎", school: "センター試験"   }
 ];
