@@ -12224,7 +12224,7 @@ const quizDataset = [
       difficulty: "標準", school: "中央大"   },
 
   {  page: 69, no: "10-c", category: "前置詞（1）", type: "sort",
-      question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ).<br><small>恐怖のあまり、その少年は口がきけなくなった。（言葉を失った）</small>",
+      question: "<small class='instruction-note'>次の語句を並び替えなさい。</small><br>( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ).",
       words: ["almost", "the boy", "deprived", "his speech", "of", "horror"],
       answer: "horror almost deprived the boy of his speech", audioText: "Horror almost deprived the boy of his speech.",
       translation: "恐怖のあまり、その少年は口がきけなくなった。（言葉を失った）",
