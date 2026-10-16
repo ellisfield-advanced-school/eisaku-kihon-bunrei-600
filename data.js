@@ -12189,5 +12189,45 @@ const quizDataset = [
       answer: "will get over his failure sooner or later", audioText: "He will get over his failure sooner or later.",
       translation: "彼は遅かれ早かれその失敗を乗り越えるだろう。",
       explanation: "「～を乗り越える」は get over ～ で表し、will get over his failure となります。「遅かれ早かれ」は sooner or later です。よって、He will get over his failure sooner or later. の順に並べます。",
-      difficulty: "標準", school: "関西学院大・改"   }
+      difficulty: "標準", school: "関西学院大・改"   },
+
+  {  page: 69, no: "10-1", category: "前置詞（1）", type: "4choice",
+      question: "The man robbed the bank ( &nbsp; &nbsp; &nbsp; ) a thousand dollars.<br><small>その男は銀行から1,000ドルを奪った。</small>",
+      choices: ["with", "for", "from", "of"],
+      answer: "of", audioText: "The man robbed the bank of a thousand dollars.",
+      translation: "その男は銀行から1,000ドルを奪った。",
+      explanation: "「AからBを奪う」は rob A of B で表します。A には人や場所（ここでは the bank）が入り、奪った物（a thousand dollars）の前に of をつけるので、of が正解です。from は steal B from A（AからBを盗む）の形で使い、rob の後ろには使いません。with と for も、この意味を表せません。",
+      difficulty: "基礎", school: "桃山学院大"   },
+
+  {  page: 69, no: "10-2", category: "前置詞（1）", type: "4choice",
+      question: "The poor old man was robbed ( &nbsp; &nbsp; &nbsp; ) his money.",
+      choices: ["off", "for", "from", "of"],
+      answer: "of", audioText: "The poor old man was robbed of his money.",
+      translation: "その貧しい老人は、お金を奪われた。",
+      explanation: "rob A of B（AからBを奪う）を受け身にすると、A was robbed of B（AはBを奪われる）となります。よって、of が正解です。from は steal B from A の形で使い、rob の後ろには使いません。off と for も、この意味を表せません。",
+      difficulty: "標準", school: "九州東海大"   },
+
+  {  page: 69, no: "10-a", category: "前置詞（1）", type: "4choice",
+      question: "The illness deprived him ( &nbsp; &nbsp; &nbsp; ) the opportunity to study abroad.",
+      choices: ["of", "from", "with", "off"],
+      answer: "of", audioText: "The illness deprived him of the opportunity to study abroad.",
+      translation: "その病気のせいで、彼は留学する機会を奪われた。",
+      explanation: "「AからBを奪う」は deprive A of B で表します。rob A of B と同じ形で、A には人（ここでは him）、B には奪われる物（the opportunity）が入るので、of が正解です。from、with、off は、deprive の後ろにつなぐ形になりません。",
+      difficulty: "基礎", school: "明治大・改"   },
+
+  {  page: 69, no: "10-b", category: "前置詞（1）", type: "4choice",
+      question: "Many children in the war zone were deprived ( &nbsp; &nbsp; &nbsp; ) basic medical care.",
+      choices: ["from", "of", "with", "for"],
+      answer: "of", audioText: "Many children in the war zone were deprived of basic medical care.",
+      translation: "戦争地域の多くの子どもたちは、基本的な医療を受ける機会を奪われていた。",
+      explanation: "deprive A of B（AからBを奪う）を受け身にすると、A is deprived of B（AはBを奪われる）となります。よって、were deprived of basic medical care で「基本的な医療を奪われた」となり、of が正解です。from、with、for は、deprived の後ろにつなぐ形になりません。",
+      difficulty: "標準", school: "中央大"   },
+
+  {  page: 69, no: "10-c", category: "前置詞（1）", type: "sort",
+      question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ).<br><small>恐怖のあまり、その少年は口がきけなくなった。（言葉を失った）</small>",
+      words: ["almost", "the boy", "deprived", "his speech", "of", "horror"],
+      answer: "horror almost deprived the boy of his speech", audioText: "Horror almost deprived the boy of his speech.",
+      translation: "恐怖のあまり、その少年は口がきけなくなった。（言葉を失った）",
+      explanation: "「AからBを奪う」は deprive A of B で表します。日本文は「恐怖のあまり」ですが、英語では「恐怖が少年から言葉を奪った」と、無生物（horror）を主語にします。よって、Horror almost deprived the boy of his speech. の順に並べます。※ almost は動詞 deprived の前に置きます。",
+      difficulty: "応用", school: "関西学院大・改"   }
 ];
