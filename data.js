@@ -12050,5 +12050,50 @@ const quizDataset = [
       answer: "by", audioText: "I need to finish writing my report by Friday so that I can leave for Sapporo on Saturday morning.",
       translation: "土曜日の朝に札幌へ出発できるように、金曜日までにレポートを書き終える必要があります。",
       explanation: "finish writing は「書き終える」という完了する動作で、「金曜日までに」という期限を表すので、by が正解です。until は「～までずっと」という継続を表し、完了する動作には合いません。since は「～以来」という起点、to は from A to B の形で使うので、ここには合いません。※ so that I can ～ は「～できるように」という目的を表します。",
-      difficulty: "基礎", school: "芝浦工業大"   }
+      difficulty: "基礎", school: "芝浦工業大"   },
+
+  {  page: 69, no: "6-1", category: "前置詞（1）", type: "rewrite",
+      question: "This book will be ( &nbsp; &nbsp; &nbsp; ) great use to you.<br><small>この本は君に大変役立つだろう。</small>",
+      blankCount: 1, answer: ["of"], audioText: "This book will be of great use to you.",
+      translation: "この本は君に大変役立つだろう。",
+      explanation: "＜of ＋ 抽象名詞＞ は、形容詞と同じ働きをします。of great use は very useful（とても役に立つ）と同じ意味なので、空欄には of が入ります。この文は This book will be very useful to you. と書き換えられます。※ of no use（役に立たない）、of little use（ほとんど役に立たない）のように、抽象名詞の前に no や little を置いた形もよく使われます。",
+      difficulty: "標準", school: "鹿児島大"   },
+
+  {  page: 69, no: "6-2", category: "前置詞（1）", type: "rewrite",
+      question: "This machine was ( &nbsp; &nbsp; &nbsp; ) great use to all of us.<br><small>この機械は私たち全員にとても役に立った。</small>",
+      blankCount: 1, answer: ["of"], audioText: "This machine was of great use to all of us.",
+      translation: "この機械は私たち全員にとても役に立った。",
+      explanation: "＜of ＋ 抽象名詞＞ は、形容詞と同じ働きをします。of great use は very useful（とても役に立つ）と同じ意味なので、空欄には of が入ります。この文は This machine was very useful to all of us. と書き換えられます。",
+      difficulty: "標準", school: "専修大"   },
+
+  {  page: 69, no: "6-3", category: "前置詞（1）", type: "4choice",
+      question: "This handbook will be ( &nbsp; &nbsp; &nbsp; ) great use when you need to create a list of works cited.",
+      choices: ["at", "by", "for", "of", "on", "over", "to", "within"],
+      answer: "of", audioText: "This handbook will be of great use when you need to create a list of works cited.",
+      translation: "このハンドブックは、引用文献の一覧を作る必要があるときに、大いに役立つでしょう。",
+      explanation: "＜of ＋ 抽象名詞＞ は、形容詞と同じ働きをします。of great use は very useful（とても役に立つ）と同じ意味なので、of が正解です。ほかの at、by、for、on、over、to、within は、be の後ろに great use をつないで「役に立つ」の意味を表す形にはなりません。※ a list of works cited は「引用文献の一覧」という意味です。",
+      difficulty: "標準", school: "早稲田大"   },
+
+  {  page: 69, no: "6-4", category: "前置詞（1）", type: "4choice",
+      question: "I'm afraid he can be ( &nbsp; &nbsp; &nbsp; ) little help.  He is extremely busy right now.",
+      choices: ["at", "by", "for", "in", "of", "on", "to", "with"],
+      answer: "of", audioText: "I'm afraid he can be of little help. He is extremely busy right now.",
+      translation: "あいにく、彼はほとんど助けにならないと思います。彼は今、非常に忙しいのです。",
+      explanation: "＜of ＋ 抽象名詞＞ は、形容詞と同じ働きをします。of little help は「ほとんど助けにならない」という意味で、後ろの文の「彼は今、非常に忙しい」という理由ともつながります。よって、of が正解です。ほかの at、by、for、in、on、to、with は、be の後ろに little help をつないで「助けにならない」の意味を表す形にはなりません。※ little は「ほとんどない」という否定の意味を持ちます。",
+      difficulty: "標準", school: "早稲田大"   },
+
+  {  page: 69, no: "6-5", category: "前置詞（1）", type: "rewrite",
+      question: "It is ( &nbsp; &nbsp; &nbsp; ) no importance what you say.<br><small>君の言うことは重要ではない。</small>",
+      blankCount: 1, answer: ["of"], audioText: "It is of no importance what you say.",
+      translation: "君の言うことは重要ではない。",
+      explanation: "＜of ＋ 抽象名詞＞ は、形容詞と同じ働きをします。of no importance は「重要ではない」という意味で、unimportant と同じです。空欄には of が入ります。It は形式主語で、what you say（君の言うこと）が真の主語です。",
+      difficulty: "標準", school: "専修大"   },
+
+  {  page: 69, no: "6-6", category: "前置詞（1）", type: "4choice",
+      question: "These kinds of jewelry are ( &nbsp; &nbsp; &nbsp; ) little value.",
+      choices: ["having", "of", "with", "without"],
+      answer: "of", audioText: "These kinds of jewelry are of little value.",
+      translation: "これらの種類の宝石には、ほとんど価値がありません。",
+      explanation: "＜of ＋ 抽象名詞＞ は、形容詞と同じ働きをします。of little value は「ほとんど価値がない」という意味なので、of が正解です。having は are と合わせると進行形になり、状態を表す have はここでは使えません。with は are の後ろに little value をつなぐ形になりません。without を使うと、否定の意味の little と重なって、意味が通りません。",
+      difficulty: "標準", school: "愛知工業大"   }
 ];
