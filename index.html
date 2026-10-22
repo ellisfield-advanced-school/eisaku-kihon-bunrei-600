@@ -385,6 +385,12 @@ h2[style*="8e44ad"]{color:#7a5cff!important}
 #view-category .btn-action[onclick*="stats"],.mode-row .btn-mode{display:block;width:100%;max-width:340px;box-sizing:border-box;padding:13px 10px;font-size:.98rem;white-space:nowrap;text-align:center}
 #view-category .btn-action[onclick*="stats"]{margin:0 auto}
 .mode-row{flex-direction:column;align-items:center}
+
+        /* 新規（NEW）表示 */
+        .new-badge { display:inline-block; background:#e74c3c; color:#fff; border-radius:8px; padding:1px 8px; font-size:0.75rem; font-weight:800; letter-spacing:0.03em; vertical-align:middle; }
+        .sr-new { background:#e74c3c; color:#fff; border-radius:8px; padding:1px 8px; font-weight:800; }
+        .new-only-box { text-align:center; margin:22px 0 0 0; }
+        .new-only-note { color:#7f8c8d; font-size:0.85rem; margin:6px 0 0 0; }
 </style>
 </head>
 <body>
@@ -573,6 +579,11 @@ h2[style*="8e44ad"]{color:#7a5cff!important}
            <p style="color: #7f8c8d; margin: 0; font-size: 1rem; font-weight: bold;">解きたい問題の番号を選んでね</p>
        </div>
        <div id="number-buttons-container" class="category-grid"></div>
+
+       <div id="new-only-box" class="hidden new-only-box">
+           <button class="btn-action" style="background-color:#e67e22;" onclick="startNewOnly()">🆕 NEW の問題だけ解く（<span id="new-only-count">0</span>問）</button>
+           <p class="new-only-note">追加収録してから 2 週間以内の問題です。</p>
+       </div>
        
        <div class="action-container" style="margin-top: 30px;">
            <button class="btn-action" style="background-color:#95a5a6;" onclick="backToCategory()">カテゴリ一覧へ戻る</button>
@@ -603,7 +614,7 @@ h2[style*="8e44ad"]{color:#7a5cff!important}
 
    <div id="view-quiz" class="hidden">
        <div class="meta-info">
-           <span id="quiz-meta-pos">p.0 No.0</span>
+           <span><span id="quiz-meta-pos">p.0 No.0</span> <span id="quiz-meta-new" class="new-badge hidden">NEW</span></span>
            <span id="quiz-meta-type">形式</span>
        </div>
        <div class="question-text" id="quiz-question">Question Text</div>
@@ -630,6 +641,7 @@ h2[style*="8e44ad"]{color:#7a5cff!important}
         <div id="wrong-note" class="wrong-note hidden"></div>
         
        
+        <div id="res-new" class="hidden" style="text-align:center; margin-bottom:8px;"><span class="new-badge">NEW</span> <span style="color:#7f8c8d; font-size:0.85rem;">追加収録から 2 週間以内の問題です</span></div>
        <div class="review-panel">
            <div class="review-item">
                 <div class="review-label">あなたの解答:</div>
@@ -808,6 +820,18 @@ const DOM = {
     resSchool: document.getElementById("res-school")
 };
 
+// ==========================================
+// 「新規（NEW）」の判定: data.js の added: "YYYY-MM-DD"（追加収録日）から NEW_DAYS 日以内の問題
+// ==========================================
+const NEW_DAYS = 14;
+function isNewQuestion(q) {
+    if (!q || !q.added) return false;
+    const m = String(q.added).match(/^(\d{4})-(\d{2})-(\d{2})$/);
+    if (!m) return false;
+    const end = new Date(Number(m[1]), Number(m[2]) - 1, Number(m[3]));   // 端末の現地時間の 0 時
+    end.setDate(end.getDate() + NEW_DAYS);
+    return new Date() < end;
+}
 let categoryQuestions = []; // 選択されたカテゴリ内の全問題
 let currentQuestions = [];  // 選択された番号に絞り込まれた問題グループ
 let currentIndex = 0;
@@ -863,14 +887,33 @@ const container = DOM.numberButtonsContainer;
 
        const btn = document.createElement("button");
        btn.className = "btn-cat";
-       btn.innerText = `${num}番 (${qCount}問)`;
+       const nNew = categoryQuestions.filter(q => {
+           const match = String(q.no).match(/^(\d+)/);
+           return match && parseInt(match[1], 10) === num && isNewQuestion(q);
+       }).length;
+       btn.innerHTML = `${num}番 (${qCount}問)` + (nNew > 0 ? ` <span class="new-badge">NEW ${nNew}</span>` : "");
        btn.onclick = () => startNumber(num);
        container.appendChild(btn);
    });
 
-   showView("number-select");
+   const newQs = categoryQuestions.filter(isNewQuestion);
+    document.getElementById("new-only-box").classList.toggle("hidden", newQs.length === 0);
+    document.getElementById("new-only-count").innerText = newQs.length;
+
+    showView("number-select");
 }
 
+function startNewOnly() {
+    currentQuestions = categoryQuestions.filter(isNewQuestion);
+    if (currentQuestions.length === 0) {
+        alert("現在、NEW の問題はありません。");
+        return;
+    }
+    sessionMode = "normal";
+    currentIndex = 0;
+    showView("quiz");
+    loadQuestion();
+}
 function startNumber(selectedNum) {
     currentQuestions = categoryQuestions.filter(q => {
         const match = String(q.no).match(/^(\d+)/);
@@ -899,6 +942,7 @@ function loadQuestion() {
         ? `${sessionMode === "random" ? "🎲" : "🔁"} ${currentIndex + 1}/${currentQuestions.length}　`
         : (sessionMode === "search" ? `🔍 ${currentIndex + 1}/${currentQuestions.length}　` : "");
     document.getElementById("quiz-meta-pos").innerText = `${progressLabel}${posLabel(q)}`;
+    document.getElementById("quiz-meta-new").classList.toggle("hidden", !isNewQuestion(q));
 
    // 4choice のときの表示を「選択問題」に変更
    // rewrite タイプは「2文の書き換え（同意文完成など）」と「1文の空所補充（つづり・語形変化）」の
@@ -1176,6 +1220,8 @@ let cleanCorrect = normalizeText(q.answer);
       document.getElementById("res-school").innerText = q.school;
    }
 
+    // 新規（NEW）の問題なら、バッジを表示する
+    document.getElementById("res-new").classList.toggle("hidden", !isNewQuestion(q));
    // Google Analytics 4 に解答データを送信
    gtag('event', 'solve_question', {
        category: q.category,
@@ -2092,7 +2138,7 @@ function renderSessionResult() {
     } else {
         wrongBox.innerHTML = `<div class="section-title" style="margin-bottom:10px;">間違えた問題</div>` +
             wrongs.map(l => `<div class="session-item">
-                <div class="session-item-pos">${esc(posLabel(l.q))}　${esc(l.q.category)}　［${esc(l.q.difficulty)}］</div>
+                <div class="session-item-pos">${isNewQuestion(l.q) ? '<span class="new-badge">NEW</span> ' : ""}${esc(posLabel(l.q))}　${esc(l.q.category)}　［${esc(l.q.difficulty)}］</div>
                 <div class="session-item-en">${esc(l.q.audioText || "")}</div>
                 <div class="session-item-ja">${esc(l.q.translation || "")}</div>
             </div>`).join("");
@@ -2319,6 +2365,7 @@ function renderSearchResults() {
         addSpan("sr-pos", posLabel(q));
         addSpan("sr-tag", questionTypeLabel(q));
         if (q.difficulty) addSpan("sr-diff", q.difficulty, SR_DIFF_COLOR[q.difficulty] || "#95a5a6");
+        if (isNewQuestion(q)) addSpan("sr-new", "NEW");
         if (q.school) {
             const sp = document.createElement("span");
             sp.textContent = q.school;
