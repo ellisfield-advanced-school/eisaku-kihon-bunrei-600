@@ -386,6 +386,7 @@ h2[style*="8e44ad"]{color:#7a5cff!important}
 #view-category .btn-action[onclick*="stats"]{margin:0 auto}
 .mode-row{flex-direction:column;align-items:center}
 
+        .new-pill { display:inline-block; background:#fff; color:#e67e22; border-radius:8px; padding:1px 9px; margin-right:6px; font-size:0.9em; font-weight:900; letter-spacing:0.03em; }
         /* 新規（NEW）表示 */
         .new-badge { display:inline-block; background:#e74c3c; color:#fff; border-radius:8px; padding:1px 8px; font-size:0.75rem; font-weight:800; letter-spacing:0.03em; vertical-align:middle; }
         .sr-new { background:#e74c3c; color:#fff; border-radius:8px; padding:1px 8px; font-weight:800; }
@@ -470,6 +471,10 @@ h2[style*="8e44ad"]{color:#7a5cff!important}
            <div style="text-align:center; margin-top:12px;">
                <button class="btn-action" style="background-color:#8e44ad;" onclick="showView('stats')">📊 成績を見る（苦手分野チェック）</button>
             </div>
+<div id="new-top-box" class="hidden new-only-box" style="margin:14px 0 4px 0;">
+<button class="btn-action" style="background-color:#e67e22;" onclick="startNewAll()"><span class="new-pill">NEW</span>の問題だけ解く（<span id="new-top-count">0</span>問）</button>
+<p class="new-only-note">追加収録してから 2 週間以内の問題です。</p>
+</div>
             <div class="mode-row">
                 <button class="btn-mode" style="background-color:#e67e22;" onclick="openRandomSetup()">🎲 ランダム10問テスト</button>
                 <button class="btn-mode" id="btn-review-entry" style="background-color:#16a085;" onclick="openReview()">🔁 誤答復習</button>
@@ -581,7 +586,7 @@ h2[style*="8e44ad"]{color:#7a5cff!important}
        <div id="number-buttons-container" class="category-grid"></div>
 
        <div id="new-only-box" class="hidden new-only-box">
-           <button class="btn-action" style="background-color:#e67e22;" onclick="startNewOnly()">🆕 NEW の問題だけ解く（<span id="new-only-count">0</span>問）</button>
+           <button class="btn-action" style="background-color:#e67e22;" onclick="startNewOnly()"><span class="new-pill">NEW</span>の問題だけ解く（<span id="new-only-count">0</span>問）</button>
            <p class="new-only-note">追加収録してから 2 週間以内の問題です。</p>
        </div>
        
@@ -836,11 +841,12 @@ let categoryQuestions = []; // 選択されたカテゴリ内の全問題
 let currentQuestions = [];  // 選択された番号に絞り込まれた問題グループ
 let currentIndex = 0;
 let selectedDifficulty = "すべて"; // 難易度フィルター（すべて/基礎/標準/応用）
-let sessionMode = "normal";  // normal(カテゴリ学習) / search(検索) / random(ランダムテスト) / review(誤答復習)
+let sessionMode = "normal";  // normal(カテゴリ学習) / search(検索) / random(ランダムテスト) / review(誤答復習) / newall(全カテゴリの NEW)
 let sessionLog = [];         // random・reviewで、1問ごとの結果を溜める [{q, isCorrect, wrong}]
 
 function setDifficultyFilter(level) {
     selectedDifficulty = level;
+    updateTopNewButton();
     document.querySelectorAll(".btn-difficulty").forEach(btn => {
         btn.classList.toggle("active", btn.dataset.level === level);
     });
@@ -903,6 +909,31 @@ const container = DOM.numberButtonsContainer;
     showView("number-select");
 }
 
+// トップ画面用: 全カテゴリの NEW の問題（難易度フィルターに従う）
+function getNewPool() {
+    return quizDataset.filter(q => isNewQuestion(q) &&
+        (selectedDifficulty === "すべて" || q.difficulty === selectedDifficulty));
+}
+
+function updateTopNewButton() {
+    const box = document.getElementById("new-top-box");
+    if (!box) return;
+    const n = getNewPool().length;
+    box.classList.toggle("hidden", n === 0);
+    document.getElementById("new-top-count").innerText = n;
+}
+
+function startNewAll() {
+    currentQuestions = getNewPool();
+    if (currentQuestions.length === 0) {
+        alert("現在、NEW の問題はありません。");
+        return;
+    }
+    sessionMode = "newall";
+    currentIndex = 0;
+    showView("quiz");
+    loadQuestion();
+}
 function startNewOnly() {
     currentQuestions = categoryQuestions.filter(isNewQuestion);
     if (currentQuestions.length === 0) {
@@ -940,7 +971,7 @@ function loadQuestion() {
    const pNo = q.no !== undefined ? q.no : "?";
    const progressLabel = (sessionMode === "random" || sessionMode === "review")
         ? `${sessionMode === "random" ? "🎲" : "🔁"} ${currentIndex + 1}/${currentQuestions.length}　`
-        : (sessionMode === "search" ? `🔍 ${currentIndex + 1}/${currentQuestions.length}　` : "");
+        : (sessionMode === "search" ? `🔍 ${currentIndex + 1}/${currentQuestions.length}　` : (sessionMode === "newall" ? `NEW ${currentIndex + 1}/${currentQuestions.length}　` : ""));
     document.getElementById("quiz-meta-pos").innerText = `${progressLabel}${posLabel(q)}`;
     document.getElementById("quiz-meta-new").classList.toggle("hidden", !isNewQuestion(q));
 
@@ -1238,7 +1269,7 @@ let cleanCorrect = normalizeText(q.answer);
        btnNext.innerText =
            sessionMode === "random" ? "結果を見る"
          : sessionMode === "review" ? "復習の結果を見る"
-         : sessionMode === "search" ? "カテゴリ一覧へ戻る"
+         : (sessionMode === "search" || sessionMode === "newall") ? "カテゴリ一覧へ戻る"
          : "問題番号選択へ戻る";
     } else {
       btnNext.innerText = "次の問題へ";
@@ -1433,7 +1464,7 @@ function showView(viewName) {
    document.getElementById("view-" + viewName).classList.remove("hidden");
 
    if (viewName === "stats") renderStats();
-   if (viewName === "category") updateReviewButton();
+   if (viewName === "category") { updateReviewButton(); updateTopNewButton(); }
    if (viewName === "review") renderReview();
    if (viewName === "history") renderHistory();
    window.scrollTo(0, 0);
@@ -2101,6 +2132,8 @@ function finishSession() {
         showView("session-result");
     } else if (sessionMode === "search") {
         backToSearchResults();
+    } else if (sessionMode === "newall") {
+        showView("category");
     } else {
         showView("number-select");
     }
@@ -2171,6 +2204,10 @@ function backFromQuiz() {
     }
     if (sessionMode === "search") {
         backToSearchResults();
+        return;
+    }
+    if (sessionMode === "newall") {
+        showView("category");
         return;
     }
     showView("number-select");
