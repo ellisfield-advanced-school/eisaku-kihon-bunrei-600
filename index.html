@@ -402,7 +402,7 @@ h2[style*="8e44ad"]{color:#7a5cff!important}
 </h1>
 <div id="quiz-counter"
      style="text-align: center; font-size: 1.1rem; color: #e74c3c; font-weight: bold; margin-bottom: 25px;">
-    入試問題演習 作成中
+    入試問題演習 随時追加中
 </div>
 <div id="streak-badge"
      class="hidden"
@@ -1237,6 +1237,7 @@ let cleanCorrect = normalizeText(q.answer);
  
    // 【防弾】和訳や解説が省略されていてもエラーを出さない処理
   document.getElementById("res-user-ans").innerText = userDisplay;
+  document.getElementById("res-user-ans").style.color = isCorrect ? "#2ecc71" : "#e74c3c";
   document.getElementById("res-correct").innerText = correctDisplay;
   document.getElementById("res-audiotext").innerText = q.audioText || "-";
   document.getElementById("res-translation").innerText = q.translation || "";
@@ -2493,7 +2494,7 @@ showView("search-results");
 
 }
   document.getElementById("quiz-counter").innerText =
-    `入試問題演習 作成中 現在 ${quizDataset.length} 問収録`;
+    `入試問題演習 随時追加中 現在 ${quizDataset.length} 問収録`;
 
    const audioTextCount = quizDataset.filter(q => q.audioText).length;
 document.getElementById("audio-progress-notice").innerText =
