@@ -392,6 +392,10 @@ h2[style*="8e44ad"]{color:#7a5cff!important}
         .sr-new { background:#e74c3c; color:#fff; border-radius:8px; padding:1px 8px; font-weight:800; }
         .new-only-box { text-align:center; margin:22px 0 0 0; }
         .new-only-note { color:#7f8c8d; font-size:0.85rem; margin:6px 0 0 0; }
+        /* 収録日の選択画面 */
+        .new-dates-list { display:flex; flex-direction:column; gap:12px; margin-top:6px; }
+        .new-dates-list .btn-action { display:block; width:100%; box-sizing:border-box; text-align:center; }
+        .res-pos { text-align:center; color:#7f8c8d; font-size:0.9rem; font-weight:700; margin:-8px 0 14px 0; }
 </style>
 </head>
 <body>
@@ -617,6 +621,17 @@ h2[style*="8e44ad"]{color:#7a5cff!important}
        </div>
    </div>
 
+   <div id="view-new-dates" class="hidden">
+       <div style="text-align:center; margin-bottom:16px;">
+           <p style="color:#2c3e50; margin:0; font-size:1.05rem; font-weight:bold;"><span class="new-badge">NEW</span> 収録日を選んでね</p>
+           <p class="new-only-note">収録日ごとに解けば、同じ問題を重複して解かずに済みます。解き終わると、この画面に戻ります。</p>
+       </div>
+       <div id="new-dates-list" class="new-dates-list"></div>
+       <div class="action-container" style="margin-top:24px;">
+           <button class="btn-action" style="background-color:#95a5a6;" onclick="backFromNewDates()">戻る</button>
+       </div>
+   </div>
+
    <div id="view-quiz" class="hidden">
        <div class="meta-info">
            <span><span id="quiz-meta-pos">p.0 No.0</span> <span id="quiz-meta-new" class="new-badge hidden">NEW</span></span>
@@ -643,6 +658,7 @@ h2[style*="8e44ad"]{color:#7a5cff!important}
  
    <div id="view-result" class="hidden">
        <div id="result-judge" class="result-box">正解 / 不正解</div>
+        <div id="res-pos" class="res-pos"></div>
         <div id="wrong-note" class="wrong-note hidden"></div>
         
        
@@ -841,7 +857,7 @@ let categoryQuestions = []; // 選択されたカテゴリ内の全問題
 let currentQuestions = [];  // 選択された番号に絞り込まれた問題グループ
 let currentIndex = 0;
 let selectedDifficulty = "すべて"; // 難易度フィルター（すべて/基礎/標準/応用）
-let sessionMode = "normal";  // normal(カテゴリ学習) / search(検索) / random(ランダムテスト) / review(誤答復習) / newall(全カテゴリの NEW)
+let sessionMode = "normal";  // normal(カテゴリ学習) / search(検索) / random(ランダムテスト) / review(誤答復習) / newall(全カテゴリの NEW) / newdate(NEW を収録日ごとに解く)
 let sessionLog = [];         // random・reviewで、1問ごとの結果を溜める [{q, isCorrect, wrong}]
 
 function setDifficultyFilter(level) {
@@ -923,27 +939,78 @@ function updateTopNewButton() {
     document.getElementById("new-top-count").innerText = n;
 }
 
-function startNewAll() {
-    currentQuestions = getNewPool();
-    if (currentQuestions.length === 0) {
-        alert("現在、NEW の問題はありません。");
-        return;
-    }
-    sessionMode = "newall";
+// ==========================================
+// NEW の問題を「収録日ごと」に解く
+// 「NEW の問題だけ解く」を押すと収録日の選択画面を開き、「○月○日収録の問題を解く」で1日分ずつ出題する
+// （収録日が1日分しかないときは、選択画面を出さずにそのまま始める）
+// ==========================================
+let newDatesCtx = null;   // { scope: "all"(トップ) | "category"(カテゴリ内), pool: 対象の NEW の問題 }
+
+function formatAddedDate(ymd) {
+    const m = String(ymd).match(/^(\d{4})-(\d{2})-(\d{2})$/);
+    return m ? `${Number(m[2])}月${Number(m[3])}日` : String(ymd);
+}
+// 収録日ごとにまとめる（新しい日付が上）
+function groupByAddedDate(pool) {
+    const map = new Map();
+    pool.forEach(q => {
+        const k = String(q.added);
+        if (!map.has(k)) map.set(k, []);
+        map.get(k).push(q);
+    });
+    return Array.from(map.entries()).sort((a, b) => b[0].localeCompare(a[0]));
+}
+function beginNewSession(scope, qs, mode) {
+    currentQuestions = qs;
+    sessionMode = mode || (scope === "all" ? "newall" : "normal");
     currentIndex = 0;
     showView("quiz");
     loadQuestion();
 }
-function startNewOnly() {
-    currentQuestions = categoryQuestions.filter(isNewQuestion);
-    if (currentQuestions.length === 0) {
+function openNewDates(scope, pool) {
+    if (pool.length === 0) {
         alert("現在、NEW の問題はありません。");
         return;
     }
-    sessionMode = "normal";
-    currentIndex = 0;
-    showView("quiz");
-    loadQuestion();
+    if (groupByAddedDate(pool).length === 1) {
+        beginNewSession(scope, pool);
+        return;
+    }
+    newDatesCtx = { scope: scope, pool: pool };
+    showNewDates();
+}
+function showNewDates() {
+    const ctx = newDatesCtx;
+    if (!ctx) { showView("category"); return; }
+    const list = document.getElementById("new-dates-list");
+    list.innerHTML = "";
+    groupByAddedDate(ctx.pool).forEach(([ymd, qs]) => {
+        const b = document.createElement("button");
+        b.className = "btn-action";
+        b.style.backgroundColor = "#e67e22";
+        b.textContent = `${formatAddedDate(ymd)}収録の問題を解く（${qs.length}問）`;
+        b.onclick = () => beginNewSession(ctx.scope, qs, "newdate");
+        list.appendChild(b);
+    });
+    const all = document.createElement("button");
+    all.className = "btn-action";
+    all.style.backgroundColor = "#34495e";
+    all.textContent = `NEW の問題をすべて解く（${ctx.pool.length}問）`;
+    all.onclick = () => beginNewSession(ctx.scope, ctx.pool);
+    list.appendChild(all);
+    showView("new-dates");
+}
+function backFromNewDates() {
+    const scope = newDatesCtx ? newDatesCtx.scope : "all";
+    newDatesCtx = null;
+    showView(scope === "all" ? "category" : "number-select");
+}
+
+function startNewAll() {
+    openNewDates("all", getNewPool());
+}
+function startNewOnly() {
+    openNewDates("category", categoryQuestions.filter(isNewQuestion));
 }
 function startNumber(selectedNum) {
     currentQuestions = categoryQuestions.filter(q => {
@@ -971,7 +1038,7 @@ function loadQuestion() {
    const pNo = q.no !== undefined ? q.no : "?";
    const progressLabel = (sessionMode === "random" || sessionMode === "review")
         ? `${sessionMode === "random" ? "🎲" : "🔁"} ${currentIndex + 1}/${currentQuestions.length}　`
-        : (sessionMode === "search" ? `🔍 ${currentIndex + 1}/${currentQuestions.length}　` : (sessionMode === "newall" ? `NEW ${currentIndex + 1}/${currentQuestions.length}　` : ""));
+        : (sessionMode === "search" ? `🔍 ${currentIndex + 1}/${currentQuestions.length}　` : ((sessionMode === "newall" || sessionMode === "newdate") ? `NEW ${currentIndex + 1}/${currentQuestions.length}　` : ""));
     document.getElementById("quiz-meta-pos").innerText = `${progressLabel}${posLabel(q)}`;
     document.getElementById("quiz-meta-new").classList.toggle("hidden", !isNewQuestion(q));
 
@@ -1252,6 +1319,9 @@ let cleanCorrect = normalizeText(q.answer);
       document.getElementById("res-school").innerText = q.school;
    }
 
+    // 問題画面と同じ「p.○ No.○」を、解説画面にも表示する
+    document.getElementById("res-pos").innerText = posLabel(q);
+
     // 新規（NEW）の問題なら、バッジを表示する
     document.getElementById("res-new").classList.toggle("hidden", !isNewQuestion(q));
    // Google Analytics 4 に解答データを送信
@@ -1270,6 +1340,7 @@ let cleanCorrect = normalizeText(q.answer);
        btnNext.innerText =
            sessionMode === "random" ? "結果を見る"
          : sessionMode === "review" ? "復習の結果を見る"
+         : sessionMode === "newdate" ? "収録日の選択へ戻る"
          : (sessionMode === "search" || sessionMode === "newall") ? "カテゴリ一覧へ戻る"
          : "問題番号選択へ戻る";
     } else {
@@ -1458,7 +1529,7 @@ function backToNumberSelect() {
 }
  
 const VIEW_IDS = ["category", "number-select", "quiz", "result", "stats",
-                  "review", "random-setup", "session-result", "history", "search-results", "correction"];
+                  "review", "random-setup", "session-result", "history", "search-results", "correction", "new-dates"];
 
 function showView(viewName) {
    VIEW_IDS.forEach(v => document.getElementById("view-" + v).classList.add("hidden"));
@@ -2133,6 +2204,8 @@ function finishSession() {
         showView("session-result");
     } else if (sessionMode === "search") {
         backToSearchResults();
+    } else if (sessionMode === "newdate") {
+        showNewDates();
     } else if (sessionMode === "newall") {
         showView("category");
     } else {
@@ -2205,6 +2278,10 @@ function backFromQuiz() {
     }
     if (sessionMode === "search") {
         backToSearchResults();
+        return;
+    }
+    if (sessionMode === "newdate") {
+        showNewDates();
         return;
     }
     if (sessionMode === "newall") {
