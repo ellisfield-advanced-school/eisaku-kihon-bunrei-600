@@ -950,15 +950,29 @@ function formatAddedDate(ymd) {
     const m = String(ymd).match(/^(\d{4})-(\d{2})-(\d{2})$/);
     return m ? `${Number(m[2])}月${Number(m[3])}日` : String(ymd);
 }
-// 収録日ごとにまとめる（新しい日付が上）
+// 収録回（data.js の added が日付、round が同じ日の何回目か。round 省略＝第1回）
+function roundOf(q) {
+    const r = parseInt(q && q.round, 10);
+    return r > 0 ? r : 1;
+}
+// 収録日・収録回ごとにまとめる（新しい日付が上、同じ日は新しい回が上）。キーは "YYYY-MM-DD#回"
 function groupByAddedDate(pool) {
     const map = new Map();
     pool.forEach(q => {
-        const k = String(q.added);
+        const k = String(q.added) + "#" + roundOf(q);
         if (!map.has(k)) map.set(k, []);
         map.get(k).push(q);
     });
-    return Array.from(map.entries()).sort((a, b) => b[0].localeCompare(a[0]));
+    return Array.from(map.entries()).sort((a, b) => {
+        const [da, ra] = a[0].split("#"), [db, rb] = b[0].split("#");
+        return db.localeCompare(da) || (Number(rb) - Number(ra));
+    });
+}
+// 新しい収録回の問題が先になるよう並べる（同じ回の中は元の並びのまま）
+function sortNewestFirst(pool) {
+    return pool.map((q, i) => ({ q, i })).sort((a, b) =>
+        String(b.q.added).localeCompare(String(a.q.added)) || (roundOf(b.q) - roundOf(a.q)) || (a.i - b.i)
+    ).map(o => o.q);
 }
 function beginNewSession(scope, qs, mode) {
     currentQuestions = qs;
@@ -972,6 +986,7 @@ function openNewDates(scope, pool) {
         alert("現在、NEW の問題はありません。");
         return;
     }
+    pool = sortNewestFirst(pool);
     if (groupByAddedDate(pool).length === 1) {
         beginNewSession(scope, pool);
         return;
@@ -984,11 +999,15 @@ function showNewDates() {
     if (!ctx) { showView("category"); return; }
     const list = document.getElementById("new-dates-list");
     list.innerHTML = "";
-    groupByAddedDate(ctx.pool).forEach(([ymd, qs]) => {
+    const groups = groupByAddedDate(ctx.pool);
+    const roundsPerDay = {};
+    groups.forEach(([k]) => { const d = k.split("#")[0]; roundsPerDay[d] = (roundsPerDay[d] || 0) + 1; });
+    groups.forEach(([key, qs]) => {
+        const [ymd, rnd] = key.split("#");
         const b = document.createElement("button");
         b.className = "btn-action";
         b.style.backgroundColor = "#e67e22";
-        b.textContent = `${formatAddedDate(ymd)}収録の問題を解く（${qs.length}問）`;
+        b.textContent = `${formatAddedDate(ymd)}${roundsPerDay[ymd] > 1 ? `（第${rnd}回）` : ""}収録の問題を解く（${qs.length}問）`;
         b.onclick = () => beginNewSession(ctx.scope, qs, "newdate");
         list.appendChild(b);
     });
