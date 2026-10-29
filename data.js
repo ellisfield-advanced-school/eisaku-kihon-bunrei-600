@@ -2013,7 +2013,7 @@ const quizDataset = [
     difficulty: "標準", school: "北海学園大", added: "2026-10-29"  },
 
   { page: 15, no: "9-a", category: "疑問文（1）", type: "4choice",
-    question: "<br>They have already gone, ( &nbsp; &nbsp; &nbsp; )?",
+    question: "<br>They have already gone, ( &nbsp; &nbsp; &nbsp; ) they?",
     choices: ["are", "don’t", "did", "haven’t"],
     answer: "haven’t", audioText: "They have already gone, haven't they?",
     translation: "彼らはもう行ってしまいましたよね。",
