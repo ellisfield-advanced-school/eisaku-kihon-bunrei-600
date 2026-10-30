@@ -189,7 +189,7 @@ const quizDataset = [
     answer: "like", audioText: "My teacher's English is so good that he sounds almost like a native speaker.",
     translation: "私の先生の英語はとても上手なので、まるでネイティブスピーカーのように聞こえます。",
     explanation: "sound は「～に聞こえる」の意味の動詞で、補語に名詞を置くときは ＜sound like ＋ 名詞＞ の形にします。a native speaker は名詞なので、like が正解です。as は「～として」の意味になり、「ネイティブスピーカーとして聞こえる」では文意に合いません。the same は sounds the same as ～ の形でなければ成り立ちません。close to は形容詞句で、sounds close to ～ なら成り立ちますが、almost と a native speaker の間に置く形にはなりません。",
-    difficulty: "標準", school: "北海学園大", added: "2026-10-29", round: 3  },
+    difficulty: "標準", school: "北海学園大", added: "2026-10-30"  },
 
   {  page: 3, no: 15, category: "文型（1）", type: "4choice",
       question: "I was deeply ( &nbsp; &nbsp; &nbsp; ) with myself after losing the race.",
@@ -524,7 +524,7 @@ const quizDataset = [
     answer: "interesting", audioText: "I thought the film was nonsense, but my girlfriend found it interesting.",
     translation: "私はその映画をくだらないと思いましたが、彼女はおもしろいと感じました。",
     explanation: "＜find ＋ O ＋ C＞ は「O が C だとわかる［思う］」の意味で、C には形容詞を置きます。it（映画）は「興味を起こさせる」側なので、interesting が正解です。interested は「興味を持った」という人の状態を表すので、物である it には使えません。interests は動詞・名詞の形で、補語になる形容詞ではありません。to be interested は、it の状態として意味が合いません。",
-    difficulty: "標準", school: "関西学院大", added: "2026-10-29", round: 3  },
+    difficulty: "標準", school: "関西学院大", added: "2026-10-30"  },
 
   {  page: 7, no: "4-a", category: "文型（3）", type: "4choice",
       question: "I found the film ( &nbsp; &nbsp; &nbsp; ) and I enjoyed it.",
@@ -977,7 +977,7 @@ const quizDataset = [
     answer: "changes", audioText: "You must not cross the road until the light changes to green.",
     translation: "信号が青に変わるまで、道路を渡ってはいけません。",
     explanation: "until（～するまで）が導く節は、時を表す副詞節です。時や条件を表す副詞節の中では、未来のことでも現在形を使うので、changes が正解です。will change と is going to change は未来を表す形、will have changed は未来完了で、いずれも副詞節の中では使えません。※ the light は三人称単数なので、動詞に s が付きます。",
-    difficulty: "基礎", school: "愛知学院大", added: "2026-10-29", round: 3  },
+    difficulty: "基礎", school: "愛知学院大", added: "2026-10-30"  },
 
   {  page: 9, no: "9-c", category: "時制の基本", type: "4choice",
       question: "He says he will study in his room until his sister ( &nbsp; &nbsp; &nbsp; ) home.",
@@ -2592,7 +2592,7 @@ const quizDataset = [
     answer: "I go about once a month.", audioText: "How often do you go to a concert? I go about once a month.",
     translation: "「コンサートにはどのくらいの頻度で行きますか。」「月に1回ぐらい行きます。」",
     explanation: "How often は「どのくらいの頻度で」と回数・頻度を尋ねる疑問文なので、答えも「月に1回ぐらい」のように頻度を表す文になります。したがって I go about once a month. が正解です。I go by bike. は手段（How に対する答え）、Yes, I do. は how often に Yes / No では答えられないので不適切です。I love going to concerts. は好みを答えているだけで、頻度を答えていません。",
-    difficulty: "基礎", school: "常葉大", added: "2026-10-29", round: 3  },
+    difficulty: "基礎", school: "常葉大", added: "2026-10-30"  },
 
   {  page: 17, no: "15-1", category: "疑問文（2）", type: "4choice",
       question: "If you happen ( &nbsp; &nbsp; &nbsp; ) John, please let me know.",
@@ -4406,7 +4406,7 @@ const quizDataset = [
     answer: "never", audioText: "Since Karen doesn't like to get sunburned, she never goes to the beach.",
     translation: "カレンは日焼けするのが好きではないので、ビーチには決して行きません。",
     explanation: "日焼けするのが好きではないので、ビーチには「まったく行かない」という文意になります。「決して～ない」は否定の頻度を表す副詞 never で表すので、never が正解です。always（いつも）、frequently（頻繁に）、often（よく）は頻度が高いことを表すので、日焼けを好まない理由と矛盾します。※ never はそれ自体が否定の意味を持つので、doesn’t などの否定語と重ねて使えません。",
-    difficulty: "基礎", school: "北海学園大", added: "2026-10-29", round: 3  },
+    difficulty: "基礎", school: "北海学園大", added: "2026-10-30"  },
 
   { page: 29, no: "7-1", category: "否定表現（1）", type: "4choice",
     question: "There used to be a big cherry tree here.<br>➔ There is ( &nbsp; &nbsp; &nbsp; ) longer a big cherry tree here now.<br><small>同意文完成</small>",
@@ -4656,7 +4656,7 @@ const quizDataset = [
     answer: "Neither", audioText: "This baseball glove is too big, and that one is too small. Neither fits me.",
     translation: "この野球のグローブは大きすぎるし、あのグローブは小さすぎます。どちらも私には合いません。",
     explanation: "「（2つのうち）どちらも～ない」は neither で表します。この文は、2つのグローブのどちらも合わないという意味になるので、Neither が正解です（＝ Neither of them fits me）。Both は「両方とも」の意味で、動詞が fit になります。Either fits me は「どちらか一方が合う」の意味で、文脈に合いません。It は2つのグローブを指せないので、不適切です。",
-    difficulty: "標準", school: "東京経済大", added: "2026-10-29", round: 3  },
+    difficulty: "標準", school: "東京経済大", added: "2026-10-30"  },
 
   { page: 31, no: 4, category: "否定表現（2）", type: "4choice",
     question: "Mr. Roberts did not choose any of the three jackets because he found ( &nbsp; &nbsp; &nbsp; ) satisfactory.",
@@ -6596,7 +6596,7 @@ const quizDataset = [
     answer: "looking forward", audioText: "We heard that you are going to help us. We are looking forward to your help.",
     translation: "あなたが私たちを手伝ってくれると聞きました。ご協力を楽しみにしています。",
     explanation: "「～を楽しみに待つ」は look forward to ～ で表し、ここでは be looking forward to ～ の形です。to は前置詞なので、後ろに名詞 your help が続きます。したがって looking forward が正解です。desiring と hoping は、to your help という形では続けられません（hoping for ～ なら成り立ちます）。expecting は expecting your help なら成り立ちますが、to を伴いません。",
-    difficulty: "基礎", school: "南山大", added: "2026-10-29", round: 3  },
+    difficulty: "基礎", school: "南山大", added: "2026-10-30"  },
 
   { page: 39, no: "12-2", category: "動名詞（1）", type: "4choice",
     question: "I am looking forward ( &nbsp; &nbsp; &nbsp; ) you again.",
@@ -9551,7 +9551,7 @@ const quizDataset = [
     answer: "who", audioText: "Mr. Morris, who has been working in my department, will be transferred to your office.",
     translation: "モリスさんは、私の部署で働いてきましたが、あなたの事務所に異動になります。",
     explanation: "人名のあとにコンマを置いて、補足の説明を加える用法（非制限用法）です。先行詞が人で、関係詞が節の主語になっているので、主格の who が正解です。whom は目的格なので、後ろに動詞 has been working が続く主語の位置には使えません。which は先行詞が物のとき、whose は所有格で後ろに名詞が必要なので、いずれも合いません。",
-    difficulty: "基礎", school: "城西大", added: "2026-10-29", round: 3  },
+    difficulty: "基礎", school: "城西大", added: "2026-10-30"  },
 
   {  page: 53, no: "10-4", category: "関係詞（1）", type: "sort",
       question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>Mr. Suzuki, ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ), still teaches here.<br><small>鈴木先生は、何年も前に私の父に英語を教えたのですが、今でもここで教えています。<span class='fuyou-note'>〔1語不要〕</span></small>",
@@ -10478,7 +10478,7 @@ const quizDataset = [
     answer: "because", audioText: "I was late because I had a flat tire.",
     translation: "私はタイヤがパンクしたので、遅刻しました。",
     explanation: "「～なので」と理由を表す接続詞は because です。後ろに ＜主語 ＋ 動詞＞ の節（I had a flat tire）が続き、I was late の理由を述べているので、because が正解です。however は副詞で、文と文をつなげません。how は「どのように」、which は関係代名詞で、いずれも理由を表せません。",
-    difficulty: "基礎", school: "名古屋学院大", added: "2026-10-29", round: 3  },
+    difficulty: "基礎", school: "名古屋学院大", added: "2026-10-30"  },
 
   { page: 57, no: "4-2", category: "接続詞（1）", type: "4choice",
     question: "The match was postponed ( &nbsp; &nbsp; &nbsp; ) the pitch was flooded after the heavy rainfall.",
@@ -11520,7 +11520,7 @@ const quizDataset = [
     answer: "until", audioText: "You cannot lose weight until you give up eating between meals.",
     translation: "間食をやめない限り、体重は減りません。",
     explanation: "not ～ until ...（…するまで～しない → …して初めて～する）の形で、「間食をやめて初めて体重が減る」の意味になるので、until が正解です。as long as は「～する限り」で、間食をやめる限り体重が減らないという反対の意味になります。by the time は「～するまでには」の意味で、cannot とつながりません。while は「～している間」の意味で、文意が通りません。※ until の節の中は、未来のことでも現在形（give up）です。",
-    difficulty: "標準", school: "学習院大", added: "2026-10-29", round: 3  },
+    difficulty: "標準", school: "学習院大", added: "2026-10-30"  },
 
   {  page: 59, no: "7-4", category: "接続詞（2）", type: "sort",
       question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>You cannot ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) you are ill.<br><small>人は病気になって，初めて健康のありがたさが分かるものです。</small>",
@@ -16365,7 +16365,7 @@ const quizDataset = [
     answer: "contact", audioText: "I know Phil, but I haven't had any contact with him since January, no communication at all.",
     translation: "私はフィルを知っていますが、1月からまったく連絡を取っていません。やり取りがまったくないのです。",
     explanation: "「～と連絡を取る」は have contact with ～ で表し、get in touch with ～ や keep in touch with ～ と同じ意味合いです。1月以来まったくやり取りがない（no communication at all）という文意に合う contact が正解です。speaking は have any speaking with ～ の形にならず、speech は「演説」の意味で、連絡を取る意味になりません。contract は「契約」の意味で、文意に合いません。",
-    difficulty: "標準", school: "亜細亜大", added: "2026-10-29", round: 3  },
+    difficulty: "標準", school: "亜細亜大", added: "2026-10-30"  },
 
   { page: 79, no: "10", category: "成句（2）", type: "rewrite",
     question: "He doesn’t have sufficient income to live ( &nbsp; &nbsp; &nbsp; ).<br><small>彼は生計を立てるだけの収入がない。</small>",
