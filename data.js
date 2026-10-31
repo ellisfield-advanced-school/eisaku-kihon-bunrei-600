@@ -127,6 +127,14 @@ const quizDataset = [
        explanation: "look（～に見える）の後ろには、状態を表す形容詞が補語として入ります。選択肢はすべて形容詞なので、意味で判断します。Perhaps she caught cold.（おそらく風邪をひいたのだろう）という理由に合うのは、pale（青白い、顔色が悪い）です。happy（うれしそう）、pleased（喜んでいる）、surprised（驚いている）は、風邪をひいたことと結びつきません。",
        difficulty: "標準", school: "東京国際大"   },
 
+  { page: 3, no: "12-3", category: "文型（1）", type: "4choice",
+    question: "Lucy looked ( &nbsp; &nbsp; &nbsp; ) when her math teacher asked her a question.",
+    choices: ["puzzle", "puzzled", "puzzling", "to puzzle"],
+    answer: "puzzled", audioText: "Lucy looked puzzled when her math teacher asked her a question.",
+    translation: "数学の先生に質問されたとき、ルーシーは当惑した様子でした。",
+    explanation: "look は「～に見える」の意味で、後ろに形容詞を置きます（look ＋ 形容詞）。ルーシーが「当惑させられた（困っている）」様子なので、過去分詞から生まれた形容詞 puzzled が正解です。puzzling は「（人を）当惑させるような」という意味で、人の状態としては合いません。puzzle は原形、to puzzle は不定詞で、look の後ろの形容詞の位置に置けません。",
+    difficulty: "基礎", school: "日本女子大", added: "2026-10-31"  },
+
   {   page: 3, no: "12-a", category: "文型（1）", type: "4choice",
        question: "Shaving his beard off made Robert ( &nbsp; &nbsp; &nbsp; ) five years younger.",
        choices: ["be", "into", "like", "look"], 
@@ -837,6 +845,14 @@ const quizDataset = [
     explanation: "make oneself at home（くつろぐ）という熟語です。相手に「どうぞくつろいで」と促す文なので、oneself の部分は2人称の再帰代名詞 yourself になります。you は主語と同じ人を指す目的語には使えず、your は所有格、yours は所有代名詞なので入りません。※ generosity は「寛大さ、気前のよさ」という意味の名詞です。",
     difficulty: "基礎", school: "追手門学院大"  },
 
+  { page: 7, no: "14-3", category: "文型（3）", type: "sort",
+    question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>Please ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) .<br><small>どうぞお楽にして、お茶をどうぞ。</small>",
+    words: ["at home", "some tea", "make", "have", "and", "yourself"],
+    answer: "make yourself at home and have some tea", audioText: "Please make yourself at home and have some tea.",
+    translation: "どうぞお楽にして、お茶をどうぞ。",
+    explanation: "make oneself at home は「くつろぐ」という意味の熟語です。命令文なので、Please の後は動詞の原形で始め、yourself を make の目的語にして at home を続けます。そのあとを and でつなぎ、have some tea（お茶を飲む）を置きます。したがって Please make yourself at home and have some tea. の語順になります。",
+    difficulty: "基礎", school: "常葉大", added: "2026-10-31"  },
+
   { page: 7, no: "15-1", category: "文型（3）", type: "4choice",
     question: "He ( &nbsp; &nbsp; &nbsp; ) his money stolen three months ago.",
     choices: ["let", "allowed", "made", "had"],
@@ -1335,6 +1351,14 @@ const quizDataset = [
     explanation: "「そこに2回行ったことがある」という現在完了の経験を表す問題です。have been to ～ が基本ですが、後ろの there は副詞なので、前置詞 to は不要です。したがって been のみが正解になります。gone to は「行ってしまった（今ここにいない）」という結果を表し、went は過去形なので have の後ろには置けません。been to は、後ろの there と合わせて to there になってしまうため不適切です。",
     difficulty: "標準", school: "松山大"  },
 
+  { page: 11, no: "12-3", category: "完了形（1）", type: "sort",
+    question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>How ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) ?<br><small>彼は何回テレビに出演したことがありますか。</small>",
+    words: ["television", "he", "on", "many", "has", "times", "appeared"],
+    answer: "many times has he appeared on television", audioText: "How many times has he appeared on television?",
+    translation: "彼は何回テレビに出演したことがありますか。",
+    explanation: "回数を尋ねるときは、How many times（何回）を文頭に置き、後ろに現在完了の疑問文の語順 ＜has ＋ 主語（he）＋ 過去分詞（appeared）＞ を続けます。appear on television は「テレビに出演する」という意味です。したがって How many times has he appeared on television? の語順になります。",
+    difficulty: "標準", school: "東京家政大", added: "2026-10-31"  },
+
   { page: 11, no: "14-1", category: "完了形（1）", type: "4choice",
     question: "<br>My mother ( &nbsp; &nbsp; &nbsp; ) for three years.",
     choices: ["died", "has died", "has been dead", "is dead"],
@@ -1628,7 +1652,15 @@ const quizDataset = [
     explanation: "＜be busy (in) -ing＞（～するのに忙しい）の構文を問う問題です。空欄には動名詞が入るので、preparing が正解です。prepare for ～ で「～の準備をする」という意味になります。to prepare と prepared は be busy の後ろに使えず、about preparing は前置詞が合いません。",
     difficulty: "基礎", school: "流通科学大"  },
 
-  { page: 13, no: "8-1", category: "完了形（2）", type: "4choice",
+  { page: 13, no: "8-1", category: "完了形（2）", type: "sort",
+    question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>What ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) ?<br><small>今まで何をしていましたか。</small>",
+    words: ["doing", "been", "have", "until now", "you"],
+    answer: "have you been doing until now", audioText: "What have you been doing until now?",
+    translation: "今まで何をしていましたか。",
+    explanation: "「今まで（ずっと）何をしていたか」と、過去から今まで続いている動作を尋ねるので、現在完了進行形 ＜have ＋ 主語 ＋ been ＋ ～ing＞ を疑問文の語順で使います。疑問詞 What を文頭に置き、have you been doing の順に並べ、最後に until now（今まで）を置きます。したがって What have you been doing until now? の語順になります。",
+    difficulty: "標準", school: "常葉大", added: "2026-10-31"  },
+
+  { page: 13, no: "8-2", category: "完了形（2）", type: "4choice",
     question: "<br>It’s nice to see you again. What ( &nbsp; &nbsp; &nbsp; ) since we last met ?",
     choices: ["are you doing", "did you do", "have you been doing", "had you done"],
     answer: "have you been doing", audioText: "It’s nice to see you again. What have you been doing since we last met?",
@@ -1636,7 +1668,7 @@ const quizDataset = [
     explanation: "since we last met（最後に会って以来）という過去の起点があるので、現在までの継続を表す現在完了（進行形）を使います。再会した相手に「その間ずっと何をしていたの？」と近況を尋ねるときは、動作の継続を強調する現在完了進行形 have you been doing が使われます。are you doing は現在進行形、did you do は過去形、had you done は過去完了なので、起点からの継続を表せません。",
     difficulty: "標準", school: "東海大"  },
 
-  { page: 13, no: "8-2", category: "完了形（2）", type: "4choice",
+  { page: 13, no: "8-3", category: "完了形（2）", type: "4choice",
     question: "<br>It’s been a long time since I saw you last! What ( &nbsp; &nbsp; &nbsp; ) all these years?",
     choices: ["are you doing", "do you do", "have you been doing", "have you been done"],
     answer: "have you been doing", 
@@ -2786,7 +2818,15 @@ const quizDataset = [
     explanation: "＜With ＋ 名詞（so many people）＋ 形容詞（ill）＞ は、「～が…な状態なので」という付帯状況と理由を表します。Regarding は「～に関して」という前置詞で、後ろに形容詞 ill が続く形になりません。Reported は過去分詞で、so many people ill を続けても意味が通りません。Since は接続詞で、後ろに ＜主語 ＋ 動詞＞ が必要です。",
     difficulty: "標準", school: "立教大"  },
 
-  { page: 19, no: "7-b", category: "命令文・感嘆文", type: "rewrite",
+  { page: 19, no: "7-b", category: "命令文・感嘆文", type: "4choice",
+    question: "( &nbsp; &nbsp; &nbsp; ) so many people injured in the accident, the local hospital was extremely crowded.",
+    choices: ["With", "By", "Because", "For"],
+    answer: "With", audioText: "With so many people injured in the accident, the local hospital was extremely crowded.",
+    translation: "その事故で非常に多くの人がけがをしたので、地元の病院はひどく混み合っていました。",
+    explanation: "＜with ＋ 名詞 ＋ 過去分詞＞ の付帯状況の形で、ここでは「～なので」という理由も表します。so many people は「けがをさせられた」側なので、過去分詞 injured が続き、With が正解です。Because は後ろに ＜主語 ＋ 動詞＞ の節が必要で、so many people injured の形には続きません。By と For も、この形では使えません。",
+    difficulty: "標準", school: "立命館大", added: "2026-10-31"  },
+
+  { page: 19, no: "7-c", category: "命令文・感嘆文", type: "rewrite",
     question: "The old man was sitting there, crossing his legs.<br>➔ The old man was sitting there, ( &nbsp; &nbsp; &nbsp; ) his legs ( &nbsp; &nbsp; &nbsp; ).<br><small>同意文完成</small>",
     blankCount: 2, answer: ["with", "crossed"], 
     audioText: "The old man was sitting there, with his legs crossed.",
@@ -2794,7 +2834,7 @@ const quizDataset = [
     explanation: "分詞構文の crossing his legs（脚を組んで）を、付帯状況の ＜with ＋ 名詞 ＋ 過去分詞＞ で書き換えます。脚（his legs）は「組まれる」という受け身の関係なので、過去分詞 crossed を使い、with his legs crossed とします。※ 分詞構文の crossing は、主語（The old man）が自分で動作をするので能動の形です。with の後ろでは名詞（his legs）が主語になるため、受け身に変わります。",
     difficulty: "標準", school: "國學院大"  },
 
-  { page: 19, no: "7-c", category: "命令文・感嘆文", type: "sort",
+  { page: 19, no: "7-d", category: "命令文・感嘆文", type: "sort",
     question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>The teacher was standing in front of the blackboard ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ).<br><small>その先生は腕組みをしたまま、黒板の前に立っていた。</small>",
     words: ["folded", "arms", "his", "with"],
     answer: "with his arms folded", 
@@ -2803,7 +2843,7 @@ const quizDataset = [
     explanation: "付帯状況の ＜with ＋ 名詞 ＋ 過去分詞＞ の形です。腕（his arms）は「組まれる」という受け身の関係なので、過去分詞 folded を使い、with his arms folded（腕を組んだ状態で）とします。語順は with → his → arms → folded で、名詞の前に所有格 his を置きます。",
     difficulty: "基礎", school: "愛知学院大"  },
 
-  { page: 19, no: "7-d", category: "命令文・感嘆文", type: "sort",
+  { page: 19, no: "7-e", category: "命令文・感嘆文", type: "sort",
     question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>He listened to ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ).<br><small>彼は腕を組んで音楽を聴いていた。</small>",
     words: ["the music", "his", "with", "arms", "crossed"],
     answer: "the music with his arms crossed", audioText: "He listened to the music with his arms crossed.",
@@ -2811,7 +2851,7 @@ const quizDataset = [
     explanation: "「音楽を聴く」を listened to the music とし、そのあとに付帯状況の ＜with ＋ 名詞 ＋ 過去分詞＞ を続けます。腕（his arms）は「組まれる」という受け身の関係なので、過去分詞 crossed を使い、with his arms crossed（腕を組んだ状態で）となります。with の後ろは ＜名詞 ＋ 過去分詞＞ の語順です。",
     difficulty: "標準", school: "東洋大・改"  },
 
-  { page: 19, no: "7-e", category: "命令文・感嘆文", type: "sort",
+  { page: 19, no: "7-f", category: "命令文・感嘆文", type: "sort",
     question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>He was ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ).<br><small>彼は目を閉じてベンチに座っていた。</small>",
     words: ["with", "his eyes", "closed", "on a bench", "sitting"],
     answer: "sitting on a bench with his eyes closed", 
@@ -2820,7 +2860,7 @@ const quizDataset = [
     explanation: "「ベンチに座っていた」を was sitting on a bench とし、そのあとに付帯状況の ＜with ＋ 名詞 ＋ 過去分詞＞ を続けます。目（his eyes）は「閉じられる」という受け身の関係なので、過去分詞 closed を使い、with his eyes closed（目を閉じた状態で）となります。",
     difficulty: "標準", school: "東亜大・改"  },
 
-  { page: 19, no: "7-f", category: "命令文・感嘆文", type: "sort",
+  { page: 19, no: "7-g", category: "命令文・感嘆文", type: "sort",
     question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>She was talking ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ).<br><small>彼女は片手で口をおおいながら話をしていた。</small>",
     words: ["over", "a hand", "mouth", "with", "her"],
     answer: "with a hand over her mouth", audioText: "She was talking with a hand over her mouth.",
@@ -2828,7 +2868,7 @@ const quizDataset = [
     explanation: "付帯状況の ＜with ＋ 名詞 ＋ 前置詞句＞ の形です。with a hand over her mouth で「片手を口の上に置いた状態で」、つまり「片手で口をおおいながら」という意味になります。語順は with → a hand → over → her → mouth で、「口の上に」を表す over her mouth が後ろに続きます。",
     difficulty: "基礎", school: "東邦大"  },
 
-  { page: 19, no: "7-g", category: "命令文・感嘆文", type: "sort",
+  { page: 19, no: "7-h", category: "命令文・感嘆文", type: "sort",
     question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>He was standing at the gate ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ).<br><small>彼はパイプをくわえて門のところに立っていた。<span class='fuyou-note'>〔2語不要〕</span></small>",
     words: ["held", "in", "with", "mouth", "his", "a pipe", "as"],
     answer: "with a pipe in his mouth", audioText: "He was standing at the gate with a pipe in his mouth.",
@@ -2836,7 +2876,7 @@ const quizDataset = [
     explanation: "付帯状況の ＜with ＋ 名詞 ＋ 前置詞句＞ の形で、with a pipe in his mouth（口にパイプをくわえた状態で）となります。held を使うと with a pipe held in his mouth と6語になり、空欄の数（5つ）に合いません。as は with の代わりにならないので、held と as の2語が不要です。",
     difficulty: "応用", school: "千葉工業大"  },
 
-  { page: 19, no: "7-h", category: "命令文・感嘆文", type: "sort",
+  { page: 19, no: "7-i", category: "命令文・感嘆文", type: "sort",
     question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>I can’t ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ).<br><small>君に見られていたら読書に集中できないよ。</small>",
     words: ["concentrate", "me", "my reading", "on", "watching", "with", "you"],
     answer: "concentrate on my reading with you watching me",
@@ -2876,13 +2916,21 @@ const quizDataset = [
     explanation: "＜Be sure to ＋ 動詞の原形＞ は「必ず～しなさい」という意味の命令文で、sure（形容詞）が入ります。Be sure to come to the station at seven. で「7時に必ず駅に来なさい」となります。※ Don't fail to come ～ とほぼ同じ意味で、「忘れずに～しなさい」と念を押すときに使います。",
     difficulty: "基礎", school: "東京家政大"  },
 
-  { page: 19, no: 12, category: "命令文・感嘆文", type: "4choice",
+  { page: 19, no: "12-1", category: "命令文・感嘆文", type: "4choice",
     question: "The child tried hard ( &nbsp; &nbsp; &nbsp; ).",
     choices: ["not to cry", "to not cry", "to cry not", "crying not"],
     answer: "not to cry", audioText: "The child tried hard not to cry.",
     translation: "その子は泣かないように一生懸命努力した。",
     explanation: "to不定詞を否定するときは、to の直前に not を置いて ＜not to ＋ 動詞の原形＞ とします。tried hard not to cry で「泣かないように一生懸命努力した」となります。to cry not と crying not は、not の位置が誤りです。※ to not cry も実際には使われますが、入試では not to cry が標準的な形です。",
     difficulty: "基礎", school: "大阪学院大"  },
+
+  { page: 19, no: "12-2", category: "命令文・感嘆文", type: "sort",
+    question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>Please ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) .<br><small>交通規則に違反しないように注意してください。</small>",
+    words: ["be", "traffic rules", "to", "not", "break", "any", "careful"],
+    answer: "be careful not to break any traffic rules", audioText: "Please be careful not to break any traffic rules.",
+    translation: "交通規則に違反しないように注意してください。",
+    explanation: "「～しないように気をつける」は be careful not to ～ で表します。to 不定詞を否定するときは、to の直前に not を置いて ＜not to ＋ 動詞の原形＞ とします。命令文の Please のあとに be careful を続け、not to break any traffic rules（交通規則を破らないように）とします。したがって Please be careful not to break any traffic rules. の語順になります。",
+    difficulty: "基礎", school: "東京家政大", added: "2026-10-31"  },
 
   { page: 19, no: "13-1", category: "命令文・感嘆文", type: "4choice",
     question: "Go straight for about 10 minutes, ( &nbsp; &nbsp; &nbsp; ) you will see a tall red building on your right.",
@@ -4538,6 +4586,14 @@ const quizDataset = [
     explanation: "time は数えられない名詞なので、a little か little を選びます。I’m afraid（残念ですが）とあり、「議論の時間はほとんどない」という否定的な意味になるので、little が正解です。a little は「少しはある」という肯定的な意味で、文意に合いません。a few、few、quite a few は数えられる名詞に使う語なので、time には使えません。",
     difficulty: "基礎", school: "慶應義塾大", added: "2026-10-30", round: 2  },
 
+  { page: 29, no: "11-4", category: "否定表現（1）", type: "sort",
+    question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>We ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) .<br><small>ラテン語を勉強しても使う機会がほとんどない。</small>",
+    words: ["we", "study", "it", "chance", "even if", "little", "to use", "have", "Latin"],
+    answer: "have little chance to use Latin even if we study it", audioText: "We have little chance to use Latin even if we study it.",
+    translation: "ラテン語を勉強しても使う機会がほとんどない。",
+    explanation: "「ほとんど～ない」は、little を名詞の前に置いて表します。have little chance to use ～ で「～を使う機会がほとんどない」という意味になります。「たとえ～しても」は even if ～ で表し、even if we study it が後ろに続きます。したがって We have little chance to use Latin even if we study it. の語順になります。",
+    difficulty: "標準", school: "北海学園大", added: "2026-10-31"  },
+
   { page: 29, no: "12-1", category: "否定表現（1）", type: "4choice",
     question: "( &nbsp; &nbsp; &nbsp; ) did I expect that my dream would come true.",
     choices: ["Very", "Little", "A little", "Very much"],
@@ -4674,7 +4730,15 @@ const quizDataset = [
     explanation: "Ken and I は2人なので、「2人のどちらも〜ない」という完全否定を表す ＜neither of ~＞ を使い、neither of us had enough money（二人ともお金が足りなかった）とします。either は肯定文で使うと「どちらか一方が持っていた」という意味になり、Although の文意に合いません。no は名詞を直接修飾する語なので、no of us という形は作れません。no one も ＜no one of us＞ の形はまれで、2人を受けるときは neither のほうが適切です。",
     difficulty: "標準", school: "センター試験" },
 
-  { page: 31, no: "3-3", category: "否定表現（2）", type: "4choice",
+  { page: 31, no: "3-3", category: "否定表現（2）", type: "sort",
+    question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) .<br><small>両親のどちらも私の退学を望まなかった。</small>",
+    words: ["leave school", "wanted", "of", "to", "neither", "me", "my parents"],
+    answer: "neither of my parents wanted me to leave school", audioText: "Neither of my parents wanted me to leave school.",
+    translation: "両親のどちらも私の退学を望まなかった。",
+    explanation: "「（2人の）どちらも～ない」は neither of ～ で表します。Neither of my parents で「両親のどちらも～ない」となり、neither 自体が否定の意味を持つので、動詞を否定形にする必要はありません。「人に～してほしい」は ＜want ＋ 人 ＋ to ～＞ で表すので、wanted me to leave school が続きます。したがって Neither of my parents wanted me to leave school. の語順になります。",
+    difficulty: "標準", school: "明海大", added: "2026-10-31"  },
+
+  { page: 31, no: "3-4", category: "否定表現（2）", type: "4choice",
     question: "This baseball glove is too big, and that one is too small. ( &nbsp; &nbsp; &nbsp; ) fits me.",
     choices: ["Both", "Neither", "Either", "It"],
     answer: "Neither", audioText: "This baseball glove is too big, and that one is too small. Neither fits me.",
@@ -6240,6 +6304,14 @@ const quizDataset = [
     explanation: "主節（seems）は現在で、that 節内（did not sleep）が過去と、時制が古いので、完了不定詞 ＜to have ＋ 過去分詞＞ を使います。不定詞の否定形は to の直前に not を置くので、＜not ＋ to have ＋ 過去分詞＞ の順になり、He seems not to have slept well last night. となります。",
     difficulty: "標準", school: "鹿児島大" },
 
+  { page: 37, no: "4-6", category: "不定詞（3）", type: "sort",
+    question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>Frank ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) .<br><small>フランクはトロントをはなれたがっているように思われるが、ナンシーはそうではない。</small>",
+    words: ["Toronto", "Nancy", "doesn't", "but", "want", "seems", "to", "to leave"],
+    answer: "seems to want to leave Toronto but Nancy doesn't", audioText: "Frank seems to want to leave Toronto but Nancy doesn't.",
+    translation: "フランクはトロントをはなれたがっているように思われるが、ナンシーはそうではない。",
+    explanation: "「～するように思われる」は ＜seem to ＋ 動詞の原形＞ で表します。Frank seems to want to leave Toronto で「フランクはトロントを離れたがっているようだ」となり、but のあとに Nancy doesn't をつなぎます。doesn't の後ろには、前半と同じ want to leave Toronto が省略されています。",
+    difficulty: "標準", school: "獨協大", added: "2026-10-31"  },
+
   { page: 37, no: "5-1", category: "不定詞（3）", type: "sort",
     question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) next Friday.<br><small>来週金曜日の誕生パーティーに是非来てくださいね。</small>",
     words: ["come", "to my birthday party", "be", "to", "sure"],
@@ -6426,6 +6498,14 @@ const quizDataset = [
     translation: "パーティーには行けると思うけど、当てにしないでくれ。",
     explanation: "熟語 ＜rely on ～＞（〜を当てにする、頼りにする）の前置詞を問う問題です。don’t rely on it で「それを当てにしないで」となり、it は「パーティーに行けること」を指します。rely は自動詞なので、後ろの目的語には前置詞 on が必要です。空欄には on が入ります。",
     difficulty: "基礎", school: "上智大" },
+
+  { page: 37, no: "14-3", category: "不定詞（3）", type: "sort",
+    question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>She ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) .<br><small>彼女は困ったときに頼りになる人だ。</small>",
+    words: ["rely on", "times", "person", "is", "can", "in", "you", "of", "a", "trouble"],
+    answer: "is a person you can rely on in times of trouble", audioText: "She is a person you can rely on in times of trouble.",
+    translation: "彼女は困ったときに頼りになる人だ。",
+    explanation: "「頼りになる人」は、a person (whom) you can rely on のように、目的格の関係代名詞を省略した形で表します。rely on ～ は「～を頼る」という意味で、on の目的語が a person なので、on は文の後ろ側に残ります。「困ったときに」は in times of trouble で表します。したがって She is a person you can rely on in times of trouble. の語順になります。",
+    difficulty: "標準", school: "実践女大", added: "2026-10-31"  },
 
   { page: 37, no: "15-1", category: "不定詞（3）", type: "rewrite",
     question: "She speaks German, not to ( &nbsp; &nbsp; &nbsp; ) English.<br><small>彼女は英語は言うまでもなく、ドイツ語も話せる。</small>",
@@ -8891,6 +8971,14 @@ const quizDataset = [
     translation: "私の車は、あなたの車に劣らず高価だ。",
     explanation: "＜no less ～ than ...＞ は「…に劣らず～」「…と同じくらい～」という意味を表します。less expensive（より高価でない）を no で打ち消すので、「同じくらい高価だ」という意味になります。fewer は数えられる名詞の複数形に使う語で、形容詞 expensive の前には使えません。neither は ＜neither A nor B＞ の形で使い、比較級の前に置いて使うことはできません。",
     difficulty: "標準", school: "東海大（医）", added: "2026-10-26" },
+
+  { page: 49, no: "16-i", category: "比較（1）", type: "4choice",
+    question: "<small class='instruction-note'>次の文とほぼ同じ意味を表すものを選びなさい。</small><br>She is no less intelligent than her sister.",
+    choices: ["She is intelligent, but her sister isn't.", "Her sister is intelligent, but she isn't.", "She is not as intelligent as her sister.", "She is just as intelligent as her sister."],
+    answer: "She is just as intelligent as her sister.", audioText: "She is no less intelligent than her sister.",
+    translation: "彼女は妹に劣らず知的です（妹と同じように知性があります）。",
+    explanation: "＜no less ～ than ...＞ は「…に劣らず～」「…と同じくらい～」という意味で、「彼女は妹と同じくらい知的だ」を表します。したがって She is just as intelligent as her sister. が正解です。a は「彼女は知的だが妹はそうではない」、b は「妹は知的だが彼女はそうではない」、c は「彼女は妹ほど知的ではない」という意味で、いずれも合いません。",
+    difficulty: "標準", school: "立命館大", added: "2026-10-31"  },
 
   { page: 51, no: 1, category: "比較（2）", type: "4choice",
     question: "Before the vaccine was discovered, ( &nbsp; &nbsp; &nbsp; ) 80,000 people died each year from smallpox.",
@@ -13055,6 +13143,14 @@ const quizDataset = [
       explanation: "ones は、前に出た可算名詞（複数形）の繰り返しを避けるために使う代名詞で、形容詞＋ones の形で用います。（単数のときは one を使います。）the ones formed in childhood（子どものころに形づくられたもの）の形で、ones が habits の繰り返しを避けています。one は単数なので不可で、them と those は the のあとには置けません。",
       difficulty: "標準", school: "明治大"   },
 
+  { page: 65, no: "6-6", category: "代名詞（2）", type: "sort",
+    question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>Don't start reading a ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) reading.<br><small>読みかけの本を読み終わらないうちに、新しい本を読み出すな。</small>",
+    words: ["book", "finishing", "new", "before", "one", "are", "the", "you"],
+    answer: "new book before finishing the one you are", audioText: "Don't start reading a new book before finishing the one you are reading.",
+    translation: "読みかけの本を読み終わらないうちに、新しい本を読み出すな。",
+    explanation: "前に出た名詞（book）の繰り返しを避けるために、代名詞 one を使います。the one you are reading は「あなたが今読んでいる（読みかけの）もの」の意味で、one の後ろには関係代名詞が省略されています（the one (that) you are reading）。「～する前に」は before ～ing で表し、before finishing the one ～ の形にします。したがって Don't start reading a new book before finishing the one you are reading. の語順になります。",
+    difficulty: "標準", school: "獨協大", added: "2026-10-31"  },
+
   {  page: 65, no: "7-1", category: "代名詞（2）", type: "4choice",
       question: "There is ( &nbsp; &nbsp; &nbsp; ) strange about him.",
       choices: ["something", "anything", "everything", "one"],
@@ -14342,6 +14438,14 @@ const quizDataset = [
       explanation: "furniture は不可算名詞で、複数形がありません。「たくさんの」は、不可算名詞にも使える a lot of で表すので、a lot of furniture が正解です。few は数えられる名詞の複数形につく語で、few furniture は不適切です。many furnitures と several furnitures は、furniture を複数形にしている点が誤りです。",
       difficulty: "基礎", school: "東海大"   },
 
+  { page: null, no: "4-4", category: "名詞", type: "4choice",
+    question: "There ( &nbsp; &nbsp; &nbsp; ) in this room.",
+    choices: ["are too many furnitures", "are too much furniture", "are too much furnitures", "is too many furniture", "is too much furniture"],
+    answer: "is too much furniture", audioText: "There is too much furniture in this room.",
+    translation: "この部屋には家具が多すぎます。",
+    explanation: "furniture は数えられない名詞（不可算名詞）で、複数形にならず、many や a もつきません。量が多いときは much を使うので、too much furniture となります。また、There is ～ の be 動詞は、後ろの名詞の数に合わせますが、furniture は単数扱いなので is を使います。したがって is too much furniture が正解です。",
+    difficulty: "標準", school: "早稲田大", added: "2026-10-31"  },
+
   {  page: null, no: "5-1", category: "名詞", type: "4choice",
       question: "My father never gave me ( &nbsp; &nbsp; &nbsp; ).",
       choices: ["many advice", "many advices", "much advice", "a lot of advices"],
@@ -14604,7 +14708,15 @@ const quizDataset = [
       explanation: "if 節が had followed（仮定法過去完了）で、then（そのとき）という過去の事実の反対を表し、主節には now（今）があるので、現在の事実の反対を表します。If S had ＋ 過去分詞, S would ＋ 原形 の混合仮定法なので、would be が正解です。is は直説法の現在形で、仮定法の主節の形になりません。will be は直説法の未来で、これも仮定法の形ではありません。would have been は過去の結果を表す形で、now とは合いません。",
       difficulty: "応用", school: "中央大"   },
 
-  {  page: 67, no: "15-5", category: "仮定法", type: "4choice",
+  { page: 67, no: "15-5", category: "仮定法", type: "4choice",
+    question: "If you had not helped them, they ( &nbsp; &nbsp; &nbsp; ) in London.",
+    choices: ["would still be", "will still be", "would have still gone", "will have still gone"],
+    answer: "would still be", audioText: "If you had not helped them, they would still be in London.",
+    translation: "もしあなたが彼らを助けていなかったら、彼らは今もロンドンにいるでしょう。",
+    explanation: "過去の事実と反対の仮定（If you had not helped them）に対して、結果が現在に及ぶ場合、主節は ＜would ＋ 動詞の原形＞ で表します。「（助けなかったら）今もロンドンにいる」という意味になるので、would still be が正解です。will still be は直説法の未来で、仮定法の主節に合いません。would have still gone と will have still gone は完了形で、「今もいる」という現在の状態を表せません。",
+    difficulty: "応用", school: "関西大", added: "2026-10-31"  },
+
+  {  page: 67, no: "15-6", category: "仮定法", type: "4choice",
       question: "If I had caught that plane, I ( &nbsp; &nbsp; &nbsp; ) now.",
       choices: ["am dead", "died", "would be dead", "would have died"],
       answer: "would be dead", audioText: "If I had caught that plane, I would be dead now.",
@@ -14612,7 +14724,7 @@ const quizDataset = [
       explanation: "if 節が had caught（仮定法過去完了）で過去の事実の反対を表し、主節に now（今）があるので、現在の事実の反対を表します。If S had ＋ 過去分詞, S would ＋ 原形 の混合仮定法なので、would be dead が正解です。am dead は直説法の現在形で、仮定法の主節の形になりません。died は過去形で、仮定を表す形になりません。would have died は過去の結果を表す形で、now とは合いません。",
       difficulty: "応用", school: "龍谷大"   },
 
-  {  page: 67, no: "15-6", category: "仮定法", type: "4choice",
+  {  page: 67, no: "15-7", category: "仮定法", type: "4choice",
       question: "If ( &nbsp; &nbsp; &nbsp; ) the doctor's quick treatment at that time, I would not be alive now.",
       choices: ["it had not been for", "it were not for", "there were not", "I did not receive"],
       answer: "it had not been for", audioText: "If it had not been for the doctor's quick treatment at that time, I would not be alive now.",
@@ -14620,7 +14732,7 @@ const quizDataset = [
       explanation: "at that time（そのとき）が過去を、now（今）が現在を表しているので、過去と現在を組み合わせた混合仮定法の文です。「（過去に）～がなかったら」は If it had not been for ～ で表すので、it had not been for が正解です。it were not for は現在の仮定を表す形で、at that time と合いません。there were not は後ろの名詞句とつながりません。I did not receive は過去形なので、過去の事実に反する仮定としては、時制が合いません（had not received なら正しい形です）。",
       difficulty: "応用", school: "昭和女子大"   },
 
-  {  page: 67, no: "15-7", category: "仮定法", type: "4choice",
+  {  page: 67, no: "15-8", category: "仮定法", type: "4choice",
       question: "( &nbsp; &nbsp; &nbsp; ) for his timely warning yesterday, I would not be alive today.",
       choices: ["If it were not", "Had it not been", "Without it", "Unless it had"],
       answer: "Had it not been", audioText: "Had it not been for his timely warning yesterday, I would not be alive today.",
@@ -14628,7 +14740,7 @@ const quizDataset = [
       explanation: "yesterday（昨日）が過去を、today（今日）が現在を表しているので、過去と現在を組み合わせた混合仮定法の文です。If it had not been for ～ の If を省略すると、Had it not been for ～ という倒置の形になります。よって、Had it not been が正解です。If it were not は現在の仮定を表す形で、yesterday と合いません。Without it と Unless it had は、後ろの for につながりません。",
       difficulty: "応用", school: "関西学院大"   },
 
-  {  page: 67, no: "15-8", category: "仮定法", type: "sort",
+  {  page: 67, no: "15-9", category: "仮定法", type: "sort",
       question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ), I would be in big trouble now.<br><small>彼の助言がなかったら、私は今ごろ大きなトラブルに巻き込まれているだろう。</small>",
       words: ["his advice", "been", "for", "had", "it", "not"],
       answer: "Had it not been for his advice", audioText: "Had it not been for his advice, I would be in big trouble now.",
@@ -14636,7 +14748,7 @@ const quizDataset = [
       explanation: "主節が I would be ～ now（現在の事実の反対）で、「助言がなかったら」は過去の事実の反対を表すので、混合仮定法の文です。If it had not been for ～（～がなかったら）の If を省略すると、Had it not been for ～ という倒置の形になります。よって、Had it not been for his advice の順に並べます。",
       difficulty: "応用", school: "中央大・改"   },
 
-  {  page: 67, no: "15-9", category: "仮定法", type: "rewrite",
+  {  page: 67, no: "15-10", category: "仮定法", type: "rewrite",
       question: "As I didn't follow your advice, I'm not happy now.<br>➔ If I ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) your advice, I ( &nbsp; &nbsp; &nbsp; ) be happy now.<br><small>同意文完成</small>",
       blankCount: 3,
       answer: ["had", "followed", "would"], audioText: "As I didn't follow your advice, I'm not happy now. If I had followed your advice, I would be happy now.",
@@ -15391,7 +15503,15 @@ const quizDataset = [
     explanation: "「A と B を区別する」は ＜distinguish A from B＞ で表し、tell A from B と同じ意味です。したがって、from が正解です。by、with、to は、distinguish A ～ B の形で「区別する」の意味を表せません。※ distinguish between A and B の形もあります。",
     difficulty: "標準", school: "中央大"  },
 
-  { page: 71, no: "11-b", category: "前置詞（2）", type: "sort",
+  { page: 71, no: "11-b", category: "前置詞（2）", type: "4choice",
+    question: "It was difficult for the visitors to distinguish ( &nbsp; &nbsp; &nbsp; ) artificial and natural plants in our house.",
+    choices: ["of", "both", "from", "between"],
+    answer: "between", audioText: "It was difficult for the visitors to distinguish between artificial and natural plants in our house.",
+    translation: "訪れた人たちが、私たちの家の人工の植物と自然の植物を区別するのは難しかった。",
+    explanation: "「A と B を区別する」は distinguish between A and B で表します。artificial and natural plants（人工の植物と自然の植物）と and でつながれた 2 つを区別するので、between が正解です。distinguish A from B の形では、A と B の間に from を置くので、ここでは使えません。of と both は、distinguish の後ろに続ける形になりません。",
+    difficulty: "標準", school: "東洋大", added: "2026-10-31"  },
+
+  { page: 71, no: "11-c", category: "前置詞（2）", type: "sort",
     question: "<small class='instruction-note'>次の語句を並び替えなさい。</small><br>I can hardly ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ).",
     words: ["the", "from", "one", "distinguish", "other"],
     answer: "distinguish one from the other", audioText: "I can hardly distinguish one from the other.",
