@@ -8263,12 +8263,12 @@ const quizDataset = [
     difficulty: "標準", school: "津田塾大" },
 
   { page: 45, no: "10-g", category: "分詞（2）", type: "sort",
-    question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>The present situation of this company, ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) was, is improved greatly.<br><small>この会社の現状は，昔に比べると大きく改善されている。</small>",
-    words: ["with", "it", "compared", "what"],
-    answer: "compared with what it", audioText: "The present situation of this company, compared with what it was, is improved greatly.",
+    question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>The present situation of this company, ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ), is improved greatly.<br><small>この会社の現状は，昔に比べると大きく改善されている。</small>",
+    words: ["with", "it", "compared", "what", "was"],
+    answer: "compared with what it was", audioText: "The present situation of this company, compared with what it was, is improved greatly.",
     translation: "この会社の現状は，昔に比べると大きく改善されている。",
-    explanation: "Compared with ～（～と比べると）は、If it is compared with ～ を分詞構文にした、過去分詞で始まる形です。what it was は「それが昔そうであったもの」で、compared with what it was で「昔と比べると」という意味になります。したがって、compared with what it の語順になります（was は問題文にあります）。",
-    difficulty: "標準", school: "名古屋学院大", added: "2026-11-02", round: 2  },
+    explanation: "Compared with ～（～と比べると）は、If it is compared with ～ を分詞構文にした、過去分詞で始まる形です。what it was は「それが昔そうであったもの」で、compared with what it was で「昔と比べると」という意味になります。したがって、compared with what it was の語順になります。",
+    difficulty: "標準", school: "名古屋学院大・改", added: "2026-11-02", round: 2  },
 
   { page: 45, no: "10-h", category: "分詞（2）", type: "sort",
     question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>Born into a wealthy family, ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) granted.<br><small>裕福な家庭に生まれたので，彼女は豊かさを当たり前のことだと思いながら育った。</small>",
