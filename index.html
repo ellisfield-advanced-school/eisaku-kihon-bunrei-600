@@ -946,6 +946,14 @@ function updateTopNewButton() {
 // ==========================================
 let newDatesCtx = null;   // { scope: "all"(トップ) | "category"(カテゴリ内), pool: 対象の NEW の問題 }
 
+// 収録日ごとのボタンの色（同じ日は同じ色。日付から決めるので、他の日が消えても色は変わらない。隣り合う日は必ず別の色）
+const NEW_DATE_COLORS = ["#c0392b", "#2471a3", "#1e8449", "#7d3c98", "#d35400", "#117a65", "#b03a6f"];
+function colorForAddedDate(ymd) {
+    const m = String(ymd).match(/^(\d{4})-(\d{2})-(\d{2})$/);
+    if (!m) return "#e67e22";
+    const days = Math.floor(Date.UTC(Number(m[1]), Number(m[2]) - 1, Number(m[3])) / 86400000);
+    return NEW_DATE_COLORS[((days % NEW_DATE_COLORS.length) + NEW_DATE_COLORS.length) % NEW_DATE_COLORS.length];
+}
 function formatAddedDate(ymd) {
     const m = String(ymd).match(/^(\d{4})-(\d{2})-(\d{2})$/);
     return m ? `${Number(m[2])}月${Number(m[3])}日` : String(ymd);
@@ -1006,7 +1014,7 @@ function showNewDates() {
         const [ymd, rnd] = key.split("#");
         const b = document.createElement("button");
         b.className = "btn-action";
-        b.style.backgroundColor = "#e67e22";
+        b.style.backgroundColor = colorForAddedDate(ymd);
         b.textContent = `${formatAddedDate(ymd)}${roundsPerDay[ymd] > 1 ? `（第${rnd}回）` : ""}収録の問題を解く（${qs.length}問）`;
         b.onclick = () => beginNewSession(ctx.scope, qs, "newdate");
         list.appendChild(b);
