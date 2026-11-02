@@ -1115,13 +1115,21 @@ const quizDataset = [
     explanation: "before ～ は時を表す副詞節を導くので、節の中では未来の内容でも現在形を使います。「忘れないうちに」は、日本語につられて否定形にするのではなく、「忘れる前に」という肯定の形（before you forget）で表します。you don't forget は否定形、you won't forget と you'll forget は未来を表す形なので、いずれも不適切です。",
     difficulty: "標準", school: "龍谷大"  },
 
-  { page: 9, no: 12, category: "時制の基本", type: "4choice",
+  { page: 9, no: "12-1", category: "時制の基本", type: "4choice",
     question: "<br>I ( &nbsp; &nbsp; &nbsp; ) Tokyo tomorrow morning.",
     choices: ["leave", "am leaving", "will be leaving", "have left"],
     answer: "am leaving", audioText: "I am leaving Tokyo tomorrow morning.",
     translation: "私は明日の朝、東京を発ちます。",
     explanation: "確定している近い未来の予定は、現在進行形で表せます。tomorrow morning（明日の朝）という未来を表す語句があり、am leaving で「出発する予定だ」という意味になります。will be leaving は「その時点で出発している最中だろう」という未来進行形で、単なる予定を述べるここでは、現在進行形のほうが適切です。have left は現在完了で、未来の内容に合いません。leave（現在形）は、電車の発車時刻のような公共の決まった予定に使う形で、個人の予定を述べる文には現在進行形が自然です。",
     difficulty: "標準", school: ""  },
+
+  { page: 9, no: "12-2", category: "時制の基本", type: "4choice",
+    question: "<br>They ( &nbsp; &nbsp; &nbsp; ) in Narita tomorrow.",
+    choices: ["arrived", "are arriving", "is going to arrive", "will be arrived"],
+    answer: "are arriving", audioText: "They are arriving in Narita tomorrow.",
+    translation: "彼らは明日、成田に到着します。",
+    explanation: "近い未来の確定した予定は、現在進行形で表せます。arrive・leave・go・come などの往来・発着を表す動詞は、この用法でよく使われます。tomorrow（明日）という未来を表す語があるので、are arriving が正解です。arrived は過去形、is going to arrive は主語 They（複数）に合わない be 動詞、will be arrived は受け身の形で、arrive は自動詞なので受け身にできません。",
+    difficulty: "標準", school: "東北学院大"  },
 
   { page: 9, no: "12-a", category: "時制の基本", type: "sort",
     question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>I think people will ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) a clever person.<br><small>人々はあなたを賢明な人だと考えると思います。</small>",
@@ -1130,14 +1138,6 @@ const quizDataset = [
     translation: "人々はあなたを賢明な人だと考えると思います。",
     explanation: "＜think of A as B＞（AをBと考える）の形です。will の後ろは動詞の原形になるので think を使い、think of you as a clever person（あなたを賢明な人だと考える）となります。したがって、think of you as の語順になります。",
     difficulty: "標準", school: "名古屋学院大", added: "2026-11-01", round: 2  },
-
-  { page: 9, no: "12-b", category: "時制の基本", type: "4choice",
-    question: "<br>They ( &nbsp; &nbsp; &nbsp; ) in Narita tomorrow.",
-    choices: ["arrived", "are arriving", "is going to arrive", "will be arrived"],
-    answer: "are arriving", audioText: "They are arriving in Narita tomorrow.",
-    translation: "彼らは明日、成田に到着します。",
-    explanation: "近い未来の確定した予定は、現在進行形で表せます。arrive・leave・go・come などの往来・発着を表す動詞は、この用法でよく使われます。tomorrow（明日）という未来を表す語があるので、are arriving が正解です。arrived は過去形、is going to arrive は主語 They（複数）に合わない be 動詞、will be arrived は受け身の形で、arrive は自動詞なので受け身にできません。",
-    difficulty: "標準", school: "東北学院大"  },
 
   { page: 9, no: "14-1", category: "時制の基本", type: "4choice",
     question: "<br>I ( &nbsp; &nbsp; &nbsp; ) reading just when he came in.",
