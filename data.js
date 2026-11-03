@@ -14327,7 +14327,7 @@ const quizDataset = [
     difficulty: "応用", school: "金城学院大", added: "2026-11-03", round: 2  },
 
   { page: 67, no: "3-g", category: "仮定法", type: "sort",
-    question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>Science would make ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) ideas.<br><small>多くの科学者が意見を交換するために使うコンピュータネットワークがなければ，科学の進歩はずっと少なかっただろう。</small>",
+    question: "<small class='instruction-note'>次の語句を並び替えなさい。</small><br>Science would make ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) ideas.",
     words: ["much less progress", "the computer networks", "to exchange", "used by many scientists", "without"],
     answer: "much less progress without the computer networks used by many scientists to exchange", audioText: "Science would make much less progress without the computer networks used by many scientists to exchange ideas.",
     translation: "多くの科学者が意見を交換するために使うコンピュータネットワークがなければ，科学の進歩はずっと少なかっただろう。",
