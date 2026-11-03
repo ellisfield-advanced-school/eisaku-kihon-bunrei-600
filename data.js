@@ -5605,12 +5605,13 @@ const quizDataset = [
     explanation: "＜make it impossible for ＋ 意味上の主語 ＋ to do＞（〜が…するのを不可能にする）の構文です。The railroad accident made it impossible for the train to reach the station on time. の順に並べます。it は後ろの to reach the station on time を指す仮目的語です。",
     difficulty: "標準", school: "関東学院大" },
 
-  { page: 33, no: "16-c", category: "不定詞（1）", type: "4choice",
-    question: "The introduction of the new library system made ( &nbsp; &nbsp; &nbsp; ) for students to find books more easily.",
-    choices: ["possible", "possibly", "it possible", "that possible"],
-    answer: "it possible", audioText: "The introduction of the new library system made it possible for students to find books more easily.", translation: "新しい図書システムの導入により、学生たちはより簡単に本を見つけられるようになった。",
-    explanation: "＜make ＋ it ＋ 形容詞（C）＋ for ＋ 意味上の主語 ＋ to do＞ の構文です。仮目的語の it と補語の形容詞 possible を合わせた it possible が入ります。possible だけでは、make の目的語（it）がなく、for students to find 以下とうまくつながりません。possibly は副詞で、補語になれません。that possible も、この形には使えません。",
-    difficulty: "標準", school: "青山学院大" },
+  { page: 33, no: "16-c", category: "不定詞（1）", type: "sort",
+    question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>This law made ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) alcohol.<br><small>この法律によって，誰であろうとアルコールを買うことは違法になった。</small>",
+    words: ["buy", "for", "to", "illegal", "anyone", "it"],
+    answer: "it illegal for anyone to buy", audioText: "This law made it illegal for anyone to buy alcohol.",
+    translation: "この法律によって，誰であろうとアルコールを買うことは違法になった。",
+    explanation: "＜make it＋形容詞＋for A to ～＞（A が～することを…にする）の形で、it は形式目的語、for anyone to buy alcohol が真の目的語です。illegal（違法な）が補語になります。したがって、it illegal for anyone to buy の語順になります。",
+    difficulty: "標準", school: "中央大", added: "2026-11-03"  },
 
   { page: 33, no: "16-d", category: "不定詞（1）", type: "sort",
     question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>The storm will ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) to leave port.<br><small>その船は嵐のため出航できないだろう。</small>",
@@ -5618,6 +5619,13 @@ const quizDataset = [
     answer: "make it impossible for the ship", audioText: "The storm will make it impossible for the ship to leave port.", translation: "その船は嵐のため出航できないだろう。",
     explanation: "＜make it impossible for ＋ 意味上の主語 ＋ to do＞（〜が…するのを不可能にする）の構文です。助動詞 will のすぐ後なので動詞の原形 make から始まり、The storm will make it impossible for the ship to leave port. の順になります。",
     difficulty: "標準", school: "国学院大・改" },
+
+  { page: 33, no: "16-e", category: "不定詞（1）", type: "4choice",
+    question: "The introduction of the new library system made ( &nbsp; &nbsp; &nbsp; ) for students to find books more easily.",
+    choices: ["possible", "possibly", "it possible", "that possible"],
+    answer: "it possible", audioText: "The introduction of the new library system made it possible for students to find books more easily.", translation: "新しい図書システムの導入により、学生たちはより簡単に本を見つけられるようになった。",
+    explanation: "＜make ＋ it ＋ 形容詞（C）＋ for ＋ 意味上の主語 ＋ to do＞ の構文です。仮目的語の it と補語の形容詞 possible を合わせた it possible が入ります。possible だけでは、make の目的語（it）がなく、for students to find 以下とうまくつながりません。possibly は副詞で、補語になれません。that possible も、この形には使えません。",
+    difficulty: "標準", school: "青山学院大" },
 
   { page: 35, no: "1-1", category: "不定詞（2）", type: "sort",
     question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>Please ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ).<br><small>何か冷たい飲み物を下さい。</small>",
@@ -5646,12 +5654,20 @@ const quizDataset = [
     explanation: "I must do a lot of things today.（今日たくさんのことをしなければならない）を、I have a lot of things to do today.（今日やるべきことがたくさんある）に書き換えます。a lot of things を後ろから不定詞の形容詞的用法 to do が修飾する形で、空欄に入る語は順に to / do です。",
     difficulty: "基礎", school: "日本福祉大" },
 
-  { page: 35, no: 3, category: "不定詞（2）", type: "sort",
+  { page: 35, no: "3-1", category: "不定詞（2）", type: "sort",
     question: "<small class='instruction-note'>次の語句を並び替えなさい。</small><br>They ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ).",
     words: ["for", "to", "looking", "live in", "a house", "are"],
     answer: "are looking for a house to live in", audioText: "They are looking for a house to live in.", translation: "彼らは住むための家を探している。",
     explanation: "「〜を探している」を表す進行形 are looking for の後ろに、「住むための家」を表す ＜a house to live in＞ を続けます。live は「住む」という意味の自動詞で、場所を表すには前置詞が必要です。a house が in の目的語にあたるため、to live in の in を省略できません。They are looking for a house to live in. の順になります。",
     difficulty: "標準", school: "" },
+
+  { page: 35, no: "3-2", category: "不定詞（2）", type: "4choice",
+    question: "He doesn’t know ( &nbsp; &nbsp; &nbsp; ) to open it with.",
+    choices: ["how", "who", "what", "when"],
+    answer: "what", audioText: "He doesn’t know what to open it with.",
+    translation: "彼は何を使ってそれを開ければよいのかわからない。",
+    explanation: "open it with ～（～を使ってそれを開ける）の with の目的語にあたる語が、疑問詞として前に出た形です。what to open it with（何を使ってそれを開ければよいか）となり、with を後ろに残します。how と when は、with の後ろに目的語がなくなるので、文として成り立ちません。who は「だれ」という意味で、「何を使って」という意味に合いません。",
+    difficulty: "標準", school: "慶應義塾大", added: "2026-11-03"  },
 
   { page: 35, no: "3-a", category: "不定詞（2）", type: "4choice",
     question: "I looked for something ( &nbsp; &nbsp; &nbsp; ).",
@@ -10594,6 +10610,14 @@ const quizDataset = [
       explanation: "先行詞 The day の後ろに will come を続け、時を表す関係副詞 when を置いて we all have robots（すべての人がロボットを所有する）という完全な文を続けます。",
       difficulty: "標準", school: "立命館大"   },
 
+  { page: 55, no: "8-5", category: "関係詞（2）", type: "sort",
+    question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>It ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) our school festival.<br><small>私たちが学園祭でいっしょに歌を歌ったのは昨日のことのようだ。</small>",
+    words: ["at", "like", "sang together", "seems", "we", "when", "yesterday"],
+    answer: "seems like yesterday when we sang together at", audioText: "It seems like yesterday when we sang together at our school festival.",
+    translation: "私たちが学園祭でいっしょに歌を歌ったのは昨日のことのようだ。",
+    explanation: "＜It seems like ～＞（～のように思える）の形で、like yesterday（昨日のようだ）の後ろに、関係副詞 when が続いて yesterday を修飾します。when we sang together at our school festival で「私たちが学園祭でいっしょに歌ったとき」という意味です。したがって、seems like yesterday when we sang together at の語順になります。",
+    difficulty: "標準", school: "立命館大", added: "2026-11-03"  },
+
   {  page: 55, no: "9-1", category: "関係詞（2）", type: "4choice",
       question: "He is not at all ( &nbsp; &nbsp; &nbsp; ) he used to be ten years ago.",
       choices: ["which", "what", "that", "why"],
@@ -10999,7 +11023,15 @@ const quizDataset = [
     explanation: "空所の後ろに the pitch was flooded という節が続くので、接続詞が入ります。「冠水したので延期された」と理由を表す because が適切です。so that は目的（～するために）、unless は「～でない限り」、although は「～だけれども」で、いずれも文意に合いません。",
     difficulty: "標準", school: "上智大（改）", added: "2026-10-28" },
 
-  {  page: 57, no: "6-1", category: "接続詞（1）", type: "4choice",
+  { page: 57, no: "6-1", category: "接続詞（1）", type: "sort",
+    question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>If you ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ), the problem is going to get worse.<br><small>それについて何も対策を講じなければ，問題は悪化する一方です。<span class='fuyou-note'>〔1語不要〕</span></small>",
+    words: ["about", "do", "don’t", "it", "plan", "something"],
+    answer: "don’t do something about it", audioText: "If you don’t do something about it, the problem is going to get worse.",
+    translation: "それについて何も対策を講じなければ，問題は悪化する一方です。",
+    explanation: "条件を表す if 節では、未来のことでも現在形を使うので、If you don’t do something about it とします。do something about ～ は「～について何か手を打つ」という意味です。plan は、ここでは意味が通らないので不要語です。したがって、don’t do something about it の語順になります。",
+    difficulty: "標準", school: "成蹊大", added: "2026-11-03"  },
+
+  {  page: 57, no: "6-2", category: "接続詞（1）", type: "4choice",
       question: "We will go on a picnic if the weather ( &nbsp; &nbsp; &nbsp; ) good.",
       choices: ["is", "was", "will be", "would be"],
       answer: "is", audioText: "We will go on a picnic if the weather is good.",
@@ -11007,7 +11039,7 @@ const quizDataset = [
       explanation: "if が導く節が「条件」を表す副詞節のときは、未来のことであっても現在形で表します。ここでは if the weather is good（もし天気が良ければ）という未来の条件を、未来形 will be ではなく現在形 is で表します。was は過去形、would be は仮定法で、いずれも単純な条件を表すこの文には合いません。",
       difficulty: "基礎", school: "北陸大"   },
 
-  {  page: 57, no: "6-2", category: "接続詞（1）", type: "4choice",
+  {  page: 57, no: "6-3", category: "接続詞（1）", type: "4choice",
       question: "If it ( &nbsp; &nbsp; &nbsp; ) fine tomorrow, we'll go on a picnic.",
       choices: ["is", "was", "will be", "would be"],
       answer: "is", audioText: "If it is fine tomorrow, we'll go on a picnic.",
@@ -11015,7 +11047,7 @@ const quizDataset = [
       explanation: "tomorrow（明日）という未来のことを表す語があっても、if が導く条件を表す副詞節の中では現在形を使います。If it is fine tomorrow（もし明日晴れたら）と現在形 is にするのが正解で、未来形 will be は使いません。was は過去形、would be は仮定法なので、ここでは不適切です。",
       difficulty: "基礎", school: "青山学院大"   },
 
-  {  page: 57, no: "6-3", category: "接続詞（1）", type: "4choice",
+  {  page: 57, no: "6-4", category: "接続詞（1）", type: "4choice",
       question: "If it ( &nbsp; &nbsp; &nbsp; ) tomorrow, I will not go on a trip.",
       choices: ["will rain", "would rain", "rains", "rain"],
       answer: "rains", audioText: "If it rains tomorrow, I will not go on a trip.",
@@ -11023,7 +11055,7 @@ const quizDataset = [
       explanation: "if が導く条件を表す副詞節の中では、未来のことでも現在形を使います。tomorrow（明日）とあっても、If it rains tomorrow（もし明日雨が降ったら）のように現在形 rains にします。主語が it なので、原形の rain ではなく3人称単数の rains が正解です。will rain・would rain は未来形・仮定法なので、条件を表す副詞節には使いません。",
       difficulty: "基礎", school: "関西学院大"   },
 
-  {  page: 57, no: "6-4", category: "接続詞（1）", type: "4choice",
+  {  page: 57, no: "6-5", category: "接続詞（1）", type: "4choice",
       question: "If it ( &nbsp; &nbsp; &nbsp; ) tomorrow, the tennis match will be postponed.",
       choices: ["rain", "rains", "rained", "will rain"],
       answer: "rains", audioText: "If it rains tomorrow, the tennis match will be postponed.",
@@ -11031,7 +11063,7 @@ const quizDataset = [
       explanation: "if が導く条件を表す副詞節の中では、未来のことでも現在形を使います。If it rains tomorrow（もし明日雨が降ったら）と、主語 it に合わせて3人称単数現在の rains にします。will rain は未来形なので使えず、rained は過去形、rain は原形で主語と一致しません。",
       difficulty: "基礎", school: "法政大"   },
 
-  {  page: 57, no: "6-5", category: "接続詞（1）", type: "4choice",
+  {  page: 57, no: "6-6", category: "接続詞（1）", type: "4choice",
       question: "If it ( &nbsp; &nbsp; &nbsp; ) rain, we will have a garden party.",
       choices: ["wouldn't", "wasn't", "doesn't", "won't"],
       answer: "doesn't", audioText: "If it doesn't rain, we will have a garden party.",
@@ -11039,7 +11071,7 @@ const quizDataset = [
       explanation: "if が導く条件を表す副詞節の中では、未来のことでも現在形を使います。ここでは否定の条件なので、現在形の否定 doesn't rain（雨が降らなければ）が正解です。won't（will not）は未来形の否定なので条件節には使えず、wouldn't は仮定法、wasn't は過去形の be動詞でこの文には合いません。",
       difficulty: "標準", school: "西南学院大"   },
 
-  {  page: 57, no: "6-6", category: "接続詞（1）", type: "4choice",
+  {  page: 57, no: "6-7", category: "接続詞（1）", type: "4choice",
       question: "You'll be sorry if you ( &nbsp; &nbsp; &nbsp; ) make reservations in advance.",
       choices: ["won't", "shouldn't", "don't", "wouldn't"],
       answer: "don't", audioText: "You'll be sorry if you don't make reservations in advance.",
@@ -13583,6 +13615,14 @@ const quizDataset = [
       explanation: "out of order（故障して）は、There is something wrong with 〜（〜はどこか調子が悪い）で言い換えられます。形容詞 wrong は something の後ろに置きます。",
       difficulty: "標準", school: "長崎大"   },
 
+  { page: 65, no: "8-4", category: "代名詞（2）", type: "sort",
+    question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>There ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) they said.<br><small>彼らが言っていたことには間違いがあるようだ。</small>",
+    words: ["appears", "be", "something", "to", "what", "with", "wrong"],
+    answer: "appears to be something wrong with what", audioText: "There appears to be something wrong with what they said.",
+    translation: "彼らが言っていたことには間違いがあるようだ。",
+    explanation: "＜There appears to be＋名詞＞は「～があるようだ」という意味です。something wrong with ～ は「～には何か間違い（異常）がある」で、with の後ろに、関係代名詞 what で始まる what they said（彼らが言ったこと）が続きます。したがって、appears to be something wrong with what の語順になります。",
+    difficulty: "標準", school: "立命館大", added: "2026-11-03"  },
+
   {  page: 65, no: "9-1", category: "代名詞（2）", type: "4choice",
       question: "It was Bill ( &nbsp; &nbsp; &nbsp; ) broke the window yesterday.",
       choices: ["with which", "which", "that", "what"],
@@ -13718,6 +13758,14 @@ const quizDataset = [
       translation: "神が存在するかしないかは、私にとってどうでもよい。",
       explanation: "It makes no difference to me whether God exists or not. の語順になります。make no difference to 〜 は「〜にとって違いはない、どうでもよい」という意味です。",
       difficulty: "標準", school: "中京大"   },
+
+  { page: 65, no: "11-d", category: "代名詞（2）", type: "sort",
+    question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ).<br><small>天候がどうだろうと，私には関係がない。<span class='fuyou-note'>〔1語不要〕</span></small>",
+    words: ["like", "many", "make", "weather", "difference", "it", "me", "the", "is", "does", "much", "to", "what", "not"],
+    answer: "It does not make much difference to me what the weather is like", audioText: "It does not make much difference to me what the weather is like.",
+    translation: "天候がどうだろうと，私には関係がない。",
+    explanation: "make a difference（違いが生じる）を否定にした It does not make much difference to me は、「私にはあまり違いがない（どうでもよい）」という意味です。to me の後ろに、疑問詞 what で始まる名詞節 what the weather is like（天候がどのようであるか）が続きます。many は、単数形の difference の前に置けないので不要語です。",
+    difficulty: "応用", school: "高知大", added: "2026-11-03"  },
 
   {  page: 65, no: "12-1", category: "代名詞（2）", type: "4choice",
       question: "My family has two cars : one is red and ( &nbsp; &nbsp; &nbsp; ) is white.",
