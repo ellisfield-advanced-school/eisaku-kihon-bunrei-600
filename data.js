@@ -9931,7 +9931,15 @@ const quizDataset = [
       explanation: "空所の後ろに name（名詞）が続き、「その生徒の名前」という所有関係を表すため、所有格の関係代名詞 whose が正解です。that、who、whom は、後ろに名詞を直接置いて所有関係を表すことができません。",
       difficulty: "基礎", school: "札幌学院大"   },
 
-  {  page: 53, no: "6-5", category: "関係詞（1）", type: "rewrite",
+  { page: 53, no: "6-5", category: "関係詞（1）", type: "4choice",
+    question: "The boy ( &nbsp; &nbsp; &nbsp; ) bicycle was stolen reported its loss to the police.",
+    choices: ["who", "that", "when", "from which", "whose"],
+    answer: "whose", audioText: "The boy whose bicycle was stolen reported its loss to the police.",
+    translation: "自転車を盗まれた少年は、その紛失を警察に届け出た。",
+    explanation: "所有格の関係代名詞 whose の問題です。the boy’s bicycle was stolen（その少年の自転車が盗まれた）の the boy’s が whose になり、＜whose ＋ 名詞＞（その人［物］の～）の形で、先行詞 The boy を修飾します。who は主格、that は主格・目的格の関係代名詞で、後ろに名詞 bicycle が直接続く形には合いません。when は関係副詞で、時を表す名詞を先行詞にします。from which は、＜前置詞 ＋ 関係代名詞＞で、後ろに完全な文が続く形なので、ここでは誤りです。",
+    difficulty: "基礎", school: "関西学院大", added: "2026-11-06", round: 2  },
+
+  {  page: 53, no: "6-6", category: "関係詞（1）", type: "rewrite",
       question: "This book is for students ( &nbsp; &nbsp; &nbsp; ) native language is not English.",
       blankCount: 1, answer: ["whose"], audioText: "This book is for students whose native language is not English.",
       translation: "この本は母国語が英語でない学生向けです。",
@@ -13449,7 +13457,15 @@ const quizDataset = [
       explanation: "those who ～ は「〜する人々」という意味で、those は people（人々）にあたります。動詞が wish（複数形）で、their forms とも合うので、複数を表す Those が正解です。Someone と Anyone は単数扱いで wish と合わず、Person は冠詞がないため不可です。",
       difficulty: "標準", school: "青山学院大・改"   },
 
-  {  page: 65, no: "3-4", category: "代名詞（2）", type: "4choice",
+  { page: 65, no: "3-4", category: "代名詞（2）", type: "4choice",
+    question: "Listen only to those ( &nbsp; &nbsp; &nbsp; ) you believe to be honest.",
+    choices: ["who", "whose", "which", "what"],
+    answer: "who", audioText: "Listen only to those who you believe to be honest.",
+    translation: "あなたが正直だと信じる人の言うことだけを聞きなさい。",
+    explanation: "＜those who ～＞は「～する人々」という意味で、those は people（人々）にあたります。you believe to be honest は、＜believe ＋ O ＋ to be ～＞（O が～だと信じる）の O にあたる語が関係代名詞となって前に出た形で、who は to be honest の意味上の主語にあたります。先行詞 those は人なので、人を表す who が正解です。whose は所有格で、後ろに名詞が必要です。which は人には使えません。what は先行詞を含む関係代名詞なので、先行詞 those の直後には置けません。（※ 格式ばった書き方では whom も使われますが、紛らわしいので選択肢に入れていません。）",
+    difficulty: "標準", school: "和光大・改", added: "2026-11-06", round: 2  },
+
+  {  page: 65, no: "3-5", category: "代名詞（2）", type: "4choice",
       question: "( &nbsp; &nbsp; &nbsp; ) present at the meeting were opposed to the planned construction of a new airport.",
       choices: ["They", "Those", "Everyone", "Someone"],
       answer: "Those", audioText: "Those present at the meeting were opposed to the planned construction of a new airport.",
@@ -13457,7 +13473,7 @@ const quizDataset = [
       explanation: "those present は those who were present の who were が省略された形で、「出席していた人々」という意味です。They は、このように後ろから形容詞で修飾する形では使いません。Everyone と Someone は単数扱いで、動詞 were と合いません。",
       difficulty: "標準", school: "立命館大"   },
 
-  {  page: 65, no: "3-5", category: "代名詞（2）", type: "4choice",
+  {  page: 65, no: "3-6", category: "代名詞（2）", type: "4choice",
       question: "( &nbsp; &nbsp; &nbsp; ) present at the wedding ceremony were totally moved by the main guest's speech.",
       choices: ["At", "That", "These", "Those"],
       answer: "Those", audioText: "Those present at the wedding ceremony were totally moved by the main guest's speech.",
@@ -13465,7 +13481,7 @@ const quizDataset = [
       explanation: "those present は those who were present の who were が省略された形で、「出席していた人々」という意味です。人々を表す Those が正解です。At は前置詞、That は単数を指す語で、These は「これら」と身近なものを指すため、ここでは使いません。",
       difficulty: "標準", school: "日本大"   },
 
-  {  page: 65, no: "3-6", category: "代名詞（2）", type: "sort",
+  {  page: 65, no: "3-7", category: "代名詞（2）", type: "sort",
       question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>I like ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ).<br><small>私は自分自身を一番愛する人が好きです。</small>",
       words: ["the", "those", "most", "love", "themselves", "who"],
       answer: "those who love themselves the most", audioText: "I like those who love themselves the most.",
