@@ -789,9 +789,9 @@ h2[style*="8e44ad"]{color:#7a5cff!important}
         </div>
         <div id="history-chart"></div>
         <div id="history-legend" class="legend"></div>
-        <div class="section-title" id="history-total-title">通算の難易度別正答率</div>
+        <div class="section-title" id="history-total-title">保存中のテストの難易度別正答率（最大200回）</div>
         <div id="history-summary" style="margin-top:10px;"></div>
-        <div class="section-title">最近のテスト</div>
+        <div class="section-title">最近のテスト（回番号は保存中の履歴内の番号）</div>
         <div id="history-list" style="margin-top:6px;"></div>
         <div class="action-container" style="margin-top:22px;">
             <button class="btn-action" style="background-color:#95a5a6;" onclick="showView('category')">トップへ戻る</button>
@@ -849,9 +849,14 @@ function isNewQuestion(q) {
     if (!q || !q.added) return false;
     const m = String(q.added).match(/^(\d{4})-(\d{2})-(\d{2})$/);
     if (!m) return false;
-    const end = new Date(Number(m[1]), Number(m[2]) - 1, Number(m[3]));   // 端末の現地時間の 0 時
+    const start = new Date(Number(m[1]), Number(m[2]) - 1, Number(m[3]));
+    if (start.getFullYear() !== Number(m[1]) ||
+        start.getMonth() !== Number(m[2]) - 1 ||
+        start.getDate() !== Number(m[3])) return false;
+    const end = new Date(start);   // 端末の現地時間の 0 時
     end.setDate(end.getDate() + NEW_DAYS);
-    return new Date() < end;
+    const now = new Date();
+    return now >= start && now < end;
 }
 let categoryQuestions = []; // 選択されたカテゴリ内の全問題
 let currentQuestions = [];  // 選択された番号に絞り込まれた問題グループ
@@ -946,14 +951,29 @@ function updateTopNewButton() {
 // ==========================================
 let newDatesCtx = null;   // { scope: "all"(トップ) | "category"(カテゴリ内), pool: 対象の NEW の問題 }
 
-// 収録日ごとのボタンの色（同じ日は同じ色。日付から決めるので、他の日が消えても色は変わらない）。
-// 偶数番目が暖色（赤・オレンジ・ピンク）、奇数番目が寒色（青・緑・紫）。色の数が偶数なので、隣り合う日は必ず暖色と寒色が交互になる。
+// 収録日ごとのボタンの色（同じ日は同じ色）。
+// 色は「data.js にある全収録日を古い順に並べたときの位置」で決める。位置が偶数なら暖色（赤・オレンジ・ピンク）、奇数なら寒色（青・緑・紫）。
+// 問題を収録していない日があっても、隣り合う収録日は必ず暖色と寒色が交互になる。新しい収録日は末尾に加わるだけなので、既存の日の色は変わらない。
 const NEW_DATE_COLORS = ["#c0392b", "#2471a3", "#d35400", "#1e8449", "#b03a6f", "#7d3c98"];
+let addedDateListCache = null;
+function addedDateList() {
+    if (addedDateListCache) return addedDateListCache;
+    const set = new Set();
+    quizDataset.forEach(q => {
+        if (!q || !q.added) return;
+        const m = String(q.added).match(/^(\d{4})-(\d{2})-(\d{2})$/);
+        if (!m) return;
+        const d = new Date(Number(m[1]), Number(m[2]) - 1, Number(m[3]));
+        if (d.getFullYear() !== Number(m[1]) || d.getMonth() !== Number(m[2]) - 1 || d.getDate() !== Number(m[3])) return;
+        set.add(String(q.added));
+    });
+    addedDateListCache = Array.from(set).sort();
+    return addedDateListCache;
+}
 function colorForAddedDate(ymd) {
-    const m = String(ymd).match(/^(\d{4})-(\d{2})-(\d{2})$/);
-    if (!m) return "#e67e22";
-    const days = Math.floor(Date.UTC(Number(m[1]), Number(m[2]) - 1, Number(m[3])) / 86400000);
-    return NEW_DATE_COLORS[((days % NEW_DATE_COLORS.length) + NEW_DATE_COLORS.length) % NEW_DATE_COLORS.length];
+    const idx = addedDateList().indexOf(String(ymd));
+    if (idx < 0) return "#e67e22";
+    return NEW_DATE_COLORS[idx % NEW_DATE_COLORS.length];
 }
 function formatAddedDate(ymd) {
     const m = String(ymd).match(/^(\d{4})-(\d{2})-(\d{2})$/);
@@ -1149,6 +1169,7 @@ function moveWord(card, wordZone, ansZone) {
         ansZone.appendChild(card);
     } else {
         wordZone.appendChild(card);
+        card.innerText = card.dataset.original;
     }
     updateWordCase(ansZone);
 }
@@ -1157,9 +1178,9 @@ function moveWord(card, wordZone, ansZone) {
 // （"What ( )( )..." のように空所の前に文字がある場合は文頭ではない）
 function questionStartsWithBlank(q) {
    if (!q || !q.question) return false;
-   let stripped = q.question.replace(/<small>[\s\S]*?<\/small>/g, "").trim();
+   let stripped = q.question.replace(/<small\b[^>]*>[\s\S]*?<\/small\s*>/gi, "").trim();
    // 【防弾】小見出しを除去した直後に残る先頭の<br>タグも除去する
-   stripped = stripped.replace(/^(<br>\s*)+/, "").trim();
+   stripped = stripped.replace(/^(?:<br\s*\/?>\s*)+/i, "").trim();
    return /^\(\s*(&nbsp;\s*)+\)/.test(stripped);
 }
 
@@ -1231,6 +1252,7 @@ function normalizeText(text) {
     return String(text)
         .trim()
         .toLowerCase()
+        .replace(/[\u2018\u2019\u02BC\uFF07]/g, "'")
         .replace(/,/g, " ")
         .replace(/　/g, " ")
         .replace(/\s+/g, " ")
@@ -1287,24 +1309,41 @@ let cleanCorrect = normalizeText(q.answer);
 
     // blankCount が1で、正解が複数ある場合：
     // 「いずれか1つ」に一致すれば正解
-    if (q.blankCount === 1 && answers.length > 1) {
+    if (Array.isArray(q.acceptedAnswers) && q.acceptedAnswers.length > 0) {
+        // answer は従来どおり残し、既存の問題IDと学習記録を維持する。
+        // 別解は空欄ごとの候補でなく、成立する解答の組み合わせ単位で照合する。
+        isCorrect = q.acceptedAnswers.some(pattern =>
+            Array.isArray(pattern) &&
+            pattern.length === q.blankCount &&
+            userAnswers.length === q.blankCount &&
+            pattern.every((ans, idx) =>
+                normalizeText(userAnswers[idx] || "") !== "" &&
+                normalizeText(userAnswers[idx]) === normalizeText(ans)
+            )
+        );
+    }
+    else if (q.blankCount === 1 && answers.length > 1) {
         const cleanUser = normalizeText(userAnswers[0] || "");
 
-        isCorrect = answers.some(ans =>
+        isCorrect = userAnswers.length === 1 && answers.some(ans =>
             cleanUser === normalizeText(ans)
         );
     }
     // 通常の複数空欄問題：
     // 空欄ごとに正解と一致するか判定
     else {
-        isCorrect = answers.every((ans, idx) =>
+        isCorrect = userAnswers.length === q.blankCount &&
+            answers.length === q.blankCount &&
+            answers.every((ans, idx) =>
             userAnswers[idx] &&
             normalizeText(userAnswers[idx]) === normalizeText(ans)
         );
     }
 
     userDisplay = userAnswers.join(", ") || "(未入力)";
-    correctDisplay = answers.join(" ／ ");
+    correctDisplay = Array.isArray(q.acceptedAnswers) && q.acceptedAnswers.length > 0
+        ? q.acceptedAnswers.map(pattern => pattern.join(" / ")).join(" または ")
+        : answers.join(" ／ ");
 }
  
   const judge = document.getElementById("result-judge");
@@ -1421,7 +1460,7 @@ function buildCorrectionPrompt() {
     const jp = document.getElementById("corr-japanese").value.trim();
     const en = document.getElementById("corr-english").value.trim();
     // replace に関数を渡して、入力中の $ などが特別扱いされないようにする
-    const text = CORRECTION_PROMPT_TEMPLATE
+    const text = buildCorrectionPromptTemplate()
         .replace("{{日本語の課題文}}", () => jp || "なし")
         .replace("{{学習者の英文}}", () => en || "（このあと、AIアプリで画像を添付します）");
     return { text: text, hasEnglish: en.length > 0 };
@@ -1464,13 +1503,24 @@ async function copyCorrectionPrompt() {
 
 // AIの返事から分類IDを探す（「分類: H06 …」の行を優先し、なければ本文中のIDを探す）
 function findCorrectionIds(reply) {
+    reply = String(reply || "").normalize("NFKC").toUpperCase();
     const known = new Set(CORRECTION_TAXONOMY.map(t => t.id));
     const found = [];
     const add = id => { if (known.has(id) && found.indexOf(id) === -1) found.push(id); };
     let m;
-    const re1 = /分類[ \t*]*[:：][ \t*]*([A-Z][0-9]{2})/g;
-    while ((m = re1.exec(reply)) !== null) add(m[1]);
-    if (found.length === 0) {
+    const re1 = /分類[ \t*]*[:：]([^\r\n]*)/g;
+    let hasClassificationLine = false;
+    while ((m = re1.exec(reply)) !== null) {
+        hasClassificationLine = true;
+        // 値の先頭に ID が並んでいる場合（H06 / H06・U02 / H06, U02 など）は、その並びだけを読み、
+        // あとに続く説明文の中の別 ID（例:「H06 仮定法（※ S04 とは別）」の S04）は拾わない。
+        // 先頭が ID でない場合（「仮定法（H06）」など）は、従来どおり行内の ID をすべて読む。
+        const head = m[1].match(/^[\s*]*([A-Z][0-9]{2}(?![A-Z0-9])(?:[\s*]*(?:[・、,\/&+]|と|および|及び|または)?[\s*]*[A-Z][0-9]{2}(?![A-Z0-9]))*)/);
+        const source = head ? head[1] : m[1];
+        const ids = source.matchAll(/(?:^|[^A-Z0-9])([A-Z][0-9]{2})(?![A-Z0-9])/g);
+        for (const match of ids) add(match[1]);
+    }
+    if (!hasClassificationLine) {
         const re2 = /(?:^|[^A-Za-z0-9])([A-Z][0-9]{2})(?![A-Za-z0-9])/g;
         while ((m = re2.exec(reply)) !== null) add(m[1]);
     }
@@ -1577,7 +1627,18 @@ const STATS_KEY = "eisaku600_categoryStats";
 // 【防弾】localStorageが使えない環境（プライベートモード等）でもエラーで落ちないようにする
 function loadStats() {
     try {
-        return JSON.parse(localStorage.getItem(STATS_KEY) || "{}");
+        const value = JSON.parse(localStorage.getItem(STATS_KEY) || "{}");
+        if (!value || typeof value !== "object" || Array.isArray(value)) return {};
+        const clean = {};
+        Object.entries(value).forEach(([category, s]) => {
+            if (!s || !Number.isSafeInteger(s.correct) || !Number.isSafeInteger(s.total) ||
+                s.correct < 0 || s.total < 0 || s.correct > s.total) return;
+            Object.defineProperty(clean, category, {
+                value: { correct: s.correct, total: s.total },
+                enumerable: true, writable: true, configurable: true
+            });
+        });
+        return clean;
     } catch (e) {
         return {};
     }
@@ -1654,7 +1715,8 @@ function renderStreakBadge() {
     const countEl = document.getElementById("streak-count");
     if (!badge || !countEl) return;
 
-    if (data.streakCount > 0) {
+    const daysSinceStudy = dateDiffInDays(data.lastStudyDate, todayDateString());
+    if (data.streakCount > 0 && (daysSinceStudy === 0 || daysSinceStudy === 1)) {
         countEl.innerText = data.streakCount;
         badge.classList.remove("hidden");
     } else {
@@ -2392,11 +2454,11 @@ function renderHistory() {
         return;
     }
 
-    // 通算のテスト番号を付ける（グラフは直近20回）
+    // 保存中の履歴内の番号を付ける（保存は最大200回、グラフは直近20回）
     const numbered = all.map((rec, i) => ({ ...rec, _no: i + 1 }));
     const recent = numbered.slice(-20);
 
-    sub.innerText = `これまでに ${all.length} 回受験（グラフは直近${recent.length}回・横軸は受験回）`;
+    sub.innerText = `保存中のテスト ${all.length} 回（最大200回）。グラフは直近${recent.length}回、横軸は保存中の履歴内の番号です。`;
     chart.innerHTML = buildChartSVG(recent);
     legend.innerHTML = SERIES_STYLE.map(sty =>
         `<span><span class="legend-dot" style="background-color:${sty.color};"></span>${sty.label}</span>`).join("");
