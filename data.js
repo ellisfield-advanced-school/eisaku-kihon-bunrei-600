@@ -5394,7 +5394,7 @@ const quizDataset = [
     answer: "cost", audioText: "Computer supplies are very expensive in Japan. Even this cable cost me 6,000 yen.",
     translation: "日本ではコンピューター用品はとても高い。このケーブルでさえ、6,000円もした。",
     explanation: "＜cost ＋ 人 ＋ 金額＞は「人に（金額）がかかる」という意味で、主語には物や事柄を使います。this cable が主語なので、cost が正解です。paid は人が支払う場合に使う語で、「物が人に支払う」という意味にはなりません。charged は、店などが客に代金を請求するときの語で、主語が this cable では合いません。owed は「～に借りがある」という意味で、文意に合いません。",
-    difficulty: "標準", school: "慶應大", added: "2026-11-07"  },
+    difficulty: "標準", school: "慶應義塾大", added: "2026-11-07"  },
 
   { page: 33, no: "11-3", category: "不定詞（1）", type: "rewrite",
     question: "That book ( &nbsp; &nbsp; &nbsp; ) me 1,000 yen.<br><small>その本を買うのに千円かかった。</small>",
@@ -5911,6 +5911,14 @@ const quizDataset = [
     translation: "日本を去る前にぜひ京都を訪れてほしいと思います。",
     explanation: "＜want ＋ 目的語 ＋ to 不定詞＞（人に〜してほしい）の否定形 ＜wouldn’t want you to do＞（あなたに〜してほしくない）に、「〜せずに」を表す ＜without ＋ 動名詞＞ を組み合わせます。「京都を訪れずに日本を去ってほしくない（＝ ぜひ訪れてほしい）」という意味になり、I wouldn’t want you to leave Japan without visiting Kyoto. の順に並べます。",
     difficulty: "標準", school: "金城学院大" },
+
+  { page: 35, no: "7-a", category: "不定詞（2）", type: "4choice",
+    question: "They tried in vain to persuade ( &nbsp; &nbsp; &nbsp; ) with them.",
+    choices: ["Dick should come", "Dick to come", "for Dick to come", "to make Dick come"],
+    answer: "Dick to come", audioText: "They tried in vain to persuade Dick to come with them.",
+    translation: "彼らはディックに一緒に来るよう説得しようとしたが、むだだった。",
+    explanation: "＜persuade ＋ 人 ＋ to 不定詞＞は「人を説得して～させる」という意味の形で、persuade Dick to come（ディックを説得して来させる）となります。persuade の後ろに ＜人 ＋ should ＋ 原形＞ や ＜for ＋ 人 ＋ to 不定詞＞ の形は続けられないので、Dick should come と for Dick to come は誤りです。to make Dick come は、persuade の後ろに目的語がないので誤りです。",
+    difficulty: "標準", school: "京都産業大", added: "2026-11-07", round: 2  },
 
   { page: 35, no: "8-1", category: "不定詞（2）", type: "rewrite",
     question: "They expected that he would go.<br>➔ They expected ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) go.<br><small>同意文完成</small>",
@@ -6665,7 +6673,7 @@ const quizDataset = [
     difficulty: "標準", school: "中京大" },
 
   { page: 37, no: "10-5", category: "不定詞（3）", type: "sort",
-    question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>When hunting, a snake is very careful ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) the attention of its victim.<br><small>狩りをするとき、ヘビは獲物の注意を引かないように、動きを最小限にして進むことにとても気をつける。</small>",
+    question: "<small class='instruction-note'>次の語句を並び替えなさい。</small><br>When hunting, a snake is very careful ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) the attention of its victim.",
     words: ["of movement", "so as not", "to advance", "to attract", "with a minimum"],
     answer: "to advance with a minimum of movement so as not to attract", audioText: "When hunting, a snake is very careful to advance with a minimum of movement so as not to attract the attention of its victim.",
     translation: "狩りをするとき、ヘビは獲物の注意を引かないように、動きを最小限にして進むことにとても気をつける。",
@@ -8863,6 +8871,14 @@ const quizDataset = [
     explanation: "guests は数えられる名詞の複数形なので、a few、few、quite a few から選びます。「混み合っていた」とあるので、数が多いことを表す quite a few（かなり多くの）が正解です。a few は「少しの」、few は「ほとんどない」の意味で、混雑した様子と合いません。a little と little は数えられない名詞に使う語なので、guests には使えません。",
     difficulty: "標準", school: "慶應義塾大", added: "2026-10-30", round: 2  },
 
+  { page: 47, no: "14-3", category: "形容詞・副詞", type: "sort",
+    question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) .<br><small>80歳以上に長生きする人は少なくありません。</small>",
+    words: ["a", "be", "eighty", "few", "live", "not", "over", "people", "to"],
+    answer: "Not a few people live to be over eighty", audioText: "Not a few people live to be over eighty.",
+    translation: "80歳以上に長生きする人は少なくありません。",
+    explanation: "＜not a few ～＞は「少なくない～、かなり多くの～」という意味で、quite a few ～ と同じです。a few（少しの）を not で打ち消して、「少なくない」となる点に注意します。not a few people が主語になり、live to be over eighty（80歳を超えるまで生きる）が続きます。＜live to be ～＞は「～歳まで生きる」という意味です。",
+    difficulty: "標準", school: "明星大", added: "2026-11-07", round: 2  },
+
   { page: 47, no: "16-1", category: "形容詞・副詞", type: "4choice",
     question: "This computer is powerful, efficient, and easy to use. ( &nbsp; &nbsp; &nbsp; ), it is too expensive.",
     choices: ["Although", "Despite", "However", "Whether or not"],
@@ -10501,6 +10517,14 @@ const quizDataset = [
       explanation: "＜be sorry for 〜＞（〜をすまなく思う）の for の目的語を、関係代名詞 what が導く節（what she has done＝彼女がしたこと）で表します。has done は「（現在までに）したこと」という現在完了形です。",
       difficulty: "標準", school: "東京家政大"   },
 
+  { page: 55, no: "2-8", category: "関係詞（2）", type: "sort",
+    question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>There are several ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) on one’s mind.<br><small>人が心に思うことを他人に知らせるには、いくつかの方法があります。</small>",
+    words: ["has", "inform", "of", "others", "one", "to", "ways", "what"],
+    answer: "ways to inform others of what one has", audioText: "There are several ways to inform others of what one has on one’s mind.",
+    translation: "人が心に思うことを他人に知らせるには、いくつかの方法があります。",
+    explanation: "＜way to 不定詞＞は「～する方法」という意味で、ways to inform others（他人に知らせる方法）と続けます。＜inform ＋ 人 ＋ of ＋ 事柄＞は「人に事柄を知らせる」という形で、of の後ろに、関係代名詞 what を使った名詞節 what one has on one’s mind（人が心に思っていること）が来ます。what は has の目的語にあたり、on one’s mind は「心に（思って）」という意味です。",
+    difficulty: "応用", school: "近畿大", added: "2026-11-07", round: 2  },
+
   { page: 55, no: "4-1", category: "関係詞（2）", type: "4choice",
     question: "That’s ( &nbsp; &nbsp; &nbsp; ) I didn’t come to the party.",
     choices: ["why", "how", "where", "what"],
@@ -11643,6 +11667,22 @@ const quizDataset = [
       translation: "私たちが月へ旅行できる日はまもなくやって来るだろう。",
       explanation: "＜It won’t be long before ＋ S ＋ V＞（まもなく〜するだろう）は、＜The day will soon come when ＋ S ＋ V＞（〜する日がまもなく来るだろう）を使って書き換えることができます。when 以下が The day を説明する関係副詞節になっています。助動詞 will の後ろなので、動詞は原形の come にします。",
       difficulty: "標準", school: "青山学院大"   },
+
+  { page: 57, no: "14-a", category: "接続詞（1）", type: "sort",
+    question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) the work is completed.<br><small>工事はあと3週間たてば終わるでしょう。</small>",
+    words: ["weeks", "it", "three", "be", "before", "will"],
+    answer: "It will be three weeks before", audioText: "It will be three weeks before the work is completed.",
+    translation: "工事はあと3週間たてば終わるでしょう。",
+    explanation: "＜It will be ＋ 時間 ＋ before ＋ S ＋ V＞は「S が V するまでに（時間）かかるだろう」という意味で、「（時間）たってから S が V する」と訳すこともできます。It will be three weeks before the work is completed. で、「工事が完了するまでに3週間かかる（あと3週間で終わる）」となります。before の後ろは、未来のことでも現在形（is completed）で表します。",
+    difficulty: "標準", school: "名古屋大", added: "2026-11-07", round: 2  },
+
+  { page: 57, no: "14-b", category: "接続詞（1）", type: "sort",
+    question: "<small class='instruction-note'>次の語句を並び替えなさい。</small><br>It was several ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) and life returned to normal.",
+    words: ["before", "days", "sank", "the", "flood-waters"],
+    answer: "days before the flood-waters sank", audioText: "It was several days before the flood-waters sank and life returned to normal.",
+    translation: "洪水が引いて、生活が元に戻ったのは数日後のことであった。",
+    explanation: "＜It was ＋ 時間 ＋ before ＋ S ＋ V＞は「S が V するまでに（時間）かかった」という意味です。It was several days before the flood-waters sank で「洪水が引くまでに数日かかった」となり、and 以下の life returned to normal（生活が元に戻った）が続きます。sink には「（船が）沈む」のほかに、「（水位が）徐々に下がる」という意味があり、ここでは後者の意味です。",
+    difficulty: "標準", school: "センター試験", added: "2026-11-07", round: 2  },
 
   {  page: 57, no: "15-1", category: "接続詞（1）", type: "4choice",
       question: "( &nbsp; &nbsp; &nbsp; ) you help me, I won’t be able to finish preparing dinner in time.",
@@ -13824,6 +13864,14 @@ const quizDataset = [
       translation: "ジョンがメアリーと結婚したのは、メアリーが金持ちだからだ。",
       explanation: "＜It is［was］＋強調する語句＋that ...＞の形で、文の一部を強調する構文（強調構文）です。理由を表す節を強調する場合は、because 節だけを It is ... that の間に置くことができます。since、as、for は、強調構文の It is ... that の間には置けないため不可です。",
       difficulty: "標準", school: "立命館大"   },
+
+  { page: 65, no: "10-c", category: "代名詞（2）", type: "sort",
+    question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>It was ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) I left New York ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) him.<br><small>彼に会ったのはニューヨークを発つ2日前だった。<span class='fuyou-note'>〔1語不要〕</span></small>",
+    words: ["before", "ago", "met", "two", "I", "that", "days"],
+    answer: "two days before that I met", audioText: "It was two days before I left New York that I met him.",
+    translation: "彼に会ったのはニューヨークを発つ2日前だった。",
+    explanation: "＜It was ～ that …＞の強調構文で、強調されているのは two days before I left New York（ニューヨークを発つ2日前に）という副詞句です。I met him two days before I left New York（ニューヨークを発つ2日前に彼に会った）の下線部を It was と that ではさんだ形です。two days は、before との時間の差を表します。ago は「今から～前」という意味で、過去の出来事を基準にした「～前」には before を使うので、不要語です。",
+    difficulty: "応用", school: "福岡大", added: "2026-11-07", round: 2  },
 
   {  page: 65, no: "11-1", category: "代名詞（2）", type: "4choice",
       question: "He said it didn't ( &nbsp; &nbsp; &nbsp; ) whether we stayed or went.",
