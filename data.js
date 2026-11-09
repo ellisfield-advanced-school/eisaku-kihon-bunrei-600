@@ -87,7 +87,7 @@ const quizDataset = [
       explanation: "太陽が昇ることは、繰り返される自然現象・事実なので現在形で表します。主語 The sun は三人称単数で、自動詞 rise に s を付けた rises が正解です。rose は過去形、risen は過去分詞なので、単独では述語動詞になれません。is rising は「今まさに昇りつつある」という進行中の動作で、「いつも」という一般的な事実とは合いません。",
       difficulty: "基礎", school: ""   },
 
-  {  page: 3, no: "7-a", category: "文型（1）", type: "4choice",
+  {  page: 3, no: "7-4", category: "文型（1）", type: "4choice",
       question: "The price of coffee ( &nbsp; &nbsp; &nbsp; ) 200 yen.",
       choices: ["has raised to", "has rised by", "raised", "rose by"],
       answer: "rose by", audioText: "The price of coffee rose by 200 yen.",
@@ -95,7 +95,15 @@ const quizDataset = [
       explanation: "「（価格などが）上がる」は自動詞 rise（rise - rose - risen）で表します。差額（～だけ）を表す前置詞は by なので、rose by（200円だけ上がった）が正解です。raise は「～を上げる」という他動詞で目的語が必要なため、has raised to や raised は不適切です。rised という形も存在しません。※ rose to 200 yen なら「200円まで上がった」と到達点を表します。",
       difficulty: "標準", school: "慶應義塾大"   },
 
-  {   page: 3, no: "7-b", category: "文型（1）", type: "4choice",
+  { page: 3, no: "7-5", category: "文型（1）", type: "4choice",
+    question: "The ( &nbsp; &nbsp; &nbsp; ) of living has greatly ( &nbsp; &nbsp; &nbsp; ) in the past ten years.",
+    choices: ["cost / risen", "cost / raised", "amount / risen", "sum / rose"],
+    answer: "cost / risen", audioText: "The cost of living has greatly risen in the past ten years.",
+    translation: "ここ10年で生活費が高騰した。",
+    explanation: "cost of living は「生活費」という意味の決まった表現です。cost は「費用」で、amount（量）や sum（合計金額）は、of living とは結びつきません。また、rise（上がる）は自動詞で、rise - rose - risen と変化します。has greatly ( ) は現在完了形なので、過去分詞 risen が入ります。rose は過去形なので、has の後ろには置けません。raised は、他動詞 raise（～を上げる）の過去分詞で、目的語が必要なので誤りです。",
+    difficulty: "標準", school: "立命館大・改", added: "2026-11-09"  },
+
+  {   page: 3, no: "7-a", category: "文型（1）", type: "4choice",
        question: "“Was the question too difficult ?”<br>“I don't think so. Several students ( &nbsp; &nbsp; &nbsp; ) their hands to answer.”",
        choices: ["have risen", "raised", "risen", "rose"],
        answer: "raised", audioText: "Several students raised their hands to answer.",
@@ -103,7 +111,7 @@ const quizDataset = [
        explanation: "空欄の後ろに their hands（彼らの手）という目的語があるので、「～を挙げる」という他動詞 raise（raise - raised - raised）が必要です。過去の出来事なので過去形の raised が正解です。rise（上がる）は自動詞で目的語を取れないため、have risen・risen・rose はいずれも不適切です。",
        difficulty: "標準", school: "フェリス女大"   },
 
-  {   page: 3, no: "7-c", category: "文型（1）", type: "4choice",
+  {   page: 3, no: "7-b", category: "文型（1）", type: "4choice",
        question: "The manager told us he would ( &nbsp; &nbsp; &nbsp; ) the price next week.",
        choices: ["rise", "rising", "raise", "rose"],
        answer: "raise", audioText: "The manager told us he would raise the price next week.",
@@ -111,7 +119,7 @@ const quizDataset = [
        explanation: "would の後ろなので動詞の原形が入ります。さらに、後ろに the price（価格）という目的語があるため、「～を上げる」という他動詞 raise が正解です。rise は自動詞で、目的語を直接取れません。rising と rose は would の後ろに置けない形です。",
        difficulty: "基礎", school: "関東学院大"   },
 
-  {  page: 3, no: "7-d", category: "文型（1）", type: "4choice",
+  {  page: 3, no: "7-c", category: "文型（1）", type: "4choice",
       question: "Because the two countries have not yet reached an agreement on compensation, most observers believe that for the time being it will be difficult ( &nbsp; &nbsp; &nbsp; ) the sunken ship of unidentified nationality.",
       choices: ["to attempt to rise","to attempt to raise","to try the rising of","trying to rise"],
       answer: "to attempt to raise", audioText: "Because the two countries have not yet reached an agreement on compensation, most observers believe that for the time being it will be difficult to attempt to raise the sunken ship of unidentified nationality.",
@@ -13561,6 +13569,14 @@ const quizDataset = [
       explanation: "necessary のような「必要・当然」を表す形容詞のあとの that 節では、＜(should) ＋ 動詞の原形＞を使います（should は省略できます）。したがって、原形の go が正解です。will go と can go は、ふつうの助動詞を使う形で、「～する必要がある」という意味の that 節に合いません。to go は、that 節の中の動詞の形として成り立ちません。",
     difficulty: "標準", school: "東洋大", added: "2026-10-25"  },
 
+  { page: 63, no: 12, category: "代名詞（1）", type: "sort",
+    question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>It is strange that a college student ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) .<br><small>大学生ともあろう者がそんなことを知らないとは不思議だ。</small>",
+    words: ["ignorant", "the", "be", "fact", "should", "of"],
+    answer: "should be ignorant of the fact", audioText: "It is strange that a college student should be ignorant of the fact.",
+    translation: "大学生ともあろう者がそんなことを知らないとは不思議だ。",
+    explanation: "＜It is strange that S ＋ should ～＞のように、驚き・意外・残念などの感情を表す形容詞（strange, surprising, a pity など）に続く that 節では、should を使うことがあります（「～するとは」という意味です）。a college student should be ignorant of the fact で「大学生ともあろう者が事実を知らないとは」となります。＜be ignorant of ～＞は「～を知らない」という意味の表現です。",
+    difficulty: "標準", school: "慶應義塾大", added: "2026-11-09"  },
+
   {  page: 63, no: "14-1", category: "代名詞（1）", type: "4choice",
       question: "It goes ( &nbsp; &nbsp; &nbsp; ) saying that health is above wealth.",
       choices: ["with", "without", "for", "inside"],
@@ -16529,6 +16545,14 @@ const quizDataset = [
     explanation: "空所の後ろが the unexpected heavy rainfall という名詞句なので、前置詞の despite（＝ in spite of）が入ります。although と even though は接続詞なので、後ろに S ＋ V が必要です。however は副詞で、名詞句を導くことができません。",
     difficulty: "標準", school: "上智大", added: "2026-10-28" },
 
+  { page: 71, no: "14-e", category: "前置詞（2）", type: "4choice",
+    question: "In spite of obvious differences, men and women have many things ( &nbsp; &nbsp; &nbsp; ).",
+    choices: ["as usual", "the same", "in common", "together with"],
+    answer: "in common", audioText: "In spite of obvious differences, men and women have many things in common.",
+    translation: "明らかな違いがあるにもかかわらず、男性と女性には、共通点がたくさんある。",
+    explanation: "＜In spite of ～＞は「～にもかかわらず」という意味の前置詞句で、後ろに名詞（obvious differences）が続きます。＜have ～ in common＞は「共通して～を持っている」という意味で、have many things in common（共通点がたくさんある）となります。as usual は「いつものように」、together with は「～と一緒に」という意味で、文意に合いません。the same は、have many things の後ろには置けません。",
+    difficulty: "標準", school: "南山大", added: "2026-11-09"  },
+
   { page: 71, no: "15-1", category: "前置詞（2）", type: "4choice",
     question: "( &nbsp; &nbsp; &nbsp; ) going to Europe, I decided to go to America.",
     choices: ["In spite of", "Instead of", "Despite", "In the way of"],
@@ -17532,7 +17556,15 @@ const quizDataset = [
     explanation: "when it comes to ～ は「～ということになると、～に関しては」という意味の熟語で、to の後ろに名詞や動名詞（cooking）を置きます。no one comes before ～ は「～が一番だ」ということを表す表現です。したがって、When it comes to cooking, no one comes before Sally. の語順になります。",
     difficulty: "基礎", school: "岐阜聖徳学園大"  },
 
-  { page: 79, no: "13-4", category: "成句（2）", type: "sort",
+  { page: 79, no: "13-4", category: "成句（2）", type: "4choice",
+    question: "Susie is second to ( &nbsp; &nbsp; &nbsp; ) in her music class.",
+    choices: ["next", "one", "none", "anybody"],
+    answer: "none", audioText: "Susie is second to none in her music class.",
+    translation: "スージーは、音楽の授業では誰にも負けない。",
+    explanation: "＜second to none＞は「誰［何］にも劣らない、最高の」という意味の慣用表現です。「何者に対しても第2位ではない」という意味から、「最高だ」を表します。next、one、anybody を to の後ろに置いても、この意味の表現にはなりません。",
+    difficulty: "基礎", school: "玉川大", added: "2026-11-09"  },
+
+  { page: 79, no: "13-5", category: "成句（2）", type: "sort",
     question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>America ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) natural resources.<br><small>アメリカは天然資源では世界一だ。</small>",
     words: ["none", "in", "is", "second", "to"],
     answer: "is second to none in", audioText: "America is second to none in natural resources.",
