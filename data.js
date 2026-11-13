@@ -3730,7 +3730,7 @@ const quizDataset = [
     answer: "can’t", audioText: "The thief can't have escaped through this window. It's much too small.",
     translation: "泥棒がこの窓から逃げたはずがない。窓が小さすぎる。",
     explanation: "＜can't have ＋ 過去分詞＞ は、「～したはずがない」という過去についての強い否定の推量を表します。「窓が小さすぎる」ことが根拠なので、can't が正解です。must は「～したにちがいない」という逆の意味になります。mustn't は「～してはいけない」という禁止で、mustn't have ＋ 過去分詞 という形は使いません。should は「～すべきだ」という意味で、文意に合いません。",
-    difficulty: "標準", school: "京都橘女子大"  },
+    difficulty: "標準", school: "京都橘大"  },
 
   { page: 23, no: "11-4", category: "助動詞（2）", type: "4choice",
     question: "He ( &nbsp; &nbsp; &nbsp; ) the machine yesterday because he had never used it.",
@@ -4581,7 +4581,7 @@ const quizDataset = [
    choices: ["made to be lived", "made to live", "was made living", "was made to live"], 
    answer: "was made to live", audioText: "Cinderella was made to live in the kitchen, where she had to do all the dirty work.", translation: "シンデレラは台所で暮らすことを強いられ、そこですべての汚い仕事をしなければならなかった。", 
    explanation: "主語 Cinderella に対する述語動詞が必要なので、受け身の ＜was made to ＋ 動詞の原形＞ の was made to live が入ります。made to be lived と made to live は、was がないので述語動詞になりません。was made living は、受け身の後ろに現在分詞を置く形で誤りです。", 
-   difficulty: "標準", school: "京都橘女子大" },
+   difficulty: "標準", school: "京都橘大" },
 
   { page: 27, no: "15-1", category: "受動態（2）", type: "rewrite", 
    question: "They say that she is a good dancer.<br>She ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) a good dancer.", 
@@ -5337,13 +5337,21 @@ const quizDataset = [
     explanation: "勧誘を表す ＜Would you like to do ... ?＞（〜しませんか）の形に、「（人）の仲間に加わる」を表す ＜join ＋ 人 ＋ for ~＞ を組み合わせます。Would you like to join us for dinner? となります。join は前置詞なしで目的語（us）を直接とる動詞です。",
     difficulty: "標準", school: "熊本保健科学大" },
 
-  { page: 33, no: 2, category: "不定詞（1）", type: "4choice",
+  { page: 33, no: "2-1", category: "不定詞（1）", type: "4choice",
     question: "I tried ( &nbsp; &nbsp; &nbsp; ) a letter in English by myself, but after an hour I gave up.",
     choices: ["having written", "to have written", "to write", "to writing"],
     answer: "to write", audioText: "I tried to write a letter in English by myself, but after an hour I gave up.",
     translation: "私は自分で英語の手紙を書こうとしましたが、1時間たってあきらめました。",
     explanation: "「～しようとした（試みた）」は try to ～ で表し、「1時間たってあきらめた」という文意に合います。したがって to write が正解です。having written は完了形の動名詞で、tried の後には続きません。to have written は完了形の不定詞で、「書いたはずだった」という意味になり、文意に合いません。to writing は、to の後に動名詞を置く形で、try の後には使えません。※ try ～ing は「試しに～してみる」の意味です。",
     difficulty: "標準", school: "センター試験", added: "2026-10-30", round: 2  },
+
+  { page: 33, no: "2-2", category: "不定詞（1）", type: "sort",
+    question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>I ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) his attention, ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) .<br><small>彼の注意を引こうとしたがだめだった。</small>",
+    words: ["attract", "but", "failed", "to", "tried"],
+    answer: "tried to attract but failed", audioText: "I tried to attract his attention, but failed.",
+    translation: "彼の注意を引こうとしたがだめだった。",
+    explanation: "「～しようとする」は ＜try to do＞ で表します。「注意を引く」は ＜attract one's attention＞ です。「しようとしたがだめだった」は、I tried to attract his attention の後ろに but failed を続けます（but の後ろは、主語 I が省略された形で、failed が tried と対になります）。I tried to attract his attention, but failed. の順に並べます。※ try ～ing は「試しに～してみる」という意味で、ここには使えません。",
+    difficulty: "標準", school: "九州産業大", added: "2026-11-13"  },
 
   { page: 33, no: 3, category: "不定詞（1）", type: "4choice",
     question: "Ten minutes’ walk along this road will ( &nbsp; &nbsp; &nbsp; ) you to the station.",
@@ -5387,6 +5395,14 @@ const quizDataset = [
     difficulty: "標準", school: "摂南大" },
 
   { page: 33, no: "5-3", category: "不定詞（1）", type: "sort",
+    question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>Don't ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) going to bed.<br><small>寝る前に忘れずに歯を磨きなさい。</small>",
+    words: ["before", "brush", "forget", "to", "your teeth"],
+    answer: "forget to brush your teeth before", audioText: "Don't forget to brush your teeth before going to bed.",
+    translation: "寝る前に忘れずに歯を磨きなさい。",
+    explanation: "「忘れずに～しなさい」は、否定の命令文 Don't forget to do（～するのを忘れてはいけない）で表します。「歯を磨く」は brush your teeth、「寝る前に」は before のあとに動名詞 going to bed を続けます。Don't forget to brush your teeth before going to bed. の順に並べます。※ forget to do は「（これから）～するのを忘れる」、forget ～ing は「（過去に）～したことを忘れる」です。",
+    difficulty: "標準", school: "九州産業大", added: "2026-11-13"  },
+
+  { page: 33, no: "5-4", category: "不定詞（1）", type: "sort",
     question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>I was ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) and ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) my friend.<br><small>私はその小説に夢中になってしまって，友達に電話するのを忘れた。</small>",
     words: ["to", "call", "in", "the novel", "forgot", "absorbed"],
     answer: "absorbed in the novel forgot to call", audioText: "I was absorbed in the novel and forgot to call my friend.", 
@@ -5394,7 +5410,7 @@ const quizDataset = [
     explanation: "「〜に夢中になっている」を表す ＜be absorbed in ~＞ と、「〜するのを忘れる」を表す ＜forget to do＞ を and でつなぎます。主語 I が共通なので、I was absorbed in the novel and forgot to call my friend. となります。was と forgot が and でつながれた形です。call は前置詞なしで my friend を目的語にとります。",
     difficulty: "標準", school: "摂南大・改" },
 
-  { page: 33, no: "5-4", category: "不定詞（1）", type: "rewrite",
+  { page: 33, no: "5-5", category: "不定詞（1）", type: "rewrite",
     question: "Would you ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) the television?<br><small>テレビを消してもらえませんか。</small>",
     blankCount: 2, answer: ["turn", "off"], audioText: "Would you turn off the television?", translation: "テレビを消してもらえませんか。",
     explanation: "「（テレビや明かりなどを）消す」は ＜turn off＞ で表します。Would you turn off the television? は、Would you ～?（〜していただけませんか）という丁寧な依頼の形です。（※ 反対の「つける」は turn on です。）",
@@ -6324,6 +6340,14 @@ const quizDataset = [
     difficulty: "基礎", school: "関西大" },
 
   { page: 35, no: "12-5", category: "不定詞（2）", type: "sort",
+    question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>This photo makes ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) really is.<br><small>この写真だと彼は年よりずっと若く見える。</small>",
+    words: ["he", "him", "look", "much younger", "than"],
+    answer: "him look much younger than he", audioText: "This photo makes him look much younger than he really is.",
+    translation: "この写真だと彼は年よりずっと若く見える。",
+    explanation: "無生物主語 This photo に、使役動詞 ＜make ＋ 目的語 ＋ 原形不定詞＞ をつなげた形で、「この写真が彼を若く見せる」という意味になります。makes の後ろに him look を置き、「ずっと若く」は比較級 younger を much で強めた much younger です。「年よりも」は than he really is（本当の彼よりも）で表し、than の後ろでは主語になる he を使います。This photo makes him look much younger than he really is. の順に並べます。",
+    difficulty: "標準", school: "九州産業大", added: "2026-11-13"  },
+
+  { page: 35, no: "12-6", category: "不定詞（2）", type: "sort",
     question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) run away.<br><small>ほんのひと目ヘビを見ただけで、その少年は逃げ出した。</small>",
     words: ["the little boy", "the mere sight", "made", "the snake", "of"],
     answer: "the mere sight of the snake made the little boy", audioText: "The mere sight of the snake made the little boy run away.", 
@@ -6331,7 +6355,7 @@ const quizDataset = [
     explanation: "無生物主語 ＜the mere sight of ~＞（〜をほんの一目見ること）を主語にして、使役動詞 ＜make ＋ 目的語 ＋ 原形不定詞＞ につなげます。The mere sight of the snake made the little boy run away. の順に並べます。",
     difficulty: "標準", school: "大東文化大・改" },
 
-  { page: 35, no: "12-6", category: "不定詞（2）", type: "sort",
+  { page: 35, no: "12-7", category: "不定詞（2）", type: "sort",
     question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) a thing ?<br><small>どうしてそんなことをしようとしたのですか。</small>",
     words: ["do", "made", "such", "to", "try", "what", "you"],
     answer: "what made you try to do such", audioText: "What made you try to do such a thing?", 
@@ -6339,7 +6363,7 @@ const quizDataset = [
     explanation: "無生物主語の疑問文 ＜What made ＋ 目的語 ＋ 動詞の原形 ...?＞（何があなたに〜させたのか → どうして〜したのか）の形です。made you のあとに、＜try to do＞（〜しようとする）と ＜such a thing＞（そんなこと）を続け、What made you try to do such a thing? の順に並べます。",
     difficulty: "標準", school: "梅花女子大" },
 
-  { page: 35, no: "12-7", category: "不定詞（2）", type: "sort",
+  { page: 35, no: "12-8", category: "不定詞（2）", type: "sort",
     question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) to him ?<br><small>どうして彼にそんなことを言ったのですか？</small>",
     words: ["a", "made", "such", "tell", "thing", "you", "what"],
     answer: "what made you tell such a thing", audioText: "What made you tell such a thing to him?", 
@@ -6347,7 +6371,7 @@ const quizDataset = [
     explanation: "無生物主語の疑問文 ＜What made ＋ 目的語 ＋ 動詞の原形 ...?＞ の形です。made you の後ろに tell を置き、＜tell ＋ 物（such a thing）＋ to ＋ 人（him）＞ の語順で続けて、What made you tell such a thing to him? の順に並べます。",
     difficulty: "標準", school: "高崎経済大" },
 
-  { page: 35, no: "12-8", category: "不定詞（2）", type: "sort",
+  { page: 35, no: "12-9", category: "不定詞（2）", type: "sort",
     question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>What ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) ?<br><small>彼はどうして留学する気になったのですか。</small>",
     words: ["want", "abroad", "him", "made", "to", "study"],
     answer: "made him want to study abroad", audioText: "What made him want to study abroad?", 
@@ -6355,7 +6379,7 @@ const quizDataset = [
     explanation: "無生物主語の疑問文 ＜What made ＋ 目的語 ＋ 動詞の原形 ...?＞ の形です。made him のあとに ＜want to do＞（〜したい）と ＜study abroad＞（留学する）を続け、What made him want to study abroad? の順になります。",
     difficulty: "標準", school: "九州国際大" },
 
-  { page: 35, no: "12-9", category: "不定詞（2）", type: "sort",
+  { page: 35, no: "12-10", category: "不定詞（2）", type: "sort",
     question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ).<br><small>コーヒーを一杯飲んだら、気分が良くなりますよ。</small>",
     words: ["cup", "coffee", "make", "of", "you", "better", "feel", "will", "a"],
     answer: "a cup of coffee will make you feel better", audioText: "A cup of coffee will make you feel better.", 
@@ -8353,14 +8377,22 @@ const quizDataset = [
     explanation: "＜make oneself understood＞ は「自分の考え（言葉）を相手に理解してもらう」という意味の熟語です。make は ＜make ＋ O ＋ C＞ の形で、目的語 myself と understand の関係は「自分が理解される」という受け身なので、補語には過去分詞 understood を使います。目的語は主語 I と同じ人なので、me ではなく再帰代名詞 myself にします。make it understand は、it が人を指さず、understand も能動の形で不適切です。make me understand は「私に理解させる」、make me understood は目的語が主語と同じ人を指す場合に myself を使うため、いずれも誤りです。",
     difficulty: "基礎", school: "早稲田大", added: "2026-10-25" },
 
-  { page: 43, no: "15-3", category: "分詞（1）", type: "rewrite",
+  { page: 43, no: "15-3", category: "分詞（1）", type: "4choice",
+    question: "If you want to make yourself ( &nbsp; &nbsp; &nbsp; ), you should speak more clearly.",
+    choices: ["to understand", "understand", "understanding", "understood"],
+    answer: "understood", audioText: "If you want to make yourself understood, you should speak more clearly.",
+    translation: "自分の考えを理解してもらいたいなら、もっとはっきり話すべきです。",
+    explanation: "＜make oneself understood＞ は、「自分の考え（言葉）を理解してもらう、相手に通じさせる」という重要表現です。yourself は「理解される」という受け身の関係なので、過去分詞 understood が入ります。to understand と understand は、「理解する」という能動の意味になり、understanding も現在分詞で、受け身の意味になりません。",
+    difficulty: "基礎", school: "金城学院大", added: "2026-11-13"  },
+
+  { page: 43, no: "15-4", category: "分詞（1）", type: "rewrite",
     question: "He managed to make himself ( &nbsp; &nbsp; &nbsp; ) with gestures.<br><small>彼はジェスチャーでどうにか理解してもらった。</small>",
     blankCount: 1, answer: ["understood"], audioText: "He managed to make himself understood with gestures.", 
     translation: "彼はジェスチャーでどうにか理解してもらった。",
     explanation: "＜make oneself understood＞ は、「自分の言葉や意志を理解してもらう」という意味の成句です。himself に対する補語として、過去分詞 understood を入れ、He managed to make himself understood with gestures. となります。",
     difficulty: "基礎", school: "東京理科大" },
 
-  { page: 43, no: "15-4", category: "分詞（1）", type: "sort",
+  { page: 43, no: "15-5", category: "分詞（1）", type: "sort",
     question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>When I was asked the way to the station, I could not ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) my efforts.<br><small>駅への道を尋ねられたとき、どうしても（努力したにもかかわらず）英語で自分の意思を伝えることができなかった。</small>",
     words: ["for", "in English", "all", "make", "understood", "myself"],
     answer: "make myself understood in English for all", audioText: "When I was asked the way to the station, I could not make myself understood in English for all my efforts.", 
@@ -9618,9 +9650,17 @@ const quizDataset = [
     answer: "the less", audioText: "The more you lie, the less likely you are to be believed.",
     translation: "嘘をつくことが多くなればなるほど、よりいっそう信じてもらえる見込みが低くなる。",
     explanation: "「〜すればするほど、ますます…」を表す ＜The ＋ 比較級 ～, the ＋ 比較級 ...＞ の構文です。「嘘をつけばつくほど信じてもらえる見込みが低くなる」という内容なので、the less likely となり、the less が入ります。the more も文法的には成り立ちますが、「見込みが高くなる」という意味になり、日本文と合いません。the better と the fewer は、likely の程度を表す語として使えません。",
-    difficulty: "標準", school: "京都橘女子大" },
+    difficulty: "標準", school: "京都橘大" },
 
-  { page: 49, no: "15-6", category: "比較（1）", type: "sort",
+  { page: 49, no: "15-6", category: "比較（1）", type: "4choice",
+    question: "It is important to remember that the more civilized a society becomes, the ( &nbsp; &nbsp; &nbsp; ) it hates people who use violence.",
+    choices: ["better", "less", "more", "worse"],
+    answer: "more", audioText: "It is important to remember that the more civilized a society becomes, the more it hates people who use violence.",
+    translation: "社会が文明化すればするほど、暴力を使う人々をいっそう憎むようになるということを覚えておくことが大切だ。",
+    explanation: "＜the ＋ 比較級 ～, the ＋ 比較級 …＞ は「～すればするほど、ますます…」という意味です。the more civilized a society becomes（社会が文明化すればするほど）に対応して、the more it hates ～（～をますます憎む）となります。less は「あまり憎まなくなる」という逆の意味になり、better と worse は hate を修飾する語として文意に合いません。",
+    difficulty: "標準", school: "金城学院大", added: "2026-11-13"  },
+
+  { page: 49, no: "15-7", category: "比較（1）", type: "sort",
     question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>( &nbsp; &nbsp; &nbsp; ) you get, ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ).<br><small>年を取れば取るほど時間がたつのが速くなる。</small>",
     words: ["time", "by", "the faster", "goes", "the older"],
     answer: "The older the faster time goes by", audioText: "The older you get, the faster time goes by.",
@@ -9628,7 +9668,7 @@ const quizDataset = [
     explanation: "＜The ＋ 比較級 ＋ S ＋ V, the ＋ 比較級 ＋ S ＋ V＞ の構文です。前半の空欄には The older（The older you get）を置き、後半の空欄には the faster ＋ 主語 time ＋ 動詞句 goes by を置きます。The older you get, the faster time goes by. となります。",
     difficulty: "標準", school: "拓殖大" },
 
-  { page: 49, no: "15-7", category: "比較（1）", type: "sort",
+  { page: 49, no: "15-8", category: "比較（1）", type: "sort",
     question: "<small class='instruction-note'>次の語句を並び替えなさい。</small><br>The higher he rose in social rank, ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ).",
     words: ["he", "modest", "became", "more", "the"],
     answer: "the more modest he became", audioText: "The higher he rose in social rank, the more modest he became.",
@@ -9636,7 +9676,7 @@ const quizDataset = [
     explanation: "＜The ＋ 比較級 ＋ S ＋ V, the ＋ 比較級 ＋ S ＋ V＞（〜すればするほど、ますます…）の構文です。後半は ＜the ＋ 比較級（more modest）＋ 主語（he）＋ 動詞（became）＞ の順に並べて、The higher he rose in social rank, the more modest he became. となります。",
     difficulty: "標準", school: "松山商科大・改" },
 
-  { page: 49, no: "15-8", category: "比較（1）", type: "4choice",
+  { page: 49, no: "15-9", category: "比較（1）", type: "4choice",
     question: "The older we grow, the weaker our strength becomes.<br>➔ ( &nbsp; &nbsp; &nbsp; ), our strength becomes weaker.<br><small>同意文完成</small>",
     choices: ["However young we are", "When we grow old", "Whether we are old", "As we grow older"],
     answer: "As we grow older", audioText: "As we grow older, our strength becomes weaker.",
@@ -9644,7 +9684,7 @@ const quizDataset = [
     explanation: "＜The ＋ 比較級 ＋ S ＋ V, the ＋ 比較級 ＋ S ＋ V＞（〜すればするほど…）は、「〜するにつれて」を表す接続詞 As を使った ＜As ＋ S ＋ 比較級 ＋ V＞ に書き換えられます。As we grow older が入ります。However young we are は「どんなに若くても」、When we grow old は「年を取ったとき」、Whether we are old は「年を取っていようといまいと」という意味で、いずれも日本文と合いません。",
     difficulty: "標準", school: "名古屋学院大" },
 
-  { page: 49, no: "15-9", category: "比較（1）", type: "sort",
+  { page: 49, no: "15-10", category: "比較（1）", type: "sort",
     question: "<small class='instruction-note'>次の語句を並び替えなさい。</small><br>The longer we discussed the problem, the ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) a solution.",
     words: ["difficult", "find", "it", "more", "seemed", "to"],
     answer: "more difficult it seemed to find", audioText: "The longer we discussed the problem, the more difficult it seemed to find a solution.",
@@ -11512,6 +11552,14 @@ const quizDataset = [
     difficulty: "基礎", school: "名古屋学院大", added: "2026-10-30"  },
 
   { page: 57, no: "4-2", category: "接続詞（1）", type: "4choice",
+    question: "( &nbsp; &nbsp; &nbsp; ) Mr. Tanaka accomplished little as production supervisor, he was fired.",
+    choices: ["Because", "Even though", "In order to", "In spite of"],
+    answer: "Because", audioText: "Because Mr. Tanaka accomplished little as production supervisor, he was fired.",
+    translation: "田中氏は生産管理者としてほとんど成果を上げなかったので、解雇された。",
+    explanation: "後ろに Mr. Tanaka accomplished little ... という節（主語＋動詞）が続くので、接続詞が入ります。「成果を上げなかったので、解雇された」と理由を表す Because が適切です。Even though は「～だけれども」という譲歩で、文意に合いません。In order to は後ろに動詞の原形が続く目的を表す表現で、節は続けられません。In spite of は前置詞なので、後ろには名詞（句）が必要で、節は続けられません。",
+    difficulty: "標準", school: "京都橘大", added: "2026-11-13"  },
+
+  { page: 57, no: "4-3", category: "接続詞（1）", type: "4choice",
     question: "The match was postponed ( &nbsp; &nbsp; &nbsp; ) the pitch was flooded after the heavy rainfall.",
     choices: ["so that", "unless", "because", "although"],
     answer: "because", audioText: "The match was postponed because the pitch was flooded after the heavy rainfall.",
@@ -14233,7 +14281,15 @@ const quizDataset = [
     explanation: "It was ～ that … の強調構文で、「～したのは…のときだ」という意味になります。the ice age は名詞なので、前置詞 during が合います。while は、後ろに文が続く接続詞なので、名詞の前には使えません。While there was や When では、強調構文の形になりません。",
     difficulty: "標準", school: "千葉大", added: "2026-11-03", round: 2  },
 
-  {  page: 65, no: "10-4", category: "代名詞（2）", type: "4choice",
+  { page: 65, no: "10-4", category: "代名詞（2）", type: "4choice",
+    question: "It was ( &nbsp; &nbsp; &nbsp; ) the Industrial Revolution that the United States was able to increase its productivity through mechanization.",
+    choices: ["at the time", "because", "during", "when"],
+    answer: "during", audioText: "It was during the Industrial Revolution that the United States was able to increase its productivity through mechanization.",
+    translation: "アメリカ合衆国が機械化によって生産性を高めることができたのは、産業革命の間のことであった。",
+    explanation: "＜It was ～ that ...＞ は、～の部分を強調する強調構文です。ここでは、「産業革命の間に」という時を表す語句が強調されています。「～の間に」を表す前置詞 during が入り、during the Industrial Revolution となります。at the time は、そのままでは名詞を続けられません（at the time of ～ の形になります）。because と when は接続詞なので、後ろに節（主語＋動詞）が必要で、名詞 the Industrial Revolution だけを続けることはできません。",
+    difficulty: "標準", school: "京都橘大", added: "2026-11-13"  },
+
+  {  page: 65, no: "10-5", category: "代名詞（2）", type: "4choice",
       question: "It was ( &nbsp; &nbsp; &nbsp; ) I met her for the first time.",
       choices: ["at a coffee shop that", "at a coffee shop where", "a coffee shop that", "a coffee shop in which"],
       answer: "at a coffee shop that", audioText: "It was at a coffee shop that I met her for the first time.",
@@ -14241,7 +14297,7 @@ const quizDataset = [
       explanation: "＜It is［was］＋強調する語句＋that ...＞の形で、文の一部を強調する構文（強調構文）です。場所を表す副詞句 at a coffee shop を強調しているので、前置詞 at を含めた at a coffee shop that が正解です。強調構文では where は使いません。a coffee shop that と a coffee shop in which は、前置詞 at が欠けているか、関係代名詞の形になっているため不可です。",
       difficulty: "標準", school: "青山学院大・改"   },
 
-  {  page: 65, no: "10-5", category: "代名詞（2）", type: "4choice",
+  {  page: 65, no: "10-6", category: "代名詞（2）", type: "4choice",
       question: "What was ( &nbsp; &nbsp; &nbsp; ) that we were told to do ?",
       choices: ["thing", "it", "expected", "there", "said", "which"],
       answer: "it", audioText: "What was it that we were told to do ?",
@@ -14518,7 +14574,7 @@ const quizDataset = [
       answer: "that", audioText: "The population of Belgium is smaller than that of the Netherlands.",
       translation: "ベルギーの人口はオランダの人口より少ない。",
       explanation: "「ベルギーの人口」と「オランダの人口」を比べる文で、同じ名詞 population の繰り返しを避けるために that を使い、＜that of ～＞ とします。one は ＜a(n) ＋ 名詞＞（不特定のもの）の代わりをする語で、ones はその複数形なので、特定のものを指す of 句の前には合いません。the one of ～ は不自然で、that of ～ のほうがより適切です。※ 複数名詞の繰り返しを避けるときは those を使います。",
-      difficulty: "標準", school: "京都橘女子大"   },
+      difficulty: "標準", school: "京都橘大"   },
 
   {  page: 65, no: "15-2", category: "代名詞（2）", type: "sort",
       question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>The population of New York is ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ).<br><small>ニューヨークの人口はワシントンDCの人口より多い。</small>",
@@ -17966,5 +18022,29 @@ const quizDataset = [
     answer: "out", audioText: "After he joined the travel agency, he worked hard to improve his English in order to carry out his duties more effectively.",
     translation: "旅行代理店に入社したあと、彼はより効果的に職務を果たすために、英語の上達に一生懸命取り組んだ。",
     explanation: "carry out ～ は「～を実行する、～を果たす」という意味の熟語で、carry out one’s duties は「職務を果たす」という意味になります。したがって、out が正解です。carry away は「～を運び去る」、carry back は「～を運び戻す」という意味で、文意に合いません。carry off は、duties と結びつく熟語になりません。",
-    difficulty: "基礎", school: "センター試験"  }
+    difficulty: "基礎", school: "センター試験"  },
+
+  { page: 79, no: "16-1", category: "成句（2）", type: "4choice",
+    question: "He is in ( &nbsp; &nbsp; &nbsp; ) of this project.",
+    choices: ["spite", "case", "charge", "place"],
+    answer: "charge", audioText: "He is in charge of this project.",
+    translation: "彼がこのプロジェクトの責任者です。",
+    explanation: "＜be in charge of ～＞ は「～を担当している、～の責任者である」という意味の熟語で、charge が入ります。in spite of は「～にもかかわらず」、in case of は「～の場合には」、in place of は「～の代わりに」という熟語で、いずれも文意に合いません。",
+    difficulty: "標準", school: "岐阜聖徳学園大", added: "2026-11-13"  },
+
+  { page: 79, no: "16-2", category: "成句（2）", type: "sort",
+    question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>Joining the soccer team ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) his behavior.<br><small>サッカーチームへの入部が彼の行動によい影響を与えた。</small>",
+    words: ["a", "influence", "good", "had", "on"],
+    answer: "had a good influence on", audioText: "Joining the soccer team had a good influence on his behavior.",
+    translation: "サッカーチームへの入部が彼の行動によい影響を与えた。",
+    explanation: "「～によい影響を与える」は ＜have a good influence on ～＞ で表します。動名詞句 Joining the soccer team が主語で、過去の内容なので had を使い、冠詞・形容詞・名詞の順に a good influence を置いて、on his behavior（彼の行動に）につなげます。Joining the soccer team had a good influence on his behavior. の順に並べます。",
+    difficulty: "標準", school: "九州産業大", added: "2026-11-13"  },
+
+  { page: 79, no: "16-3", category: "成句（2）", type: "4choice",
+    question: "You need to ( &nbsp; &nbsp; &nbsp; ) in the homework now.",
+    choices: ["hand", "submit", "make", "finish"],
+    answer: "hand", audioText: "You need to hand in the homework now.",
+    translation: "今すぐ宿題を提出する必要があります。",
+    explanation: "＜hand in ～＞ は「～を提出する」という意味の句動詞で、hand in the homework で「宿題を提出する」となります。submit は「提出する」という意味ですが、他動詞なので in を伴いません。make in や finish in は、「提出する」という意味になりません。",
+    difficulty: "標準", school: "岐阜聖徳学園大・改", added: "2026-11-13"  }
 ];
