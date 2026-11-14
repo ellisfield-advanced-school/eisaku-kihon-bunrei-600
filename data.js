@@ -2634,6 +2634,14 @@ const quizDataset = [
     explanation: "will be chosen の主語を尋ねるので、＜Who do you think ＋ 動詞～?＞ の形にします。Who に do you think が挿入された形になります。Do you think who ～ は疑問詞が文頭にありません。Whom は目的格で、will be chosen の主語になれません。",
     difficulty: "標準", school: "慶應義塾大"  },
 
+  { page: 17, no: "9-g", category: "疑問文（2）", type: "sort",
+    question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>How ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) ?<br><small>このお城の維持費はどのくらいだと思いますか。</small>",
+    words: ["castle", "costs", "do", "it", "maintain", "much", "think", "this", "to", "you"],
+    answer: "much do you think it costs to maintain this castle", audioText: "How much do you think it costs to maintain this castle?",
+    translation: "このお城の維持費はどのくらいだと思いますか。",
+    explanation: "「どのくらいだと思いますか」のように think を含む疑問文は、疑問詞を文頭に置いて ＜疑問詞 ＋ do you think ＋ 平叙文の語順＞ にします。ここでは、How much do you think の後ろに、it costs to maintain this castle（このお城を維持するのにお金がかかる）を続けます。it は形式主語で、to maintain this castle が真主語です。How much do you think it costs to maintain this castle? の順に並べます。",
+    difficulty: "応用", school: "実践女子大", added: "2026-11-14"  },
+
   { page: 17, no: "10-1", category: "疑問文（2）", type: "sort",
     question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>I wonder ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ).<br><small>彼はいつまで日本に滞在するのだろう。</small>",
     words: ["is", "he", "in Japan", "how long", "to stay", "going"],
@@ -9472,6 +9480,14 @@ const quizDataset = [
     difficulty: "標準", school: "帝京大" },
 
   { page: 49, no: "8-b", category: "比較（1）", type: "4choice",
+    question: "( &nbsp; &nbsp; &nbsp; ) country in the world has as large a population as China.",
+    choices: ["Nothing", "Neither", "No", "None"],
+    answer: "No", audioText: "No country in the world has as large a population as China.",
+    translation: "世界で中国ほど人口の多い国はない。",
+    explanation: "＜No ＋ 名詞 ＋ 動詞 ＋ as ... as ～＞ は、「～ほど…な―はない」という意味で、原級を用いた最上級表現です。名詞 country を直接修飾できる No が入ります。as large a population as China は、＜as ＋ 形容詞 ＋ a ＋ 名詞 ＋ as ～＞ の語順です。Nothing は「何も…ない」という物事を表す代名詞で、名詞の前には置けません。Neither は「2者のどちらも…ない」という意味で、名詞 country の前には置けません。None は代名詞で、名詞を直接修飾できません。",
+    difficulty: "標準", school: "摂南大", added: "2026-11-14"  },
+
+  { page: 49, no: "8-c", category: "比較（1）", type: "4choice",
     question: "He is as bright as ( &nbsp; &nbsp; &nbsp; ) in this class.",
     choices: ["other boys", "any boys", "any boy", "any other boys"],
     answer: "any boy", audioText: "He is as bright as any boy in this class.",
@@ -10663,6 +10679,14 @@ const quizDataset = [
       translation: "宇宙飛行士たちは無事に宇宙から帰還したが、そのことは管制センターのスタッフ全員を喜ばせた。",
       explanation: "関係代名詞 which が前の文全体（宇宙飛行士たちが無事に帰還したこと）を先行詞として受ける用法です。it は代名詞であり、接続詞の働きを持たないため2つの文をつなぐことができません。that は非制限用法では使えず、what は先行詞を含むため、前の文全体を先行詞として受けることができません。",
       difficulty: "標準", school: "京都産業大"   },
+
+  { page: 53, no: "12-5", category: "関係詞（1）", type: "4choice",
+    question: "As I knew from his accent, he was Italian.<br>➔ He was Italian, ( &nbsp; &nbsp; &nbsp; ) I knew from his accent.<br><small>同意文完成</small>",
+    choices: ["that", "what", "which", "whom"],
+    answer: "which", audioText: "He was Italian, which I knew from his accent.",
+    translation: "彼の訛りからわかったことだが、彼はイタリア人だった。／彼はイタリア人だったが、そのことは彼の訛りからわかった。",
+    explanation: "関係代名詞 which が、前の節全体（He was Italian）を先行詞として受ける継続用法（非制限用法）です。「彼はイタリア人だったが、そのことを私は彼の訛りからわかった」という意味になり、which は knew の目的語の働きをしています。that は、コンマの後ろの非制限用法では使えません。what は先行詞を含む関係代名詞で、先行詞（前の節）がある場合には使えません。whom は「人」を先行詞とする関係代名詞で、前の節全体を受けることはできません。",
+    difficulty: "標準", school: "実践女子大", added: "2026-11-14"  },
 
   {  page: 53, no: "13-1", category: "関係詞（1）", type: "4choice",
       question: "This is the same coat ( &nbsp; &nbsp; &nbsp; ) I lost yesterday.",
@@ -14041,6 +14065,14 @@ const quizDataset = [
       explanation: "those who ～ は「〜する人々」という意味で、those は people（人々）にあたります。I like those who love themselves the most. の語順になります。those who love themselves で「自分自身を愛する人々」、the most は「最も」という意味です。",
       difficulty: "標準", school: "九州国際大"   },
 
+  { page: 65, no: "3-8", category: "代名詞（2）", type: "sort",
+    question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>Those ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) .<br><small>その会議に参加していた人々は彼の提案に反対しなかった。</small>",
+    words: ["against", "at", "his", "meeting", "not", "present", "proposal", "the", "were"],
+    answer: "present at the meeting were not against his proposal", audioText: "Those present at the meeting were not against his proposal.",
+    translation: "その会議に参加していた人々は彼の提案に反対しなかった。",
+    explanation: "「～に出席していた人々」は ＜those present at ～＞ で表します。これは those who were present at ～ の who were が省略された形で、形容詞 present が後ろの at the meeting とともに those を修飾しています。主語 Those に対する動詞は複数形の were で、「反対しなかった」は were not against（～に反対ではなかった）とします。Those present at the meeting were not against his proposal. の順に並べます。",
+    difficulty: "標準", school: "実践女子大", added: "2026-11-14"  },
+
   {  page: 65, no: "4-1", category: "代名詞（2）", type: "4choice",
       question: "He solved the difficult problem all ( &nbsp; &nbsp; &nbsp; ) himself.",
       choices: ["in", "for", "by", "of"],
@@ -14608,7 +14640,15 @@ const quizDataset = [
     explanation: "同じ名詞（the structure）の繰り返しを避けるために、＜that of ～＞ を使い、「～の構造」という意味を表します。the structure は特定の単数の名詞なので、that で受けます。it は of を伴う形で使えません。one は a(n) ＋ 名詞の代わりに使う語で、the structure のように特定の名詞は受けられません。those は複数の名詞を受ける形です。",
     difficulty: "基礎", school: "日本女子大", added: "2026-10-26" },
 
-  {  page: 65, no: "15-6", category: "代名詞（2）", type: "rewrite",
+  { page: 65, no: "15-6", category: "代名詞（2）", type: "4choice",
+    question: "The climate here is similar ( &nbsp; &nbsp; &nbsp; ) that of Los Angeles.",
+    choices: ["to", "in", "like", "with"],
+    answer: "to", audioText: "The climate here is similar to that of Los Angeles.",
+    translation: "ここの気候はロサンゼルスの気候に似ている。",
+    explanation: "「～に似ている」は ＜be similar to ～＞ で表します。that of Los Angeles の that は、前に出た the climate を言い換える代名詞で、the climate of Los Angeles を表します。like は、それ自体が「～のような」を表す前置詞なので、similar の後ろには続けられません。in と with は、similar とは結びつきません。",
+    difficulty: "基礎", school: "摂南大", added: "2026-11-14"  },
+
+  {  page: 65, no: "15-7", category: "代名詞（2）", type: "rewrite",
       question: "No other career is so dramatic as ( &nbsp; &nbsp; &nbsp; ) of Alexander the Great.<br><small>アレクサンダー大王の生涯ほど劇的なものはない。</small>",
       blankCount: 1,
       answer: ["that"], audioText: "No other career is so dramatic as that of Alexander the Great.",
@@ -14616,7 +14656,7 @@ const quizDataset = [
       explanation: "＜No other ～ is so ... as ...＞ は「…ほど～なものはない」という最上級の意味を表す表現です。as の後ろは「アレクサンダー大王の生涯」で、career の繰り返しを避けて that of Alexander the Great とします。career は単数名詞なので that を使います（複数名詞なら those を使います）。",
       difficulty: "基礎", school: "鹿児島大"   },
 
-  {  page: 65, no: "15-7", category: "代名詞（2）", type: "4choice",
+  {  page: 65, no: "15-8", category: "代名詞（2）", type: "4choice",
       question: "The ears of a rabbit are longer than ( &nbsp; &nbsp; &nbsp; ) of a cat.",
       choices: ["this", "these", "that", "those", "ones"],
       answer: "those", audioText: "The ears of a rabbit are longer than those of a cat.",
@@ -14624,7 +14664,7 @@ const quizDataset = [
       explanation: "「ウサギの耳」と「ネコの耳」を比べる文です。ears は複数名詞なので、繰り返しを避ける代名詞は those（those of a cat）になります。that と this は単数のものを指す語なので合いません。these は「これら」と近くのものを指す語で、of a cat のあとに続く形にはなりません。ones は of 句の前に単独では使わず、those of ～ が定型です。",
       difficulty: "基礎", school: "姫路獨協大"   },
 
-  {  page: 65, no: "15-8", category: "代名詞（2）", type: "4choice",
+  {  page: 65, no: "15-9", category: "代名詞（2）", type: "4choice",
       question: "This year's fashions are quite different from ( &nbsp; &nbsp; &nbsp; ) of last year.",
       choices: ["that", "those", "the one", "these"],
       answer: "those", audioText: "This year's fashions are quite different from those of last year.",
@@ -14632,7 +14672,7 @@ const quizDataset = [
       explanation: "「今年の流行」と「去年の流行」を比べる文です。fashions は複数名詞なので、繰り返しを避ける代名詞は those（those of last year）です。that と the one は単数のものを指すので合いません。these は「これら」と近くのものを指す語で、「去年の」という限定した特定のものを表す of last year には those を使います。",
       difficulty: "基礎", school: "広島工業大"   },
 
-  {  page: 65, no: "15-9", category: "代名詞（2）", type: "4choice",
+  {  page: 65, no: "15-10", category: "代名詞（2）", type: "4choice",
       question: "Cars imported from other countries are a lot better than ( &nbsp; &nbsp; &nbsp; ) made in our country.",
       choices: ["all", "them", "those", "which"],
       answer: "those", audioText: "Cars imported from other countries are a lot better than those made in our country.",
