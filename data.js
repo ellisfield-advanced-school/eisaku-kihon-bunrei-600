@@ -9614,22 +9614,14 @@ const quizDataset = [
     explanation: "「思った（予想していた）以上に〜」は ＜比較級 ＋ than ＋ S ＋ had expected＞ で表します。The movie was more interesting than I had expected. の順に並べます。had expected が過去完了なのは、映画を見た時点より前に予想していたからです。",
     difficulty: "標準", school: "拓殖大" },
 
-  { page: 49, no: "14-2", category: "比較（1）", type: "sort",
-    question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ).<br><small>予想をはるかに超える人手があった。</small>",
-    words: ["more", "expected", "many", "had", "were", "people", "we", "there", "than"],
-    answer: "there were many more people than we had expected", audioText: "There were many more people than we had expected.",
-    translation: "予想をはるかに超える人手があった。",
-    explanation: "people は数えられる名詞（複数扱い）なので、many more people（ずっと多くの人々）の形になります。there were many more people than we had expected の順に並べます。数えられない名詞の場合は、much more ＋ 名詞 の形になります。than we had expected は「私たちが予想していたよりも」という意味です。",
-    difficulty: "応用", school: "西南女学院" },
-
-  { page: 49, no: "14-3", category: "比較（1）", type: "rewrite",
+  { page: 49, no: "14-2", category: "比較（1）", type: "rewrite",
     question: "I woke up two hours earlier ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ).<br><small>いつもより2時間早く目が覚めた。</small>",
     blankCount: 2, answer: ["than", "usual"], audioText: "I woke up two hours earlier than usual.",
     translation: "いつもより2時間早く目が覚めた。",
     explanation: "「いつもより〜」は、比較級のあとに ＜than usual＞ をつなげて表します。I woke up two hours earlier than usual. となり、空欄に入る語は順に than / usual です。two hours は、earlier との差を表しています。",
     difficulty: "基礎", school: "" },
 
-  { page: 49, no: "14-4", category: "比較（1）", type: "sort",
+  { page: 49, no: "14-3", category: "比較（1）", type: "sort",
     question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>The bus arrived ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ).<br><small>バスはいつもより3分早く着いた。</small>",
     words: ["than", "earlier", "usual", "three minutes"],
     answer: "three minutes earlier than usual", audioText: "The bus arrived three minutes earlier than usual.",
@@ -9637,7 +9629,7 @@ const quizDataset = [
     explanation: "差を表す数値（three minutes）、比較級（earlier）、than usual（いつもより）の順に並べます。The bus arrived three minutes earlier than usual. となります。数値が比較級の前に置かれて、差の大きさを示します。",
     difficulty: "基礎", school: "" },
 
-  { page: 49, no: "14-5", category: "比較（1）", type: "rewrite",
+  { page: 49, no: "14-4", category: "比較（1）", type: "rewrite",
     question: "There were more people on the beach than ( &nbsp; &nbsp; &nbsp; ).<br><small>浜にはいつもより多くの人がいた。</small>",
     blankCount: 1, answer: ["usual"], audioText: "There were more people on the beach than usual.",
     translation: "浜にはいつもより多くの人がいた。",
