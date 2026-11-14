@@ -7707,7 +7707,15 @@ const quizDataset = [
     explanation: "＜keep ＋ O ＋ from -ing＞ は、「Oが〜するのを妨げる、Oのために〜できない」という意味を表します。Sickness kept me from going on a trip. となります。enabled は ＜enable ＋ O ＋ to do＞ の形で、「可能にする」という逆の意味になります。couldn’t get to と caught は、from -ing を従える形にならず、意味も合いません。",
     difficulty: "基礎", school: "東京電機大" },
 
-  { page: 41, no: "13-b", category: "動名詞（2）", type: "sort",
+  { page: 41, no: "13-b", category: "動名詞（2）", type: "4choice",
+    question: "A previous engagement ( &nbsp; &nbsp; &nbsp; ) me from accepting your invitation.",
+    choices: ["had", "kept", "made", "showed"],
+    answer: "kept", audioText: "A previous engagement kept me from accepting your invitation.",
+    translation: "先約があったので、私はあなたの招待を受けられなかった。",
+    explanation: "＜keep ＋ 人 ＋ from ～ing＞ は「（人）が～するのを妨げる」という意味で、無生物主語の A previous engagement を用いて、「先約が私があなたの招待を受けるのを妨げた」、つまり「先約があって招待を受けられなかった」を表します。had、made、showed は、後ろに ＜人 ＋ from ～ing＞ を続けることができません。",
+    difficulty: "基礎", school: "実践女子大", added: "2026-11-14"  },
+
+  { page: 41, no: "13-c", category: "動名詞（2）", type: "sort",
     question: "<small class='instruction-note'>次の語句を並び替えなさい。</small><br>( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) sleep last night.",
     words: ["noise", "from", "going", "the", "kept", "to", "me"],
     answer: "the noise kept me from going to", audioText: "The noise kept me from going to sleep last night.", 
@@ -7715,7 +7723,7 @@ const quizDataset = [
     explanation: "＜keep ＋ O ＋ from -ing＞（Oが〜するのを妨げる）を使い、「騒音のせいで眠れなかった」を表します。主語 the noise に kept me from を続け、動名詞句 going to sleep をつなげて、The noise kept me from going to sleep last night. の順に並べます。",
     difficulty: "標準", school: "東海大" },
 
-  { page: 41, no: "13-c", category: "動名詞（2）", type: "sort",
+  { page: 41, no: "13-d", category: "動名詞（2）", type: "sort",
     question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ).<br><small>聴衆が騒ぐので，彼の言ったことが聞こえなかった。</small>",
     words: ["us", "from", "said", "hearing", "the audience", "from", "he", "the noise", "kept", "what"],
     answer: "The noise from the audience kept us from hearing what he said", audioText: "The noise from the audience kept us from hearing what he said.",
@@ -8662,7 +8670,15 @@ const quizDataset = [
     explanation: "「勉強の仕方が分からなかったので」という理由を表す、否定の分詞構文です。Because he didn't know how to study の接続詞と主語を省略して、否定語 not を分詞の直前に置いた ＜Not knowing ～＞ の形にします。Not to knowing と To not knowing は、to のあとに ing 形が続く誤った形です。Knowing not to は、否定の位置が正しくなく、意味も通りません。",
     difficulty: "基礎", school: "東海大", added: "2026-10-25" },
 
-  { page: 45, no: "11-4", category: "分詞（2）", type: "rewrite",
+  { page: 45, no: "11-4", category: "分詞（2）", type: "4choice",
+    question: "Mary, ( &nbsp; &nbsp; &nbsp; ) where to put the vase, left it on the table.",
+    choices: ["never having known", "never to know", "not knowing", "not to have known"],
+    answer: "not knowing", audioText: "Mary, not knowing where to put the vase, left it on the table.",
+    translation: "メアリーは花瓶をどこに置いてよいかわからなかったので、それをテーブルの上に置いた。",
+    explanation: "「花瓶をどこに置いてよいかわからなかったので」という理由を、分詞構文で表した文です（Because she didn't know where to put the vase）。分詞構文の否定は、否定語を分詞の直前に置いて not knowing とします。never having known は「一度も知らなかった」という意味になり、文意に合いません。never to know と not to have known は不定詞なので、分詞構文の働きができません。",
+    difficulty: "基礎", school: "実践女子大", added: "2026-11-14"  },
+
+  { page: 45, no: "11-5", category: "分詞（2）", type: "rewrite",
     question: "Because I didn’t know her phone number, I couldn’t call her back.<br>➔ ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) her phone number, I couldn’t call her back.<br><small>同意文完成</small>",
     blankCount: 2, answer: ["Not", "knowing"], audioText: "Not knowing her phone number, I couldn't call her back.", 
     translation: "彼女の電話番号を知らなかったので、折り返し電話することができなかった。",
@@ -10884,7 +10900,15 @@ const quizDataset = [
       explanation: "関係代名詞 what が do の目的語となる節（what ... is right）を作り、you believe が「あなたが信じるに」という挿入句として is right の前に入っています。do の後ろに what を置き、believe に続けて is right でまとめます。",
       difficulty: "標準", school: "青山学院大"   },
 
-  {  page: 55, no: "2-1", category: "関係詞（2）", type: "4choice",
+  { page: 55, no: "2-1", category: "関係詞（2）", type: "4choice",
+    question: "( &nbsp; &nbsp; &nbsp; ) we need now is some good advice from experts.",
+    choices: ["Which", "Whether", "That", "What"],
+    answer: "What", audioText: "What we need now is some good advice from experts.",
+    translation: "私たちが今必要としているのは、専門家からの適切な助言です。",
+    explanation: "関係代名詞 what は、先行詞を含んで「～するもの・こと」という意味の名詞節を作ります。What we need now（私たちが今必要としているもの）が主語になり、is の後ろの some good advice が補語です。we need の後ろには目的語がない不完全な文なので、目的語の働きをする what が入ります。Which は先行詞が必要で、That も関係代名詞としては先行詞が必要です。Whether は「～かどうか」という意味で、後ろに完全な文が続きます。",
+    difficulty: "基礎", school: "摂南大", added: "2026-11-14"  },
+
+  {  page: 55, no: "2-2", category: "関係詞（2）", type: "4choice",
       question: "( &nbsp; &nbsp; &nbsp; ) he said at the meeting was very important for all of us.",
       choices: ["That", "Which", "What", "Which that"],
       answer: "What", audioText: "What he said at the meeting was very important for all of us.",
@@ -10892,7 +10916,7 @@ const quizDataset = [
       explanation: "先行詞を含む関係代名詞 What が he said at the meeting（彼が会議で言ったこと）という節をまとめ、文全体の主語（S）を作ります。That を関係代名詞として使うには先行詞が必要ですが、この文には先行詞がありません。また、接続詞として使うには said の後ろに完全な文（目的語がそろった文）が続く必要がありますが、said の目的語が欠けているため、接続詞の That もこの文脈には合いません。",
       difficulty: "基礎", school: "立命館大"   },
 
-  {  page: 55, no: "2-2", category: "関係詞（2）", type: "4choice",
+  {  page: 55, no: "2-3", category: "関係詞（2）", type: "4choice",
       question: "Thank you, Hiromi. This book is exactly ( &nbsp; &nbsp; &nbsp; ) I wanted.",
       choices: ["what", "which", "of which", "that"],
       answer: "what", audioText: "Thank you, Hiromi. This book is exactly what I wanted.",
@@ -10900,7 +10924,7 @@ const quizDataset = [
       explanation: "関係代名詞 what は「〜するもの」という意味を表し、wanted の目的語が欠けた節をまとめて補語（C）を作ります。which や that は先行詞を必要とするため、先行詞のないこの文脈には使えません。",
       difficulty: "基礎", school: "センター試験"   },
 
-  {  page: 55, no: "2-3", category: "関係詞（2）", type: "4choice",
+  {  page: 55, no: "2-4", category: "関係詞（2）", type: "4choice",
       question: "Remember ( &nbsp; &nbsp; &nbsp; ) I've just told you.",
       choices: ["as", "that", "what", "which"],
       answer: "what", audioText: "Remember what I've just told you.",
@@ -10908,7 +10932,7 @@ const quizDataset = [
       explanation: "Remember の目的語となる節を関係代名詞 what が作ります。told you の後ろに直接目的語が欠けているため、その欠けた部分を補う what が正解です。that は後ろに完全な文をとる接続詞なので、目的語の欠けたこの文には合いません。",
       difficulty: "基礎", school: "センター試験"   },
 
-  { page: 55, no: "2-4", category: "関係詞（2）", type: "4choice",
+  { page: 55, no: "2-5", category: "関係詞（2）", type: "4choice",
     question: "“I didn’t understand the teacher.”<br>“I didn’t know ( &nbsp; &nbsp; &nbsp; ) he was talking about either.”",
     choices: ["that", "why", "what", "nothing"],
     answer: "what", audioText: "I didn’t know what he was talking about either.",
@@ -10916,7 +10940,7 @@ const quizDataset = [
     explanation: "talking about の後ろに目的語がないので、about の目的語になる what が入ります。what he was talking about は「彼が話していたこと」という意味の名詞節です。that の後ろは完全な文が続くので不適切です。why は理由を表すので、about の目的語が欠けたままになります。nothing は、didn’t とともに二重否定になってしまいます。",
     difficulty: "基礎", school: "上智大", added: "2026-10-27" },
 
-  {  page: 55, no: "2-5", category: "関係詞（2）", type: "sort",
+  {  page: 55, no: "2-6", category: "関係詞（2）", type: "sort",
       question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>What ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) understanding.<br><small>先生の言ったことは私には理解できなかった。</small>",
       words: ["said", "beyond", "the teacher", "my", "was"],
       answer: "the teacher said was beyond my", audioText: "What the teacher said was beyond my understanding.",
@@ -10924,7 +10948,7 @@ const quizDataset = [
       explanation: "先行詞を含む関係代名詞 What が the teacher said（先生が言ったこと）という節をまとめ、文全体の主語（S）を作ります。＜be beyond one's understanding＞で「〜の理解を超えている」という意味の重要表現です。",
       difficulty: "標準", school: "拓殖大"   },
 
-  {  page: 55, no: "2-6", category: "関係詞（2）", type: "sort",
+  {  page: 55, no: "2-7", category: "関係詞（2）", type: "sort",
       question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) a sense.<br><small>彼女が言ったことは、ある意味では本当だ。</small>",
       words: ["in", "is", "she", "true", "what", "said"],
       answer: "what she said is true in", audioText: "What she said is true in a sense.",
@@ -10932,7 +10956,7 @@ const quizDataset = [
       explanation: "先行詞を含む関係代名詞 what が she said（彼女が言ったこと）という節をまとめ、文全体の主語（S）を作ります。＜in a sense＞で「ある意味では」という意味の重要表現です。",
       difficulty: "標準", school: "関西学院大"   },
 
-  {  page: 55, no: "2-7", category: "関係詞（2）", type: "sort",
+  {  page: 55, no: "2-8", category: "関係詞（2）", type: "sort",
       question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>She doesn't seem ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ).<br><small>彼女は自分のしたことを悪いと思っていないようです。</small>",
       words: ["she", "has", "for", "sorry", "done", "what"],
       answer: "sorry for what she has done", audioText: "She doesn't seem sorry for what she has done.",
@@ -10940,7 +10964,7 @@ const quizDataset = [
       explanation: "＜be sorry for 〜＞（〜をすまなく思う）の for の目的語を、関係代名詞 what が導く節（what she has done＝彼女がしたこと）で表します。has done は「（現在までに）したこと」という現在完了形です。",
       difficulty: "標準", school: "東京家政大"   },
 
-  { page: 55, no: "2-8", category: "関係詞（2）", type: "sort",
+  { page: 55, no: "2-9", category: "関係詞（2）", type: "sort",
     question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>There are several ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) on one’s mind.<br><small>人が心に思うことを他人に知らせるには、いくつかの方法があります。</small>",
     words: ["has", "inform", "of", "others", "one", "to", "ways", "what"],
     answer: "ways to inform others of what one has", audioText: "There are several ways to inform others of what one has on one’s mind.",
@@ -16006,7 +16030,15 @@ const quizDataset = [
       explanation: "No（勉強しなかった）を受けて、「そうでなければ（＝もし勉強していたら）」を表す副詞は Otherwise です。後ろの would have done better は、過去の事実の反対を表す仮定法過去完了の帰結の形で、Otherwise がその仮定の部分を表します。If I hadn't は「もししなかったら」の意味で、勉強しなかった事実と合いません。If not は現在や未来の仮定を表すときに使う形で、過去の事実の反対を表す would have done とは合いません。Unless は「～でない限り」という意味の接続詞で、文意に合いません。",
       difficulty: "応用", school: "東京電機大"   },
 
-  {  page: 67, no: "16-e", category: "仮定法", type: "4choice",
+  { page: 67, no: "16-e", category: "仮定法", type: "4choice",
+    question: "If I hadn't seen it with my own eyes, I couldn't have believed it.<br>➔ I saw it with my own eyes; ( &nbsp; &nbsp; &nbsp; ) I couldn't have believed it.<br><small>同意文完成</small>",
+    choices: ["however", "otherwise", "so", "therefore"],
+    answer: "otherwise", audioText: "I saw it with my own eyes; otherwise I couldn't have believed it.",
+    translation: "もし自分の目で見ていなかったら、それを信じることはできなかっただろう。／私はそれを自分の目で見た。そうでなければ、それを信じることはできなかっただろう。",
+    explanation: "otherwise は「そうでなければ」という意味の副詞で、前の内容を打ち消した条件（If I hadn't seen it with my own eyes）の意味を表します。ここでは、仮定法過去完了の if 節の代わりに用いられていて、後ろの couldn't have believed ～（信じることはできなかっただろう）が帰結の部分です。however（しかしながら）、so と therefore（だから）は、文意に合いません。",
+    difficulty: "標準", school: "実践女子大", added: "2026-11-14"  },
+
+  {  page: 67, no: "16-f", category: "仮定法", type: "4choice",
       question: "There is little, ( &nbsp; &nbsp; &nbsp; ) any, hope of her recovery.",
       choices: ["when", "if", "but", "unless"],
       answer: "if", audioText: "There is little, if any, hope of her recovery.",
@@ -16014,7 +16046,7 @@ const quizDataset = [
       explanation: "＜little, if any, ～＞ は「あったとしても、ほとんど～ない」という意味の決まった表現で、if any は if there is any（もしあるとしても）の省略です。よって if が正解です。when、but、unless では、any と合わせて「あったとしても」の意味を表せません。",
       difficulty: "標準", school: "中京大"   },
 
-  {  page: 67, no: "16-f", category: "仮定法", type: "4choice",
+  {  page: 67, no: "16-g", category: "仮定法", type: "4choice",
       question: "Would you read my letter and correct the mistakes, if ( &nbsp; &nbsp; &nbsp; ) ?",
       choices: ["ever", "any", "not", "never"],
       answer: "any", audioText: "Would you read my letter and correct the mistakes, if any?",
@@ -16022,7 +16054,7 @@ const quizDataset = [
       explanation: "if any は if there are any（もしあれば）の省略表現で、数や量があるかどうかを表します。ここでは「もし間違い（mistakes）があれば」の意味なので、any が正解です。if ever は「もしあるとしても、これまでに／めったに」という経験や頻度を表す表現で、間違いの有無を表せません。not と never は、if につなぐと意味が合いません。",
       difficulty: "標準", school: "センター試験"   },
 
-  { page: 67, no: "16-g", category: "仮定法", type: "4choice",
+  { page: 67, no: "16-h", category: "仮定法", type: "4choice",
     question: "There were very few people, if ( &nbsp; &nbsp; &nbsp; ), who actually saw what happened.",
     choices: ["any", "ever", "many", "not"],
     answer: "any", audioText: "There were very few people, if any, who actually saw what happened.",
@@ -16030,7 +16062,7 @@ const quizDataset = [
     explanation: "few ～, if any は「あるとしてもごくわずか」という意味の慣用表現で、if any は if there are any（もしいるとしても）が省略された形です。ever は seldom, if ever（あるとしてもめったに）のように頻度に使い、人数には使えません。many は few と意味が矛盾します。not は if not any などの形でないと成り立ちません。",
     difficulty: "標準", school: "慶應義塾大", added: "2026-10-27" },
 
-  {  page: 67, no: "16-h", category: "仮定法", type: "4choice",
+  {  page: 67, no: "16-i", category: "仮定法", type: "4choice",
       question: "He has seldom, if ( &nbsp; &nbsp; &nbsp; ), spoken in public.",
       choices: ["any", "little", "so", "ever"],
       answer: "ever", audioText: "He has seldom, if ever, spoken in public.",
@@ -16038,7 +16070,7 @@ const quizDataset = [
       explanation: "＜seldom, if ever, ～＞ は「あったとしても、めったに～ない」という意味の決まった表現で、頻度を表す副詞 seldom に合わせて ever を使います。if ever は if he has ever（もし今までにあるとしても）の省略です。any は数や量を表す語なので、頻度を表す seldom とは合いません。little と so は、この形になりません。",
       difficulty: "標準", school: "南山大"   },
 
-  {  page: 67, no: "16-i", category: "仮定法", type: "4choice",
+  {  page: 67, no: "16-j", category: "仮定法", type: "4choice",
       question: "I seldom, if ( &nbsp; &nbsp; &nbsp; ), use a computer to do clerical work.<br><small>事務仕事をするのに、めったにコンピュータは使わない。</small>",
       choices: ["never", "rarely", "ever", "any"],
       answer: "ever", audioText: "I seldom, if ever, use a computer to do clerical work.",
