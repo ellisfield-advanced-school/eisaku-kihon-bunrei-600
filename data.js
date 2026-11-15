@@ -7699,6 +7699,14 @@ const quizDataset = [
     explanation: "＜prevent ＋ O ＋ from -ing＞（Oが〜するのを妨げる）の構文を作ります。主語 The rain に prevented me from going out を続けて、The rain prevented me from going out. の順に並べます。",
     difficulty: "基礎", school: "玉川大" },
 
+  { page: 41, no: "13-6", category: "動名詞（2）", type: "sort",
+    question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>Antibiotics are medical drugs ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) .<br><small>抗生物質というのは、細菌を殺したり、それが増殖するのを防いだりする医薬品である。</small>",
+    words: ["them", "or", "reproducing", "kill bacteria", "that", "from", "prevent"],
+    answer: "that kill bacteria or prevent them from reproducing", audioText: "Antibiotics are medical drugs that kill bacteria or prevent them from reproducing.",
+    translation: "抗生物質というのは、細菌を殺したり、それが増殖するのを防いだりする医薬品である。",
+    explanation: "関係代名詞 that が medical drugs を先行詞として、kill bacteria と prevent them from reproducing という 2 つの動詞句を、or で結んでいます。「～が…するのを防ぐ」は ＜prevent ＋ O ＋ from ～ing＞ で表すので、prevent them from reproducing（それ〔細菌〕が増殖するのを防ぐ）の順になります。Antibiotics are medical drugs that kill bacteria or prevent them from reproducing. の順に並べます。",
+    difficulty: "標準", school: "岡山理科大", added: "2026-11-15"  },
+
   { page: 41, no: "13-a", category: "動名詞（2）", type: "4choice",
     question: "Sickness ( &nbsp; &nbsp; &nbsp; ) me from going on a trip.",
     choices: ["couldn't get to", "kept", "enabled", "caught"],
@@ -8497,7 +8505,15 @@ const quizDataset = [
     explanation: "理由を表す接続詞 As と主語 he を省略し、is を現在分詞 Being に変えた分詞構文を作ります。Being a milkman, he has to get up early every morning. となります。",
     difficulty: "基礎", school: "鹿児島大" },
 
-  { page: 45, no: "7-3", category: "分詞（2）", type: "sort",
+  { page: 45, no: "7-3", category: "分詞（2）", type: "4choice",
+    question: "( &nbsp; &nbsp; &nbsp; ) to find a place to stay, they had to sleep in their car last night.",
+    choices: ["Not only", "Decide", "Avoid not", "Unable"],
+    answer: "Unable", audioText: "Unable to find a place to stay, they had to sleep in their car last night.",
+    translation: "泊まる場所を見つけられず、彼らは昨夜、車の中で寝なければならなかった。",
+    explanation: "Because they were unable to find a place to stay の分詞構文で、Being unable ～ の Being が省略された形です。形容詞 unable が文頭に出て、「泊まる場所を見つけられなかったので」という理由を表します。Not only は、後ろに倒置の形が続きます。Decide は原形で、Avoid not は形が合わず、いずれも文意に合いません。",
+    difficulty: "標準", school: "亜細亜大", added: "2026-11-15"  },
+
+  { page: 45, no: "7-4", category: "分詞（2）", type: "sort",
     question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ), ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) departure.<br><small>彼女はビザがとれなかったので、出発を延期した。</small>",
     words: ["put off", "a visa", "get", "unable to", "she"],
     answer: "Unable to get a visa, she put off", audioText: "Unable to get a visa, she put off departure.", 
@@ -8505,7 +8521,7 @@ const quizDataset = [
     explanation: "As she was unable to get a visa を分詞構文にすると Being unable to get a visa となり、この Being は省略できるので、Unable to get a visa となります。主節は she put off her departure で、put off は「〜を延期する」という意味の熟語（過去形も put off）です。Unable to get a visa, she put off her departure. の順に並べます。",
     difficulty: "標準", school: "拓殖大・改" },
 
-  { page: 45, no: "7-4", category: "分詞（2）", type: "rewrite",
+  { page: 45, no: "7-5", category: "分詞（2）", type: "rewrite",
     question: "As I was tired of studying, I went out for a walk.<br>➔ ( &nbsp; &nbsp; &nbsp; ) of studying, I went out for a walk.<br><small>同意文完成</small>",
     blankCount: 1, answer: ["Tired"], audioText: "Tired of studying, I went out for a walk.", 
     translation: "勉強に疲れたので、私は散歩に出かけた。",
@@ -9334,21 +9350,29 @@ const quizDataset = [
     explanation: "＜not so ＋ 原級 ＋ as ～＞ は、「〜ほど…ない」という意味を表します。空欄の後ろに as があるので、so cold が入り、It isn’t so cold as it was last week. となります。so as cold は語順が誤りで、such cold は形容詞 cold の前に such が付く形になり、as とつながりません。colder than は、後ろの as と合いません。",
     difficulty: "基礎", school: "関西外語大" },
 
-  { page: 49, no: "2-3", category: "比較（1）", type: "rewrite",
+  { page: 49, no: "2-3", category: "比較（1）", type: "4choice",
+    question: "I didn't spend as much money as you.<br>➔ I spent ( &nbsp; &nbsp; &nbsp; ) money than you.<br><small>同意文完成</small>",
+    choices: ["more", "fewer", "scarce", "less"],
+    answer: "less", audioText: "I spent less money than you.",
+    translation: "私はあなたほど多くのお金を使わなかった。",
+    explanation: "＜not as ＋ 原級 ＋ as ～＞ は「～ほど…ではない」という意味で、＜less ＋ 原級 ＋ than ～＞ で言い換えられます。ここでは、much money の much の比較級 more の反対を表す less が入ります。more では意味が逆になります。fewer は数えられる名詞につく語で、money（数えられない名詞）には使えません。scarce は形容詞で、比較級の形ではありません。",
+    difficulty: "標準", school: "亜細亜大", added: "2026-11-15"  },
+
+  { page: 49, no: "2-4", category: "比較（1）", type: "rewrite",
     question: "This book is less instructive than that one.<br>➔ This book is not so instructive ( &nbsp; &nbsp; &nbsp; ) that one.<br><small>同意文完成</small>",
     blankCount: 1, answer: ["as"], audioText: "This book is not so instructive as that one.",
     translation: "この本はあの本ほど（教育上）ためにならない。",
     explanation: "＜less ＋ 原級 ＋ than ～＞（〜ほど…ない）は、＜not so ＋ 原級 ＋ as ～＞ でほぼ同じ意味に書き換えられます。This book is not so instructive as that one. となり、空欄には as が入ります。less のあとの than が、not so のあとでは as に変わる点に注意します。",
     difficulty: "標準", school: "昭和女子大" },
 
-  { page: 49, no: "2-4", category: "比較（1）", type: "rewrite",
+  { page: 49, no: "2-5", category: "比較（1）", type: "rewrite",
     question: "He is ( &nbsp; &nbsp; &nbsp; ) so ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) he looks.<br><small>彼は見かけほど年をとっていない。</small>",
     blankCount: 3, answer: ["not", "old", "as"], audioText: "He is not so old as he looks.",
     translation: "彼は見かけほど年をとっていない。",
     explanation: "原級を使った比較の否定 ＜not as［so］＋ 原級 ＋ as ～＞（〜ほど…ない）です。He is not so old as he looks. となり、空欄に入る語は順に not / old / as です。as he looks は「見かけ（彼が見えるの）ほど」という意味で、as のあとに節が続いています。",
     difficulty: "標準", school: "鹿児島大" },
 
-  { page: 49, no: "2-5", category: "比較（1）", type: "sort",
+  { page: 49, no: "2-6", category: "比較（1）", type: "sort",
     question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) .<br><small>彼は昔ほどなまけ者ではありません。<span class='fuyou-note'>〔1語不要〕</span></small>",
     words: ["as", "be", "he", "he", "is", "lazy", "not", "so", "to", "used", "would"],
     answer: "He is not so lazy as he used to be", audioText: "He is not so lazy as he used to be.",
@@ -11234,6 +11258,14 @@ const quizDataset = [
       difficulty: "基礎", school: "名古屋工業大"   },
 
   { page: 55, no: "9-8", category: "関係詞（2）", type: "4choice",
+    question: "He was surprised when he met her for the first time. She was different from ( &nbsp; &nbsp; &nbsp; ) he had expected.",
+    choices: ["there", "what", "as", "like"],
+    answer: "what", audioText: "He was surprised when he met her for the first time. She was different from what he had expected.",
+    translation: "彼は初めて彼女に会ったとき驚いた。彼女は彼が予想していたのとは違っていた。",
+    explanation: "関係代名詞 what は、先行詞を含んで「～するもの・こと」という意味の名詞節を作ります。different from what he had expected（彼が予想していたものとは違う）となり、what は expected の目的語の働きをしています。there は副詞で、from の後ろには続きません。as と like は、from の後ろでは使えません。",
+    difficulty: "基礎", school: "亜細亜大", added: "2026-11-15"  },
+
+  { page: 55, no: "9-9", category: "関係詞（2）", type: "4choice",
     question: "Mr. Smith is the man who has made the company ( &nbsp; &nbsp; &nbsp; ) it is now.",
     choices: ["that", "what", "which", "where"],
     answer: "what", audioText: "Mr. Smith is the man who has made the company what it is now.",
@@ -11241,7 +11273,7 @@ const quizDataset = [
     explanation: "＜make A what it is now＞ は「A を現在のような姿にする」という意味を表します。what は先行詞を含む関係代名詞で、「現在のもの（状態）」という意味になります。that と which は先行詞が必要で、the company の後ろに続けると、it is の補語が足りない文になります。where は場所を表す語なので、ここでは意味が合いません。",
     difficulty: "基礎", school: "東洋大", added: "2026-10-26" },
 
-  { page: 55, no: "9-9", category: "関係詞（2）", type: "4choice",
+  { page: 55, no: "9-10", category: "関係詞（2）", type: "4choice",
     question: "The view of the lake from my window is different from what it ( &nbsp; &nbsp; &nbsp; ) to be.",
     choices: ["get used", "is used", "used", "uses"],
     answer: "used", audioText: "The view of the lake from my window is different from what it used to be.",
@@ -11249,7 +11281,7 @@ const quizDataset = [
     explanation: "＜what ＋ S ＋ used to be＞ は「以前の〜の姿」という意味で、used to は「以前は〜だった」という過去の状態を表します。get used と is used は、あとに to be が続く形にならず、意味も合いません。uses は「〜を使う」という意味の動詞で、used to be の形になりません。",
     difficulty: "標準", school: "日本女子大", added: "2026-10-26" },
 
-  {  page: 55, no: "9-10", category: "関係詞（2）", type: "sort",
+  {  page: 55, no: "9-11", category: "関係詞（2）", type: "sort",
       question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>This town is very ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ).<br><small>この町は10年前の姿とはすっかり変わってしまった。</small>",
       words: ["ago", "from", "it", "what", "ten", "different", "was", "years"],
       answer: "different from what it was ten years ago", audioText: "This town is very different from what it was ten years ago.",
@@ -14664,7 +14696,15 @@ const quizDataset = [
     explanation: "「～に似ている」は ＜be similar to ～＞ で表します。that of Los Angeles の that は、前に出た the climate を言い換える代名詞で、the climate of Los Angeles を表します。like は、それ自体が「～のような」を表す前置詞なので、similar の後ろには続けられません。in と with は、similar とは結びつきません。",
     difficulty: "基礎", school: "摂南大", added: "2026-11-14"  },
 
-  {  page: 65, no: "15-7", category: "代名詞（2）", type: "rewrite",
+  { page: 65, no: "15-7", category: "代名詞（2）", type: "4choice",
+    question: "Your bicycle is ( &nbsp; &nbsp; &nbsp; ) to mine, but it isn't exactly the same.",
+    choices: ["similar", "simple", "damaged", "used"],
+    answer: "similar", audioText: "Your bicycle is similar to mine, but it isn't exactly the same.",
+    translation: "あなたの自転車は私のものに似ているが、まったく同じというわけではない。",
+    explanation: "＜be similar to ～＞ は「～に似ている」という意味です。mine は my bicycle を表す所有代名詞で、「私の自転車」のことです。simple（単純な）、damaged（傷ついた）、used（使われた）は、to mine と結びついても文意に合いません。",
+    difficulty: "基礎", school: "亜細亜大", added: "2026-11-15"  },
+
+  {  page: 65, no: "15-8", category: "代名詞（2）", type: "rewrite",
       question: "No other career is so dramatic as ( &nbsp; &nbsp; &nbsp; ) of Alexander the Great.<br><small>アレクサンダー大王の生涯ほど劇的なものはない。</small>",
       blankCount: 1,
       answer: ["that"], audioText: "No other career is so dramatic as that of Alexander the Great.",
@@ -14672,7 +14712,7 @@ const quizDataset = [
       explanation: "＜No other ～ is so ... as ...＞ は「…ほど～なものはない」という最上級の意味を表す表現です。as の後ろは「アレクサンダー大王の生涯」で、career の繰り返しを避けて that of Alexander the Great とします。career は単数名詞なので that を使います（複数名詞なら those を使います）。",
       difficulty: "基礎", school: "鹿児島大"   },
 
-  {  page: 65, no: "15-8", category: "代名詞（2）", type: "4choice",
+  {  page: 65, no: "15-9", category: "代名詞（2）", type: "4choice",
       question: "The ears of a rabbit are longer than ( &nbsp; &nbsp; &nbsp; ) of a cat.",
       choices: ["this", "these", "that", "those", "ones"],
       answer: "those", audioText: "The ears of a rabbit are longer than those of a cat.",
@@ -14680,7 +14720,7 @@ const quizDataset = [
       explanation: "「ウサギの耳」と「ネコの耳」を比べる文です。ears は複数名詞なので、繰り返しを避ける代名詞は those（those of a cat）になります。that と this は単数のものを指す語なので合いません。these は「これら」と近くのものを指す語で、of a cat のあとに続く形にはなりません。ones は of 句の前に単独では使わず、those of ～ が定型です。",
       difficulty: "基礎", school: "姫路獨協大"   },
 
-  {  page: 65, no: "15-9", category: "代名詞（2）", type: "4choice",
+  {  page: 65, no: "15-10", category: "代名詞（2）", type: "4choice",
       question: "This year's fashions are quite different from ( &nbsp; &nbsp; &nbsp; ) of last year.",
       choices: ["that", "those", "the one", "these"],
       answer: "those", audioText: "This year's fashions are quite different from those of last year.",
@@ -14688,7 +14728,7 @@ const quizDataset = [
       explanation: "「今年の流行」と「去年の流行」を比べる文です。fashions は複数名詞なので、繰り返しを避ける代名詞は those（those of last year）です。that と the one は単数のものを指すので合いません。these は「これら」と近くのものを指す語で、「去年の」という限定した特定のものを表す of last year には those を使います。",
       difficulty: "基礎", school: "広島工業大"   },
 
-  {  page: 65, no: "15-10", category: "代名詞（2）", type: "4choice",
+  {  page: 65, no: "15-11", category: "代名詞（2）", type: "4choice",
       question: "Cars imported from other countries are a lot better than ( &nbsp; &nbsp; &nbsp; ) made in our country.",
       choices: ["all", "them", "those", "which"],
       answer: "those", audioText: "Cars imported from other countries are a lot better than those made in our country.",
@@ -16345,7 +16385,15 @@ const quizDataset = [
       explanation: "「AからBを奪う」は deprive A of B で表します。日本文は「恐怖のあまり」ですが、英語では「恐怖が少年から言葉を奪った」と、無生物（horror）を主語にします。よって、Horror almost deprived the boy of his speech. の順に並べます。※ almost は動詞 deprived の前に置きます。",
       difficulty: "応用", school: "関西学院大・改"   },
 
-  {  page: 69, no: "13-1", category: "前置詞（1）", type: "4choice",
+  { page: 69, no: "13-1", category: "前置詞（1）", type: "4choice",
+    question: "There are nine players on a baseball team.<br>➔ A baseball team ( &nbsp; &nbsp; &nbsp; ) of nine players.<br><small>同意文完成</small>",
+    choices: ["becomes", "consists", "concentrates", "battles"],
+    answer: "consists", audioText: "A baseball team consists of nine players.",
+    translation: "野球チームは 9 人の選手から成る。",
+    explanation: "＜consist of ～＞ は「～から成る」という意味で、There are nine players on a baseball team（野球チームには 9 人の選手がいる）を言い換えた表現です。becomes、concentrates、battles は、後ろに of を続けても、「～から成る」という意味にはなりません。",
+    difficulty: "基礎", school: "亜細亜大", added: "2026-11-15"  },
+
+  {  page: 69, no: "13-2", category: "前置詞（1）", type: "4choice",
       question: "The United States of America ( &nbsp; &nbsp; &nbsp; ) of fifty states.",
       choices: ["is made", "is consisting", "is consisted", "consists"],
       answer: "consists", audioText: "The United States of America consists of fifty states.",
@@ -16353,7 +16401,7 @@ const quizDataset = [
       explanation: "「～から成り立っている」は consist of ～ で表します。consist は自動詞で、状態を表す動詞なので、進行形や受け身にはせず、現在形の consists を使います。よって、consists が正解です。is consisting は進行形、is consisted は受け身で、どちらも consist の使い方として誤りです。is made は、of の前に up を入れて is made up of ～ とすれば、同じ意味を表せます。",
       difficulty: "基礎", school: "北陸大"   },
 
-  {  page: 69, no: "13-2", category: "前置詞（1）", type: "4choice",
+  {  page: 69, no: "13-3", category: "前置詞（1）", type: "4choice",
       question: "Water ( &nbsp; &nbsp; &nbsp; ) of hydrogen and oxygen.",
       choices: ["consists", "is consisting", "is consisted", "has consisted"],
       answer: "consists", audioText: "Water consists of hydrogen and oxygen.",
@@ -16361,7 +16409,7 @@ const quizDataset = [
       explanation: "「～から成り立っている」は consist of ～ で表します。consist は自動詞で、状態を表す動詞なので、進行形や受け身にはせず、現在形の consists を使います。よって、consists が正解です。is consisting は進行形、is consisted は受け身なので、consist の使い方として誤りです。has consisted は現在完了で、いまの構成を表す文には合いません。",
       difficulty: "基礎", school: "日本工業大"   },
 
-  {  page: 69, no: "13-3", category: "前置詞（1）", type: "4choice",
+  {  page: 69, no: "13-4", category: "前置詞（1）", type: "4choice",
       question: "Japan ( &nbsp; &nbsp; &nbsp; ) of four large islands and many small islands.",
       choices: ["consists", "contains", "forms", "organizes"],
       answer: "consists", audioText: "Japan consists of four large islands and many small islands.",
@@ -16432,6 +16480,14 @@ const quizDataset = [
       translation: "彼は、彼女の肩を優しくたたいた。",
       explanation: "「～の（体の部分）をたたく」は pat ～ on the shoulder で表し、たたく部分は on（接触）で示します。よって、on が正解です。in は範囲を表し、look ～ in the eye のように「見る」ときに使います。by は「つかむ」ときに部分を表す語で、take ～ by the arm のように使います。to は方向や到達点を表し、合いません。",
       difficulty: "基礎", school: "関西大"   },
+
+  { page: 69, no: 16, category: "前置詞（1）", type: "4choice",
+    question: "( &nbsp; &nbsp; &nbsp; ) his brother, he made every possible effort to achieve his goal.",
+    choices: ["Be", "Unlike", "Both", "Instead"],
+    answer: "Unlike", audioText: "Unlike his brother, he made every possible effort to achieve his goal.",
+    translation: "彼は兄（弟）とは違って、目標を達成するためにあらゆる努力をした。",
+    explanation: "unlike ～ は「～と違って」という意味の前置詞で、後ろに名詞の his brother が続きます。Be は原形で、文頭にこの形では使えません。Both は his brother の前に置けません。Instead は副詞で、「～の代わりに」を表すには instead of ～ の形にする必要があります。",
+    difficulty: "標準", school: "亜細亜大", added: "2026-11-15"  },
 
   { page: 71, no: "2-1", category: "前置詞（2）", type: "4choice",
     question: "Wine is made ( &nbsp; &nbsp; &nbsp; ) grapes.",
@@ -18050,14 +18106,22 @@ const quizDataset = [
     explanation: "be dependent on ～ は「～に頼っている」という意味の表現で、depend on ～ の形容詞形です。したがって、空欄には on が入ります。",
     difficulty: "標準", school: "福井工業大"  },
 
-  { page: 79, no: "14-b", category: "成句（2）", type: "rewrite",
+  { page: 79, no: "14-b", category: "成句（2）", type: "4choice",
+    question: "Tom has no money of his own. He's totally ( &nbsp; &nbsp; &nbsp; ) on his parents.",
+    choices: ["excellent", "poor", "lacking", "dependent"],
+    answer: "dependent", audioText: "Tom has no money of his own. He's totally dependent on his parents.",
+    translation: "トムには自分のお金がない。彼は完全に両親に頼っている。",
+    explanation: "＜be dependent on ～＞ は「～に頼っている、～に依存している」という意味で、depend on ～ の形容詞です。自分のお金がないので親に頼っている、という文脈に合います。excellent（すばらしい）、poor（貧しい）、lacking（不足している）は、on his parents と結びつきません。",
+    difficulty: "標準", school: "亜細亜大", added: "2026-11-15"  },
+
+  { page: 79, no: "14-c", category: "成句（2）", type: "rewrite",
     question: "She doesn’t want to ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) her parents.<br><small>彼女は両親に頼りたくないと思っている。</small>",
     blankCount: 3, answer: ["be", "dependent", "on"], audioText: "She doesn’t want to be dependent on her parents.",
     translation: "彼女は両親に頼りたくないと思っている。",
     explanation: "be dependent on ～ は「～に頼っている」という意味の表現で、want to の後ろなので、動詞の原形 be を使います。したがって、空欄には be、dependent、on の順に入ります。",
     difficulty: "標準", school: ""  },
 
-  { page: 79, no: "14-c", category: "成句（2）", type: "4choice",
+  { page: 79, no: "14-d", category: "成句（2）", type: "4choice",
     question: "I think I can come to your party tomorrow, but don’t rely ( &nbsp; &nbsp; &nbsp; ) it.<br><small>明日パーティーには行けると思うけど、当てにしないでくれ。</small>",
     choices: ["for", "on", "to", "under", "with"],
     answer: "on", audioText: "I think I can come to your party tomorrow, but don’t rely on it.",
@@ -18110,5 +18174,21 @@ const quizDataset = [
     answer: "hand", audioText: "You need to hand in the homework now.",
     translation: "今すぐ宿題を提出する必要があります。",
     explanation: "＜hand in ～＞ は「～を提出する」という意味の句動詞で、hand in the homework で「宿題を提出する」となります。submit は「提出する」という意味ですが、他動詞なので in を伴いません。make in や finish in は、「提出する」という意味になりません。",
-    difficulty: "標準", school: "岐阜聖徳学園大・改", added: "2026-11-13"  }
+    difficulty: "標準", school: "岐阜聖徳学園大・改", added: "2026-11-13"  },
+
+  { page: 79, no: "16-4", category: "成句（2）", type: "4choice",
+    question: "Do you think the riots are the fault of the government?<br>➔ Do you ( &nbsp; &nbsp; &nbsp; ) the government for the riots ?<br><small>同意文完成</small>",
+    choices: ["fail", "blame", "include", "order"],
+    answer: "blame", audioText: "Do you blame the government for the riots?",
+    translation: "暴動は政府のせいだと思いますか。／暴動について政府を責めますか。",
+    explanation: "＜blame A for B＞ は「B のことで A を責める、B を A のせいにする」という意味で、the fault of ～（～の責任）を言い換えた表現です。fail、include、order は、後ろに ＜the government for the riots＞ の形を続けることができず、文意にも合いません。",
+    difficulty: "標準", school: "亜細亜大", added: "2026-11-15"  },
+
+  { page: 79, no: "16-5", category: "成句（2）", type: "4choice",
+    question: "I got all the information I needed from Kelly.<br>➔ Kelly ( &nbsp; &nbsp; &nbsp; ) me with all the information I needed.<br><small>同意文完成</small>",
+    choices: ["gave", "had", "provided", "lent"],
+    answer: "provided", audioText: "Kelly provided me with all the information I needed.",
+    translation: "ケリーは、私が必要としていたすべての情報を提供してくれた。",
+    explanation: "＜provide A with B＞ は「A に B を提供する」という意味で、後ろの with とともに用います。gave は ＜give A B＞ の形をとるので、with は続きません。had と lent も、＜A with B＞ の形では用いません。",
+    difficulty: "標準", school: "亜細亜大", added: "2026-11-15"  }
 ];
