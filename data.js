@@ -15792,7 +15792,15 @@ const quizDataset = [
     explanation: "advice（助言）は不可算名詞なので、as many as は使えません。as much as you can で「できるだけ多く」という意味になります。a few、few は数えられる名詞に使う語です。as a little as は誤りで、as little as you can は「できるだけ少なく」という意味になり、文意に合いません。",
     difficulty: "基礎", school: "", added: "2026-11-06"  },
 
-  {  page: null, no: "6-1", category: "名詞", type: "4choice",
+  { page: null, no: "6-1", category: "名詞", type: "4choice",
+    question: "I have done all of ( &nbsp; &nbsp; &nbsp; ) and I'd like to take a short break.",
+    choices: ["a homework", "homeworks", "my homework", "my homeworks"],
+    answer: "my homework", audioText: "I have done all of my homework and I'd like to take a short break.",
+    translation: "宿題を全部終えたので、少し休憩したいです。",
+    explanation: "homework は不可算名詞なので、a をつけたり、複数形（homeworks）にしたりしません。また、all of の後ろには、my などの限定詞をつけた名詞が続くので、all of my homework（私の宿題の全部）とするのが正解です。a homework は不可算名詞に a をつけた誤り、homeworks と my homeworks は不可算名詞を複数形にした誤りです。",
+    difficulty: "基礎", school: "名古屋外大", added: "2026-11-15", round: 2  },
+
+  {  page: null, no: "6-2", category: "名詞", type: "4choice",
       question: "I have done all ( &nbsp; &nbsp; &nbsp; ), and I'd like to take a short break.",
       choices: ["a homework", "homeworks", "my homework", "homeworks of mine"],
       answer: "my homework", audioText: "I have done all my homework, and I'd like to take a short break.",
@@ -15800,7 +15808,7 @@ const quizDataset = [
       explanation: "homework は不可算名詞なので、a をつけたり、複数形（homeworks）にしたりしません。all の後ろには所有格をつけて all my homework（私の宿題の全部）とするので、my homework が正解です。a homework は不可算名詞に a をつけた誤りで、homeworks と homeworks of mine は複数形が誤りです。",
       difficulty: "基礎", school: "東海大"   },
 
-  { page: null, no: "6-2", category: "名詞", type: "4choice",
+  { page: null, no: "6-3", category: "名詞", type: "4choice",
     question: "Our teacher always gives us ( &nbsp; &nbsp; &nbsp; ) homework, so we must study very hard.",
     choices: ["many", "much", "a few", "a little", "few", "little"],
     answer: "much", audioText: "Our teacher always gives us much homework, so we must study very hard.",
