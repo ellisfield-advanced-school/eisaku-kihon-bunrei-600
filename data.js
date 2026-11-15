@@ -964,7 +964,15 @@ const quizDataset = [
     explanation: "＜have + O + 過去分詞＞で「Oを～される」という被害を表します。my bicycle（自転車）と steal（盗む）は受け身の関係で、stolen が置かれています。過去の出来事なので、have の過去形 had が正解です。※ To my regret は「残念なことに」という意味の定型表現です。",
     difficulty: "基礎", school: "鹿児島大"  },
 
-  {  page: 7, no: "15-5", category: "文型（3）", type: "sort",
+  { page: 7, no: "15-5", category: "文型（3）", type: "sort",
+    question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>I ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) in the park.<br><small>私は公園でお金を盗まれた。</small>",
+    words: ["my", "had", "stolen", "money"],
+    answer: "had my money stolen", audioText: "I had my money stolen in the park.",
+    translation: "私は公園でお金を盗まれた。",
+    explanation: "「～を…される」という被害は、＜have ＋ O ＋ 過去分詞＞ で表します。ここでは、「お金を盗まれた」を had my money stolen とし、「公園で」の in the park を続けます。I had my money stolen in the park. の順に並べます。",
+    difficulty: "基礎", school: "岐阜聖徳学園大", added: "2026-11-15", round: 2  },
+
+  {  page: 7, no: "15-6", category: "文型（3）", type: "sort",
     question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>I ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) yesterday.<br><small>私は昨日新しい自転車を盗まれました。</small>",
     words: ["new", "had", "bicycle", "my", "stolen"],
     answer: "had my new bicycle stolen", audioText: "I had my new bicycle stolen yesterday.",
@@ -972,7 +980,7 @@ const quizDataset = [
     explanation: "＜have + O + 過去分詞＞で「Oを～される」という被害の意味を表します。目的語に my new bicycle、補語に steal の過去分詞 stolen を置き、I had my new bicycle stolen yesterday. が完成します。形容詞 new は、名詞 bicycle の前に置きます。",
     difficulty: "基礎", school: "九州看護福祉大"  },
 
-  { page: 7, no: "15-6", category: "文型（3）", type: "sort",
+  { page: 7, no: "15-7", category: "文型（3）", type: "sort",
     question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>Where ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) ?<br><small>あなたはどこでパスポートを盗まれたのですか。</small>",
     words: ["have", "stolen", "your passport", "you", "did"],
     answer: "did you have your passport stolen", audioText: "Where did you have your passport stolen?",
@@ -980,7 +988,7 @@ const quizDataset = [
     explanation: "疑問詞 Where に、一般動詞の過去形の疑問文を続けます。did と主語 you の後ろに、被害を表す＜have + O + 過去分詞＞（have your passport stolen）を置きます。did に続くので have は原形になります。",
     difficulty: "標準", school: "拓殖大"  },
 
-  { page: 7, no: "15-7", category: "文型（3）", type: "sort",
+  { page: 7, no: "15-8", category: "文型（3）", type: "sort",
     question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>He ( &nbsp; &nbsp; &nbsp; ) his ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) he had a ( &nbsp; &nbsp; &nbsp; ) to ( &nbsp; &nbsp; &nbsp; ) it.<br><small>彼は果物を食べる前にそれを盗まれてしまった。</small>",
     words: ["chance", "stolen", "eat", "fruit", "before", "had"],
     answer: "had fruit stolen before chance eat", audioText: "He had his fruit stolen before he had a chance to eat it.",
@@ -2379,6 +2387,14 @@ const quizDataset = [
     translation: "それらはどれも、誰も買う余裕がないほど高価なバッグだった。",
     explanation: "＜such ＋ 形容詞 ＋ 名詞（複数形）＋ that ～＞は「とても…な～なので…」という意味の形で、such expensive bags that ～ となります。so は、so expensive のように、形容詞の直前に置く語で、名詞 bags の直前の形容詞 expensive の前には、so を置けません（so ＋ 形容詞 ＋ a ＋ 名詞は、単数形の場合の形です）。quite と very は、that 節と呼応しないので誤りです。",
     difficulty: "基礎", school: "清泉女子大・改", added: "2026-11-10"  },
+
+  { page: 15, no: "15-4", category: "疑問文（1）", type: "sort",
+    question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>I was ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) I forgot to bring my watch.<br><small>私はとても急いでいたので、時計を持ってくるのを忘れてしまった。</small>",
+    words: ["that", "a hurry", "in", "such"],
+    answer: "in such a hurry that", audioText: "I was in such a hurry that I forgot to bring my watch.",
+    translation: "私はとても急いでいたので、時計を持ってくるのを忘れてしまった。",
+    explanation: "「とても急いでいたので～」は、＜such ＋ a ＋ 名詞 ＋ that ～＞（とても…なので～）の形で表します。「急いで」は in a hurry なので、in such a hurry that の順になり、that 以下に結果を続けます。I was in such a hurry that I forgot to bring my watch. の順に並べます。",
+    difficulty: "標準", school: "岐阜聖徳学園大", added: "2026-11-15", round: 2  },
 
   {  page: 15, no: "15-a", category: "疑問文（1）", type: "4choice",
       question: "We had ( &nbsp; &nbsp; &nbsp; ) good weather during our vacation in Hokkaido.",
@@ -5713,6 +5729,14 @@ const quizDataset = [
     explanation: "＜make it a rule not to do＞（〜しないことにしている）と、「〜の悪口を言う」を表す ＜speak ill of ~＞ を組み合わせます。助動詞 should のあとなので原形の make から始まり、You should make it a rule not to speak ill of others. の順に並べます。",
     difficulty: "標準", school: "文教大" },
 
+  { page: 33, no: "15-5", category: "不定詞（1）", type: "4choice",
+    question: "Ms. Hofmann ( &nbsp; &nbsp; &nbsp; ) it a rule to jog early in the morning every other day to maintain her health.",
+    choices: ["makes", "takes", "sets", "gets", "follows"],
+    answer: "makes", audioText: "Ms. Hofmann makes it a rule to jog early in the morning every other day to maintain her health.",
+    translation: "ホフマンさんは、健康を維持するために、1 日おきに朝早くジョギングをすることにしている。",
+    explanation: "＜make it a rule to do＞ は「～することにしている」という意味の表現で、it は後ろの to jog ～ を指す形式目的語です。takes、sets、gets、follows は、it a rule to do の形と結びついて「～することにしている」という意味にはなりません。",
+    difficulty: "基礎", school: "金沢医科大", added: "2026-11-15", round: 2  },
+
   { page: 33, no: "15-a", category: "不定詞（1）", type: "rewrite",
     question: "I am in the ( &nbsp; &nbsp; &nbsp; ) of brushing my teeth twice a day.<br><small>私は毎日2回歯を磨くことにしている。</small>",
     blankCount: 1, answer: ["habit"], audioText: "I am in the habit of brushing my teeth twice a day.", translation: "私は毎日2回歯を磨くことにしている。",
@@ -7006,6 +7030,14 @@ const quizDataset = [
     explanation: "過去に「恐ろしい思いをしたこと」を表すので、＜remember ＋ 動名詞（-ing）＞ を使います。scared は「怖がっている」という意味の形容詞（過去分詞が形容詞化したもの）なので、前に be 動詞の動名詞形 being を置いて being scared とします。having を置くと、having scared となり、「〜を怖がらせた」という別の意味になってしまいます。feel と become は動名詞の形ではなく、remember の目的語になれません。",
     difficulty: "標準", school: "鹿児島大" },
 
+  { page: 39, no: "7-4", category: "動名詞（1）", type: "4choice",
+    question: "I remember ( &nbsp; &nbsp; &nbsp; ) the windows when I left my house this morning.",
+    choices: ["to close", "closing", "close", "closed", "to have closed"],
+    answer: "closing", audioText: "I remember closing the windows when I left my house this morning.",
+    translation: "今朝、家を出るとき、窓を閉めたのを覚えている。",
+    explanation: "＜remember ～ing＞ は「（過去に）～したことを覚えている」、＜remember to do＞ は「（これから）忘れずに～する」という意味です。今朝、窓を閉めたことを覚えている、という過去の内容なので closing が入ります。to close は「忘れずに閉める」の意味になり、close と closed は形が合いません。to have closed は remember の後ろには用いません。",
+    difficulty: "標準", school: "金沢医科大", added: "2026-11-15", round: 2  },
+
   { page: 39, no: "8-1", category: "動名詞（1）", type: "rewrite",
     question: "Don’t be afraid ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) mistakes.<br><small>間違いを恐れるな。</small>",
     blankCount: 2, answer: ["of", "making"], audioText: "Don't be afraid of making mistakes.", 
@@ -7787,7 +7819,15 @@ const quizDataset = [
     explanation: "＜get used to -ing＞ は、「〜することに慣れる」という意味を表します。to は前置詞なので、空欄には動名詞 living が入り、She can’t get used to living in the city. となります。live は原形、be living と be alive は、前置詞 to のあとに置ける形になっていません。",
     difficulty: "基礎", school: "桜美林大" },
 
-  { page: 41, no: "14-7", category: "動名詞（2）", type: "rewrite",
+  { page: 41, no: "14-7", category: "動名詞（2）", type: "sort",
+    question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>I ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) this town.<br><small>ここは私にとってとても住み慣れた町だ。</small>",
+    words: ["living", "to", "am", "used", "in", "very"],
+    answer: "am very used to living in", audioText: "I am very used to living in this town.",
+    translation: "ここは私にとってとても住み慣れた町だ。",
+    explanation: "「～に慣れている」は ＜be used to ～ing＞ で表します。この to は不定詞の to ではなく前置詞なので、後ろには動名詞 living が続きます。「とても」の very は used を修飾して、am very used to living in の順になります。I am very used to living in this town. の順に並べます。",
+    difficulty: "標準", school: "関東学院大", added: "2026-11-15", round: 2  },
+
+  { page: 41, no: "14-8", category: "動名詞（2）", type: "rewrite",
     question: "You will soon get ( &nbsp; &nbsp; &nbsp; ) to ( &nbsp; &nbsp; &nbsp; ) on the left.<br><small>すぐに左側通行の運転に慣れますよ。</small>",
     blankCount: 2, answer: ["used", "driving"], audioText: "You will soon get used to driving on the left.", 
     translation: "すぐに左側通行の運転に慣れますよ。",
@@ -13102,6 +13142,14 @@ const quizDataset = [
       difficulty: "標準", school: "旧センター試験"   },
 
   { page: 59, no: "12-g", category: "接続詞（2）", type: "sort",
+    question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>As ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) concerned, you don't have to worry.<br><small>お金に関する限り、心配しなくてよい。</small>",
+    words: ["is", "far", "money", "as"],
+    answer: "far as money is", audioText: "As far as money is concerned, you don't have to worry.",
+    translation: "お金に関する限り、心配しなくてよい。",
+    explanation: "「～に関する限り」は ＜as far as ～ is concerned＞ で表します。ここでは、「～」の部分に money が入ります。As のあとに、far as money is の順に並べます。As far as money is concerned, you don't have to worry. の順に並べます。",
+    difficulty: "標準", school: "岐阜聖徳学園大", added: "2026-11-15", round: 2  },
+
+  { page: 59, no: "12-h", category: "接続詞（2）", type: "sort",
     question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ), we can start today.<br><small>私に関する限り、今日出発できます。<span class='fuyou-note'>〔1語不要〕</span></small>",
     words: ["am", "as", "concerned", "far", "I", "so", "that"],
     answer: "So far as I am concerned", audioText: "So far as I am concerned, we can start today.",
@@ -14337,6 +14385,14 @@ const quizDataset = [
       explanation: "＜It is［was］＋強調する語句＋that ...＞の形で、文の一部を強調する構文（強調構文）です。強調する語句が人のときは、that の代わりに who を使うこともできます。It was Mary who left the door open last night. で、主語の Mary（人）を強調しているので who が正解です。which は人以外が先行詞のときに使い、whom は目的格、whose は所有格です。",
       difficulty: "基礎", school: "中央大"   },
 
+  { page: 65, no: "9-4", category: "代名詞（2）", type: "sort",
+    question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>It was Tom ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) the phone.<br><small>私が電話で話していたのはトムでした。</small>",
+    words: ["on", "that", "to", "was", "I", "talking"],
+    answer: "that I was talking to on", audioText: "It was Tom that I was talking to on the phone.",
+    translation: "私が電話で話していたのはトムでした。",
+    explanation: "＜It was ～ that ...＞ は、～の部分を強調する強調構文です。ここでは Tom が強調されていて、that 以下は I was talking to ～ on the phone（私が電話で～と話していた）の ～ にあたる Tom を抜いた形です。talk to ～ on the phone は「電話で～と話す」の意味です。It was Tom that I was talking to on the phone. の順に並べます。",
+    difficulty: "標準", school: "関東学院大", added: "2026-11-15", round: 2  },
+
   {  page: 65, no: "10-1", category: "代名詞（2）", type: "4choice",
       question: "It was in 1990 ( &nbsp; &nbsp; &nbsp; ) he graduated from university.",
       choices: ["that", "where", "in which", "at which"],
@@ -14792,6 +14848,14 @@ const quizDataset = [
       explanation: "if 節が過去形の came なので、主節は ＜would ＋ 動詞の原形＞ になり、would be が入ります。仮定法過去は、現在の事実に反する仮定だけでなく、tomorrow のような未来についての実現しにくい仮定や、控えめな言い方にも使います。am と will be は直説法で、if 節の過去形 came と合いません。had been は過去の事実に反する仮定の形なので、不適切です。",
       difficulty: "標準", school: "明治大"   },
 
+  { page: 67, no: "1-8", category: "仮定法", type: "4choice",
+    question: "If I were a little younger, I ( &nbsp; &nbsp; &nbsp; ) you in climbing Mt. Fuji.",
+    choices: ["join", "will join", "have joined", "would join"],
+    answer: "would join", audioText: "If I were a little younger, I would join you in climbing Mt. Fuji.",
+    translation: "もう少し若ければ、あなたと一緒に富士山に登るのだが。",
+    explanation: "If I were a little younger（もう少し若ければ）は、現在の事実に反する仮定法過去です。主節は ＜would ＋ 動詞の原形＞ の形にするので、would join が入ります。join は原形、will join は単なる未来、have joined は完了を表し、いずれも仮定法過去の主節の形ではありません。",
+    difficulty: "基礎", school: "関東学院大", added: "2026-11-15", round: 2  },
+
   {  page: 67, no: "1-a", category: "仮定法", type: "4choice",
       question: "If my father ( &nbsp; &nbsp; &nbsp; ) here now, he would tell me what to do.",
       choices: ["is", "were", "will be", "had been"],
@@ -15240,7 +15304,15 @@ const quizDataset = [
       explanation: "if節が hadn't had（＜had＋過去分詞＞）で、last month's（先月の）という過去のことなので、仮定法過去完了です。主節は＜would＋have＋過去分詞＞にするので、would have failed（失敗していただろう）が正解です。failed は単なる過去形、were failing は過去進行形で、仮定の帰結を表す形ではありません。would fail は現在や未来についての推量なので、過去の仮定に合いません。",
       difficulty: "基礎", school: "東海大"   },
 
-  { page: 67, no: "6-8", category: "仮定法", type: "sort",
+  { page: 67, no: "6-8", category: "仮定法", type: "4choice",
+    question: "Takashi was badly injured in the car accident. If only he had left home five minutes later, he ( &nbsp; &nbsp; &nbsp; ) involved in it.",
+    choices: ["would be", "would not be", "would have been", "would not have been"],
+    answer: "would not have been", audioText: "Takashi was badly injured in the car accident. If only he had left home five minutes later, he would not have been involved in it.",
+    translation: "タカシはその自動車事故でひどいけがをした。あと 5 分遅く家を出てさえいれば、事故に巻き込まれなかっただろうに。",
+    explanation: "＜If only ～＞ は「～でさえあればなあ」という仮定法で、ここでは過去の事実に反する内容を、If only he had left home ～（had ＋ 過去分詞）で表しています。主節は ＜would ＋ have ＋ 過去分詞＞ の形にします。「事故に巻き込まれた」という実際の事実と反対の内容になるので、否定の would not have been が入ります。would be と would not be は現在の内容を表し、would have been は文意が逆になります。",
+    difficulty: "標準", school: "関東学院大", added: "2026-11-15", round: 2  },
+
+  { page: 67, no: "6-9", category: "仮定法", type: "sort",
     question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>If he ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ), he probably ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) office.<br><small>彼は辞職していなければ、解任されていただろう。</small>",
     words: ["would", "not", "from", "had", "resigned", "have", "removed", "been"],
     answer: "had not resigned would have been removed from", audioText: "If he had not resigned, he probably would have been removed from office.",
