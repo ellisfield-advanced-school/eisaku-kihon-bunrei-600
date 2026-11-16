@@ -8135,6 +8135,14 @@ const quizDataset = [
     difficulty: "標準", school: "宮崎大" },
 
   { page: 43, no: "3-3", category: "分詞（1）", type: "4choice",
+    question: "Paris and London are the most ( &nbsp; &nbsp; &nbsp; ) cities in Europe.",
+    choices: ["visit", "to visit", "visiting", "visited"],
+    answer: "visited", audioText: "Paris and London are the most visited cities in Europe.",
+    translation: "パリとロンドンは、ヨーロッパで最も多くの人が訪れる都市です。",
+    explanation: "「訪れられる都市」のように、cities と visit の関係が受け身（都市は訪れられる）になるので、過去分詞 visited が名詞 cities を前から修飾します（the most visited cities で「最も多くの人が訪れる都市」）。visiting は能動の意味（訪れている）になり、visit と to visit は名詞を修飾する形になりません。",
+    difficulty: "標準", school: "岩手医科大", added: "2026-11-16"  },
+
+  { page: 43, no: "3-4", category: "分詞（1）", type: "4choice",
     question: "The five dogs ( &nbsp; &nbsp; &nbsp; ) to my uncle.",
     choices: ["belong", "belongs", "are belonging", "have been belonging"],
     answer: "belong", audioText: "The five dogs belong to my uncle.",
@@ -10956,6 +10964,14 @@ const quizDataset = [
       explanation: "関係代名詞 what が do の目的語となる節（what ... is right）を作り、you believe が「あなたが信じるに」という挿入句として is right の前に入っています。do の後ろに what を置き、believe に続けて is right でまとめます。",
       difficulty: "標準", school: "青山学院大"   },
 
+  { page: 55, no: "1-7", category: "関係詞（2）", type: "4choice",
+    question: "A lot of ( &nbsp; &nbsp; &nbsp; ) is on TV these days is not suitable for children.",
+    choices: ["that", "what", "which", "there"],
+    answer: "what", audioText: "A lot of what is on TV these days is not suitable for children.",
+    translation: "最近テレビで放送されているものの多くは、子どもに適していない。",
+    explanation: "関係代名詞 what は、先行詞を含んで「～するもの・こと」という意味の名詞節を作ります。A lot of what is on TV（テレビで放送されているものの多く）が主語で、what は is の主語の働きをしています。that と which は先行詞が必要ですが、of の直後には先行詞がありません。there は副詞なので、関係代名詞の働きができません。",
+    difficulty: "標準", school: "岩手医科大", added: "2026-11-16"  },
+
   { page: 55, no: "2-1", category: "関係詞（2）", type: "4choice",
     question: "( &nbsp; &nbsp; &nbsp; ) we need now is some good advice from experts.",
     choices: ["Which", "Whether", "That", "What"],
@@ -11734,6 +11750,14 @@ const quizDataset = [
       translation: "前もって予約をしなければ、後悔しますよ。",
       explanation: "if が導く条件を表す副詞節の中では、未来のことでも現在形を使います。if you don't make reservations in advance（もし前もって予約をしなければ）と、現在形の否定 don't にするのが正解です。won't（will not）は未来形の否定なので条件節には使えず、wouldn't は仮定法、shouldn't は「〜すべきでない」という意味になり文脈に合いません。",
       difficulty: "標準", school: "明治大"   },
+
+  { page: 57, no: "6-8", category: "接続詞（1）", type: "4choice",
+    question: "( &nbsp; &nbsp; &nbsp; ) while I'm away, please contact Mark.",
+    choices: ["If anything happened", "If anything happens", "If anything will happen", "If anything will have happened"],
+    answer: "If anything happens", audioText: "If anything happens while I'm away, please contact Mark.",
+    translation: "私が留守の間に何かあったら、マークに連絡してください。",
+    explanation: "条件を表す副詞節（if ～）の中では、未来のことでも現在形を用います。If anything happens while I'm away（私が留守の間に何かあったら）となります。If anything happened は過去形で、現在の事実や将来のことへの仮定には合いません。If anything will happen と If anything will have happened は、条件の副詞節の中で will を使っている誤りです。",
+    difficulty: "標準", school: "大妻女子大", added: "2026-11-16"  },
 
   {  page: 57, no: "6-a", category: "接続詞（1）", type: "4choice",
       question: "Please let me know when she ( &nbsp; &nbsp; &nbsp; ) back to the office.",
@@ -13409,6 +13433,14 @@ const quizDataset = [
       explanation: "Whatever he may say は「彼が何と言おうと」の意味で、whatever は say の目的語です（＝ No matter what he may say）。What だけでは譲歩の意味にならず、However は後ろに形容詞［副詞］が続きます。How は譲歩を表せません。",
       difficulty: "基礎", school: "立命館大"   },
 
+  { page: 59, no: 16, category: "接続詞（2）", type: "4choice",
+    question: "( &nbsp; &nbsp; &nbsp; ) he is now, tell him to come back here by 4 o'clock.",
+    choices: ["Whatever", "When", "Where", "Wherever"],
+    answer: "Wherever", audioText: "Wherever he is now, tell him to come back here by 4 o'clock.",
+    translation: "彼が今どこにいようとも、4 時までにここに戻ってくるように伝えてください。",
+    explanation: "wherever は「どこで（へ）～しようとも」（= no matter where）という意味の複合関係副詞で、譲歩の副詞節を作ります。ここでは「彼が今どこにいようとも」という意味です。Whatever は「何が（を）～しようとも」という意味で、he is の後ろに補語がない文には合いません。When は「～するとき」、Where は「～する場所で」という意味で、「どこにいようとも」という譲歩の意味になりません。",
+    difficulty: "標準", school: "大妻女子大", added: "2026-11-16"  },
+
   {  page: 59, no: "16-a", category: "接続詞（2）", type: "rewrite",
       question: "You may go ( &nbsp; &nbsp; &nbsp; ) you like.<br><small>行きたい時にいつでも行っていいですよ。</small>",
       blankCount: 1,
@@ -13832,6 +13864,14 @@ const quizDataset = [
       translation: "祖父が亡くなってから10年になる。",
       explanation: "Ten years have passed since ...（〜してから10年が過ぎた）は、It has been ten years since ... と書き換えられます。「〜してから…になる」は、＜It has been＋期間＋since＋S＋V（過去形）＞で表します。was は過去形なので、現在までの経過を表せません。passed と has passed は、後ろの ten years とつながらないため不可です。",
       difficulty: "標準", school: "慶應義塾大・改"   },
+
+  { page: 63, no: "6-4", category: "代名詞（1）", type: "4choice",
+    question: "It is already over three years ( &nbsp; &nbsp; &nbsp; ) David started working as a doctor.",
+    choices: ["before", "ago", "when", "since"],
+    answer: "since", audioText: "It is already over three years since David started working as a doctor.",
+    translation: "デイビッドが医者として働き始めてから、すでに 3 年以上たつ。",
+    explanation: "＜It is ＋ 期間 ＋ since ～＞ は「～してから…になる」という意味の表現で、since が入ります。before は「～する前に」、ago は副詞で、接続詞として節を続けることができません。when は「～するとき」という意味で、時間の経過を表しません。",
+    difficulty: "標準", school: "岩手医科大", added: "2026-11-16"  },
 
   {  page: 63, no: "7-1", category: "代名詞（1）", type: "4choice",
       question: "It is no use ( &nbsp; &nbsp; &nbsp; ) over spilt milk.",
@@ -14720,7 +14760,15 @@ const quizDataset = [
       explanation: "「ニューヨークの人口」と「ワシントンDCの人口」を比べる文です。後ろの population の繰り返しを避けるために that を使い、＜larger than that of ～＞ の語順にします。than の後ろに that of Washington DC が続きます。※ Washington DC は2語で1つのチップです。",
       difficulty: "基礎", school: "拓殖大"   },
 
-  {  page: 65, no: "15-3", category: "代名詞（2）", type: "sort",
+  { page: 65, no: "15-3", category: "代名詞（2）", type: "4choice",
+    question: "The weather in Tokyo is warmer than ( &nbsp; &nbsp; &nbsp; ) in Sapporo.",
+    choices: ["that", "the one", "it", "of"],
+    answer: "that", audioText: "The weather in Tokyo is warmer than that in Sapporo.",
+    translation: "東京の天気は、札幌の天気よりも暖かい。",
+    explanation: "比較する対象として the weather の繰り返しを避けるときは、代名詞 that を使います。the weather in Tokyo と that in Sapporo（= the weather in Sapporo）を比べる文です。the one は、可算名詞の単数形の代わりに使う語で、不可算名詞の weather の代わりには使えません。it は特定の同じものを指すので比較に使えません。of は前置詞なので、後ろの in Sapporo とつながりません。",
+    difficulty: "基礎", school: "岩手医科大", added: "2026-11-16"  },
+
+  {  page: 65, no: "15-4", category: "代名詞（2）", type: "sort",
       question: "<small class='instruction-note'>次の語句を並び替えなさい。</small><br>The population of London is ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) any other British city.",
       words: ["that", "greater", "than", "of", "much"],
       answer: "much greater than that of", audioText: "The population of London is much greater than that of any other British city.",
@@ -14728,7 +14776,7 @@ const quizDataset = [
       explanation: "「ロンドンの人口」と「他の都市の人口」を比べるので、population の繰り返しを避けて that of とします。＜比較級 than any other ＋ 単数名詞＞ は「他のどの～よりも…」という意味です。much は比較級 greater を強めて「ずっと」を表し、much greater than that of any other British city の語順になります。",
       difficulty: "標準", school: ""   },
 
-  {  page: 65, no: "15-4", category: "代名詞（2）", type: "sort",
+  {  page: 65, no: "15-5", category: "代名詞（2）", type: "sort",
       question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>The climate of ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) Japan.<br><small>この国の気候は日本の気候に似ている。</small>",
       words: ["is", "like", "of", "that", "this country"],
       answer: "this country is like that of", audioText: "The climate of this country is like that of Japan.",
@@ -14736,7 +14784,7 @@ const quizDataset = [
       explanation: "「この国の気候」と「日本の気候」を比べる文で、climate の繰り返しを避けるために that を使い、that of Japan とします。like は「～に似ている」という前置詞で、＜be like ～＞ の形です。したがって、The climate of this country is like that of Japan. の語順になります。",
       difficulty: "標準", school: "佛教大"   },
 
-  { page: 65, no: "15-5", category: "代名詞（2）", type: "4choice",
+  { page: 65, no: "15-6", category: "代名詞（2）", type: "4choice",
     question: "Bob says that the structure of society is like ( &nbsp; &nbsp; &nbsp; ) of a family.",
     choices: ["it", "one", "that", "those"],
     answer: "that", audioText: "Bob says that the structure of society is like that of a family.",
@@ -14744,7 +14792,7 @@ const quizDataset = [
     explanation: "同じ名詞（the structure）の繰り返しを避けるために、＜that of ～＞ を使い、「～の構造」という意味を表します。the structure は特定の単数の名詞なので、that で受けます。it は of を伴う形で使えません。one は a(n) ＋ 名詞の代わりに使う語で、the structure のように特定の名詞は受けられません。those は複数の名詞を受ける形です。",
     difficulty: "基礎", school: "日本女子大", added: "2026-10-26" },
 
-  { page: 65, no: "15-6", category: "代名詞（2）", type: "4choice",
+  { page: 65, no: "15-7", category: "代名詞（2）", type: "4choice",
     question: "The climate here is similar ( &nbsp; &nbsp; &nbsp; ) that of Los Angeles.",
     choices: ["to", "in", "like", "with"],
     answer: "to", audioText: "The climate here is similar to that of Los Angeles.",
@@ -14752,7 +14800,7 @@ const quizDataset = [
     explanation: "「～に似ている」は ＜be similar to ～＞ で表します。that of Los Angeles の that は、前に出た the climate を言い換える代名詞で、the climate of Los Angeles を表します。like は、それ自体が「～のような」を表す前置詞なので、similar の後ろには続けられません。in と with は、similar とは結びつきません。",
     difficulty: "基礎", school: "摂南大", added: "2026-11-14"  },
 
-  { page: 65, no: "15-7", category: "代名詞（2）", type: "4choice",
+  { page: 65, no: "15-8", category: "代名詞（2）", type: "4choice",
     question: "Your bicycle is ( &nbsp; &nbsp; &nbsp; ) to mine, but it isn't exactly the same.",
     choices: ["similar", "simple", "damaged", "used"],
     answer: "similar", audioText: "Your bicycle is similar to mine, but it isn't exactly the same.",
@@ -14760,7 +14808,7 @@ const quizDataset = [
     explanation: "＜be similar to ～＞ は「～に似ている」という意味です。mine は my bicycle を表す所有代名詞で、「私の自転車」のことです。simple（単純な）、damaged（傷ついた）、used（使われた）は、to mine と結びついても文意に合いません。",
     difficulty: "基礎", school: "亜細亜大", added: "2026-11-15"  },
 
-  {  page: 65, no: "15-8", category: "代名詞（2）", type: "rewrite",
+  {  page: 65, no: "15-9", category: "代名詞（2）", type: "rewrite",
       question: "No other career is so dramatic as ( &nbsp; &nbsp; &nbsp; ) of Alexander the Great.<br><small>アレクサンダー大王の生涯ほど劇的なものはない。</small>",
       blankCount: 1,
       answer: ["that"], audioText: "No other career is so dramatic as that of Alexander the Great.",
@@ -14768,7 +14816,7 @@ const quizDataset = [
       explanation: "＜No other ～ is so ... as ...＞ は「…ほど～なものはない」という最上級の意味を表す表現です。as の後ろは「アレクサンダー大王の生涯」で、career の繰り返しを避けて that of Alexander the Great とします。career は単数名詞なので that を使います（複数名詞なら those を使います）。",
       difficulty: "基礎", school: "鹿児島大"   },
 
-  {  page: 65, no: "15-9", category: "代名詞（2）", type: "4choice",
+  {  page: 65, no: "15-10", category: "代名詞（2）", type: "4choice",
       question: "The ears of a rabbit are longer than ( &nbsp; &nbsp; &nbsp; ) of a cat.",
       choices: ["this", "these", "that", "those", "ones"],
       answer: "those", audioText: "The ears of a rabbit are longer than those of a cat.",
@@ -14776,7 +14824,7 @@ const quizDataset = [
       explanation: "「ウサギの耳」と「ネコの耳」を比べる文です。ears は複数名詞なので、繰り返しを避ける代名詞は those（those of a cat）になります。that と this は単数のものを指す語なので合いません。these は「これら」と近くのものを指す語で、of a cat のあとに続く形にはなりません。ones は of 句の前に単独では使わず、those of ～ が定型です。",
       difficulty: "基礎", school: "姫路獨協大"   },
 
-  {  page: 65, no: "15-10", category: "代名詞（2）", type: "4choice",
+  {  page: 65, no: "15-11", category: "代名詞（2）", type: "4choice",
       question: "This year's fashions are quite different from ( &nbsp; &nbsp; &nbsp; ) of last year.",
       choices: ["that", "those", "the one", "these"],
       answer: "those", audioText: "This year's fashions are quite different from those of last year.",
@@ -14784,7 +14832,7 @@ const quizDataset = [
       explanation: "「今年の流行」と「去年の流行」を比べる文です。fashions は複数名詞なので、繰り返しを避ける代名詞は those（those of last year）です。that と the one は単数のものを指すので合いません。these は「これら」と近くのものを指す語で、「去年の」という限定した特定のものを表す of last year には those を使います。",
       difficulty: "基礎", school: "広島工業大"   },
 
-  {  page: 65, no: "15-11", category: "代名詞（2）", type: "4choice",
+  {  page: 65, no: "15-12", category: "代名詞（2）", type: "4choice",
       question: "Cars imported from other countries are a lot better than ( &nbsp; &nbsp; &nbsp; ) made in our country.",
       choices: ["all", "them", "those", "which"],
       answer: "those", audioText: "Cars imported from other countries are a lot better than those made in our country.",
@@ -15305,6 +15353,14 @@ const quizDataset = [
       difficulty: "基礎", school: "東海大"   },
 
   { page: 67, no: "6-8", category: "仮定法", type: "4choice",
+    question: "If I had known that the bus was going to be late, I ( &nbsp; &nbsp; &nbsp; ) home later.",
+    choices: ["had left", "would have left", "should be leaving", "am going to leave"],
+    answer: "would have left", audioText: "If I had known that the bus was going to be late, I would have left home later.",
+    translation: "バスが遅れることがわかっていたら、もっと遅く家を出ただろうに。",
+    explanation: "If I had known（過去完了）は、過去の事実に反する仮定を表す仮定法過去完了なので、主節は ＜would ＋ have ＋ 過去分詞＞ の形にします。would have left が入ります。had left は条件節の形で、主節には使えません。should be leaving と am going to leave は、仮定法過去完了の主節の形ではありません。",
+    difficulty: "標準", school: "岩手医科大", added: "2026-11-16"  },
+
+  { page: 67, no: "6-9", category: "仮定法", type: "4choice",
     question: "Takashi was badly injured in the car accident. If only he had left home five minutes later, he ( &nbsp; &nbsp; &nbsp; ) involved in it.",
     choices: ["would be", "would not be", "would have been", "would not have been"],
     answer: "would not have been", audioText: "Takashi was badly injured in the car accident. If only he had left home five minutes later, he would not have been involved in it.",
@@ -15312,7 +15368,7 @@ const quizDataset = [
     explanation: "＜If only ～＞ は「～でさえあればなあ」という仮定法で、ここでは過去の事実に反する内容を、If only he had left home ～（had ＋ 過去分詞）で表しています。主節は ＜would ＋ have ＋ 過去分詞＞ の形にします。「事故に巻き込まれた」という実際の事実と反対の内容になるので、否定の would not have been が入ります。would be と would not be は現在の内容を表し、would have been は文意が逆になります。",
     difficulty: "標準", school: "関東学院大", added: "2026-11-15", round: 2  },
 
-  { page: 67, no: "6-9", category: "仮定法", type: "sort",
+  { page: 67, no: "6-10", category: "仮定法", type: "sort",
     question: "<small class='instruction-note'>日本文に合うように、次の語句を並び替えなさい。</small><br>If he ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ), he probably ( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; )( &nbsp; &nbsp; &nbsp; ) office.<br><small>彼は辞職していなければ、解任されていただろう。</small>",
     words: ["would", "not", "from", "had", "resigned", "have", "removed", "been"],
     answer: "had not resigned would have been removed from", audioText: "If he had not resigned, he probably would have been removed from office.",
